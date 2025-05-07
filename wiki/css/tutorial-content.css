@@ -1,0 +1,161 @@
+/* 教程内容页面专用样式 */
+.tutorial-content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.tutorial-content h1 {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 15px;
+}
+
+/* 教程部分 */
+.tutorial-content section {
+    margin-bottom: 40px;
+}
+
+.tutorial-content h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.tutorial-content h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+.tutorial-content h3 {
+    color: #444;
+    font-size: 1.2rem;
+    margin: 15px 0 10px;
+}
+
+.tutorial-content p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* 步骤样式 */
+.step {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.step h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* 图片样式 */
+.tutorial-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.tutorial-content img:hover {
+    transform: scale(1.01);
+}
+
+/* FAQ 样式 */
+.faq-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f5f7fa;
+    border-radius: var(--border-radius);
+}
+
+.faq-item h3 {
+    color: #444;
+    margin-top: 0;
+}
+
+/* 资源链接 */
+.resources ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resources li {
+    margin-bottom: 10px;
+}
+
+.resources a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+}
+
+.resources a::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.resources a:hover {
+    color: var(--primary-hover);
+}
+
+.resources a:hover::before {
+    transform: translateX(3px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .tutorial-content {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .tutorial-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .tutorial-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .tutorial-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .step {
+        padding: 15px;
+    }
+} 

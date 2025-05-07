@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shadowrocket iOS代理软件使用教程">
+    <meta name="keywords" content="Shadowrocket,iOS,iPhone,代理工具,教程">
+    <meta name="author" content="ToolStore">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1d24">
+    <title>Shadowrocket 教程</title>
+    <!-- 立即应用暗色主题，防止闪烁 -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            // 默认使用暗色主题
+            document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
+            if (!savedTheme) {
+                localStorage.setItem('theme', 'dark');
+            }
+        })();
+    </script>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/media-queries.css">
+    <!-- 文档站专用样式 -->
+    <link rel="stylesheet" href="../css/doc-style.css">
+    <!-- 模板页面自定义样式 -->
+    <link rel="stylesheet" href="../css/custom-templates.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='180' height='180' fill='%231a1d24'/%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+
+<body class="wiki-page">
+    <header>
+        <div class="header-content">
+            <h1>
+                <a href="../wiki.html">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    ToolStore 文档
+                </a>
+            </h1>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../wiki.html">文档首页</a></li>
+                    <li><a href="https://nav.awafuns.cn/" target="_blank">导航站点</a></li>
+                    <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点</a></li>
+                </ul>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="themeToggle">
+                        <input type="checkbox" id="themeToggle">
+                        <div class="slider round">
+                            <span class="theme-icon light">☀️</span>
+                            <span class="theme-icon dark">🌙</span>
+                        </div>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
+    </button>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="../../index.html">主页</a></li>
+            <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点</a></li>
+            <li><a href="javascript:void(0)" id="mobile-feedback-modal">邮箱反馈</a></li>
+        </ul>
+    </div>
+
+    <button class="sidebar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="page-container">
+        <!-- 左侧导航栏 -->
+        <aside class="sidebar">
+            <!-- 通用教程分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>通用教程
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="usage-guide.html">使用指南</a></li>
+                    <li class="nav-item"><a href="troubleshooting.html">常见问题解决</a></li>
+                    <li class="nav-item"><a href="feedback-email.html">邮件反馈指南</a></li>
+                    <li class="nav-item"><a href="../templates/templates.html">文档示例</a></li>
+                </ul>
+            </div>
+
+            <!-- 安卓分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>安卓工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="clashmeta.html">ClashMeta</a></li>
+                    <li class="nav-item"><a href="hiddify.html">Hiddify</a></li>
+                    <li class="nav-item"><a href="surfboard.html">Surfboard</a></li>
+                </ul>
+            </div>
+
+            <!-- iOS分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>iOS工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="shadowrocket.html">Shadowrocket</a></li>
+                </ul>
+            </div>
+
+            <!-- PC分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>PC工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="clash_verge.html">Clash Verge</a></li>
+                    <li class="nav-item"><a href="mihomo_party.html">Mihomo Party</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 主要内容区 -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Shadowrocket使用教程 <span class="difficulty difficulty-intermediate">一般</span></h1>
+                <p>作者： <a href="https://github.com/Re0XIAOPA" target="_blank" rel="noopener noreferrer"><span
+                            class="author-name" itemprop="name">Re0XIAOPA</span></a></p>
+            </div>
+            <div class="tool-tags">
+                <span class="tag">iOS</span>
+                <span class="tag">iPhone</span>
+                <span class="tag">入门指南</span>
+            </div>
+            <p class="version-info">最后更新: 2024-05-20</p>
+            <!-- 文档模板元素库 - 基础内容 -->
+            <section class="content-section">
+                <h2 id="intro">Shadowrocket 简介</h2>
+                <div class="note">
+                    <p><strong>提示：</strong>Shadowrocket是iOS平台上最受欢迎的代理工具之一，你需要拥有机场订阅才能使用。</p>
+                </div>
+                
+                <h3 id="step1">1、获取Shadowrocket应用</h3>
+                <p>由于App Store区域限制，中国区App Store无法直接下载Shadowrocket。您需要：</p>
+                <ol>
+                    <li>拥有非中国区的Apple ID（如美区、香港区等）</li>
+                    <li>在App Store中登录该账号</li>
+                    <li>搜索并购买Shadowrocket应用（目前售价约$2.99美元）</li>
+                </ol>
+                <p><strong>注意：</strong>不推荐使用共享Apple ID或第三方下载的版本，以避免账号安全问题。</p>
+                
+                <h3 id="step2">2、获取订阅地址</h3>
+                <p>在您购买的机场网站中，找到并复制Shadowrocket专用的订阅链接。通常会有以下几种类型：</p>
+                <ul>
+                    <li>通用格式：直接复制订阅URL</li>
+                    <li>二维码格式：保存二维码图片</li>
+                </ul>
+                <p>不同机场可能提供不同格式的订阅链接，一般在"用户中心"或"仪表盘"页面可以找到。</p>
+                
+                <h3 id="step3">3、导入订阅配置</h3>
+                <p>有多种方法可以导入订阅配置到Shadowrocket：</p>
+                <ol>
+                    <li>
+                        <strong>通过URL导入：</strong>
+                        <ul>
+                            <li>打开Shadowrocket应用</li>
+                            <li>点击右上角的"+"号</li>
+                            <li>类型选择"Subscribe"</li>
+                            <li>URL栏粘贴您的订阅链接</li>
+                            <li>备注栏填写自定义名称（可选）</li>
+                            <li>点击"完成"保存</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>通过扫描二维码导入：</strong>
+                        <ul>
+                            <li>打开Shadowrocket应用</li>
+                            <li>点击右上角的"+"号</li>
+                            <li>点击右上角的扫描图标</li>
+                            <li>对准订阅二维码进行扫描</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3 id="step4">4、选择节点并连接</h3>
+                <p>订阅导入成功后，Shadowrocket会自动下载所有可用节点：</p>
+                <ol>
+                    <li>在主界面可以看到所有节点列表</li>
+                    <li>点击节点右侧的速度图标可以测试延迟</li>
+                    <li>点击想要使用的节点，该节点前会出现一个黄点，表示已选中</li>
+                    <li>点击屏幕底部的"连接"按钮启动代理</li>
+                    <li>首次连接时，系统会要求授权VPN配置，点击"允许"即可</li>
+                </ol>
+                <p>成功连接后，屏幕上方会显示"VPN"字样，表示代理已生效。</p>
+                
+                <h3 id="step5">5、全局路由设置</h3>
+                <p>Shadowrocket提供多种代理模式，可以根据需求选择：</p>
+                <ol>
+                    <li>点击底部的"全局路由"</li>
+                    <li>选择合适的模式：
+                        <ul>
+                            <li><strong>配置</strong>：按照规则分流，推荐选择</li>
+                            <li><strong>代理</strong>：所有流量都走代理</li>
+                            <li><strong>直连</strong>：所有流量都直接连接</li>
+                            <li><strong>场景</strong>：根据不同网络环境自动切换模式</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>对于大多数用户，建议选择"配置"模式，这样国内网站直连访问，国外网站走代理，既提高了速度又节省了流量。</p>
+                
+                <h3 id="step6">6、更新订阅</h3>
+                <p>为确保使用最新的节点列表，需要定期更新订阅：</p>
+                <ol>
+                    <li>在主界面下拉刷新</li>
+                    <li>或长按订阅名称，选择"更新"</li>
+                </ol>
+                <p>建议每周至少更新一次订阅，或者当发现节点连接不畅时进行更新。</p>
+                
+                <h3 id="advanced">7、高级设置</h3>
+                <p>Shadowrocket还提供了一些高级功能，适合进阶用户使用：</p>
+                <ul>
+                    <li><strong>规则编辑</strong>：在"配置"选项卡中，可以编辑和管理规则组</li>
+                    <li><strong>本地分流</strong>：可以设置特定应用不走代理</li>
+                    <li><strong>DNS设置</strong>：可以修改DNS服务器</li>
+                    <li><strong>MITM设置</strong>：用于HTTPS解密（谨慎使用）</li>
+                </ul>
+                <p>初学者可以先使用默认设置，熟悉基本操作后再逐步探索这些高级功能。</p>
+                
+                <h3 id="troubleshooting">常见问题排查</h3>
+                <p>如果遇到连接问题，可以尝试以下解决方法：</p>
+                <ul>
+                    <li>检查是否有网络连接</li>
+                    <li>检查订阅是否过期，尝试更新订阅</li>
+                    <li>尝试切换不同的节点</li>
+                    <li>重启Shadowrocket应用</li>
+                    <li>重启iPhone设备</li>
+                    <li>检查VPN权限是否开启（设置 → 通用 → VPN与设备管理）</li>
+                </ul>
+                
+                <h3 id="tips">使用技巧</h3>
+                <p>以下是一些使用Shadowrocket的实用技巧：</p>
+                <ul>
+                    <li>使用Widget小组件可以快速开关代理</li>
+                    <li>设置自动连接可以在打开特定应用时自动启动代理</li>
+                    <li>使用URL Scheme可以通过Siri快捷指令控制Shadowrocket</li>
+                    <li>在WiFi和蜂窝数据间切换时，可能需要重新连接</li>
+                </ul>
+                
+                <h3 id="conclusion">总结</h3>
+                <p>Shadowrocket是iOS平台上功能强大且易用的代理工具，适合各类用户使用。按照本教程的步骤操作，您应该能够顺利设置和使用Shadowrocket进行网络访问。如有更多问题，请参阅<a href="troubleshooting.html">常见问题解决</a>页面。</p>
+            </section>
+        </main>
+
+        <!-- 右侧目录导航 -->
+        <aside class="table-of-contents">
+            <h4 class="toc-header">目录</h4>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#intro">Shadowrocket 简介</a></li>
+                <li class="toc-item"><a href="#step1">1、获取Shadowrocket应用</a></li>
+                <li class="toc-item"><a href="#step2">2、获取订阅地址</a></li>
+                <li class="toc-item"><a href="#step3">3、导入订阅配置</a></li>
+                <li class="toc-item"><a href="#step4">4、选择节点并连接</a></li>
+                <li class="toc-item"><a href="#step5">5、全局路由设置</a></li>
+                <li class="toc-item"><a href="#step6">6、更新订阅</a></li>
+                <li class="toc-item"><a href="#advanced">7、高级设置</a></li>
+                <li class="toc-item"><a href="#troubleshooting">常见问题排查</a></li>
+                <li class="toc-item"><a href="#tips">使用技巧</a></li>
+                <li class="toc-item"><a href="#conclusion">总结</a></li>
+            </ul>
+        </aside>
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2023-2025 ToolStore. 保留所有权利。</p>
+            </div>
+        </footer>
+
+        <!-- 放大预览模态框 -->
+        <div id="imageModal" class="modal">
+            <span class="close" id="closeModal">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="caption"></div>
+        </div>
+
+        <!-- 回到顶部按钮 -->
+        <button id="backToTop" class="back-to-top-btn" title="回到顶部"></button>
+
+        <!-- 引入公共JS -->
+        <script src="../../assets/scripts/config.js"></script>
+        <!-- 文档站专用JS -->
+        <script src="../js/doc-scripts.js"></script>
+        <!-- 单页应用功能 -->
+        <script src="../js/spa.js"></script>
+        <!-- 主题切换功能 -->
+        <script src="../js/theme.js"></script>
+        <!-- 回到顶部按钮功能 -->
+        <script src="../js/top.js"></script>
+    </body>
+</html>

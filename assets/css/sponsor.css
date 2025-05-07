@@ -1,0 +1,95 @@
+/* 
+ * 赞助商标题样式
+ * 赞助商部分的标题样式和布局
+ */
+.sponsors-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #7c8aff;
+  width: 100%;
+}
+
+/* 
+ * 赞助商容器
+ * 主要赞助商容器的布局和间距
+ */
+.sponsors-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 0 60px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 
+ * 主要赞助商容器
+ * 顶级赞助商的特殊样式和布局
+ */
+.primary-sponsors-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  /* background: rgba(124, 138, 255, 0.1); */
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+/* 
+ * 次要赞助商容器
+ * 普通赞助商的布局样式
+ */
+.secondary-sponsors-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* 
+ * 赞助商卡片基础样式
+ * 单个赞助商卡片的基本布局
+ */
+.sponsor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  text-align: center;
+}
+
+.sponsor-card.primary {
+  transform: scale(1.1);
+}
+
+.sponsor-card.primary .sponsor-name {
+  font-weight: bold;
+}
+
+/* 
+ * 赞助商头像
+ * 赞助商logo的圆形样式和动画效果
+ */
+.sponsor-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.sponsor-avatar:hover {
+  transform: scale(1.1);
+}
+
+.sponsor-name {
+  font-size: 14px;
+  color: #7c8aff;
+}

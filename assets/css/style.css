@@ -1,0 +1,1444 @@
+/* 
+ * 全局样式优化
+ * 定义CSS变量和基础样式
+ */
+:root {
+    --main-bg-color: #0f1318;
+    --secondary-bg-color: #1a1d24;
+    --main-gradient: linear-gradient(135deg, var(--main-bg-color) 0%, var(--secondary-bg-color) 100%);
+    --card-bg-color: #1e222b;
+    --card-secondary-bg-color: #252a35;
+    --card-gradient: linear-gradient(145deg, var(--card-bg-color), var(--card-secondary-bg-color));
+    --primary-color: #7c8aff;
+    --text-color: #fff;
+    --border-color: rgba(124, 138, 255, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    /* 调整滚动停止位置，避免被header遮挡 */
+}
+
+/* 确保内容区域有正确的定位 */
+#tools,
+#software,
+#proxy {
+    scroll-margin-top: 80px;
+    /* 与header高度相同 */
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #171A21 0%, #171A21 100%);
+    background-attachment: fixed;
+    /* 固定背景，防止滚动时出现问题 */
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* 
+ * 头部样式优化
+ * 固定顶部的导航栏样式
+ */
+header {
+    background: rgba(26, 29, 36, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mask~header {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+h1 a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+h1 a:hover {
+    color: #7c8aff;
+    background: rgba(124, 138, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+/* 
+ * 导航栏样式优化
+ * 主导航链接的样式和交互效果
+ */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: rgba(124, 138, 255, 0.1);
+}
+
+.nav-links a:hover {
+    color: #7c8aff;
+    transform: translateY(-1px);
+}
+
+
+
+/* 
+ * 主要内容区域优化
+ * 页面主体内容的布局和间距
+ */
+main {
+    position: relative;
+    z-index: 1000;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: transparent;
+    /* 确保背景是透明的 */
+}
+
+.announcement {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(145deg, rgba(32, 33, 39, 0.8), rgba(42, 42, 51, 0.8));
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.announcement h2 {
+    font-size: 28px;
+    color: #b19cd9;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.announcement strong {
+    color: #888;
+    font-size: 15px;
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* 
+ * 卡片样式优化
+ * 工具/软件卡片的通用样式和悬停效果
+ */
+.card {
+    background: linear-gradient(145deg, #1e222b, #252a35);
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid rgba(124, 138, 255, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 180px;
+}
+
+/* 图标容器样式优化 */
+.card-icon {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 18px;
+    background: rgba(30, 34, 43, 0.5);
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    border-radius: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 卡片标题样式 */
+.card-title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+/* 卡片描述样式 */
+.card-description {
+    color: #a8b3cf;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* 
+ * 页脚样式优化
+ * 页面底部版权信息和链接样式
+ */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(26, 29, 36, 0.95);
+    color: #a8b3cf;
+    border-top: 1px solid rgba(124, 138, 255, 0.1);
+}
+
+footer p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* 网格布局容器优化 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .canceled-message {
+        width: 80%;
+        max-width: 300px;
+        padding: 15px 20px;
+        font-size: 14px;
+    }
+
+    .canceled-message button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+/* 
+ * 滚动条美化
+ * 自定义浏览器滚动条样式
+ */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1d24;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(120, 120, 140, .44);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7c8aff;
+}
+
+/* 
+ * 提示窗样式优化
+ * 全屏模态对话框的样式和动画
+ */
+.notice {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2100;
+}
+
+.notice-content {
+    background: linear-gradient(145deg, #202127, #2a2a33);
+    border-radius: 24px;
+    padding: 35px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.text-label {
+    text-align: center;
+    color: #7c8aff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(177, 156, 217, 0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.nv {
+    margin: 25px 0;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.nv p {
+    margin: 15px 0;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.nv strong {
+    color: #e6e6e6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.buttons button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.buttons button.acknowledge {
+    background: rgba(124, 138, 255, 0.5);
+    color: #fff;
+}
+
+.buttons button.acknowledge:hover {
+    background: #5d6dff;
+    transform: translateY(-2px);
+}
+
+.buttons button.cancel {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    backdrop-filter: blur(5px);
+}
+
+.buttons button.cancel:hover {
+    background: #ff4747;
+    transform: translateY(-2px);
+}
+
+/* 取消访问提示样式 */
+.canceled-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff4747;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 30px;
+    display: none;
+    text-align: center;
+    z-index: 2200;
+    box-shadow: 0 4px 20px rgba(255, 71, 71, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.canceled-message button {
+    padding: 8px 15px;
+    background: white;
+    color: #ff4747;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.canceled-message button:hover {
+    background: #f8f8f8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 警告消息样式 */
+.warning-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4747;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: none;
+    z-index: 2200;
+    animation: slideDown 0.3s ease-out;
+    box-shadow: 0 4px 15px rgba(255, 71, 71, 0.2);
+}
+
+/* 隐藏主页表格，但不影响wiki下的表格 */
+body:not(.wiki-page) table {
+    display: none !important;
+}
+
+/* 确保wiki页面下的表格可见 */
+.wiki-page table, .wiki table, body[class*="wiki"] table {
+    display: table !important;
+}
+
+/* 遮罩层样式 */
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    backdrop-filter: blur(8px);
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    display: none;
+}
+
+/* 工具客户端区域容器 */
+.tools-section {
+    position: relative;
+    scroll-margin-top: 100px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    background: rgba(26, 29, 36, 0.95);
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(124, 138, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tools-section:hover {
+    border-color: rgba(124, 138, 255, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* 确保第一个section有足够的上边距 */
+.tools-section:first-child {
+    margin-top: 0;
+}
+
+.tools-header {
+    text-align: center;
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(124, 138, 255, 0.1);
+}
+
+.tools-header h2 {
+    font-size: 28px;
+    color: #7c8aff;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tools-header p {
+    color: #a8b3cf;
+    font-size: 15px;
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(124, 138, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* 调整网格容器样式 */
+.grid-container {
+    gap: 20px;
+    padding: 0;
+    margin-top: 0;
+}
+
+/* 调整卡片样式 */
+.card {
+    background: linear-gradient(145deg, #1e222b, #252a35);
+    border: 1px solid rgba(124, 138, 255, 0.1);
+}
+
+/* 移动端菜单按钮样式 */
+.toggle-button {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* 三横图标样式 */
+.toggle-button .bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px auto;
+    background: #7c8aff;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.toggle-button:hover {
+    background: rgba(124, 138, 255, 0.1);
+}
+
+.toggle-button:hover .bar {
+    background: #5d6dff;
+}
+
+.card.proxy-card .card-price {
+    color: #7c8aff;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.card.proxy-card .card-description {
+    color: #a8b3cf;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+/* 添加ID以支持导航跳转 */
+#tools,
+#software,
+#proxy {
+    scroll-margin-top: 100px;
+    scroll-snap-margin-top: 100px;
+    /* Safari 支持 */
+}
+
+/* 优化导航栏样式 */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* 平台图标容器 */
+.platform-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.platform-icon-wrapper {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.platform-icon-wrapper:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.platform-icon-wrapper svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* 添加图标悬停效果 */
+.platform-icon-wrapper:hover svg path {
+    fill: #5d6dff;
+    filter: drop-shadow(0 2px 4px rgba(124, 138, 255, 0.3));
+}
+
+/* 修复导航栏显示问题 */
+
+
+/* 隐藏表格中的原始图片 */
+table img {
+    display: none;
+}
+
+/* 下载弹窗样式优化 */
+.download-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding: 20px;
+}
+
+.download-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.download-content {
+    background: rgba(26, 29, 36, 0.98);
+    border-radius: 24px;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid rgba(124, 138, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* 添加内容进入动画 */
+.modal-content-enter {
+    animation: modalContentEnter 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* 添加内容退出动画 */
+.modal-content-exit {
+    animation: modalContentExit 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes modalContentEnter {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes modalContentExit {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.9) translateY(30px);
+    }
+}
+
+/* 模态框背景样式 */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 1999;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: none;
+}
+
+.modal-backdrop.show {
+    opacity: 1;
+}
+
+/* 应用下载项动画 */
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+
+.download-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(124, 138, 255, 0.1);
+}
+
+.download-header h3 {
+    font-size: 28px;
+    color: #7c8aff;
+    margin-bottom: 10px;
+}
+
+.download-item {
+    background: linear-gradient(145deg, #1e222b, #252a35);
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(124, 138, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: pointer;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: itemFadeIn 0.5s forwards;
+    animation-delay: calc(var(--item-index, 0) * 0.1s);
+}
+
+.download-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(124, 138, 255, 0.3);
+    background: linear-gradient(145deg, #252a35, #2a2f3d);
+}
+
+@keyframes itemFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.download-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 15px;
+}
+
+.download-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #7c8aff;
+    transition: all 0.3s ease;
+}
+
+.download-item:hover .download-icon svg {
+    fill: #5d6dff;
+    transform: scale(1.1);
+}
+
+.download-name {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(124, 138, 255, 0.15);
+    border: 1px solid rgba(124, 138, 255, 0.2);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal:hover {
+    background: rgba(124, 138, 255, 0.25);
+    transform: rotate(90deg) scale(1.1);
+    border-color: rgba(124, 138, 255, 0.3);
+}
+
+.close-modal:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+/* 添加滚动行为样式 */
+html {
+    scroll-behavior: smooth;
+    /* 添加原生平滑滚动作为后备 */
+}
+
+/* 调整锚点偏移 */
+#tools,
+#software,
+#proxy {
+    scroll-margin-top: 100px;
+    scroll-snap-margin-top: 100px;
+    /* Safari 支持 */
+}
+
+/* 确保内容不会被header遮挡 */
+main {
+    padding-top: 100px;
+    padding-bottom: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* 禁用状态的下载项样式 */
+.download-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(1);
+}
+
+/* 平台图标容器样式优化 */
+.platform-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* GitHub 图标特殊样式 */
+.download-item[data-platform="github"] {
+    background: linear-gradient(145deg, #1e222b, #252a35);
+}
+
+.download-item[data-platform="github"]:hover {
+    background: linear-gradient(145deg, #2f3545, #252a35);
+}
+
+/* 机场详情弹窗样式优化 */
+.airport-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.airport-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.airport-content {
+    background: linear-gradient(165deg, rgba(26, 29, 36, 0.98), rgba(31, 34, 43, 0.98));
+    border-radius: 24px;
+    padding: 0;
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid rgba(124, 138, 255, 0.12);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(124, 138, 255, 0.3) transparent;
+    position: relative;
+}
+
+.airport-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.airport-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.airport-content::-webkit-scrollbar-thumb {
+    background-color: rgba(124, 138, 255, 0.3);
+    border-radius: 3px;
+}
+
+.airport-content {
+    animation: modalContentShow 0.3s ease;
+}
+
+@keyframes modalContentShow {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 头部区域 */
+.airport-header {
+    text-align: center;
+    padding: 30px 30px;
+    background: linear-gradient(145deg, rgba(124, 138, 255, 0.1), rgba(124, 138, 255, 0.05));
+    border-bottom: 1px solid rgba(124, 138, 255, 0.1);
+    position: relative;
+}
+
+.airport-header h3 {
+    font-size: 32px;
+    background: linear-gradient(135deg, #fff, #e0e4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.airport-tags {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: rgba(124, 138, 255, 0.15);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(124, 138, 255, 0.2);
+}
+
+.tag:hover {
+    background: rgba(124, 138, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.airport-price {
+    font-size: 28px;
+    color: #7c8aff;
+    font-weight: 600;
+    margin: 20px 0 5px;
+    text-shadow: 0 0 20px rgba(124, 138, 255, 0.3);
+}
+
+/* 内容区域 */
+.airport-body {
+    padding: 30px;
+}
+
+/* 描述部分 */
+.description-section {
+    background: rgba(124, 138, 255, 0.05);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(124, 138, 255, 0.1);
+}
+
+.section-title {
+    font-size: 16px;
+    color: #7c8aff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-title svg {
+    width: 20px;
+    height: 20px;
+    opacity: 0.9;
+}
+
+.airport-description {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* 特色功能部分 */
+.features-section {
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.feature-item {
+    background: rgba(124, 138, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid rgba(124, 138, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+    background: rgba(124, 138, 255, 0.08);
+    border-color: rgba(124, 138, 255, 0.2);
+}
+
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.feature-icon {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    background: rgba(124, 138, 255, 0.1);
+    border-radius: 8px;
+}
+
+.feature-content h5 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.feature-content p {
+    color: #a8b3cf;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+/* 底部按钮 */
+.airport-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    padding: 20px 30px;
+    background: rgba(124, 138, 255, 0.03);
+    border-top: 1px solid rgba(124, 138, 255, 0.1);
+}
+
+.action-button {
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+.visit-button {
+    background: rgba(124, 138, 255, 0.5);
+    color: #fff;
+}
+
+.visit-button:hover {
+    background: #5d6dff;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.cancel-button {
+    background: rgba(124, 138, 255, 0.1);
+    color: #fff;
+}
+
+.cancel-button:hover {
+    background: #ff4747;
+    transform: translateY(-2px);
+}
+
+/* 关闭按钮样式优化 */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(124, 138, 255, 0.15);
+    border: 1px solid rgba(124, 138, 255, 0.2);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal:hover {
+    background: rgba(124, 138, 255, 0.25);
+    transform: rotate(90deg) scale(1.1);
+    border-color: rgba(124, 138, 255, 0.3);
+    color: #ff4747;
+}
+
+.close-modal:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+
+
+/* 可点击卡片样式 */
+.card.clickable {
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.card.clickable::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: rgba(124, 138, 255, 0.1);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s ease;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%237c8aff' d='M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .89-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z'/%3E%3C/svg%3E");
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card.clickable:hover::after {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* 优化卡片悬停效果 */
+.card.clickable:hover {
+    transform: translateY(-8px);
+    border-color: rgba(124, 138, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(124, 138, 255, 0.15);
+}
+
+/* 点击效果 */
+.card.clickable:active {
+    transform: translateY(-4px) scale(0.98);
+}
+
+/* 添加工具卡片点击波纹效果 */
+@keyframes cardRipple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(124, 138, 255, 0.3);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(124, 138, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(124, 138, 255, 0);
+    }
+}
+
+.card.tool-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+        box-shadow 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+        border-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.card.tool-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(124, 138, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(124, 138, 255, 0.15);
+}
+
+.card.tool-card:active {
+    transform: translateY(-2px) scale(0.98);
+    animation: cardRipple 0.6s;
+}
+
+/* 点击波纹动画 */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(124, 138, 255, 0.4);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.button:nth-child(2) {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: rgba(124, 138, 255, 0.1);
+    margin-right: 15px;
+}
+
+.button:nth-child(1) {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: rgba(124, 138, 255, 0.1);
+    margin-right: 10.5px;
+}
+
+.button:hover {
+    color: #7c8aff;
+    background: rgba(124, 138, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+/* 工具版本号样式 */
+.tool-version {
+    font-size: 14px;
+    color: #7c8aff;
+    background-color: rgba(124, 138, 255, 0.1);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    display: inline-block;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.card .tool-version {
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .tool-version {
+        font-size: 12px;
+        padding: 2px 6px;
+        margin-left: 5px;
+    }
+}
+
+/* 加载指示器 */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(124, 138, 255, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid var(--primary-color);
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-container p {
+    color: #a8b3cf;
+    font-size: 16px;
+}
+
+/* 机场套餐样式 */
+.packages-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(124, 138, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(124, 138, 255, 0.1);
+}
+
+.packages-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.package-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(124, 138, 255, 0.07);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.package-row:hover {
+    background: rgba(124, 138, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.package-name {
+    font-weight: 500;
+    color: #fff;
+}
+
+.package-price {
+    color: #7c8aff;
+    font-weight: 600;
+}
+
+.price-currency {
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+.price-amount {
+    font-size: 18px;
+}
+
+.price-period {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.package-traffic {
+    color: #a0a8c0;
+    font-size: 14px;
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}

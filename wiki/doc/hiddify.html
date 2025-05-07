@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hiddify安卓代理软件使用教程">
+    <meta name="keywords" content="Hiddify,安卓,代理工具,教程">
+    <meta name="author" content="ToolStore">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1d24">
+    <title>Hiddify 教程</title>
+    <!-- 立即应用暗色主题，防止闪烁 -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            // 默认使用暗色主题
+            document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
+            if (!savedTheme) {
+                localStorage.setItem('theme', 'dark');
+            }
+        })();
+    </script>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/media-queries.css">
+    <!-- 文档站专用样式 -->
+    <link rel="stylesheet" href="../css/doc-style.css">
+    <!-- 模板页面自定义样式 -->
+    <link rel="stylesheet" href="../css/custom-templates.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='180' height='180' fill='%231a1d24'/%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+
+<body class="wiki-page">
+    <header>
+        <div class="header-content">
+            <h1>
+                <a href="../wiki.html">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    ToolStore 文档
+                </a>
+            </h1>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../wiki.html">文档首页</a></li>
+                    <li><a href="https://nav.awafuns.cn/" target="_blank">导航站点</a></li>
+                    <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点</a></li>
+                </ul>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="themeToggle">
+                        <input type="checkbox" id="themeToggle">
+                        <div class="slider round">
+                            <span class="theme-icon light">☀️</span>
+                            <span class="theme-icon dark">🌙</span>
+                        </div>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
+    </button>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="../../index.html">主页</a></li>
+            <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点</a></li>
+            <li><a href="javascript:void(0)" id="mobile-feedback-modal">邮箱反馈</a></li>
+        </ul>
+    </div>
+
+    <button class="sidebar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="page-container">
+        <!-- 左侧导航栏 -->
+        <aside class="sidebar">
+            <!-- 通用教程分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>通用教程
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="usage-guide.html">使用指南</a></li>
+                    <li class="nav-item"><a href="troubleshooting.html">常见问题解决</a></li>
+                    <li class="nav-item"><a href="feedback-email.html">邮件反馈指南</a></li>
+                    <li class="nav-item"><a href="../templates/templates.html">文档示例</a></li>
+                </ul>
+            </div>
+
+            <!-- 安卓分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>安卓工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="clashmeta.html">ClashMeta</a></li>
+                    <li class="nav-item"><a href="hiddify.html">Hiddify</a></li>
+                    <li class="nav-item"><a href="surfboard.html">Surfboard</a></li>
+                </ul>
+            </div>
+
+            <!-- iOS分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>iOS工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="shadowrocket.html">Shadowrocket</a></li>
+                </ul>
+            </div>
+
+            <!-- PC分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>PC工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="clash_verge.html">Clash Verge</a></li>
+                    <li class="nav-item"><a href="mihomo_party.html">Mihomo Party</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 主要内容区 -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Hiddify使用教程 <span class="difficulty difficulty-beginner">简单</span></h1>
+                <p>作者： <a href="https://github.com/Re0XIAOPA" target="_blank" rel="noopener noreferrer"><span
+                            class="author-name" itemprop="name">Re0XIAOPA</span></a></p>
+            </div>
+            <div class="tool-tags">
+                <span class="tag">安卓</span>
+                <span class="tag">基础知识</span>
+                <span class="tag">入门指南</span>
+            </div>
+            <p class="version-info">最后更新: 2024-05-20</p>
+            <!-- 文档模板元素库 - 基础内容 -->
+            <section class="content-section">
+                <h2 id="intro">Hiddify 简介</h2>
+                <div class="note">
+                    <p><strong>提示：</strong>Hiddify 是安卓平台上的代理工具，你需要拥有机场订阅才能使用。</p>
+                </div>
+                
+                <h3 id="step1">1、下载安装Hiddify</h3>
+                <p>首先需要下载安装Hiddify客户端，可以从Google Play商店安装，也可以从官方GitHub页面下载安装。</p>
+                <p>官方GitHub下载地址：<a href="https://github.com/hiddify/hiddify-next/releases" target="_blank">https://github.com/hiddify/hiddify-next/releases</a></p>
+                <p>下载完成后安装到手机上即可。</p>
+                
+                <h3 id="step2">2、获取订阅地址</h3>
+                <p>在您购买的机场网站上找到订阅链接。通常在"仪表盘"或"用户中心"可以找到订阅地址，复制该地址备用。</p>
+                
+                <h3 id="step3">3、导入订阅</h3>
+                <p>打开Hiddify应用，点击右下角"添加"按钮，选择"从剪贴板导入"，粘贴您的订阅链接，然后点击"确定"。</p>
+                <p>也可以选择"扫描二维码"导入订阅，如果您的机场提供了订阅二维码。</p>
+                
+                <h3 id="step4">4、选择节点并启动代理</h3>
+                <p>订阅导入成功后，会显示所有可用节点。点击右下角的测速按钮可以测试所有节点的延迟和速度。</p>
+                <p>选择一个延迟较低、速度较快的节点，点击该节点连接。</p>
+                <p>连接后点击底部的"启动"按钮开启代理，首次使用时会请求VPN权限，请点击允许。</p>
+                
+                <h3 id="step5">5、设置代理模式</h3>
+                <p>在Hiddify设置中，可以选择不同的代理模式：</p>
+                <ul>
+                    <li><strong>智能代理</strong>：只代理无法直接访问的网站，国内网站直连</li>
+                    <li><strong>全局代理</strong>：所有流量都通过代理服务器</li>
+                    <li><strong>直连模式</strong>：不使用代理，所有流量直连</li>
+                </ul>
+                <p>推荐使用"智能代理"模式，这样可以节省流量并提高访问国内网站的速度。</p>
+                
+                <h3 id="step6">6、其他高级设置</h3>
+                <p>Hiddify还提供了多种高级设置，如自定义路由规则、DNS设置、分应用代理等功能，进阶用户可以根据自己的需要进行配置。</p>
+                <p>在设置页面中，您可以找到这些高级选项，根据需要调整。</p>
+                
+                <h3 id="troubleshooting">常见问题排查</h3>
+                <p>如果遇到连接问题，可以尝试以下方法：</p>
+                <ul>
+                    <li>检查订阅是否过期，尝试更新订阅</li>
+                    <li>尝试切换不同的节点</li>
+                    <li>重启应用或重启手机</li>
+                    <li>检查网络连接是否正常</li>
+                    <li>清除应用数据并重新配置</li>
+                </ul>
+                
+                <h3 id="conclusion">总结</h3>
+                <p>Hiddify是一款功能强大且用户友好的安卓代理工具，适合初学者和高级用户使用。按照上述步骤操作，您应该能够顺利使用Hiddify进行网络访问。</p>
+            </section>
+        </main>
+
+        <!-- 右侧目录导航 -->
+        <aside class="table-of-contents">
+            <h4 class="toc-header">目录</h4>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#intro">Hiddify 简介</a></li>
+                <li class="toc-item"><a href="#step1">1、下载安装Hiddify</a></li>
+                <li class="toc-item"><a href="#step2">2、获取订阅地址</a></li>
+                <li class="toc-item"><a href="#step3">3、导入订阅</a></li>
+                <li class="toc-item"><a href="#step4">4、选择节点并启动代理</a></li>
+                <li class="toc-item"><a href="#step5">5、设置代理模式</a></li>
+                <li class="toc-item"><a href="#step6">6、其他高级设置</a></li>
+                <li class="toc-item"><a href="#troubleshooting">常见问题排查</a></li>
+                <li class="toc-item"><a href="#conclusion">总结</a></li>
+            </ul>
+        </aside>
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2023-2025 ToolStore. 保留所有权利。</p>
+            </div>
+        </footer>
+
+        <!-- 放大预览模态框 -->
+        <div id="imageModal" class="modal">
+            <span class="close" id="closeModal">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="caption"></div>
+        </div>
+
+        <!-- 回到顶部按钮 -->
+        <button id="backToTop" class="back-to-top-btn" title="回到顶部"></button>
+
+        <!-- 引入公共JS -->
+        <script src="../../assets/scripts/config.js"></script>
+        <!-- 文档站专用JS -->
+        <script src="../js/doc-scripts.js"></script>
+        <!-- 单页应用功能 -->
+        <script src="../js/spa.js"></script>
+        <!-- 主题切换功能 -->
+        <script src="../js/theme.js"></script>
+        <!-- 回到顶部按钮功能 -->
+        <script src="../js/top.js"></script>
+    </body>
+</html>

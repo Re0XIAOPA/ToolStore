@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>工具介绍 | 软件推荐</title>
+    <script type="module" src="assets/scripts/program.js"></script>
+    <script type="module" src="assets/scripts/sponsor.js"></script>
+    <script type="module" src="assets/scripts/config.js"></script>
+    <script type="module" src="assets/scripts/modules/feedback-modal.js"></script>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='180' height='180' fill='%231a1d24'/%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <meta name="theme-color" content="#1a1d24">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/other.css">
+    <link rel="stylesheet" href="assets/css/feedback-modal.css">
+    <link rel="stylesheet" href="assets/css/media-queries.css">
+    <link rel="stylesheet" href="assets/css/recommend-badge.css">
+    <link rel="stylesheet" href="assets/css/price-card.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/sponsor.css">
+    <link rel="stylesheet" href="assets/css/back-to-top.css">
+    <link rel="stylesheet" href="assets/css/card-manager.css">
+</head>
+
+<body>
+    <div id="mask" class="mask"></div>
+
+    <div id="dailyNotice" class="notice">
+        <div class="notice-content">
+            <div class="text-label">--— 公告 —--</div>
+            <div class="nv">
+                <p class="tzText"><strong>本页各类工具基本开源，请合理使用，仅供学习参考</strong></p>
+                <p class="tzText"><strong>加载慢？试试在 <span class="tip">二级域名toolstore</span> 前加 <span class="tipa">cf</span> 看看？</strong></p>
+                <p class="tzText"><strong>大陆可以试试在 <span class="tip">二级域名toolstore</span> 前加 <span class="tipa">cn</span> 看看？</strong></p>
+            </div>
+            <div class="buttons">
+                <button class="acknowledge">我已知晓</button>
+                <button class="cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="canceled-message" id="canceledMessage">
+        您已取消，将无法访问！<br><button id="retryButton">刷新重试</button>
+    </div>
+
+    <div class="warning-message" id="warningMessage">
+        取消 <span class="cancel-count"></span> 次将无法访问！
+    </div>
+
+    <header>
+
+        <div class="header-content">
+            <h1>
+                <a href="">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    ToolStore
+                </a>
+            </h1>
+
+            <nav>
+                <div class="button-container">
+                    <a href="wiki/wiki.html" target="_blank" class="button">教程</a>
+                </div>
+                <button class="toggle-button" id="toggleButton">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#tools">网络工具</a></li>
+                    <li><a href="#software">精选推荐</a></li>
+                    <li><a href="#proxy">机场推荐</a></li>
+                    <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点</a></li>
+                    <li><a href="javascript:void(0)" id="open-feedback-modal">邮箱反馈</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 内容将通过JavaScript动态生成 -->
+        <div id="loading" class="loading-container">
+            <div class="loading-spinner"></div>
+            <p>正在加载内容...</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">
+                © 2024-2025
+                <span class="divider">|</span>
+                <a href="https://github.com/Re0XIAOPA/ToolStore" class="footer-link" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/></svg>
+                    Github</a>
+                <span class="divider">|</span>
+                仅供学习参考
+            </p>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <div id="back-to-top" class="back-to-top">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+        </svg>
+    </div>
+
+    <script type="module">
+        // 导入反馈表单模块
+        import feedbackModal from './assets/scripts/modules/feedback-modal.js';
+        
+        // 绑定打开反馈表单的点击事件
+        document.addEventListener('DOMContentLoaded', () => {
+            const openFeedbackBtn = document.getElementById('open-feedback-modal');
+            if (openFeedbackBtn) {
+                openFeedbackBtn.addEventListener('click', () => {
+                    feedbackModal.open();
+                });
+            }
+            
+            // 确保初始状态下模态框是关闭的
+            if (feedbackModal && feedbackModal.modal) {
+                feedbackModal.close();
+            }
+        });
+    </script>
+    
+    <!-- 返回顶部按钮脚本 -->
+    <script type="module" src="assets/scripts/modules/back-to-top.js"></script>
+</body>
+
+</html>

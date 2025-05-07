@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ToolStore常见问题解决指南，帮助您解决使用网络代理工具时可能遇到的各种问题。">
+    <meta name="keywords" content="代理工具,故障排除,问题解决,网络代理">
+    <meta name="author" content="ToolStore">
+    <title>常见问题解决</title>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/media-queries.css">
+    <!-- 文档站专用样式 -->
+    <link rel="stylesheet" href="../css/doc-style.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+
+<body class="wiki-page">
+    <header>
+        <div class="header-content">
+            <h1>
+                <a href="../wiki.html">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    ToolStore <span>文档</span>
+                </a>
+            </h1>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../wiki.html">返回教程目录</a></li>
+                    <li><a href="../../index.html#tools">工具下载</a></li>
+                    <li><a href="../../index.html#proxy">机场推荐</a></li>
+                    <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主题切换开关 -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="themeToggle">
+            <input type="checkbox" id="themeToggle">
+            <div class="slider round">
+                <span class="theme-icon light">☀️</span>
+                <span class="theme-icon dark">🌙</span>
+            </div>
+        </label>
+    </div>
+
+    <button class="sidebar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="page-container">
+        <!-- 左侧导航栏 -->
+        <aside class="sidebar">
+            <!-- 通用教程分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>通用教程
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="usage-guide.html">使用指南</a></li>
+                    <li class="nav-item"><a href="troubleshooting.html">常见问题解决</a></li>
+                    <li class="nav-item"><a href="feedback-email.html">邮件反馈指南</a></li>
+                    <li class="nav-item"><a href="../templates/templates.html">文档示例</a></li>
+                </ul>
+            </div>
+
+            <!-- 安卓分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>安卓工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="clashmeta.html">ClashMeta</a></li>
+                    <li class="nav-item"><a href="hiddify.html">Hiddify</a></li>
+                    <li class="nav-item"><a href="surfboard.html">Surfboard</a></li>
+                </ul>
+            </div>
+
+            <!-- iOS分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>iOS工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="shadowrocket.html">Shadowrocket</a></li>
+                </ul>
+            </div>
+
+            <!-- PC分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>PC工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="clash_verge.html">Clash Verge</a></li>
+                    <li class="nav-item"><a href="mihomo_party.html">Mihomo Party</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 主要内容区 -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>网络代理工具常见问题解决指南 <span class="difficulty difficulty-intermediate">中级</span></h1>
+                <div class="tool-tags">
+                    <span class="tag">故障排除</span>
+                    <span class="tag">问题解决</span>
+                    <span class="tag">网络代理</span>
+                </div>
+                <p class="version-info">最后更新: 2024-05-10</p>
+            </div>
+
+            <!-- 简介 -->
+            <section class="content-section">
+                <h2 id="introduction">简介</h2>
+                <p>使用代理工具时可能会遇到各种问题，本指南将帮助您解决最常见的故障和困扰。</p>
+
+                <div class="note">
+                    <p><strong>提示：</strong> 如果您是新手，建议先阅读<a href="usage-guide.html">使用指南</a>，了解基本概念后再查看这里的问题解决方法。</p>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ 故障排除步骤</h4>
+                    <p>在解决网络代理问题时，建议按照以下步骤进行：</p>
+                    <ol>
+                        <li>确认网络连接是否正常（尝试不使用代理直接访问国内网站）</li>
+                        <li>尝试不同的节点（问题可能只存在于特定节点）</li>
+                        <li>检查代理客户端是否需要更新</li>
+                        <li>重新导入/更新订阅</li>
+                        <li>尝试不同的代理协议</li>
+                        <li>检查防火墙和安全软件设置</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- 系统和平台特定问题 -->
+            <section class="content-section">
+                <h2 id="platform-issues">系统和平台特定问题</h2>
+
+                <div class="tabs">
+                    <div class="tab-header">
+                        <div class="tab active" data-tab="windows">Windows</div>
+                        <div class="tab" data-tab="macos">macOS</div>
+                        <div class="tab" data-tab="android">Android</div>
+                        <div class="tab" data-tab="ios">iOS</div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="windows">
+                            <h3>Windows常见问题</h3>
+
+                            <details class="faq-item">
+                                <summary>TUN模式无法启用</summary>
+                                <div class="faq-answer">
+                                    <p><strong>症状：</strong>尝试启用TUN模式时出现错误或无法成功启用。</p>
+
+                                    <p><strong>可能的原因：</strong></p>
+                                    <ul>
+                                        <li>没有管理员权限</li>
+                                        <li>所需驱动未安装</li>
+                                        <li>与其他VPN软件冲突</li>
+                                        <li>杀毒软件阻止</li>
+                                    </ul>
+
+                                    <p><strong>解决方法：</strong></p>
+                                    <ol>
+                                        <li>以管理员身份运行客户端（右键点击 → 以管理员身份运行）</li>
+                                        <li>安装所需驱动，如WinTUN或TAP-Windows</li>
+                                        <li>关闭其他可能使用TUN/TAP设备的软件</li>
+                                        <li>暂时禁用杀毒软件，或添加代理客户端到白名单</li>
+                                    </ol>
+
+                                    <div class="terminal-block">
+                                        <pre><code># 检查WinTUN驱动状态
+sc query WinTUN
+
+# 安装WinTUN驱动（管理员命令提示符）
+netsh winsock reset</code></pre>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>系统代理设置无法保存</summary>
+                                <div class="faq-answer">
+                                    <p><strong>症状：</strong>设置系统代理后，重启应用或系统后设置丢失。</p>
+
+                                    <p><strong>解决方法：</strong></p>
+                                    <ol>
+                                        <li>检查注册表权限（Windows可能限制修改代理设置的权限）</li>
+                                        <li>使用服务模式安装代理客户端（如果支持）</li>
+                                        <li>检查其他可能覆盖代理设置的软件</li>
+                                    </ol>
+
+                                    <div class="warning-box">
+                                        <h4>⚠️ 注册表修复</h4>
+                                        <p>如果问题持续存在，可能需要修复注册表：</p>
+                                        <ol>
+                                            <li>按Win+R打开运行</li>
+                                            <li>输入"regedit"并确认</li>
+                                            <li>导航至"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet
+                                                Settings"</li>
+                                            <li>检查ProxyEnable和ProxyServer值是否正确</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+
+                        <div class="tab-pane" id="macos">
+                            <h3>macOS常见问题</h3>
+
+                            <details class="faq-item">
+                                <summary>无法获取系统代理权限</summary>
+                                <div class="faq-answer">
+                                    <p><strong>症状：</strong>应用请求代理权限时，授权对话框不出现或授权后仍无法设置系统代理。</p>
+
+                                    <p><strong>解决方法：</strong></p>
+                                    <ol>
+                                        <li>检查"系统偏好设置 → 安全性与隐私 → 隐私 → 完全磁盘访问权限"中是否已授权</li>
+                                        <li>重置代理设置：
+                                            <div class="terminal-block">
+                                                <pre><code># 重置网络设置
+networksetup -setwebproxystate Wi-Fi off
+networksetup -setsecurewebproxystate Wi-Fi off
+# 重新启用
+networksetup -setwebproxy Wi-Fi 127.0.0.1 [port]
+networksetup -setsecurewebproxy Wi-Fi 127.0.0.1 [port]</code></pre>
+                                            </div>
+                                        </li>
+                                        <li>重启后重新安装应用</li>
+                                    </ol>
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>应用提示未签名或来自不明开发者</summary>
+                                <div class="faq-answer">
+                                    <p><strong>症状：</strong>macOS阻止打开应用，提示软件未经过苹果公证。</p>
+
+                                    <p><strong>解决方法：</strong></p>
+                                    <ol>
+                                        <li>右键(或Control+点击)应用图标，选择"打开"</li>
+                                        <li>在弹出的对话框中点击"打开"</li>
+                                        <li>如上述方法无效，可在"系统偏好设置 → 安全性与隐私"中点击"仍要打开"</li>
+                                    </ol>
+
+                                    <div class="note">
+                                        <p><strong>提示：</strong> 这是正常的安全机制，对于非App
+                                            Store下载的应用第一次运行时会出现。只需按上述步骤操作一次，之后可正常使用。</p>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+
+                        <div class="tab-pane" id="android">
+                            <h3>Android常见问题</h3>
+
+                            <details class="faq-item">
+                                <summary>VPN权限请求被拒绝</summary>
+                                <div class="faq-answer">
+                                    <p><strong>症状：</strong>应用无法获取VPN权限，或VPN权限对话框不出现。</p>
+
+                                    <p><strong>解决方法：</strong></p>
+                                    <ol>
+                                        <li>检查应用权限设置：
+                                            <ul>
+                                                <li>打开设置 → 应用 → [代理应用] → 权限</li>
+                                                <li>确保已授予VPN权限</li>
+                                            </ul>
+                                        </li>
+                                        <li>检查是否有其他VPN应用正在运行（Android通常只允许一个VPN连接）</li>
+                                        <li>如果使用模拟器，某些模拟器不支持VPN功能</li>
+                                        <li>在某些设备上，可能需要停用省电模式</li>
+                                    </ol>
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>后台运行时自动断开</summary>
+                                <div class="faq-answer">
+                                    <p><strong>症状：</strong>当应用在后台运行或屏幕锁定时，代理连接自动断开。</p>
+
+                                    <p><strong>解决方法：</strong></p>
+                                    <div class="two-column">
+                                        <div class="column">
+                                            <h4>电池优化设置</h4>
+                                            <ol>
+                                                <li>打开设置 → 应用 → [代理应用]</li>
+                                                <li>电池 → 不优化 或 允许后台运行</li>
+                                                <li>关闭"省电模式"对该应用的限制</li>
+                                            </ol>
+                                        </div>
+                                        <div class="column">
+                                            <h4>应用设置优化</h4>
+                                            <ol>
+                                                <li>在代理应用内启用"前台服务"</li>
+                                                <li>如支持，启用持久通知</li>
+                                                <li>某些设备需在自启动管理中添加允许</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+
+                                    <div class="note">
+                                        <p><strong>注意：</strong>
+                                            不同品牌的Android设备有不同的电池优化设置位置，如小米的MIUI有"自启动管理"，华为的EMUI有"应用启动管理"等。</p>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+
+                        <div class="tab-pane" id="ios">
+                            <h3>iOS常见问题</h3>
+
+                            <details class="faq-item">
+                                <summary>无法安装配置文件</summary>
+                                <div class="faq-answer">
+                                    <p><strong>症状：</strong>尝试安装代理配置文件时失败或无反应。</p>
+
+                                    <p><strong>解决方法：</strong></p>
+                                    <ol>
+                                        <li>确保已在设置 → 通用 → VPN与设备管理中信任开发者</li>
+                                        <li>如果配置文件下载但未自动打开设置应用：
+                                            <ul>
+                                                <li>打开设置 → 通用 → VPN与设备管理</li>
+                                                <li>查找并手动安装下载的配置文件</li>
+                                            </ul>
+                                        </li>
+                                        <li>重新启动设备后再次尝试</li>
+                                        <li>尝试使用不同的浏览器下载配置文件（如Safari）</li>
+                                    </ol>
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>应用后台定期断开</summary>
+                                <div class="faq-answer">
+                                    <p><strong>症状：</strong>代理在设备锁屏或长时间后台运行后自动断开。</p>
+
+                                    <p><strong>可能的原因：</strong>iOS对后台应用有严格限制。</p>
+
+                                    <p><strong>解决方法：</strong></p>
+                                    <ol>
+                                        <li>启用"始终开启VPN"选项（如果应用支持）</li>
+                                        <li>在设置中确保代理应用有后台刷新权限：
+                                            <ul>
+                                                <li>设置 → 通用 → 后台应用刷新 → [启用代理应用]</li>
+                                            </ul>
+                                        </li>
+                                        <li>使用"按需连接"功能（On-Demand功能）</li>
+                                        <li>如可能，使用系统级代理配置文件而不是应用</li>
+                                    </ol>
+
+                                    <div class="warning-box">
+                                        <h4>⚠️ iOS限制</h4>
+                                        <p>由于iOS系统限制，即使采取以上措施，代理应用仍可能在后台运行一段时间后被系统挂起。这是系统电池优化机制的一部分，无法完全避免。</p>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 高级故障排除 -->
+            <section class="content-section">
+                <h2 id="advanced-troubleshooting">高级故障排除</h2>
+
+                <p>对于经验丰富的用户，以下高级故障排除技术可能有助于解决复杂问题。</p>
+
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary>使用抓包分析连接问题</summary>
+                        <div class="faq-answer">
+                            <p>使用网络抓包工具可以帮助分析连接失败的具体原因。</p>
+
+                            <div class="step">
+                                <h4>抓包工具推荐</h4>
+                                <ul>
+                                    <li><strong>Wireshark</strong>：功能最全面的网络分析工具</li>
+                                    <li><strong>Fiddler</strong>：针对HTTP/HTTPS流量分析</li>
+                                    <li><strong>Charles</strong>：适合移动设备代理调试</li>
+                                </ul>
+                            </div>
+
+                            <div class="step">
+                                <h4>基本抓包流程</h4>
+                                <ol>
+                                    <li>安装并启动抓包工具</li>
+                                    <li>设置过滤器（如 <code>tcp.port == 443</code> 或 <code>host contains example.com</code>）
+                                    </li>
+                                    <li>尝试连接代理</li>
+                                    <li>分析通信过程中的错误</li>
+                                </ol>
+                            </div>
+
+                            <div class="code-block">
+                                # Wireshark过滤示例
+                                tcp.port == 443 and ip.addr == 节点IP地址
+
+                                # 查找TLS错误
+                                ssl.alert_message.desc == 40 # handshake failure</div>
+
+                            <div class="warning-box">
+                                <h4>⚠️ 隐私注意事项</h4>
+                                <p>抓包可能捕获敏感信息。请勿在公共网络进行抓包，也不要分享包含个人信息的抓包结果。</p>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>解决DNS泄漏问题</summary>
+                        <div class="faq-answer">
+                            <p><strong>症状：</strong>使用代理后，DNS请求仍通过本地ISP解析，可能导致访问被监控或屏蔽。</p>
+
+                            <div class="step">
+                                <h4>检查DNS泄漏</h4>
+                                <p>访问 <a href="https://www.dnsleaktest.com" target="_blank">DNS Leak Test</a> 或 <a
+                                        href="https://ipleak.net" target="_blank">IPLeak.net</a> 进行测试。</p>
+                            </div>
+
+                            <div class="step">
+                                <h4>解决方法</h4>
+                                <ol>
+                                    <li>启用客户端的"DNS劫持"或"本地DNS映射"功能</li>
+                                    <li>配置使用代理服务器的DNS解析，而非本地DNS</li>
+                                    <li>启用DNS over HTTPS (DoH)或DNS over TLS (DoT)</li>
+                                </ol>
+                            </div>
+
+                            <div class="code-block">
+                                # Clash配置示例
+                                dns:
+                                enable: true
+                                nameserver:
+                                - tls://1.1.1.1:853
+                                - https://cloudflare-dns.com/dns-query
+                                fallback:
+                                - tls://8.8.8.8:853
+                                fallback-filter:
+                                geoip: true
+                                ipcidr:
+                                - 240.0.0.0/4
+                                enhanced-mode: fake-ip</div>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>使用自定义路由和规则</summary>
+                        <div class="faq-answer">
+                            <p>自定义路由和规则可以解决特定网站或应用的访问问题。</p>
+
+                            <div class="step">
+                                <h4>Clash规则示例</h4>
+                                <div class="code-block">
+                                    # 域名规则
+                                    - DOMAIN,www.example.com,Proxy
+                                    - DOMAIN-SUFFIX,example.com,Proxy
+                                    - DOMAIN-KEYWORD,example,Proxy
+
+                                    # IP规则
+                                    - IP-CIDR,192.168.1.0/24,DIRECT
+                                    - IP-CIDR6,2001:db8::/32,Proxy
+
+                                    # 应用进程规则
+                                    - PROCESS-NAME,chrome.exe,Proxy
+                                    - PROCESS-NAME,firefox.exe,Proxy
+
+                                    # 复杂规则组合
+                                    - OR,((DOMAIN,www.google.com),(DOMAIN,www.youtube.com)),Google
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <h4>规则优化建议</h4>
+                                <ul>
+                                    <li>规则顺序很重要，按照从具体到一般的顺序排列</li>
+                                    <li>使用更具体的匹配方式（DOMAIN优于DOMAIN-SUFFIX优于DOMAIN-KEYWORD）</li>
+                                    <li>为关键应用创建专用规则组</li>
+                                    <li>定期更新规则以适应网站变化</li>
+                                </ul>
+                            </div>
+
+                            <div class="tip-card">
+                                <h4>推荐的规则集</h4>
+                                <p>以下是一些社区维护的高质量规则集：</p>
+                                <ul>
+                                    <li><a href="https://github.com/ACL4SSR/ACL4SSR" target="_blank">ACL4SSR</a> -
+                                        全面的分流规则</li>
+                                    <li><a href="https://github.com/Loyalsoldier/clash-rules"
+                                            target="_blank">Loyalsoldier规则</a> - 针对Clash优化</li>
+                                    <li><a href="https://github.com/DivineEngine/Profiles"
+                                            target="_blank">DivineEngine规则</a> - 针对多平台优化</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>优化性能与延迟</summary>
+                        <div class="faq-answer">
+                            <p>对于追求极致性能体验的用户，可以尝试以下高级优化技巧。</p>
+
+                            <div class="two-column">
+                                <div class="column">
+                                    <h4>TCP优化</h4>
+                                    <ul>
+                                        <li>启用TCP Fast Open (TFO)</li>
+                                        <li>调整TCP拥塞控制算法（如BBR）</li>
+                                        <li>优化MTU值（通常1350-1450之间最佳）</li>
+                                        <li>启用TCP连接复用</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h4>TLS优化</h4>
+                                    <ul>
+                                        <li>启用TLS 1.3（更快握手速度）</li>
+                                        <li>使用ECDHE等高效密钥交换算法</li>
+                                        <li>启用0-RTT握手（如协议支持）</li>
+                                        <li>使用QUIC协议（如支持）</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <h4>客户端优化示例（Clash）</h4>
+                                <div class="code-block">
+                                    profile:
+                                    tracing: true
+                                    store-selected: true
+
+                                    tun:
+                                    enable: true
+                                    stack: system
+                                    dns-hijack:
+                                    - any:53
+                                    auto-route: true
+
+                                    tcp-connection:
+                                    enable: true
+                                    fast-open: true
+                                    multi-path: true
+                                </div>
+                            </div>
+
+                            <div class="success-box">
+                                <h4>✅ 专业建议</h4>
+                                <p>对于需要极致性能的场景（如游戏或视频会议），考虑：</p>
+                                <ul>
+                                    <li>使用专属带宽的专线节点</li>
+                                    <li>在网络较好时段使用</li>
+                                    <li>使用更先进的协议如Hysteria或TUIC</li>
+                                    <li>如可能，通过光猫桥接+路由器级别代理实现全局优化</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- 常见错误信息解析 -->
+            <section class="content-section">
+                <h2 id="error-codes">常见错误信息解析</h2>
+
+                <p>以下是各种代理客户端中常见的错误信息及其解决方法。</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>错误信息</th>
+                                <th>可能原因</th>
+                                <th>解决方法</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Connection refused</td>
+                                <td>服务器拒绝连接，端口封锁</td>
+                                <td>更换节点或端口，检查防火墙设置</td>
+                            </tr>
+                            <tr>
+                                <td>Connection timeout</td>
+                                <td>连接超时，服务器无响应</td>
+                                <td>检查网络状态，尝试使用更近的节点</td>
+                            </tr>
+                            <tr>
+                                <td>DNS resolution failed</td>
+                                <td>无法解析服务器域名</td>
+                                <td>修改DNS设置，使用IP地址代替域名</td>
+                            </tr>
+                            <tr>
+                                <td>TLS handshake error</td>
+                                <td>TLS握手失败，可能是协议配置问题</td>
+                                <td>检查TLS版本设置，确认证书有效性</td>
+                            </tr>
+                            <tr>
+                                <td>Auth failed</td>
+                                <td>认证失败，密码错误或过期</td>
+                                <td>更新订阅获取最新凭据，检查账户状态</td>
+                            </tr>
+                            <tr>
+                                <td>Invalid parameter</td>
+                                <td>配置参数错误</td>
+                                <td>重新导入订阅，检查手动配置是否正确</td>
+                            </tr>
+                            <tr>
+                                <td>Network unreachable</td>
+                                <td>网络不可达，本地网络问题</td>
+                                <td>检查本地网络连接，重启网络设备</td>
+                            </tr>
+                            <tr>
+                                <td>Permission denied</td>
+                                <td>权限不足，无法创建连接</td>
+                                <td>以管理员/root权限运行，检查应用权限</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="step">
+                    <h3>Clash专用错误</h3>
+                    <div class="code-block">
+                        "parsing YAML config: yaml: unmarshal errors" - 配置文件YAML格式错误
+                        "DNS lookup failed" - DNS解析失败，检查DNS配置
+                        "creating TUN interface failed" - TUN模式启动失败，检查权限
+                        "invalid TCP connection timeout" - TCP连接超时配置无效</div>
+                </div>
+
+                <div class="step">
+                    <h3>Shadowrocket专用错误</h3>
+                    <div class="code-block">
+                        "Failed to connect to server" - 连接服务器失败
+                        "Invalid URL" - 无效的订阅链接
+                        "Config file parsing error" - 配置文件解析错误
+                        "Network extension start failed" - 网络扩展启动失败</div>
+                </div>
+
+                <div class="tip-card">
+                    <h3>获取更多帮助</h3>
+                    <p>如果您遇到的问题无法通过本指南解决：</p>
+                    <ul>
+                        <li>查阅代理客户端的官方文档或GitHub Issues</li>
+                        <li>联系您的服务提供商的客服支持</li>
+                        <li>在专业论坛如<a href="https://github.com/v2fly/v2ray-core/discussions"
+                                target="_blank">V2Ray讨论区</a>或<a href="https://github.com/Dreamacro/clash/issues"
+                                target="_blank">Clash Issues</a>寻求帮助</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- 右侧目录导航 -->
+        <aside class="table-of-contents">
+            <h4 class="toc-header">目录</h4>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#introduction">简介</a></li>
+                <li class="toc-item"><a href="#connection-issues">连接问题</a></li>
+                <li class="toc-item"><a href="#app-specific-issues">特定应用和网站问题</a></li>
+                <li class="toc-item"><a href="#client-issues">客户端特定问题</a></li>
+                <li class="toc-item"><a href="#performance">性能优化</a></li>
+                <li class="toc-item"><a href="#platform-issues">系统和平台特定问题</a></li>
+                <li class="toc-item"><a href="#advanced-troubleshooting">高级故障排除</a></li>
+                <li class="toc-item"><a href="#error-codes">常见错误信息解析</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2023-2024 ToolStore. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <!-- 放大预览模态框 -->
+    <div id="imageModal" class="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <!-- 引入公共JS -->
+    <script src="../../assets/scripts/config.js"></script>
+    <!-- 文档站专用JS -->
+    <script src="../js/doc-scripts.js"></script>
+    <!-- 单页应用功能 -->
+    <script src="../js/spa.js"></script>
+    <!-- 主题切换功能 -->
+    <script src="../js/theme.js"></script>
+</body>
+
+</html>

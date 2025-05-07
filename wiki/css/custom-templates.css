@@ -1,0 +1,66 @@
+/**
+ * 模板页面自定义样式
+ * 用于调整templates.html的特定样式
+ */
+
+/* 代码块样式 */
+code {
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* 增加主内容区宽度 */
+.main-content {
+    max-width: none !important; /* 移除最大宽度限制 */
+    width: 100% !important; /* 让宽度自动调整 */
+}
+
+/* 调整页面容器网格布局 */
+.page-container {
+    grid-template-columns: var(--sidebar-width) minmax(500px, 1fr) var(--toc-width) !important;
+}
+
+/* 为主内容区添加最小宽度 */
+.main-content {
+    min-width: 600px !important;
+}
+
+/* 修改工具卡片布局，使其更好地适应更宽的内容区 */
+.tool-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* 响应式调整 */
+@media (max-width: 1280px) {
+    .main-content {
+        min-width: 450px !important;
+    }
+    
+    .page-container {
+        grid-template-columns: var(--sidebar-width) minmax(450px, 1fr) var(--toc-width) !important;
+    }
+}
+
+@media (max-width: 956px) {
+    .page-container {
+        grid-template-columns: var(--sidebar-width) 1fr !important;
+    }
+    
+    .main-content {
+        min-width: 350px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .main-content {
+        min-width: 100% !important;
+    }
+} 

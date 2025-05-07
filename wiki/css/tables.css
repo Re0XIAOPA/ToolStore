@@ -1,0 +1,86 @@
+ /* 响应式表格容器 */
+ .table-responsive {
+     overflow-x: auto;
+     margin-bottom: 25px;
+     border-radius: 8px;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+ }
+
+ /* 表格基本样式 */
+ table {
+     width: 100%;
+     border-collapse: collapse;
+     font-size: 0.95rem;
+     background-color: #ffffff;
+     border: 1px solid #e9ecef;
+ }
+
+ /* 表头样式 */
+ thead {
+     background-color: rgba(124, 138, 255, 0.1);
+ }
+
+ th {
+     padding: 12px 15px;
+     text-align: left;
+     font-weight: 600;
+     color: #333333;
+     border-bottom: 1px solid #e9ecef;
+ }
+
+ /* 表格内容样式 */
+ td {
+     padding: 10px 15px;
+     border-bottom: 1px solid #e9ecef;
+ }
+
+ /* 表格行悬停效果 */
+ tbody tr:hover {
+     background-color: #f9fafc;
+     transition: background-color 0.2s ease;
+ }
+
+ /* 表格最后一行底部无边框 */
+ tbody tr:last-child td {
+     border-bottom: none;
+ }
+
+ /* 确保暗色模式下表格显示正常 */
+ [data-theme="dark"] table {
+     background-color: #20242c;
+     border-color: #2c3039;
+ }
+
+ [data-theme="dark"] thead {
+     background-color: rgba(149, 164, 255, 0.1);
+ }
+
+ [data-theme="dark"] th {
+     color: #e1e1e1;
+     border-color: #2c3039;
+ }
+
+ [data-theme="dark"] td {
+     border-color: #2c3039;
+ }
+
+ [data-theme="dark"] tbody tr:hover {
+     background-color: #0f1115;
+ }
+
+ /* 移动设备上的表格样式优化 */
+ @media (max-width: 768px) {
+
+     th,
+     td {
+         padding: 8px 10px;
+         font-size: 0.85rem;
+     }
+
+     .table-responsive {
+         margin-left: -15px;
+         margin-right: -15px;
+         width: calc(100% + 30px);
+         border-radius: 0;
+     }
+ }

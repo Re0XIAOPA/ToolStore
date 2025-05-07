@@ -1,0 +1,217 @@
+/* 
+ * 推荐徽章基础定位
+ * 绝对定位在卡片左上角外(-6px)
+ * 设置固定宽高(60px)确保视觉一致性
+ * 较高z-index(10)确保显示在卡片内容之上
+ */
+.recommend-badge {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    pointer-events: none; /* 确保不会干扰卡片点击 */
+    overflow: visible;
+}
+
+/* 
+ * 飘带背景效果
+ * 使用伪元素创建斜向装饰条
+ * 渐变背景增强视觉吸引力
+ * 旋转-45度形成斜向布局
+ * 多边形裁剪(clip-path)塑造飘带两端尖角
+ * 内外阴影增强立体感
+ * 平滑过渡动画(all 0.3s ease)
+ */
+.recommend-badge::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: -35px;
+    width: 120px;
+    height: 28px;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+    transform: rotate(-45deg);
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    box-shadow:
+        0 2px 8px rgba(255, 107, 107, 0.4),
+        inset 0 1px rgba(255, 255, 255, 0.3);
+    z-index: -1;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none; /* 确保不会干扰卡片点击 */
+}
+
+/* 
+ * 星星图标
+ * 使用SVG内联数据URI确保高清显示
+ * 固定尺寸(24px)保持视觉平衡
+ * 精确定位在飘带中央
+ * 白色填充与渐变背景形成对比
+ * 设置变换原点(transform-origin)为中心
+ */
+.recommend-badge::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 15px;
+    left: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform-origin: center;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+    animation: starPulse 2s ease-in-out infinite;
+    pointer-events: none; /* 确保不会干扰卡片点击 */
+}
+
+/* 卡片光效 */
+.card:has(.recommend-badge) {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.15);
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+/* 主光效 */
+.card:has(.recommend-badge)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 107, 107, 0) 20%,
+            rgba(255, 107, 107, 0.15) 50%,
+            rgba(255, 107, 107, 0) 80%,
+            transparent 100%);
+    transform: translateX(-100%) skewX(-15deg);
+    animation: cardShine 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* 边缘光晕 */
+.card:has(.recommend-badge)::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(90deg,
+            rgba(255, 107, 107, 0.15),
+            rgba(255, 142, 142, 0.15));
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+}
+
+/* 悬停效果 */
+.card:has(.recommend-badge):hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.25);
+}
+
+.card:has(.recommend-badge):hover::before {
+    animation: cardShine 4s ease-in-out infinite;
+}
+
+.card:hover .recommend-badge::before {
+    filter: brightness(1.1) saturate(1.2);
+    transform: rotate(-45deg) scale(1.05);
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD166 100%);
+}
+
+/* 星星悬停动画 */
+.card:hover .recommend-badge::after {
+    animation: starRotate 2s linear infinite;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'/%3E%3C/svg%3E");
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
+/* 推荐卡片标题效果 */
+.card:has(.recommend-badge) .card-title {
+    background: linear-gradient(90deg, #FF6B6B, #FFD166);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+}
+
+/* 动画定义 */
+@keyframes cardShine {
+    0% {
+        transform: translateX(-100%) skewX(-15deg);
+    }
+
+    30%,
+    100% {
+        transform: translateX(200%) skewX(-15deg);
+    }
+}
+
+@keyframes starPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+}
+
+@keyframes starRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 3D悬浮效果 */
+.card:has(.recommend-badge) {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.card:has(.recommend-badge):hover {
+    transform: translateY(-5px) rotateX(5deg) rotateY(5deg) scale(1.02);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 飘带悬停效果 */
+.card:hover .recommend-badge::before {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD166 100%);
+    transform: rotate(-45deg) scale(1.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+        0 3px 10px rgba(255, 107, 107, 0.5),
+        inset 0 1px rgba(255, 255, 255, 0.4);
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .recommend-badge {
+        transform: scale(0.9);
+        transform-origin: top left;
+    }
+
+    .recommend-badge::after {
+        width: 20px;
+        height: 20px;
+        top: 18px;
+        left: 16px;
+    }
+    
+    .card:has(.recommend-badge):hover {
+        transform: translateY(-3px) scale(1.01);
+    }
+}

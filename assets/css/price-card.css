@@ -1,0 +1,148 @@
+i/* 
+ * 套餐区域容器
+ * 套餐价格展示区域的整体布局
+ */
+.packages-section {
+    margin: 15px 0;
+}
+
+/* 
+ * 套餐内容区域
+ * 套餐卡片的网格布局和间距
+ */
+.packages-content {
+    display: grid;
+    grid-template-columns: repeat(5, 130px);
+    gap: 15px;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 
+ * 套餐卡片
+ * 单个套餐卡片的背景、边框和动画效果
+ */
+.package-row {
+    position: relative;
+    background: rgba(26, 29, 36, 0.5);
+    border: 1px solid rgba(124, 138, 255, 0.08);
+    border-radius: 12px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 4px #96a1ff;
+}
+
+
+/* 
+ * 套餐名称
+ * 套餐名称的文本样式和溢出处理
+ */
+.package-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(124, 138, 255, 0.08);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+/* 
+ * 套餐价格
+ * 价格数字和货币符号的布局和样式
+ */
+.package-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin: auto 0;
+
+}
+
+.price-currency,
+.price-amount {
+    transition: all 0.3s ease;
+}
+
+.price-currency {
+    font-size: 20px;
+    color: #96a1ff;
+    font-weight: 600;
+}
+
+.price-amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: #96a1ff;
+    margin: 0 3px;
+    text-shadow: 0 2px 8px rgba(124, 138, 255, 0.3);
+    letter-spacing: -0.5px;
+}
+
+.price-period {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* 
+ * 流量信息
+ * 套餐流量数据的样式和分隔线
+ */
+.package-traffic {
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    border-top: 1px solid rgba(124, 138, 255, 0.08);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* 
+ * 响应式布局
+ * 针对不同屏幕尺寸的布局调整
+ */
+@media screen and (max-width: 768px) {
+    .packages-content {
+        grid-template-columns: repeat(3, 130px);
+        gap: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .packages-content {
+        grid-template-columns: repeat(2, 130px);
+        gap: 10px;
+    }
+
+    .package-row {
+        padding: 12px;
+    }
+
+    .package-name {
+        font-size: 12px;
+        padding: 6px 0;
+        margin-bottom: 10px;
+    }
+
+    .package-price {
+        padding: 8px 0;
+    }
+
+    .price-amount {
+        font-size: 28px;
+    }
+
+    .package-traffic {
+        font-size: 12px;
+        padding: 6px 0;
+        margin-top: 10px;
+    }
+}

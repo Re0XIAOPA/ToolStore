@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ToolStore工具教程中心提供各类网络工具的详细安装和使用教程，包括安卓、iOS和PC平台的代理软件配置指南。">
+    <meta name="keywords" content="代理工具,网络工具,教程,Clash Verge,ClashMeta,Shadowrocket,上网工具">
+    <meta name="author" content="ToolStore">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1d24">
+    <title>教程 | ToolStore</title>
+    <!-- 立即应用暗色主题，防止闪烁 -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            // 默认使用暗色主题
+            document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
+            if (!savedTheme) {
+                localStorage.setItem('theme', 'dark');
+            }
+        })();
+    </script>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/media-queries.css">
+    <!-- 文档站专用样式 -->
+    <link rel="stylesheet" href="css/doc-style.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='180' height='180' fill='%231a1d24'/%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <!-- 添加内联表格样式 -->
+    <style>
+       
+    </style>
+</head>
+
+<body class="wiki-page">
+    <header>
+        <div class="header-content">
+            <h1>
+                <a href="./wiki.html">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    ToolStore 文档
+                </a>
+            </h1>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="wiki.html">文档首页</a></li>
+                    <li><a href="https://nav.awafuns.cn/" target="_blank">导航站点</a></li>
+                    <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点</a></li>
+                </ul>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="themeToggle">
+                        <input type="checkbox" id="themeToggle">
+                        <div class="slider round">
+                            <span class="theme-icon light">☀️</span>
+                            <span class="theme-icon dark">🌙</span>
+                        </div>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
+    </button>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="../index.html">主页</a></li>
+            <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点</a></li>
+            <li><a href="javascript:void(0)" id="mobile-feedback-modal">邮箱反馈</a></li>
+        </ul>
+    </div>
+
+    <button class="sidebar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="page-container">
+        <!-- 左侧导航栏 -->
+        <aside class="sidebar">
+            <!-- 通用教程分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>通用教程
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="doc/usage-guide.html">使用指南</a></li>
+                    <li class="nav-item"><a href="doc/troubleshooting.html">常见问题解决</a></li>
+                    <li class="nav-item"><a href="doc/feedback-email.html">邮件反馈指南</a></li>
+                    <li class="nav-item"><a href="../templates/templates.html">文档示例</a></li>
+                </ul>
+            </div>
+
+            <!-- 安卓分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>安卓工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="doc/clashmeta.html">ClashMeta</a></li>
+                    <li class="nav-item"><a href="doc/hiddify.html">Hiddify</a></li>
+                    <li class="nav-item"><a href="doc/surfboard.html">Surfboard</a></li>
+                </ul>
+            </div>
+
+            <!-- iOS分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>iOS工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="doc/shadowrocket.html">Shadowrocket</a></li>
+                </ul>
+            </div>
+
+            <!-- PC分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>PC工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="doc/clash_verge.html">Clash Verge</a></li>
+                    <li class="nav-item"><a href="doc/mihomo_party.html">Mihomo Party</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 主要内容区 -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>ToolStore 工具教程中心</h1>
+                <p>为您提供全面的网络工具指南，让科学上网变得简单易懂</p>
+                <p>初次使用网络工具？我们推荐您先阅读<a href="doc/usage-guide.html">使用指南</a>了解基本概念，以及<a
+                    href="doc/troubleshooting.html">常见问题解决</a>掌握常见问题的解决方法。</p>
+            </div>
+
+            <section class="content-section">
+                <h2 id="popular">热门推荐</h2>
+
+                <div class="tool-cards">
+                    <!-- 热门教程卡片 1 -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <img src="../assets/images/tools/ClashVerge.png" alt="Clash Verge" class="no-preview">
+                        </div>
+                        <div class="tool-info">
+                            <h3>Clash Verge <span class="difficulty difficulty-beginner">简单</span></h3>
+                            <p>界面美观、功能全面的跨平台代理工具，支持规则分流和策略组</p>
+                            <div class="tool-tags">
+                                <span class="tag">PC</span>
+                                <span class="tag">Windows</span>
+                                <span class="tag">macOS</span>
+                                <span class="tag">Linux</span>
+                            </div>
+                            <a href="doc/clash_verge.html" class="btn-view">查看教程</a>
+                        </div>
+                    </div>
+
+                    <!-- 热门教程卡片 2 -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <img src="../assets/images/tools/ClashMeta.png" alt="ClashMeta" class="no-preview">
+                        </div>
+                        <div class="tool-info">
+                            <h3>ClashMeta <span class="difficulty difficulty-intermediate">一般</span></h3>
+                            <p>安卓平台功能强大的代理工具，支持多种协议和自定义配置</p>
+                            <div class="tool-tags">
+                                <span class="tag">安卓</span>
+                                <span class="tag">移动设备</span>
+                            </div>
+                            <a href="doc/clashmeta.html" class="btn-view">查看教程</a>
+                        </div>
+                    </div>
+
+                    <!-- 热门教程卡片 3 -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <img src="../assets/images/tools/Shadowrocket.png" alt="Shadowrocket" class="no-preview">
+                        </div>
+                        <div class="tool-info">
+                            <h3>Shadowrocket <span class="difficulty difficulty-advanced">困难</span></h3>
+                            <p>iOS设备上最受欢迎的代理工具，体积小巧但功能丰富</p>
+                            <div class="tool-tags">
+                                <span class="tag">iOS</span>
+                                <span class="tag">iPhone</span>
+                                <span class="tag">iPad</span>
+                            </div>
+                            <a href="doc/shadowrocket.html" class="btn-view">查看教程</a>
+                        </div>
+                    </div>
+
+
+                    <!-- 热门教程卡片 4 -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <img src="../assets/images/tools/Surfboard.png" alt="Surfboard" class="no-preview">
+                        </div>
+                        <div class="tool-info">
+                            <h3>Surfboard <span class="difficulty difficulty-beginner">简单</span></h3>
+                            <p>安卓平台功能强大的代理工具，支持多种协议和自定义配置</p>
+                            <div class="tool-tags">
+                                <span class="tag">安卓</span>
+                                <span class="tag">移动设备</span>
+                            </div>
+                            <a href="doc/surfboard.html" class="btn-view">查看教程</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 id="getting-started">新手指引</h2>
+                <p>如果你是首次接触这类工具，以下步骤可以帮助你快速上手：</p>
+
+                <div class="step">
+                    <h3>步骤 1: 选择合适的工具</h3>
+                    <p>根据你的设备类型选择相应的客户端。安卓设备推荐使用ClashMeta，iOS设备推荐Shadowrocket，PC用户可以选择Clash Verge。</p>
+                </div>
+
+                <div class="step">
+                    <h3>步骤 2: 获取节点或订阅</h3>
+                    <p>你需要获取节点信息或订阅链接。可以通过我们推荐的<a href="../index.html#proxy">机场服务</a>获取，或使用<a
+                            href="https://asfn.awafuns.cn/" target="_blank">免费节点资源</a>测试体验。</p>
+                </div>
+
+                <div class="step">
+                    <h3>步骤 3: 配置并连接</h3>
+                    <p>按照对应工具的教程指引，导入节点或订阅，然后连接到网络。大多数工具都支持一键导入，操作简便。</p>
+                </div>
+
+                <div class="tip-card">
+                    <h3>小提示</h3>
+                    <p>如果你在使用过程中遇到任何问题，别忘了查看我们的<a href="doc/troubleshooting.html">常见问题解决</a>页面，或通过邮箱联系我们获取支持。</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 id="resources">相关资源</h2>
+                <p>除了详细的教程外，我们还提供以下资源：</p>
+                <ul>
+                    <li><a href="../index.html#tools">各平台工具官方下载链接</a> - 确保安全可靠</li>
+                    <li><a href="../index.html#proxy">优质机场推荐</a> - 稳定高速的服务提供商</li>
+                    <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点资源</a> - 用于测试和临时使用</li>
+                </ul>
+
+                <p>我们的目标是为用户提供全面且易于理解的网络工具教程，让每个人都能轻松访问开放、自由的互联网。如有任何建议或反馈，欢迎联系我们。</p>
+            </section>
+        </main>
+
+        <!-- 右侧目录导航 -->
+        <aside class="table-of-contents">
+            <h4 class="toc-header">目录</h4>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#popular">热门推荐</a></li>
+                <li class="toc-item"><a href="#getting-started">新手指引</a></li>
+                <li class="toc-item"><a href="#resources">相关资源</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p> 2023-2025 ToolStore. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <!-- 放大预览模态框 -->
+    <div id="imageModal" class="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="back-to-top-btn" title="回到顶部">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20V4M12 4L5 11M12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <!-- 引入公共JS -->
+    <script src="../assets/scripts/config.js"></script>
+    <!-- 文档站专用JS -->
+    <script src="js/doc-scripts.js"></script>
+    <!-- 单页应用功能 -->
+    <script src="js/spa.js"></script>
+    <!-- 主题切换功能 -->
+    <script src="js/theme.js"></script>
+    <!-- 回到顶部按钮功能 -->
+    <script src="js/top.js"></script>
+</body>
+
+</html>

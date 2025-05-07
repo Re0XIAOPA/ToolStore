@@ -1,0 +1,412 @@
+/* 响应式样式 */
+/* 
+ * 平板及以上设备(≥956px)
+ * 适用于iPad、小型笔记本电脑等中等屏幕设备
+ * 主要调整导航链接的悬停效果，增强交互视觉反馈
+ */
+@media screen and (min-width: 956px) {
+    .nav-links a:hover {
+        color: #7c8aff;
+        background: rgba(124, 138, 255, 0.15);
+        transform: translateY(-1px);
+    }
+    
+    .toggle-button {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex !important;
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 大屏幕设备(≥1024px) */
+@media screen and (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 超大屏幕设备(≥1400px) */
+@media screen and (min-width: 1400px) {
+    .grid-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    main {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* 
+ * 平板及以下设备(≤956px)
+ * 全面响应式布局调整，包括:
+ * - 头部内容压缩
+ * - 主标题缩小
+ * - 导航菜单改为垂直下拉式
+ * - 主要内容区域重新布局
+ */
+@media screen and (max-width: 956px) {
+    .header-content {
+        padding: 10px 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+    
+    /* 导航相关布局 */
+    nav {
+        position: static;
+    }
+
+    .toggle-button {
+        display: block;
+        position: relative;
+        z-index: 1001;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(26, 29, 36, 0.98);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(124, 138, 255, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        padding: 15px;
+        gap: 15px;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links a {
+        opacity: 0;
+        transform: translateY(-5px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0.1s;
+        width: 100%;
+        background: rgba(124, 138, 255, 0.05);
+        border-radius: 8px;
+        text-align: center;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #fff;
+        font-weight: 500;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+    
+    .nav-links.active a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links a:hover {
+        color: #7c8aff;
+        background: rgba(124, 138, 255, 0.15);
+        width: 100%;
+        transform: translateY(-2px);
+    }
+    
+    /* 内容区域布局 */
+    main {
+        padding: 80px 15px 30px;
+    }
+
+    .announcement {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .announcement h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    /* 工具区域布局 */
+    .tools-section {
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+    }
+
+    .tools-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .tools-header h2 {
+        font-size: 24px;
+    }
+    
+    /* 下载区域布局 */
+    .download-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .download-content {
+        padding: 25px;
+    }
+
+    .download-item {
+        padding: 20px;
+    }
+
+    .download-header h3 {
+        font-size: 24px;
+    }
+    
+    /* 机场卡片布局 */
+    .airport-header {
+        padding: 25px 20px;
+    }
+
+    .airport-body {
+        padding: 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .feature-item {
+        padding: 15px;
+    }
+    
+    /* 可点击卡片样式 */
+    .card.clickable::after {
+        top: 8px;
+        right: 8px;
+        width: 20px;
+        height: 20px;
+        background-size: 14px;
+    }
+}
+
+/* 
+ * 中等屏幕设备(≤767px)
+ * 适用于大多数智能手机的横向模式和小型平板
+ */
+@media screen and (max-width: 767px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .card {
+        padding: 20px;
+        min-height: 160px;
+    }
+
+    .card-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+    }
+}
+
+/* 
+ * 小屏幕设备(≤480px)
+ * 适用于大多数智能手机的纵向模式
+ */
+@media screen and (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    /* 导航链接 */
+    .nav-links {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    /* 卡片相关布局 */
+    .card {
+        padding: 15px;
+        min-height: 140px;
+    }
+    
+    .card.clickable::after {
+        top: 6px;
+        right: 6px;
+        width: 18px;
+        height: 18px;
+        background-size: 12px;
+    }
+
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+    
+    /* 工具区域布局 */
+    .tools-section {
+        padding: 15px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+    }
+
+    .tools-header {
+        margin-bottom: 15px;
+        padding-bottom: 12px;
+    }
+
+    .tools-header h2 {
+        font-size: 22px;
+    }
+    
+    /* 下载区域布局 */
+    .download-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .download-content {
+        padding: 20px;
+    }
+
+    .download-item {
+        padding: 15px;
+    }
+
+    .download-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .download-name {
+        font-size: 14px;
+    }
+    
+    /* 机场卡片布局 */
+    .airport-header {
+        padding: 20px 15px;
+    }
+
+    .airport-body {
+        padding: 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .airport-actions {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .action-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* 
+ * 超小屏幕设备(≤430px)
+ * 针对iPhone等小屏幕设备优化
+ */
+@media screen and (max-width: 430px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px;
+    }
+    
+    .sponsors-container {
+        gap: 20px;
+        padding: 0 10px 40px 10px;
+    }
+
+    .primary-sponsors-container,
+    .secondary-sponsors-container {
+        gap: 15px;
+        padding: 0px !important;
+    }
+
+    .sponsor-card {
+        width: 110px;
+    }
+
+    .sponsor-card.primary {
+        transform: scale(1);
+    }
+
+    .sponsor-avatar {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+/* 
+ * 微型屏幕设备(≤390px)
+ * 针对小型智能手机优化
+ */
+@media screen and (max-width: 390px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 6px;
+    }
+
+    .card {
+        padding: 12px;
+        min-height: 130px;
+    }
+
+    .card-icon {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 10px;
+    }
+
+    .card-title {
+        font-size: 13px;
+    }
+}

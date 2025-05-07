@@ -1,0 +1,97 @@
+/**
+ * CSS变量与主题设置
+ * 集中管理所有全局变量和主题配置
+ */
+
+/* 亮色主题变量 */
+:root {
+    /* 主色调 */
+    --primary-color: #7c8aff;        /* 主紫色 */
+    --primary-hover: #5a6efd;        /* 悬停紫色 */
+    --accent-color: #9370DB;         /* 强调色 */
+    
+    /* 文本颜色 */
+    --text-color: #333333;           /* 主文本颜色 */
+    --light-text: #555555;           /* 次要文本 */
+    --muted-text: #777777;           /* 弱化文本 */
+    
+    /* 背景颜色 */
+    --light-bg: #f9fafc;             /* 页面背景 */
+    --body-bg: #f9fafc;              /* body背景色 */
+    --sidebar-bg: #ffffff;           /* 侧边栏背景 */
+    --card-bg: #ffffff;              /* 卡片背景 */
+    --header-bg: rgba(255, 255, 255, 0.97); /* 头部背景 - 半透明白色 */
+    --header-text: #333333;          /* 头部文本颜色 */
+    --header-bg-start: #f9fafc;      /* 顶部渐变开始 */
+    --header-bg-end: #f5f7fa;        /* 顶部渐变结束 */
+    --footer-bg: #f5f7fa;            /* 底部背景 */
+    --code-bg: #f0f0f0;              /* 代码背景 */
+    --code-text: #333333;            /* 代码文本 */
+    
+    /* 边框和阴影 */
+    --border-color: #e9ecef;         /* 边框颜色 */
+    --divider-color: #eaecef;        /* 分割线 */
+    --border-radius: 8px;            /* 圆角半径 */
+    --header-border: none;           /* 头部边框 */
+    --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);  /* 阴影 */
+    --header-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 头部阴影 */
+    --sidebar-shadow: none;          /* 侧边栏阴影 */
+    
+    /* 尺寸和速度变量 */
+    --header-height: 84px;           /* 修改头部高度为84px */
+    --sidebar-width: 260px;          /* 侧边栏宽度 */
+    --toc-width: 200px;              /* 目录宽度 */
+    --transition-speed: 0.3s;        /* 过渡速度 */
+    
+    /* 组件特殊颜色 */
+    --note-bg: rgba(124, 138, 255, 0.08);  /* 提示框背景 */
+    --tag-bg: rgba(124, 138, 255, 0.08);  /* 标签背景 */
+    --tool-icon-bg: rgba(124, 138, 255, 0.08);  /* 工具图标背景 */
+    --step-bg: #f9fafc;              /* 步骤背景 */
+    --tip-card-bg: rgba(124, 138, 255, 0.06);  /* 提示卡片背景 */
+    --code-bg: #f5f7fa;              /* 代码背景 */
+    --code-text: #333333;            /* 代码文本 */
+}
+
+/* 暗色主题变量 */
+[data-theme="dark"] {
+    /* 主色调 */
+    --primary-color: #95a4ff;        /* 亮紫色 */
+    --primary-hover: #a0a6ff;        /* 悬停亮紫色 */
+    --accent-color: #b19cde;         /* 强调色 */
+    
+    /* 文本颜色 */
+    --text-color: #e1e1e1;           /* 主文本颜色 */
+    --light-text: #bbbbbb;           /* 次要文本 */
+    --muted-text: #999999;           /* 弱化文本 */
+    
+    /* 背景颜色 */
+    --light-bg: #1a1d24;             /* 页面背景 */
+    --body-bg: #1a1d24;              /* body背景色 */
+    --sidebar-bg: #0f1115;           /* 侧边栏背景 */
+    --card-bg: #20242c;              /* 卡片背景 */
+    --header-bg: rgba(15, 17, 21, 0.97); /* 头部背景 - 半透明深色 */
+    --header-text: #ffffff;          /* 头部文本 */
+    --header-bg-start: #0f1115;      /* 顶部渐变开始 - 与侧边栏背景一致 */
+    --header-bg-end: #1a1d24;        /* 顶部渐变结束 - 与页面背景一致 */
+    --footer-bg: #0f1115;            /* 底部背景 */
+    --code-bg: #141921;              /* 代码背景 */
+    --code-text: #e1e1e1;            /* 代码文本 */
+    
+    /* 边框和阴影 */
+    --border-color: #2c3039;         /* 边框颜色 */
+    --divider-color: #2c3039;        /* 分割线 */
+    --header-border: none;           /* 头部边框 */
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);  /* 阴影 */
+    --header-shadow: 0 1px 5px rgba(0, 0, 0, 0.15); /* 头部阴影 */
+    --sidebar-shadow: none;          /* 侧边栏阴影 */
+    
+    /* 组件特殊颜色 */
+    --note-bg: rgba(124, 138, 255, 0.05);  /* 提示框背景 */
+    --tag-bg: rgba(149, 164, 255, 0.15);   /* 标签背景 - 匹配新的主色调 */
+    --tool-icon-bg: rgba(149, 164, 255, 0.15);  /* 工具图标背景 - 匹配新的主色调 */
+    --step-bg: #1e222a;              /* 步骤背景 */
+    --tip-card-bg: rgba(149, 164, 255, 0.06);  /* 提示卡片背景 - 匹配新的主色调 */
+    --code-bg: #141921;              /* 代码背景 */
+    --code-text: #e1e1e1;            /* 代码文本 */
+}

@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ToolStore模板文件，用于创建新页面">
+    <meta name="keywords" content="模板,网络工具,教程">
+    <meta name="author" content="ToolStore">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#1a1d24">
+    <title>页面模板</title>
+    <!-- 立即应用暗色主题，防止闪烁 -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            // 默认使用暗色主题
+            document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
+            if (!savedTheme) {
+                localStorage.setItem('theme', 'dark');
+            }
+        })();
+    </script>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/media-queries.css">
+    <!-- 文档站专用样式 -->
+    <link rel="stylesheet" href="../css/doc-style.css">
+    <!-- 模板页面自定义样式 -->
+    <link rel="stylesheet" href="../css/custom-templates.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='180' height='180' fill='%231a1d24'/%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>
+                <a href="../wiki.html">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    ToolStore 文档
+                </a>
+            </h1>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../wiki.html">文档首页</a></li>
+                    <li><a href="https://nav.awafuns.cn/" target="_blank">导航站点</a></li>
+                    <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点</a></li>
+                </ul>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="themeToggle">
+                        <input type="checkbox" id="themeToggle">
+                        <div class="slider round">
+                            <span class="theme-icon light">☀️</span>
+                            <span class="theme-icon dark">🌙</span>
+                        </div>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
+    </button>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="../../index.html">主页</a></li>
+            <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点</a></li>
+            <li><a href="javascript:void(0)" id="mobile-feedback-modal">邮箱反馈</a></li>
+        </ul>
+    </div>
+
+    <button class="sidebar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="page-container">
+        <!-- 左侧导航栏 -->
+        <aside class="sidebar">
+            <!-- 通用教程分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>通用教程
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="../doc/usage-guide.html">使用指南</a></li>
+                    <li class="nav-item"><a href="../doc/troubleshooting.html">常见问题解决</a></li>
+                    <li class="nav-item"><a href="../doc/feedback-email.html">邮件反馈指南</a></li>
+                    <li class="nav-item"><a href="../templates/templates.html">文档示例</a></li>
+                </ul>
+            </div>
+
+            <!-- 安卓分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>安卓工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="../doc/clashmeta.html">ClashMeta</a></li>
+                    <li class="nav-item"><a href="../doc/hiddify.html">Hiddify</a></li>
+                    <li class="nav-item"><a href="../doc/surfboard.html">Surfboard</a></li>
+                </ul>
+            </div>
+
+            <!-- iOS分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>iOS工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="../doc/shadowrocket.html">Shadowrocket</a></li>
+                </ul>
+            </div>
+
+            <!-- PC分类 -->
+            <div class="nav-category">
+                <div class="category-title">
+                    <span class="toggle-icon">▼</span>PC工具
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="../doc/clash_verge.html">Clash Verge</a></li>
+                    <li class="nav-item"><a href="../doc/mihomo_party.html">Mihomo Party</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 主要内容区 -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>页面标题</h1>
+                <p>页面简介描述</p>
+            </div>
+
+            <!-- 文档模板元素库 - 基础内容 -->
+            <section class="content-section">
+                <h2 id="page-structure">页面结构与布局</h2>
+                <div class="note">
+                    <p><strong>提示：</strong> 本模板集合了常用的HTML结构和组件，创建新页面时可以直接复制需要的部分。</p>
+                </div>
+
+                <h3>标题层级</h3>
+                <div class="example-box">
+                    <h1>H1 - 主标题</h1>
+                    <h2>H2 - 二级标题</h2>
+                    <h3>H3 - 三级标题</h3>
+                    <h4>H4 - 四级标题</h4>
+                    <h5>H5 - 五级标题</h5>
+                    <h6>H6 - 六级标题</h6>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;h1&gt;H1 - 主标题&lt;/h1&gt;
+&lt;h2&gt;H2 - 二级标题&lt;/h2&gt;
+&lt;h3&gt;H3 - 三级标题&lt;/h3&gt;
+&lt;h4&gt;H4 - 四级标题&lt;/h4&gt;
+&lt;h5&gt;H5 - 五级标题&lt;/h5&gt;
+&lt;h6&gt;H6 - 六级标题&lt;/h6&gt;</code></pre>
+                </div>
+
+                <h3>文本格式化</h3>
+                <div class="example-box">
+                    <p>普通文本段落</p>
+                    <p><strong>加粗文本</strong></p>
+                    <p><em>斜体文本</em></p>
+                    <p><u>下划线文本</u></p>
+                    <p><s>删除线文本</s></p>
+                    <p><mark>高亮文本</mark></p>
+                    <p><small>小号文本</small></p>
+                    <p><code>行内代码</code></p>
+                    <p><kbd>键盘输入</kbd></p>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;p&gt;普通文本段落&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;加粗文本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;斜体文本&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;下划线文本&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;删除线文本&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;高亮文本&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;小号文本&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;行内代码&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;kbd&gt;键盘输入&lt;/kbd&gt;&lt;/p&gt;</code></pre>
+                </div>
+
+                <h3>链接样式</h3>
+                <div class="example-box">
+                    <p><a href="#">基本链接</a></p>
+                    <p><a href="#" class="btn-link">按钮式链接</a></p>
+                    <p><a href="#" class="external-link" target="_blank">外部链接</a>（打开新窗口）</p>
+                    <p><a href="#" class="download-link">下载链接</a></p>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;p&gt;&lt;a href="#"&gt;基本链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="btn-link"&gt;按钮式链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="external-link" target="_blank"&gt;外部链接&lt;/a&gt;（打开新窗口）&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="download-link"&gt;下载链接&lt;/a&gt;&lt;/p&gt;</code></pre>
+                </div>
+
+                <h3>分隔线</h3>
+                <div class="example-box">
+                    <hr class="divider">
+                    <hr class="divider-dashed">
+                    <hr class="divider-dotted">
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;hr class="divider"&gt;
+&lt;hr class="divider-dashed"&gt;
+&lt;hr class="divider-dotted"&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 列表元素 -->
+            <section class="content-section">
+                <h2 id="lists">列表元素</h2>
+
+                <h3>无序列表</h3>
+                <div class="example-box">
+                    <ul>
+                        <li>列表项目一</li>
+                        <li>列表项目二</li>
+                        <li>列表项目三</li>
+                    </ul>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;ul&gt;
+    &lt;li&gt;列表项目一&lt;/li&gt;
+    &lt;li&gt;列表项目二&lt;/li&gt;
+    &lt;li&gt;列表项目三&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                </div>
+
+                <h3>有序列表</h3>
+                <div class="example-box">
+                    <ol>
+                        <li>第一步</li>
+                        <li>第二步</li>
+                        <li>第三步</li>
+                    </ol>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;ol&gt;
+    &lt;li&gt;第一步&lt;/li&gt;
+    &lt;li&gt;第二步&lt;/li&gt;
+    &lt;li&gt;第三步&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                </div>
+
+                <h3>定义列表</h3>
+                <div class="example-box">
+                    <dl>
+                        <dt>术语一</dt>
+                        <dd>术语一的解释说明</dd>
+                        <dt>术语二</dt>
+                        <dd>术语二的解释说明</dd>
+                    </dl>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;dl&gt;
+    &lt;dt&gt;术语一&lt;/dt&gt;
+    &lt;dd&gt;术语一的解释说明&lt;/dd&gt;
+    &lt;dt&gt;术语二&lt;/dt&gt;
+    &lt;dd&gt;术语二的解释说明&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                </div>
+
+                <h3>嵌套列表</h3>
+                <div class="example-box">
+                    <ul>
+                        <li>父列表项 1
+                            <ul>
+                                <li>子列表项 1.1</li>
+                                <li>子列表项 1.2</li>
+                            </ul>
+                        </li>
+                        <li>父列表项 2
+                            <ul>
+                                <li>子列表项 2.1</li>
+                                <li>子列表项 2.2</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;ul&gt;
+    &lt;li&gt;父列表项 1
+        &lt;ul&gt;
+            &lt;li&gt;子列表项 1.1&lt;/li&gt;
+            &lt;li&gt;子列表项 1.2&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;父列表项 2
+        &lt;ul&gt;
+            &lt;li&gt;子列表项 2.1&lt;/li&gt;
+            &lt;li&gt;子列表项 2.2&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                </div>
+
+                <h3>带图标列表</h3>
+                <div class="example-box">
+                    <ul class="icon-list">
+                        <li class="icon-check">已完成的任务</li>
+                        <li class="icon-warning">需要注意的项目</li>
+                        <li class="icon-info">信息项目</li>
+                    </ul>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;ul class="icon-list"&gt;
+    &lt;li class="icon-check"&gt;已完成的任务&lt;/li&gt;
+    &lt;li class="icon-warning"&gt;需要注意的项目&lt;/li&gt;
+    &lt;li class="icon-info"&gt;信息项目&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 表格元素 -->
+            <section class="content-section">
+                <h2 id="tables">表格元素</h2>
+
+                <h3>基本表格</h3>
+                <div class="example-box">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>表头列1</th>
+                                    <th>表头列2</th>
+                                    <th>表头列3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>数据1</td>
+                                    <td>数据2</td>
+                                    <td>数据3</td>
+                                </tr>
+                                <tr>
+                                    <td>数据4</td>
+                                    <td>数据5</td>
+                                    <td>数据6</td>
+                                </tr>
+                                <tr>
+                                    <td>数据7</td>
+                                    <td>数据8</td>
+                                    <td>数据9</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="table-container"&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;表头列1&lt;/th&gt;
+                &lt;th&gt;表头列2&lt;/th&gt;
+                &lt;th&gt;表头列3&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;数据1&lt;/td&gt;
+                &lt;td&gt;数据2&lt;/td&gt;
+                &lt;td&gt;数据3&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;数据4&lt;/td&gt;
+                &lt;td&gt;数据5&lt;/td&gt;
+                &lt;td&gt;数据6&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;数据7&lt;/td&gt;
+                &lt;td&gt;数据8&lt;/td&gt;
+                &lt;td&gt;数据9&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>带边框表格</h3>
+                <div class="example-box">
+                    <div class="table-container">
+                        <table class="table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>名称</th>
+                                    <th>版本</th>
+                                    <th>系统</th>
+                                    <th>状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Clash Verge</td>
+                                    <td>v1.2.3</td>
+                                    <td>Windows</td>
+                                    <td>稳定版</td>
+                                </tr>
+                                <tr>
+                                    <td>Shadowrocket</td>
+                                    <td>v2.1.12</td>
+                                    <td>iOS</td>
+                                    <td>最新版</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="table-container"&gt;
+    &lt;table class="table-bordered"&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;名称&lt;/th&gt;
+                &lt;th&gt;版本&lt;/th&gt;
+                &lt;th&gt;系统&lt;/th&gt;
+                &lt;th&gt;状态&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Clash Verge&lt;/td&gt;
+                &lt;td&gt;v1.2.3&lt;/td&gt;
+                &lt;td&gt;Windows&lt;/td&gt;
+                &lt;td&gt;稳定版&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Shadowrocket&lt;/td&gt;
+                &lt;td&gt;v2.1.12&lt;/td&gt;
+                &lt;td&gt;iOS&lt;/td&gt;
+                &lt;td&gt;最新版&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>条纹表格</h3>
+                <div class="example-box">
+                    <div class="table-container">
+                        <table class="table-striped">
+                            <thead>
+                                <tr>
+                                    <th>选项</th>
+                                    <th>描述</th>
+                                    <th>默认值</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>开启系统代理</td>
+                                    <td>允许应用接管系统代理设置</td>
+                                    <td>开启</td>
+                                </tr>
+                                <tr>
+                                    <td>自动更新</td>
+                                    <td>定期自动更新订阅配置</td>
+                                    <td>关闭</td>
+                                </tr>
+                                <tr>
+                                    <td>启动时连接</td>
+                                    <td>程序启动时自动连接到代理</td>
+                                    <td>开启</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="table-container"&gt;
+    &lt;table class="table-striped"&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;选项&lt;/th&gt;
+                &lt;th&gt;描述&lt;/th&gt;
+                &lt;th&gt;默认值&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;开启系统代理&lt;/td&gt;
+                &lt;td&gt;允许应用接管系统代理设置&lt;/td&gt;
+                &lt;td&gt;开启&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;自动更新&lt;/td&gt;
+                &lt;td&gt;定期自动更新订阅配置&lt;/td&gt;
+                &lt;td&gt;关闭&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;启动时连接&lt;/td&gt;
+                &lt;td&gt;程序启动时自动连接到代理&lt;/td&gt;
+                &lt;td&gt;开启&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>响应式表格</h3>
+                <div class="example-box">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>工具名称</th>
+                                    <th>支持平台</th>
+                                    <th>主要协议</th>
+                                    <th>使用难度</th>
+                                    <th>最后更新</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Clash Verge</td>
+                                    <td>Windows, macOS, Linux</td>
+                                    <td>SS, SSR, Vmess, Trojan</td>
+                                    <td>中等</td>
+                                    <td>2023-05-15</td>
+                                </tr>
+                                <tr>
+                                    <td>ClashMeta</td>
+                                    <td>Android</td>
+                                    <td>SS, SSR, Vmess, Trojan</td>
+                                    <td>简单</td>
+                                    <td>2023-06-20</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="table-responsive"&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;工具名称&lt;/th&gt;
+                &lt;th&gt;支持平台&lt;/th&gt;
+                &lt;th&gt;主要协议&lt;/th&gt;
+                &lt;th&gt;使用难度&lt;/th&gt;
+                &lt;th&gt;最后更新&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Clash Verge&lt;/td&gt;
+                &lt;td&gt;Windows, macOS, Linux&lt;/td&gt;
+                &lt;td&gt;SS, SSR, Vmess, Trojan&lt;/td&gt;
+                &lt;td&gt;中等&lt;/td&gt;
+                &lt;td&gt;2023-05-15&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;ClashMeta&lt;/td&gt;
+                &lt;td&gt;Android&lt;/td&gt;
+                &lt;td&gt;SS, SSR, Vmess, Trojan&lt;/td&gt;
+                &lt;td&gt;简单&lt;/td&gt;
+                &lt;td&gt;2023-06-20&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 id="section1">第一部分</h2>
+                <div class="note">
+                    <p><strong>提示：</strong> 这里是一个提示框示例，可以用来显示重要信息。</p>
+                </div>
+
+                <p>这里是正文内容，可以添加<a href="#">链接</a>和解释说明。</p>
+
+                <div class="tip-card">
+                    <h3>小贴士标题</h3>
+                    <p>这里是小贴士内容，可以提供额外的建议或技巧。</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 id="section2">第二部分</h2>
+
+                <!-- 工具卡片示例 -->
+                <div class="tool-cards">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <img src="../../assets/images/placeholder.png" alt="工具名称" class="no-preview">
+                        </div>
+                        <div class="tool-info">
+                            <h3>工具名称 <span class="difficulty difficulty-beginner">初级</span></h3>
+                            <p>工具简短描述</p>
+                            <div class="tool-tags">
+                                <span class="tag">PC</span>
+                                <span class="tag">Windows</span>
+                                <span class="tag">标签3</span>
+                            </div>
+                            <a href="#" class="btn-view">按钮文本</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 id="section3">第三部分</h2>
+
+                <div class="step">
+                    <h3>步骤 1: 步骤标题</h3>
+                    <p>步骤的详细说明。</p>
+                </div>
+
+                <div class="step">
+                    <h3>步骤 2: 步骤标题</h3>
+                    <p>步骤的详细说明。可以添加<a href="#">链接</a>或其他说明。</p>
+                </div>
+
+                <div class="tip-card">
+                    <h3>提示</h3>
+                    <p>关于步骤的额外提示或建议。</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 id="section4">第四部分</h2>
+                <p>其他内容说明：</p>
+                <ul>
+                    <li><a href="#">链接示例1</a> - 描述文本</li>
+                    <li><a href="#">链接示例2</a> - 描述文本</li>
+                    <li><a href="#">链接示例3</a> - 描述文本</li>
+                </ul>
+
+                <p>结尾文字，总结或额外说明。</p>
+            </section>
+
+            <!-- 提示框与通知 -->
+            <section class="content-section">
+                <h2 id="notifications">提示框与通知</h2>
+
+                <h3>基础提示框</h3>
+                <div class="example-box">
+                    <div class="note">
+                        <p><strong>提示：</strong> 这是一个基本提示框，用于展示一般性的提示信息。</p>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="note"&gt;
+    &lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt; 这是一个基本提示框，用于展示一般性的提示信息。&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>警告提示框</h3>
+                <div class="example-box">
+                    <div class="warning-box">
+                        <h4>⚠️ 警告</h4>
+                        <p>这是一个警告提示框，用于显示需要特别注意的重要信息。</p>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="warning-box"&gt;
+    &lt;h4&gt;⚠️ 警告&lt;/h4&gt;
+    &lt;p&gt;这是一个警告提示框，用于显示需要特别注意的重要信息。&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>成功提示框</h3>
+                <div class="example-box">
+                    <div class="success-box">
+                        <h4>✅ 成功提示</h4>
+                        <p>这是一个成功提示框，用于显示操作成功或正确配置的信息。</p>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="success-box"&gt;
+    &lt;h4&gt;✅ 成功提示&lt;/h4&gt;
+    &lt;p&gt;这是一个成功提示框，用于显示操作成功或正确配置的信息。&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>错误提示框</h3>
+                <div class="example-box">
+                    <div class="error-box">
+                        <h4>❌ 错误提示</h4>
+                        <p>这是一个错误提示框，用于显示操作失败或配置错误的信息。</p>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="error-box"&gt;
+    &lt;h4&gt;❌ 错误提示&lt;/h4&gt;
+    &lt;p&gt;这是一个错误提示框，用于显示操作失败或配置错误的信息。&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>信息提示框</h3>
+                <div class="example-box">
+                    <div class="info-box">
+                        <h4>ℹ️ 信息提示</h4>
+                        <p>这是一个信息提示框，用于展示补充说明或额外的背景信息。</p>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="info-box"&gt;
+    &lt;h4&gt;ℹ️ 信息提示&lt;/h4&gt;
+    &lt;p&gt;这是一个信息提示框，用于展示补充说明或额外的背景信息。&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>小贴士卡片</h3>
+                <div class="example-box">
+                    <div class="tip-card">
+                        <h3>小贴士标题</h3>
+                        <p>这里是小贴士内容，可以提供额外的建议或技巧。可以包含<a href="#">链接</a>或其他格式化内容。</p>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="tip-card"&gt;
+    &lt;h3&gt;小贴士标题&lt;/h3&gt;
+    &lt;p&gt;这里是小贴士内容，可以提供额外的建议或技巧。可以包含&lt;a href="#"&gt;链接&lt;/a&gt;或其他格式化内容。&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 卡片与面板 -->
+            <section class="content-section">
+                <h2 id="cards">卡片与面板</h2>
+
+                <h3>工具卡片</h3>
+                <div class="example-box">
+                    <div class="tool-cards">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <img src="../../assets/images/placeholder.png" alt="工具名称" class="no-preview">
+                            </div>
+                            <div class="tool-info">
+                                <h3>工具名称 <span class="difficulty difficulty-beginner">初级</span></h3>
+                                <p>工具简短描述文本，介绍其主要功能和特点</p>
+                                <div class="tool-tags">
+                                    <span class="tag">PC</span>
+                                    <span class="tag">Windows</span>
+                                    <span class="tag">标签3</span>
+                                </div>
+                                <a href="#" class="btn-view">查看教程</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="tool-cards"&gt;
+    &lt;div class="tool-card"&gt;
+        &lt;div class="tool-icon"&gt;
+            &lt;img src="../../assets/images/placeholder.png" alt="工具名称" class="no-preview"&gt;
+        &lt;/div&gt;
+        &lt;div class="tool-info"&gt;
+            &lt;h3&gt;工具名称 &lt;span class="difficulty difficulty-beginner"&gt;初级&lt;/span&gt;&lt;/h3&gt;
+            &lt;p&gt;工具简短描述文本，介绍其主要功能和特点&lt;/p&gt;
+            &lt;div class="tool-tags"&gt;
+                &lt;span class="tag"&gt;PC&lt;/span&gt;
+                &lt;span class="tag"&gt;Windows&lt;/span&gt;
+                &lt;span class="tag"&gt;标签3&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;a href="#" class="btn-view"&gt;查看教程&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>难度标签</h3>
+                <div class="example-box">
+                    <span class="difficulty difficulty-beginner">初级</span>
+                    <span class="difficulty difficulty-intermediate">中级</span>
+                    <span class="difficulty difficulty-advanced">高级</span>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;span class="difficulty difficulty-beginner"&gt;初级&lt;/span&gt;
+&lt;span class="difficulty difficulty-intermediate"&gt;中级&lt;/span&gt;
+&lt;span class="difficulty difficulty-advanced"&gt;高级&lt;/span&gt;</code></pre>
+                </div>
+
+                <h3>标签样式</h3>
+                <div class="example-box">
+                    <span class="tag">默认标签</span>
+                    <span class="tag tag-primary">主要</span>
+                    <span class="tag tag-secondary">次要</span>
+                    <span class="tag tag-success">成功</span>
+                    <span class="tag tag-danger">危险</span>
+                    <span class="tag tag-warning">警告</span>
+                    <span class="tag tag-info">信息</span>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;span class="tag"&gt;默认标签&lt;/span&gt;
+&lt;span class="tag tag-primary"&gt;主要&lt;/span&gt;
+&lt;span class="tag tag-secondary"&gt;次要&lt;/span&gt;
+&lt;span class="tag tag-success"&gt;成功&lt;/span&gt;
+&lt;span class="tag tag-danger"&gt;危险&lt;/span&gt;
+&lt;span class="tag tag-warning"&gt;警告&lt;/span&gt;
+&lt;span class="tag tag-info"&gt;信息&lt;/span&gt;</code></pre>
+                </div>
+
+                <h3>特性卡片</h3>
+                <div class="example-box">
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <div class="feature-icon">🚀</div>
+                            <h3>高速连接</h3>
+                            <p>提供稳定快速的连接体验，适合各类网络环境</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h3>安全防护</h3>
+                            <p>采用先进加密技术，保护您的网络数据安全</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🌐</div>
+                            <h3>全球节点</h3>
+                            <p>覆盖全球多个区域的服务器节点，随时随地连接</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="feature-cards"&gt;
+    &lt;div class="feature-card"&gt;
+        &lt;div class="feature-icon"&gt;🚀&lt;/div&gt;
+        &lt;h3&gt;高速连接&lt;/h3&gt;
+        &lt;p&gt;提供稳定快速的连接体验，适合各类网络环境&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="feature-card"&gt;
+        &lt;div class="feature-icon"&gt;🔒&lt;/div&gt;
+        &lt;h3&gt;安全防护&lt;/h3&gt;
+        &lt;p&gt;采用先进加密技术，保护您的网络数据安全&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="feature-card"&gt;
+        &lt;div class="feature-icon"&gt;🌐&lt;/div&gt;
+        &lt;h3&gt;全球节点&lt;/h3&gt;
+        &lt;p&gt;覆盖全球多个区域的服务器节点，随时随地连接&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>基础卡片</h3>
+                <div class="example-box">
+                    <div class="basic-card">
+                        <h3>卡片标题</h3>
+                        <p>卡片内容区域，可以包含任意HTML元素，如文字、图片、列表等。</p>
+                        <a href="#" class="card-link">查看详情</a>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="basic-card"&gt;
+    &lt;h3&gt;卡片标题&lt;/h3&gt;
+    &lt;p&gt;卡片内容区域，可以包含任意HTML元素，如文字、图片、列表等。&lt;/p&gt;
+    &lt;a href="#" class="card-link"&gt;查看详情&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>步骤卡片</h3>
+                <div class="example-box">
+                    <div class="step">
+                        <h3>步骤 1: 步骤标题</h3>
+                        <p>步骤的详细说明文字。可以添加<a href="#">链接</a>和解释内容。</p>
+                        <img src="../../assets/images/placeholder.png" alt="步骤示意图" class="step-image">
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="step"&gt;
+    &lt;h3&gt;步骤 1: 步骤标题&lt;/h3&gt;
+    &lt;p&gt;步骤的详细说明文字。可以添加&lt;a href="#"&gt;链接&lt;/a&gt;和解释内容。&lt;/p&gt;
+    &lt;img src="../../assets/images/placeholder.png" alt="步骤示意图" class="step-image"&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 基础内容部分 -->
+            <section class="content-section">
+                <h2 id="basic">基础内容</h2>
+
+                <!-- 文本格式示例 -->
+                <h3>文本格式</h3>
+                <p>这是普通段落文本。<strong>这是加粗文本</strong>，<em>这是斜体文本</em>，<u>这是下划线文本</u>，<code>这是代码片段</code>。</p>
+
+                <!-- 引用块示例 -->
+                <blockquote>
+                    <p>这是一个引用块，可以用来引用其他来源的内容或特别强调的信息。</p>
+                </blockquote>
+
+                <!-- 表格示例 -->
+                <h3>表格示例</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>表头1</th>
+                                <th>表头2</th>
+                                <th>表头3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>内容1</td>
+                                <td>内容2</td>
+                                <td>内容3</td>
+                            </tr>
+                            <tr>
+                                <td>内容4</td>
+                                <td>内容5</td>
+                                <td>内容6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 不同类型列表 -->
+                <h3>列表类型</h3>
+                <p>有序列表：</p>
+                <ol>
+                    <li>第一项内容</li>
+                    <li>第二项内容</li>
+                    <li>第三项内容</li>
+                </ol>
+
+                <p>无序列表：</p>
+                <ul>
+                    <li>列表项目一</li>
+                    <li>列表项目二</li>
+                    <li>列表项目三</li>
+                </ul>
+            </section>
+
+            <!-- 常用组件部分 -->
+            <section class="content-section">
+                <h2 id="components">常用组件</h2>
+
+                <!-- 警告框 -->
+                <div class="warning-box">
+                    <h4>⚠️ 警告</h4>
+                    <p>这是一个警告提示框，用于显示需要特别注意的重要信息。</p>
+                </div>
+
+                <!-- 成功提示框 -->
+                <div class="success-box">
+                    <h4>✅ 成功提示</h4>
+                    <p>这是一个成功提示框，用于显示操作成功或正确配置的信息。</p>
+                </div>
+
+                <!-- 折叠面板 -->
+                <h3>折叠面板</h3>
+                <details>
+                    <summary>点击展开更多内容</summary>
+                    <div class="details-content">
+                        <p>这里是折叠内容，可以包含详细的说明、代码或额外信息。</p>
+                        <p>用户只有在需要时才会展开查看，有助于保持页面简洁。</p>
+                    </div>
+                </details>
+
+                <!-- 标签系统 -->
+                <h3>标签系统</h3>
+                <div class="tags-container">
+                    <span class="tag tag-primary">主要</span>
+                    <span class="tag tag-secondary">次要</span>
+                    <span class="tag tag-success">成功</span>
+                    <span class="tag tag-danger">危险</span>
+                    <span class="tag tag-warning">警告</span>
+                    <span class="tag tag-info">信息</span>
+                </div>
+
+                <!-- 按钮样式 -->
+                <h3>按钮样式</h3>
+                <div class="buttons-container">
+                    <a href="#" class="btn btn-primary">主要按钮</a>
+                    <a href="#" class="btn btn-secondary">次要按钮</a>
+                    <a href="#" class="btn btn-outline">边框按钮</a>
+                </div>
+            </section>
+
+            <!-- 进阶内容部分 -->
+            <section class="content-section">
+                <h2 id="advanced">进阶内容</h2>
+
+                <!-- 代码块示例 -->
+                <h3>代码块</h3>
+                <pre><code class="language-javascript">// JavaScript代码示例
+function exampleFunction() {
+    const data = {
+        name: 'ToolStore',
+        version: '1.0.0'
+    };
+    
+    console.log('示例代码:', data);
+    return data;
+}</code></pre>
+
+                <!-- 终端命令示例 -->
+                <h3>终端命令</h3>
+                <div class="terminal-block">
+                    <pre><code>$ sudo apt update
+$ sudo apt install clash
+$ clash -d . -f config.yaml</code></pre>
+                </div>
+
+                <!-- 交互式元素 -->
+                <h3>交互式内容</h3>
+                <div class="interactive-container">
+                    <div class="tabs">
+                        <div class="tab-header">
+                            <div class="tab active" data-tab="tab1">选项卡1</div>
+                            <div class="tab" data-tab="tab2">选项卡2</div>
+                            <div class="tab" data-tab="tab3">选项卡3</div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab1">
+                                <p>这是第一个选项卡的内容。可以包含任何HTML元素。</p>
+                            </div>
+                            <div class="tab-pane" id="tab2">
+                                <p>这是第二个选项卡的内容。用于分类展示相关但不同的内容。</p>
+                            </div>
+                            <div class="tab-pane" id="tab3">
+                                <p>这是第三个选项卡的内容。适合用于切换不同平台的操作指南。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 图片展示区 -->
+                <h3>图片展示</h3>
+                <div class="image-gallery">
+                    <figure class="image-container">
+                        <img src="../../assets/images/placeholder.png" alt="示例图片" class="tutorial-image">
+                        <figcaption>图片说明文字 - 点击可放大查看</figcaption>
+                    </figure>
+                </div>
+
+                <!-- 常见问题解答 -->
+                <h3>常见问题解答</h3>
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary>问题1：这是一个常见问题？</summary>
+                        <div class="faq-answer">
+                            <p>这是对问题1的详细回答。提供清晰、简洁的解释，必要时可以包含链接或图片辅助说明。</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>问题2：这是另一个常见问题？</summary>
+                        <div class="faq-answer">
+                            <p>这是对问题2的详细回答。可以列出步骤或提供相关资源链接。</p>
+                            <ol>
+                                <li>第一步操作</li>
+                                <li>第二步操作</li>
+                                <li>第三步操作</li>
+                            </ol>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- 按钮与交互控件 -->
+            <section class="content-section">
+                <h2 id="buttons">按钮与交互控件</h2>
+
+                <h3>基础按钮</h3>
+                <div class="example-box">
+                    <a href="#" class="btn">默认按钮</a>
+                    <a href="#" class="btn btn-primary">主要按钮</a>
+                    <a href="#" class="btn btn-secondary">次要按钮</a>
+                    <a href="#" class="btn btn-success">成功按钮</a>
+                    <a href="#" class="btn btn-danger">危险按钮</a>
+                    <a href="#" class="btn btn-outline">边框按钮</a>
+                    <a href="#" class="btn btn-small">小尺寸按钮</a>
+                    <a href="#" class="btn btn-large">大尺寸按钮</a>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;a href="#" class="btn"&gt;默认按钮&lt;/a&gt;
+&lt;a href="#" class="btn btn-primary"&gt;主要按钮&lt;/a&gt;
+&lt;a href="#" class="btn btn-secondary"&gt;次要按钮&lt;/a&gt;
+&lt;a href="#" class="btn btn-success"&gt;成功按钮&lt;/a&gt;
+&lt;a href="#" class="btn btn-danger"&gt;危险按钮&lt;/a&gt;
+&lt;a href="#" class="btn btn-outline"&gt;边框按钮&lt;/a&gt;
+&lt;a href="#" class="btn btn-small"&gt;小尺寸按钮&lt;/a&gt;
+&lt;a href="#" class="btn btn-large"&gt;大尺寸按钮&lt;/a&gt;</code></pre>
+                </div>
+
+                <h3>图标按钮</h3>
+                <div class="example-box">
+                    <a href="#" class="btn btn-icon"><span class="icon-download"></span> 下载</a>
+                    <a href="#" class="btn btn-icon"><span class="icon-external"></span> 外部链接</a>
+                    <a href="#" class="btn btn-icon btn-primary"><span class="icon-arrow"></span> 继续</a>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;a href="#" class="btn btn-icon"&gt;&lt;span class="icon-download"&gt;&lt;/span&gt; 下载&lt;/a&gt;
+&lt;a href="#" class="btn btn-icon"&gt;&lt;span class="icon-external"&gt;&lt;/span&gt; 外部链接&lt;/a&gt;
+&lt;a href="#" class="btn btn-icon btn-primary"&gt;&lt;span class="icon-arrow"&gt;&lt;/span&gt; 继续&lt;/a&gt;</code></pre>
+                </div>
+
+                <h3>按钮组</h3>
+                <div class="example-box">
+                    <div class="btn-group">
+                        <a href="#" class="btn">按钮1</a>
+                        <a href="#" class="btn">按钮2</a>
+                        <a href="#" class="btn">按钮3</a>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="btn-group"&gt;
+    &lt;a href="#" class="btn"&gt;按钮1&lt;/a&gt;
+    &lt;a href="#" class="btn"&gt;按钮2&lt;/a&gt;
+    &lt;a href="#" class="btn"&gt;按钮3&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>折叠面板</h3>
+                <div class="example-box">
+                    <details>
+                        <summary>点击展开更多内容</summary>
+                        <div class="details-content">
+                            <p>这里是折叠内容，可以包含详细的说明、代码或额外信息。</p>
+                            <p>用户只有在需要时才会展开查看，有助于保持页面简洁。</p>
+                        </div>
+                    </details>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;details&gt;
+    &lt;summary&gt;点击展开更多内容&lt;/summary&gt;
+    &lt;div class="details-content"&gt;
+        &lt;p&gt;这里是折叠内容，可以包含详细的说明、代码或额外信息。&lt;/p&gt;
+        &lt;p&gt;用户只有在需要时才会展开查看，有助于保持页面简洁。&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/details&gt;</code></pre>
+                </div>
+
+                <h3>选项卡界面</h3>
+                <div class="example-box">
+                    <div class="tabs">
+                        <div class="tab-header">
+                            <div class="tab active" data-tab="tab1">选项卡1</div>
+                            <div class="tab" data-tab="tab2">选项卡2</div>
+                            <div class="tab" data-tab="tab3">选项卡3</div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab1">
+                                <p>这是第一个选项卡的内容。可以包含任何HTML元素。</p>
+                            </div>
+                            <div class="tab-pane" id="tab2">
+                                <p>这是第二个选项卡的内容。用于分类展示相关但不同的内容。</p>
+                            </div>
+                            <div class="tab-pane" id="tab3">
+                                <p>这是第三个选项卡的内容。适合用于切换不同平台的操作指南。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="tabs"&gt;
+    &lt;div class="tab-header"&gt;
+        &lt;div class="tab active" data-tab="tab1"&gt;选项卡1&lt;/div&gt;
+        &lt;div class="tab" data-tab="tab2"&gt;选项卡2&lt;/div&gt;
+        &lt;div class="tab" data-tab="tab3"&gt;选项卡3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="tab-content"&gt;
+        &lt;div class="tab-pane active" id="tab1"&gt;
+            &lt;p&gt;这是第一个选项卡的内容。可以包含任何HTML元素。&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="tab-pane" id="tab2"&gt;
+            &lt;p&gt;这是第二个选项卡的内容。用于分类展示相关但不同的内容。&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="tab-pane" id="tab3"&gt;
+            &lt;p&gt;这是第三个选项卡的内容。适合用于切换不同平台的操作指南。&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 多媒体元素 -->
+            <section class="content-section">
+                <h2 id="media">多媒体元素</h2>
+
+                <h3>响应式图片</h3>
+                <div class="example-box">
+                    <img src="../../assets/images/placeholder.png" alt="响应式图片示例" class="responsive-image">
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;img src="../../assets/images/placeholder.png" alt="响应式图片示例" class="responsive-image"&gt;</code></pre>
+                </div>
+
+                <h3>带说明的图片</h3>
+                <div class="example-box">
+                    <figure class="image-container">
+                        <img src="../../assets/images/placeholder.png" alt="带说明的图片" class="tutorial-image">
+                        <figcaption>图片说明文字 - 点击图片可放大查看</figcaption>
+                    </figure>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;figure class="image-container"&gt;
+    &lt;img src="../../assets/images/placeholder.png" alt="带说明的图片" class="tutorial-image"&gt;
+    &lt;figcaption&gt;图片说明文字 - 点击图片可放大查看&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                </div>
+
+                <h3>图片边框样式</h3>
+                <div class="example-box">
+                    <img src="../../assets/images/placeholder.png" alt="带边框的图片" class="image-bordered">
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;img src="../../assets/images/placeholder.png" alt="带边框的图片" class="image-bordered"&gt;</code></pre>
+                </div>
+
+                <h3>图片阴影效果</h3>
+                <div class="example-box">
+                    <img src="../../assets/images/placeholder.png" alt="带阴影的图片" class="image-shadow">
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;img src="../../assets/images/placeholder.png" alt="带阴影的图片" class="image-shadow"&gt;</code></pre>
+                </div>
+
+                <h3>图片画廊</h3>
+                <div class="example-box">
+                    <div class="image-gallery">
+                        <figure class="gallery-item">
+                            <img src="../../assets/images/placeholder.png" alt="画廊图片1" class="gallery-image">
+                            <figcaption>图片1说明</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="../../assets/images/placeholder.png" alt="画廊图片2" class="gallery-image">
+                            <figcaption>图片2说明</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="../../assets/images/placeholder.png" alt="画廊图片3" class="gallery-image">
+                            <figcaption>图片3说明</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="image-gallery"&gt;
+    &lt;figure class="gallery-item"&gt;
+        &lt;img src="../../assets/images/placeholder.png" alt="画廊图片1" class="gallery-image"&gt;
+        &lt;figcaption&gt;图片1说明&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;figure class="gallery-item"&gt;
+        &lt;img src="../../assets/images/placeholder.png" alt="画廊图片2" class="gallery-image"&gt;
+        &lt;figcaption&gt;图片2说明&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;figure class="gallery-item"&gt;
+        &lt;img src="../../assets/images/placeholder.png" alt="画廊图片3" class="gallery-image"&gt;
+        &lt;figcaption&gt;图片3说明&lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>视频嵌入</h3>
+                <div class="example-box">
+                    <div class="video-container">
+                        <!-- 视频嵌入代码会替换为实际的视频 -->
+                        <div class="video-placeholder">视频嵌入示例</div>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="video-container"&gt;
+    &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 代码和命令行 -->
+            <section class="content-section">
+                <h2 id="code">代码和命令行</h2>
+
+                <h3>行内代码</h3>
+                <div class="example-box">
+                    <p>使用 <code>npm install clash-verge</code> 命令安装软件。</p>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;p&gt;使用 &lt;code&gt;npm install clash-verge&lt;/code&gt; 命令安装软件。&lt;/p&gt;</code></pre>
+                </div>
+
+                <h3>代码块</h3>
+                <div class="example-box">
+                    <pre><code class="language-javascript">// JavaScript代码示例
+function exampleFunction() {
+    const data = {
+        name: 'ToolStore',
+        version: '1.0.0'
+    };
+    
+    console.log('示例代码:', data);
+    return data;
+}</code></pre>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;pre&gt;&lt;code class="language-javascript"&gt;// JavaScript代码示例
+function exampleFunction() {
+    const data = {
+        name: 'ToolStore',
+        version: '1.0.0'
+    };
+    
+    console.log('示例代码:', data);
+    return data;
+}&lt;/code&gt;&lt;/pre&gt;</code></pre>
+                </div>
+
+                <h3>终端命令</h3>
+                <div class="example-box">
+                    <div class="terminal-block">
+                        <pre><code>$ sudo apt update
+$ sudo apt install clash
+$ clash -d . -f config.yaml</code></pre>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="terminal-block"&gt;
+    &lt;pre&gt;&lt;code&gt;$ sudo apt update
+$ sudo apt install clash
+$ clash -d . -f config.yaml&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>文件内容示例</h3>
+                <div class="example-box">
+                    <div class="file-content">
+                        <div class="file-header">config.yaml</div>
+                        <pre><code>port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+proxies:
+  - name: "服务器1"
+    type: ss
+    server: example.com
+    port: 443
+    cipher: aes-256-gcm
+    password: password</code></pre>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="file-content"&gt;
+    &lt;div class="file-header"&gt;config.yaml&lt;/div&gt;
+    &lt;pre&gt;&lt;code&gt;port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+proxies:
+  - name: "服务器1"
+    type: ss
+    server: example.com
+    port: 443
+    cipher: aes-256-gcm
+    password: password&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 下载和引用 -->
+            <section class="content-section">
+                <h2 id="downloads">下载和引用</h2>
+
+                <h3>下载按钮</h3>
+                <div class="example-box">
+                    <a href="#" class="download-button">
+                        <span class="download-icon"></span>
+                        <div class="download-info">
+                            <span class="download-title">Clash Verge v1.2.3</span>
+                            <span class="download-meta">Windows | 10.5MB</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;a href="#" class="download-button"&gt;
+    &lt;span class="download-icon"&gt;&lt;/span&gt;
+    &lt;div class="download-info"&gt;
+        &lt;span class="download-title"&gt;Clash Verge v1.2.3&lt;/span&gt;
+        &lt;span class="download-meta"&gt;Windows | 10.5MB&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/a&gt;</code></pre>
+                </div>
+
+                <h3>文件下载列表</h3>
+                <div class="example-box">
+                    <div class="download-list">
+                        <div class="download-item">
+                            <div class="download-name">配置文件模板</div>
+                            <div class="download-description">适用于新手的基础配置模板</div>
+                            <a href="#" class="btn-download">下载</a>
+                        </div>
+                        <div class="download-item">
+                            <div class="download-name">高级配置示例</div>
+                            <div class="download-description">包含更多自定义规则的高级配置</div>
+                            <a href="#" class="btn-download">下载</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="download-list"&gt;
+    &lt;div class="download-item"&gt;
+        &lt;div class="download-name"&gt;配置文件模板&lt;/div&gt;
+        &lt;div class="download-description"&gt;适用于新手的基础配置模板&lt;/div&gt;
+        &lt;a href="#" class="btn-download"&gt;下载&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="download-item"&gt;
+        &lt;div class="download-name"&gt;高级配置示例&lt;/div&gt;
+        &lt;div class="download-description"&gt;包含更多自定义规则的高级配置&lt;/div&gt;
+        &lt;a href="#" class="btn-download"&gt;下载&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>引用块</h3>
+                <div class="example-box">
+                    <blockquote>
+                        <p>这是一个引用块，可以用来引用其他来源的内容或特别强调的信息。</p>
+                        <cite>— 引用来源</cite>
+                    </blockquote>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;blockquote&gt;
+    &lt;p&gt;这是一个引用块，可以用来引用其他来源的内容或特别强调的信息。&lt;/p&gt;
+    &lt;cite&gt;— 引用来源&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 常见问题解答 -->
+            <section class="content-section">
+                <h2 id="faq">常见问题解答</h2>
+
+                <h3>基本FAQ格式</h3>
+                <div class="example-box">
+                    <div class="faq-container">
+                        <details class="faq-item">
+                            <summary>问题1：这是一个常见问题？</summary>
+                            <div class="faq-answer">
+                                <p>这是对问题1的详细回答。提供清晰、简洁的解释，必要时可以包含链接或图片辅助说明。</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>问题2：这是另一个常见问题？</summary>
+                            <div class="faq-answer">
+                                <p>这是对问题2的详细回答。可以列出步骤或提供相关资源链接。</p>
+                                <ol>
+                                    <li>第一步操作</li>
+                                    <li>第二步操作</li>
+                                    <li>第三步操作</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="faq-container"&gt;
+    &lt;details class="faq-item"&gt;
+        &lt;summary&gt;问题1：这是一个常见问题？&lt;/summary&gt;
+        &lt;div class="faq-answer"&gt;
+            &lt;p&gt;这是对问题1的详细回答。提供清晰、简洁的解释，必要时可以包含链接或图片辅助说明。&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/details&gt;
+    
+    &lt;details class="faq-item"&gt;
+        &lt;summary&gt;问题2：这是另一个常见问题？&lt;/summary&gt;
+        &lt;div class="faq-answer"&gt;
+            &lt;p&gt;这是对问题2的详细回答。可以列出步骤或提供相关资源链接。&lt;/p&gt;
+            &lt;ol&gt;
+                &lt;li&gt;第一步操作&lt;/li&gt;
+                &lt;li&gt;第二步操作&lt;/li&gt;
+                &lt;li&gt;第三步操作&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/div&gt;
+    &lt;/details&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>分类FAQ</h3>
+                <div class="example-box">
+                    <div class="faq-section">
+                        <h4>安装问题</h4>
+                        <div class="faq-container">
+                            <details class="faq-item">
+                                <summary>如何安装软件？</summary>
+                                <div class="faq-answer">
+                                    <p>安装步骤说明...</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="faq-section">
+                        <h4>使用问题</h4>
+                        <div class="faq-container">
+                            <details class="faq-item">
+                                <summary>如何配置代理？</summary>
+                                <div class="faq-answer">
+                                    <p>配置代理步骤说明...</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="faq-section"&gt;
+    &lt;h4&gt;安装问题&lt;/h4&gt;
+    &lt;div class="faq-container"&gt;
+        &lt;details class="faq-item"&gt;
+            &lt;summary&gt;如何安装软件？&lt;/summary&gt;
+            &lt;div class="faq-answer"&gt;
+                &lt;p&gt;安装步骤说明...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/details&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="faq-section"&gt;
+    &lt;h4&gt;使用问题&lt;/h4&gt;
+    &lt;div class="faq-container"&gt;
+        &lt;details class="faq-item"&gt;
+            &lt;summary&gt;如何配置代理？&lt;/summary&gt;
+            &lt;div class="faq-answer"&gt;
+                &lt;p&gt;配置代理步骤说明...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/details&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 高级组件和布局 -->
+            <section class="content-section">
+                <h2 id="advanced-components">高级组件和布局</h2>
+
+                <h3>分栏布局</h3>
+                <div class="example-box">
+                    <div class="two-column">
+                        <div class="column">
+                            <h4>左栏标题</h4>
+                            <p>左栏内容，可以是文字、图片或其他元素。</p>
+                        </div>
+                        <div class="column">
+                            <h4>右栏标题</h4>
+                            <p>右栏内容，可以是文字、图片或其他元素。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="two-column"&gt;
+    &lt;div class="column"&gt;
+        &lt;h4&gt;左栏标题&lt;/h4&gt;
+        &lt;p&gt;左栏内容，可以是文字、图片或其他元素。&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="column"&gt;
+        &lt;h4&gt;右栏标题&lt;/h4&gt;
+        &lt;p&gt;右栏内容，可以是文字、图片或其他元素。&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>三栏布局</h3>
+                <div class="example-box">
+                    <div class="three-column">
+                        <div class="column">
+                            <h4>第一栏</h4>
+                            <p>第一栏内容</p>
+                        </div>
+                        <div class="column">
+                            <h4>第二栏</h4>
+                            <p>第二栏内容</p>
+                        </div>
+                        <div class="column">
+                            <h4>第三栏</h4>
+                            <p>第三栏内容</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="three-column"&gt;
+    &lt;div class="column"&gt;
+        &lt;h4&gt;第一栏&lt;/h4&gt;
+        &lt;p&gt;第一栏内容&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="column"&gt;
+        &lt;h4&gt;第二栏&lt;/h4&gt;
+        &lt;p&gt;第二栏内容&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="column"&gt;
+        &lt;h4&gt;第三栏&lt;/h4&gt;
+        &lt;p&gt;第三栏内容&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>图文并排</h3>
+                <div class="example-box">
+                    <div class="image-text-container">
+                        <div class="image-part">
+                            <img src="../../assets/images/placeholder.png" alt="图文并排示例">
+                        </div>
+                        <div class="text-part">
+                            <h4>图文并排标题</h4>
+                            <p>这是与图片并排的文字内容，可以详细描述图片所展示的内容或提供相关的补充信息。</p>
+                            <p>适合用于步骤说明、产品展示等需要图文结合的场景。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="image-text-container"&gt;
+    &lt;div class="image-part"&gt;
+        &lt;img src="../../assets/images/placeholder.png" alt="图文并排示例"&gt;
+    &lt;/div&gt;
+    &lt;div class="text-part"&gt;
+        &lt;h4&gt;图文并排标题&lt;/h4&gt;
+        &lt;p&gt;这是与图片并排的文字内容，可以详细描述图片所展示的内容或提供相关的补充信息。&lt;/p&gt;
+        &lt;p&gt;适合用于步骤说明、产品展示等需要图文结合的场景。&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>比较表</h3>
+                <div class="example-box">
+                    <div class="comparison-table">
+                        <div class="comparison-header">
+                            <div class="comparison-cell header-cell"></div>
+                            <div class="comparison-cell header-cell">ClashMeta</div>
+                            <div class="comparison-cell header-cell">Shadowrocket</div>
+                            <div class="comparison-cell header-cell">Clash Verge</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-cell feature-cell">平台支持</div>
+                            <div class="comparison-cell">Android</div>
+                            <div class="comparison-cell">iOS</div>
+                            <div class="comparison-cell">Windows, macOS, Linux</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-cell feature-cell">规则支持</div>
+                            <div class="comparison-cell">✓</div>
+                            <div class="comparison-cell">✓</div>
+                            <div class="comparison-cell">✓</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-cell feature-cell">自定义配置</div>
+                            <div class="comparison-cell">部分支持</div>
+                            <div class="comparison-cell">有限支持</div>
+                            <div class="comparison-cell">完全支持</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="comparison-table"&gt;
+    &lt;div class="comparison-header"&gt;
+        &lt;div class="comparison-cell header-cell"&gt;&lt;/div&gt;
+        &lt;div class="comparison-cell header-cell"&gt;ClashMeta&lt;/div&gt;
+        &lt;div class="comparison-cell header-cell"&gt;Shadowrocket&lt;/div&gt;
+        &lt;div class="comparison-cell header-cell"&gt;Clash Verge&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="comparison-row"&gt;
+        &lt;div class="comparison-cell feature-cell"&gt;平台支持&lt;/div&gt;
+        &lt;div class="comparison-cell"&gt;Android&lt;/div&gt;
+        &lt;div class="comparison-cell"&gt;iOS&lt;/div&gt;
+        &lt;div class="comparison-cell"&gt;Windows, macOS, Linux&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="comparison-row"&gt;
+        &lt;div class="comparison-cell feature-cell"&gt;规则支持&lt;/div&gt;
+        &lt;div class="comparison-cell"&gt;✓&lt;/div&gt;
+        &lt;div class="comparison-cell"&gt;✓&lt;/div&gt;
+        &lt;div class="comparison-cell"&gt;✓&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="comparison-row"&gt;
+        &lt;div class="comparison-cell feature-cell"&gt;自定义配置&lt;/div&gt;
+        &lt;div class="comparison-cell"&gt;部分支持&lt;/div&gt;
+        &lt;div class="comparison-cell"&gt;有限支持&lt;/div&gt;
+        &lt;div class="comparison-cell"&gt;完全支持&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3>时间线</h3>
+                <div class="example-box">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023年1月</div>
+                            <div class="timeline-content">
+                                <h4>Clash Verge 1.0 发布</h4>
+                                <p>首个正式版本发布，提供基础代理功能</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023年6月</div>
+                            <div class="timeline-content">
+                                <h4>Clash Verge 1.2 更新</h4>
+                                <p>增加多种新功能，优化用户界面</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023年12月</div>
+                            <div class="timeline-content">
+                                <h4>Clash Verge 2.0 发布</h4>
+                                <p>全新架构，性能大幅提升</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-snippet">
+                    <pre><code>&lt;div class="timeline"&gt;
+    &lt;div class="timeline-item"&gt;
+        &lt;div class="timeline-date"&gt;2023年1月&lt;/div&gt;
+        &lt;div class="timeline-content"&gt;
+            &lt;h4&gt;Clash Verge 1.0 发布&lt;/h4&gt;
+            &lt;p&gt;首个正式版本发布，提供基础代理功能&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="timeline-item"&gt;
+        &lt;div class="timeline-date"&gt;2023年6月&lt;/div&gt;
+        &lt;div class="timeline-content"&gt;
+            &lt;h4&gt;Clash Verge 1.2 更新&lt;/h4&gt;
+            &lt;p&gt;增加多种新功能，优化用户界面&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="timeline-item"&gt;
+        &lt;div class="timeline-date"&gt;2023年12月&lt;/div&gt;
+        &lt;div class="timeline-content"&gt;
+            &lt;h4&gt;Clash Verge 2.0 发布&lt;/h4&gt;
+            &lt;p&gt;全新架构，性能大幅提升&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 样式示例结束 -->
+            <section class="content-section">
+                <h2 id="template-usage">模板使用说明</h2>
+                <div class="note">
+                    <p><strong>提示：</strong> 此模板文件包含了创建文档页面所需的各种HTML组件和样式示例。创建新页面时，可以直接复制需要的部分并根据实际需求修改内容。</p>
+                </div>
+
+                <p>使用步骤：</p>
+                <ol>
+                    <li>复制此模板创建新的HTML文件</li>
+                    <li>根据页面内容修改标题、描述和关键词</li>
+                    <li>从模板中选择需要的组件并复制到相应位置</li>
+                    <li>替换示例内容为实际内容</li>
+                    <li>确保更新右侧目录导航的链接</li>
+                </ol>
+
+                <div class="tip-card">
+                    <h3>最佳实践</h3>
+                    <p>保持页面结构一致性，使用统一的样式和命名规范。在添加新的自定义样式前，先检查是否已有现成的组件可用。</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- 右侧目录导航 -->
+        <aside class="table-of-contents">
+            <h4 class="toc-header">目录</h4>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#page-structure">页面结构与布局</a></li>
+                <li class="toc-item"><a href="#lists">列表元素</a></li>
+                <li class="toc-item"><a href="#tables">表格元素</a></li>
+                <li class="toc-item"><a href="#notifications">提示框与通知</a></li>
+                <li class="toc-item"><a href="#cards">卡片与面板</a></li>
+                <li class="toc-item"><a href="#buttons">按钮与交互控件</a></li>
+                <li class="toc-item"><a href="#media">多媒体元素</a></li>
+                <li class="toc-item"><a href="#code">代码和命令行</a></li>
+                <li class="toc-item"><a href="#downloads">下载和引用</a></li>
+                <li class="toc-item"><a href="#faq">常见问题解答</a></li>
+                <li class="toc-item"><a href="#advanced-components">高级组件和布局</a></li>
+                <li class="toc-item"><a href="#template-usage">模板使用说明</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2023-2025 ToolStore. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <!-- 放大预览模态框 -->
+    <div id="imageModal" class="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="back-to-top-btn" title="回到顶部"></button>
+
+    <!-- 引入公共JS -->
+    <script src="../../assets/scripts/config.js"></script>
+    <!-- 文档站专用JS -->
+    <script src="../js/doc-scripts.js"></script>
+    <!-- 单页应用功能 -->
+    <script src="../js/spa.js"></script>
+    <!-- 主题切换功能 -->
+    <script src="../js/theme.js"></script>
+    <!-- 回到顶部按钮功能 -->
+    <script src="../js/top.js"></script>
+</body>
+
+</html>

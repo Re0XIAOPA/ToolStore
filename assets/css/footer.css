@@ -1,0 +1,105 @@
+/* 
+ * 页脚样式
+ * 页面底部区域的整体布局和背景渐变效果
+ */
+footer {
+    padding: 20px 0;
+    text-align: center;
+    background: linear-gradient(180deg, transparent, rgba(26, 29, 36, 0.5));
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 
+ * 版权信息样式
+ * 版权文本的布局和字体样式
+ */
+.copyright {
+    font-size: 14px;
+    color: rgba(255, 255, 255);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* 
+ * 链接样式
+ * 页脚链接的颜色、动画效果和交互状态
+ */
+.footer-link {
+    color: #7c8aff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-link svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.footer-link:hover {
+    color: #96a1ff;
+    text-shadow: 0 0 10px rgba(124, 138, 255, 0.3);
+}
+
+.footer-link svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    fill: #7c8aff;
+}
+
+.footer-link:hover svg {
+    fill: #96a1ff;
+    background: rgba(124, 138, 255, 0.1);
+}
+
+/* 
+ * 分隔符样式
+ * 链接之间的分隔线样式
+ */
+.divider {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 13px;
+}
+
+/* 
+ * 移动端适配
+ * 针对小屏幕设备的响应式布局调整
+ */
+@media screen and (max-width: 768px) {
+    .copyright {
+        flex-wrap: wrap;
+    }
+
+    .footer-link {
+        padding: 2px 4px;
+    }
+}
+
+/* 版本信息样式 */
+.version-info {
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#app-version {
+    color: #7c8aff;
+    font-weight: 500;
+}
