@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/7/2025, 7:22:07 AM
+// 最后更新时间: 5/7/2025, 8:15:41 AM
 
 const downloadLinks = {
     "v2box": {
@@ -60,19 +60,19 @@ const downloadLinks = {
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
-        "version": "mobile-2.24.10",
+        "version": "v2.24.10",
         "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.24.10/mobile-universal-release.apk",
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayn": {
-        "version": "7.11.3",
+        "version": "v7.11.3",
         "windows": "https://github.com/2dust/v2rayN/releases/download/7.11.3/v2rayN-linux-64.zip",
         "mac": "https://github.com/2dust/v2rayN/releases/download/7.11.3/v2rayN-macos-64.dmg",
         "linux": "https://github.com/2dust/v2rayN/releases/download/7.11.3/v2rayN-linux-64.AppImage",
         "github": "https://github.com/2dust/v2rayN"
     },
     "v2rayng": {
-        "version": "1.9.46",
+        "version": "v1.9.46",
         "android": "https://github.com/2dust/v2rayNG/releases/download/1.9.46/v2rayNG_1.9.46_universal.apk",
         "github": "https://github.com/2dust/v2rayNG"
     },
@@ -90,7 +90,7 @@ const downloadLinks = {
         "github": "https://github.com/chen08209/FlClash"
     },
     "nekobox": {
-        "version": "1.3.9",
+        "version": "v1.3.9",
         "android": "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/download/1.3.9/NekoBox-1.3.9-arm64-v8a.apk",
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
