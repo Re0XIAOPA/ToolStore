@@ -1,8 +1,4 @@
 // 下载链接配置  全是小写
-<<<<<<< HEAD
-=======
-// 最后更新时间: 5/9/2025, 7:25:52 PM
->>>>>>> 00a2e71f1bf0fd744e763ced4acdf1299d9e933d
 
 const downloadLinks = {
     "v2box": {
