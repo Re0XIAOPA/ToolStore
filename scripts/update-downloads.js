@@ -69,10 +69,10 @@ const CONFIG = {
     },
     // 平台特定的文件匹配模式 - 扩展更多关键词和扩展名
     platformPatterns: {
-        windows: /\.exe$|\.msi$|\.zip$|\.msix$|\.appx$|windows|win|win32|win64|win-|installer|setup/i,
-        mac: /\.dmg$|\.pkg$|\.app$|\.zip$|macos|mac|darwin|osx|apple/i,
+        windows: /\.exe$|\.msi$|windows-amd64|\.zip$|\.msix$|\.appx$|windows|win|win32|win64|win-|win\.|x64-win|x86-win|amd64-windows|installer|setup|portable|release-win/i,
+        mac: /\.dmg$|\.pkg$|\.app$|\.zip$|macos|mac|darwin|osx|apple|darwin-amd64|darwin-arm64/i,
         linux: /\.deb$|\.rpm$|\.AppImage$|\.tar\.gz$|\.snap$|linux|ubuntu|debian|fedora|arch|x11/i,
-        android: /\.apk$|android|arm64-v8a|armeabi|mobile/i,
+        android: /\universal|.apk$|android|arm64-v8a|armeabi|mobile/i,
         ios: /\.ipa$|ios|iphone|ipad|apple/i
     },
     // 平台排序顺序
@@ -191,20 +191,20 @@ async function getLatestRelease(owner, repo, retryCount = 0) {
     } catch (error) {
         if (error.response) {
             // 处理速率限制错误
-            if (error.response.status === 403 && error.response.data && 
+            if (error.response.status === 403 && error.response.data &&
                 error.response.data.message && error.response.data.message.includes('rate limit')) {
-                
+
                 // 最多重试3次
                 if (retryCount < 3) {
                     const waitTime = Math.pow(2, retryCount) * 1000; // 指数退避
-                    console.log(`遇到API速率限制，等待${waitTime/1000}秒后重试(${retryCount + 1}/3)...`);
-                    
+                    console.log(`遇到API速率限制，等待${waitTime / 1000}秒后重试(${retryCount + 1}/3)...`);
+
                     // 等待一段时间后重试
                     await new Promise(resolve => setTimeout(resolve, waitTime));
                     return getLatestRelease(owner, repo, retryCount + 1);
                 }
             }
-            
+
             console.error(`获取 ${owner}/${repo} 的最新版本失败:`, error.response.status, error.response.data.message);
         } else if (error.code === 'ECONNABORTED') {
             console.error(`获取 ${owner}/${repo} 的最新版本超时`);
@@ -323,6 +323,11 @@ function calculateAssetScore(platform, assetName, assetUrl, baseScore) {
     // 1. 平台关键词匹配度
     if (platform === 'windows' && (assetName.includes('windows') || assetName.includes('win'))) {
         score += 50;
+        // Windows额外匹配逻辑
+        if (/[\._-]win(dows)?[\._-]/i.test(assetName)) score += 5; // 专门为Windows构建的版本
+        if (/win(dows)?[\._-](x64|amd64|64|x86)/i.test(assetName)) score += 5; // 包含架构信息的Windows版本
+        if (/[\._-](x64|amd64|64|x86)[\._-]win(dows)?/i.test(assetName)) score += 5; // 另一种架构格式
+        if (/\.exe$/i.test(assetName)) score += 10; // .exe文件额外加分
     } else if (platform === 'mac' && (assetName.includes('macos') || assetName.includes('mac') || assetName.includes('darwin'))) {
         score += 50;
     } else if (platform === 'linux' && (assetName.includes('linux') || assetName.includes('ubuntu') || assetName.includes('debian'))) {
@@ -425,13 +430,24 @@ function validatePlatformLinks(platformLinks, platformScores) {
     }
 
     // 移除可能指向错误资源的链接
-    for (const [platform, url] of Object.entries(platformLinks)) {
+    for (const [platform, url] of Object.entries({ ...platformLinks })) {
         const urlLower = url.toLowerCase();
 
         // 跳过特定仓库的冲突检测 - 新增特例处理
         if (urlLower.includes('gui.for.singbox') || urlLower.includes('gui-for-cores')) {
             console.log(`跳过对 ${platform} 平台的冲突检测: ${url} (GUI.for.SingBox特例)`);
             continue;
+        }
+
+        // 对Windows平台做特殊处理，允许更宽松的匹配
+        if (platform === 'windows') {
+            // 对于Windows平台链接，只有当明确包含linux或macOS关键词时才排除
+            if (/\b(linux|ubuntu|debian|fedora|arch)\b/i.test(urlLower) ||
+                /\b(macos|darwin|osx)\b/i.test(urlLower)) {
+                console.warn(`警告: Windows平台的链接可能指向其他平台: ${url}`);
+                delete platformLinks[platform];
+            }
+            continue; // 跳过其他检查
         }
 
         // 检查链接是否指向不匹配的平台文件
@@ -506,17 +522,17 @@ async function updateDownloadConfig() {
         for (const [name, config] of Object.entries(manualConfig.downloadLinks)) {
             // 检查是否保留自动获取的链接（默认为false）
             const keepAutoLinks = config.keepAutoLinks === true;
-            
+
             if (autoDownloadLinks[name] && keepAutoLinks) {
                 // 如果同时存在自动和手动配置，执行智能合并
                 const mergedLinks = { ...autoDownloadLinks[name] };
-                
+
                 // 对每个平台分别处理
                 for (const platform of [...CONFIG.platformOrder, 'version']) {
                     // 如果手动配置了此平台
                     if (platform in config) {
                         const manualValue = config[platform];
-                        
+
                         // 1. 如果手动值是空字符串，保留自动获取的值
                         if (manualValue === '') {
                             // 保持自动获取的值不变
@@ -535,31 +551,31 @@ async function updateDownloadConfig() {
                     }
                     // 如果没有手动配置此平台，保留自动获取的值
                 }
-                
+
                 downloadLinks[name] = mergedLinks;
                 console.log(`已智能合并 ${name} 的自动和手动配置下载链接`);
             } else if (autoDownloadLinks[name] && !keepAutoLinks) {
                 // 如果不保留自动链接，只使用手动配置的链接
                 const manualLinks = { ...config };
                 delete manualLinks.keepAutoLinks;  // 移除特殊属性
-                
+
                 // 但要保留版本号
                 if (!manualLinks.version && autoDownloadLinks[name].version) {
                     manualLinks.version = autoDownloadLinks[name].version;
                 }
-                
+
                 // 确保至少有github链接
                 if (!manualLinks.github && autoDownloadLinks[name].github) {
                     manualLinks.github = autoDownloadLinks[name].github;
                 }
-                
+
                 downloadLinks[name] = sortObjectByOrder(manualLinks, CONFIG.platformOrder);
                 console.log(`已使用手动配置替换 ${name} 的下载链接`);
             } else if (!autoDownloadLinks[name]) {
                 // 如果只有手动配置，直接使用
                 const manualLinks = { ...config };
                 delete manualLinks.keepAutoLinks;  // 移除特殊属性
-                
+
                 downloadLinks[name] = sortObjectByOrder(manualLinks, CONFIG.platformOrder);
                 console.log(`已添加 ${name} 的手动配置下载链接`);
             }
