@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 2025/5/9 18:14:53
+// 最后更新时间: 2025/5/10 03:01:41
 
 const downloadLinks = {
     "v2box": {
@@ -68,6 +68,12 @@ const downloadLinks = {
         "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.11.10/sing-box_1.11.10_linux_amd64.deb",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
+    },
+    "gui.for.clash": {
+        "version": "v1.9.7",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.7/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.7/GUI.for.Clash-linux-amd64.zip",
+        "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
         "version": "v0.8.84",

@@ -44,6 +44,11 @@ export const toolsData = [
         link: "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases"
     },
     {
+        name: "GUI.for.Clash",
+        image: "assets/images/tools/SingBox.png",
+        link: "https://github.com/GUI-for-Cores/GUI.for.Clash/releases"
+    },
+    {
         name: "FlClash",
         image: "assets/images/tools/FlClash.png",
         link: "https://github.com/chen08209/FlClash/releases"
