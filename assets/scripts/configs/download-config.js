@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/9/2025, 10:24:39 AM
+// 最后更新时间: 5/9/2025, 7:25:52 PM
 
 const downloadLinks = {
     "v2box": {
@@ -36,7 +36,7 @@ const downloadLinks = {
     },
     "mihomo party": {
         "version": "v1.7.3",
-        "windows": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.3/mihomo-party-win7-1.7.3-x64-setup.exe",
+        "windows": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.3/mihomo-party-windows-1.7.3-x64-setup.exe",
         "mac": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.3/mihomo-party-macos-1.7.3-arm64.pkg",
         "linux": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.3/mihomo-party-linux-1.7.3-amd64.deb",
         "github": "https://github.com/mihomo-party-org/mihomo-party"
@@ -53,6 +53,7 @@ const downloadLinks = {
     },
     "v2rayn": {
         "version": "v7.12.1",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-windows-arm64-desktop.zip",
         "mac": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-macos-arm64.dmg",
         "linux": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-linux-arm64.deb",
         "github": "https://github.com/2dust/v2rayN"
@@ -64,10 +65,17 @@ const downloadLinks = {
     },
     "singbox": {
         "version": "v1.11.10",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.11.10/sing-box-1.11.10-windows-amd64-legacy.zip",
         "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.11.10/SFM-1.11.10-universal.dmg",
         "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.11.10/sing-box_1.11.10_linux_amd64.deb",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
+    },
+    "gui.for.clash": {
+        "version": "v1.9.7",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.7/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.7/GUI.for.Clash-linux-amd64.zip",
+        "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
         "version": "v0.8.84",
