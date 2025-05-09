@@ -169,5 +169,35 @@ on:
    - 手动配置：可自定义版本号
    - iOS 应用：显示 "N/A"
 
+## 🔑 GitHub API Token 配置
+
+GitHub API 对未认证请求有速率限制（每小时60次），配置 Token 后可提高至每小时5000次：
+
+1. **获取 Token**:
+   - 访问 GitHub > Settings > Developer settings > Personal access tokens > Tokens (classic)
+   - 创建新token，只需勾选 "public_repo" 权限
+   - 复制生成的token
+
+2. **配置方式**:
+   - **方法1**: 编辑 `scripts/config.js` (如不存在请创建):
+     ```javascript
+     module.exports = {
+         githubToken: '你的GitHub Token'
+     };
+     ```
+   - **方法2**: 设置环境变量 `GITHUB_TOKEN`:
+     ```bash
+     # Windows
+     set GITHUB_TOKEN=你的GitHub Token
+     
+     # Linux/Mac
+     export GITHUB_TOKEN=你的GitHub Token
+     ```
+
+3. **注意事项**:
+   - Token过期后，系统会自动退回到未认证状态（每小时60次请求限制）
+   - 请勿将包含实际Token的config.js文件提交到公共仓库
+   - 如遇到 "API rate limit exceeded" 错误，请配置有效的Token
+
 > [!IMPORTANT]
 > 本项目仅仅是个人学习和研究

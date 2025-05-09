@@ -4,22 +4,30 @@ const axios = require('axios');
 const https = require('https');
 const manualConfig = require('./manual-config');
 
+// 导入配置（如果存在）
+let config = {};
+try {
+    config = require('./config');
+} catch (err) {
+    console.log('未找到config.js文件，将使用默认配置');
+}
+
 // 格式化版本号，确保以 v 开头
 function formatVersion(version) {
     if (!version) return 'N/A';
-    
+
     // 移除可能存在的 v 前缀
     version = version.replace(/^v/i, '');
-    
+
     // 移除常见的前缀词（如 mobile-、release- 等）
     version = version.replace(/^(mobile-|release-|v-|version-)/i, '');
-    
+
     // 提取版本号部分（匹配 x.y.z 格式）
     const versionMatch = version.match(/\d+\.\d+(\.\d+)?/);
     if (versionMatch) {
         version = versionMatch[0];
     }
-    
+
     // 添加 v 前缀
     return `v${version}`;
 }
@@ -59,16 +67,60 @@ const CONFIG = {
         'singbox': 'https://apps.apple.com/us/app/sing-box-vt/id6673731168',
         'hiddify': 'https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532'
     },
-    // 平台特定的文件匹配模式
+    // 平台特定的文件匹配模式 - 扩展更多关键词和扩展名
     platformPatterns: {
-        windows: /\.exe$|\.msi$|\.zip$|windows|win/i,
-        mac: /\.dmg$|\.pkg$|\.app$|macos|mac/i,
-        linux: /\.deb$|\.rpm$|\.AppImage$|\.tar\.gz$|linux/i,
-        android: /\.apk$|android/i,
-        ios: /\.ipa$|ios/i
+        windows: /\.exe$|\.msi$|\.zip$|\.msix$|\.appx$|windows|win|win32|win64|win-|installer|setup/i,
+        mac: /\.dmg$|\.pkg$|\.app$|\.zip$|macos|mac|darwin|osx|apple/i,
+        linux: /\.deb$|\.rpm$|\.AppImage$|\.tar\.gz$|\.snap$|linux|ubuntu|debian|fedora|arch|x11/i,
+        android: /\.apk$|android|arm64-v8a|armeabi|mobile/i,
+        ios: /\.ipa$|ios|iphone|ipad|apple/i
     },
     // 平台排序顺序
-    platformOrder: ['windows', 'mac', 'linux', 'android', 'ios', 'github']
+    platformOrder: ['windows', 'mac', 'linux', 'android', 'ios', 'github'],
+    // 文件类型优先级 - 新增配置
+    fileTypePriority: {
+        windows: ['.exe', '.msi', '.msix', '.appx', '.zip'],
+        mac: ['.dmg', '.pkg', '.app', '.zip'],
+        linux: ['.AppImage', '.deb', '.rpm', '.snap', '.tar.gz'],
+        android: ['.apk'],
+        ios: ['.ipa']
+    },
+    // 平台冲突词 - 新增配置
+    platformConflicts: {
+        windows: ['linux', 'macos', 'mac', 'darwin', 'android', 'ios', 'iphone', 'ipad'],
+        mac: ['windows', 'win', 'linux', 'android'],
+        linux: ['windows', 'win', 'macos', 'mac', 'darwin', 'android', 'ios'],
+        android: ['windows', 'win', 'macos', 'mac', 'darwin', 'linux', 'ios', 'iphone', 'ipad'],
+        ios: ['windows', 'win', 'linux', 'android']
+    },
+    // 架构优先级 - 新增配置
+    architecturePriority: {
+        windows: ['x64', 'amd64', 'x86_64', 'win64', '64bit', 'arm64', 'x86', 'win32', '32bit'],
+        mac: ['universal', 'arm64', 'apple-silicon', 'm1', 'm2', 'silicon', 'x64', 'amd64', 'intel'],
+        linux: ['amd64', 'x86_64', 'x64', 'arm64', 'aarch64'],
+        android: ['arm64-v8a', 'arm64', 'armv8', 'universal', 'armeabi-v7a', 'x86_64', 'x86'],
+        ios: ['arm64', 'universal']
+    },
+    // 过滤的文件类型 - 新增配置（除了校验文件外，还包括文档、图片等）
+    excludedFileTypes: [
+        '.sha256', '.md5', '.asc', '.sig',
+        '.txt', '.md', '.log', '.json', '.yml', '.yaml',
+        '.png', '.jpg', '.jpeg', '.gif', '.svg',
+        'readme', 'changelog', 'license', 'note'
+    ],
+    // 稳定版关键词 - 新增配置
+    stableKeywords: ['stable', 'release', 'official', 'production'],
+    // 非稳定版关键词 - 新增配置  
+    unstableKeywords: ['beta', 'alpha', 'nightly', 'dev', 'preview', 'test', 'rc', 'snapshot'],
+    // 仓库特殊平台映射 - 新增配置
+    // 为特定仓库指定平台文件的识别规则，覆盖默认规则
+    repoSpecificMappings: {
+        "GUI.for.SingBox": {
+            "windows": /windows.*\.zip$/i,
+            "mac": /macos.*\.zip$/i,
+            "linux": /linux.*\.zip$/i
+        }
+    },
 };
 
 // 创建axios实例
@@ -80,14 +132,25 @@ const axiosInstance = axios.create({
     headers: {
         'Accept': 'application/vnd.github.v3+json',
         'User-Agent': 'ToolStore-Update-Script'
+        // GitHub Token可以在这里添加:
+        // 'Authorization': 'token ghp_xxxxxxxxxxxxxxxxxxxx'
     }
 });
+
+// 从环境变量或配置文件读取GitHub Token
+if (process.env.GITHUB_TOKEN) {
+    axiosInstance.defaults.headers.common['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
+    console.log('使用环境变量中的GitHub Token进行API请求认证');
+} else if (config.githubToken) {
+    axiosInstance.defaults.headers.common['Authorization'] = `token ${config.githubToken}`;
+    console.log('使用配置文件中的GitHub Token进行API请求认证');
+}
 
 // 从card-data.js中读取仓库信息
 async function getRepositories() {
     const cardDataPath = path.join(__dirname, '../public/assets/scripts/configs/card-data.js');
     const content = fs.readFileSync(cardDataPath, 'utf8');
-    
+
     // 使用正则表达式提取GitHub仓库链接
     const repoRegex = /link:\s*"https:\/\/github\.com\/([^\/]+)\/([^\/]+)\/releases"/g;
     const repos = [];
@@ -111,7 +174,7 @@ async function getRepositories() {
 }
 
 // 获取仓库的最新发布版本
-async function getLatestRelease(owner, repo) {
+async function getLatestRelease(owner, repo, retryCount = 0) {
     try {
         // 获取最新的release
         const response = await axiosInstance.get(
@@ -127,6 +190,21 @@ async function getLatestRelease(owner, repo) {
         return response.data;
     } catch (error) {
         if (error.response) {
+            // 处理速率限制错误
+            if (error.response.status === 403 && error.response.data && 
+                error.response.data.message && error.response.data.message.includes('rate limit')) {
+                
+                // 最多重试3次
+                if (retryCount < 3) {
+                    const waitTime = Math.pow(2, retryCount) * 1000; // 指数退避
+                    console.log(`遇到API速率限制，等待${waitTime/1000}秒后重试(${retryCount + 1}/3)...`);
+                    
+                    // 等待一段时间后重试
+                    await new Promise(resolve => setTimeout(resolve, waitTime));
+                    return getLatestRelease(owner, repo, retryCount + 1);
+                }
+            }
+            
             console.error(`获取 ${owner}/${repo} 的最新版本失败:`, error.response.status, error.response.data.message);
         } else if (error.code === 'ECONNABORTED') {
             console.error(`获取 ${owner}/${repo} 的最新版本超时`);
@@ -137,27 +215,238 @@ async function getLatestRelease(owner, repo) {
     }
 }
 
-// 根据平台匹配下载链接
-function matchPlatformAssets(assets) {
+// 根据平台匹配下载链接 - 完全重写的高级匹配算法
+function matchPlatformAssets(assets, repoName = null) {
     const platformLinks = {};
-    
-    for (const asset of assets) {
+    const platformScores = {};
+    const debugInfo = {};  // 存储调试信息
+
+    // 检查是否有特殊映射规则
+    const hasSpecialMapping = repoName && CONFIG.repoSpecificMappings[repoName];
+
+    // 第一步：过滤掉不需要的文件类型
+    const filteredAssets = assets.filter(asset => {
+        const name = asset.name.toLowerCase();
+        return !CONFIG.excludedFileTypes.some(type => name.includes(type) || name.endsWith(type));
+    });
+
+    // 如果过滤后没有资源，直接返回空对象
+    if (filteredAssets.length === 0) {
+        console.warn('警告: 所有资源文件都被过滤掉了');
+        return {};
+    }
+
+    // 第二步：为每个平台创建候选资源列表
+    const platformCandidates = {};
+
+    for (const platform of CONFIG.platformOrder.filter(p => p !== 'github')) {
+        platformCandidates[platform] = [];
+    }
+
+    // 第三步：初步分类和打分
+    for (const asset of filteredAssets) {
         const assetName = asset.name.toLowerCase();
-        for (const [platform, pattern] of Object.entries(CONFIG.platformPatterns)) {
-            if (pattern.test(assetName)) {
-                // 如果已经找到该平台的链接，检查版本号是否更新
-                if (!platformLinks[platform] || 
-                    assetName.includes('universal') || 
-                    assetName.includes('amd64') || 
-                    assetName.includes('x64')) {
-                    platformLinks[platform] = asset.browser_download_url;
+        const assetUrl = asset.browser_download_url.toLowerCase();
+
+        for (const platform of Object.keys(platformCandidates)) {
+            // 使用特殊映射规则或默认规则
+            let pattern = CONFIG.platformPatterns[platform];
+            if (hasSpecialMapping && CONFIG.repoSpecificMappings[repoName][platform]) {
+                pattern = CONFIG.repoSpecificMappings[repoName][platform];
+            }
+
+            // 检查资源是否匹配平台模式
+            if (pattern.test(assetName) || pattern.test(assetUrl)) {
+                // 检查跨平台冲突
+                const conflicts = CONFIG.platformConflicts[platform] || [];
+                const hasConflict = conflicts.some(conflict =>
+                    assetName.includes(conflict) || assetUrl.includes(conflict)
+                );
+
+                // 如果存在明确的冲突，跳过此平台的匹配
+                if (hasConflict) {
+                    continue;
                 }
-                break;
+
+                // 初始基础得分
+                let score = 10;
+
+                // 计算详细得分
+                score = calculateAssetScore(platform, assetName, assetUrl, score);
+
+                // 如果得分为正，将资源添加到该平台的候选列表
+                if (score > 0) {
+                    platformCandidates[platform].push({
+                        asset,
+                        score,
+                        name: assetName,
+                        url: asset.browser_download_url
+                    });
+                }
             }
         }
     }
-    
+
+    // 第四步：为每个平台选择最佳匹配
+    for (const platform of Object.keys(platformCandidates)) {
+        const candidates = platformCandidates[platform];
+
+        // 按得分降序排序
+        candidates.sort((a, b) => b.score - a.score);
+
+        if (candidates.length > 0) {
+            const bestMatch = candidates[0];
+            platformLinks[platform] = bestMatch.url;
+            platformScores[platform] = bestMatch.score;
+
+            // 记录调试信息
+            debugInfo[platform] = {
+                selected: bestMatch.name,
+                score: bestMatch.score,
+                allCandidates: candidates.map(c => ({ name: c.name, score: c.score }))
+            };
+
+            console.log(`为 ${platform} 平台选择最佳匹配: ${bestMatch.name} (得分: ${bestMatch.score})`);
+        }
+    }
+
+    // 第五步：验证结果，确保没有链接重叠
+    validatePlatformLinks(platformLinks, platformScores);
+
     return platformLinks;
+}
+
+// 新增：计算资源的详细得分
+function calculateAssetScore(platform, assetName, assetUrl, baseScore) {
+    let score = baseScore;
+
+    // 1. 平台关键词匹配度
+    if (platform === 'windows' && (assetName.includes('windows') || assetName.includes('win'))) {
+        score += 50;
+    } else if (platform === 'mac' && (assetName.includes('macos') || assetName.includes('mac') || assetName.includes('darwin'))) {
+        score += 50;
+    } else if (platform === 'linux' && (assetName.includes('linux') || assetName.includes('ubuntu') || assetName.includes('debian'))) {
+        score += 50;
+    } else if (platform === 'android' && assetName.includes('android')) {
+        score += 50;
+    } else if (platform === 'ios' && (assetName.includes('ios') || assetName.includes('iphone') || assetName.includes('ipad'))) {
+        score += 50;
+    }
+
+    // 2. 文件类型评分 - 使用优先级列表
+    const fileExtensions = CONFIG.fileTypePriority[platform] || [];
+    for (let i = 0; i < fileExtensions.length; i++) {
+        const ext = fileExtensions[i];
+        if (assetName.endsWith(ext)) {
+            // 优先级越高，得分越高
+            score += 30 - (i * 5);
+            break;
+        }
+    }
+
+    // 3. 架构评分 - 使用优先级列表
+    const archPatterns = CONFIG.architecturePriority[platform] || [];
+    for (let i = 0; i < archPatterns.length; i++) {
+        const arch = archPatterns[i];
+        const archRegex = new RegExp(`(^|[^a-z])${arch}([^a-z]|$)`, 'i');
+        if (archRegex.test(assetName)) {
+            // 优先级越高，得分越高
+            score += 15 - (i * 1.5);
+            break;
+        }
+    }
+
+    // 4. 稳定版/非稳定版评分
+    if (CONFIG.stableKeywords.some(keyword => assetName.includes(keyword))) {
+        score += 5;
+    }
+    if (CONFIG.unstableKeywords.some(keyword => assetName.includes(keyword))) {
+        score -= 10;
+    }
+
+    // 5. 通用版本/安装版优先
+    if (assetName.includes('universal') || assetName.includes('all') || assetName.includes('multi')) {
+        score += 8;
+    }
+    if (assetName.includes('setup') || assetName.includes('install') || assetName.includes('installer')) {
+        score += 5;
+    }
+    if (assetName.includes('portable') || assetName.includes('noinstall')) {
+        score -= 3;
+    }
+
+    return score;
+}
+
+// 新增：验证和修正平台链接
+function validatePlatformLinks(platformLinks, platformScores) {
+    // 检测平台之间的URL重复和冲突
+    const urlToPlatform = {};
+    const duplicates = {};
+
+    // 检测重复URL
+    for (const [platform, url] of Object.entries(platformLinks)) {
+        if (url) {
+            if (urlToPlatform[url]) {
+                // 发现重复URL
+                duplicates[url] = [...(duplicates[url] || []), platform];
+            } else {
+                urlToPlatform[url] = platform;
+            }
+        }
+    }
+
+    // 解决重复URL问题
+    for (const [url, platforms] of Object.entries(duplicates)) {
+        console.warn(`发现重复URL: ${url} 在以下平台: ${platforms.join(', ')}`);
+
+        // 只保留得分最高的平台
+        let bestPlatform = platforms[0];
+        let bestScore = platformScores[platforms[0]] || 0;
+
+        for (let i = 1; i < platforms.length; i++) {
+            const platform = platforms[i];
+            const score = platformScores[platform] || 0;
+
+            if (score > bestScore) {
+                // 移除之前最佳的平台
+                delete platformLinks[bestPlatform];
+
+                // 更新最佳平台
+                bestPlatform = platform;
+                bestScore = score;
+            } else {
+                // 移除当前平台
+                delete platformLinks[platform];
+            }
+        }
+
+        console.log(`保留 ${bestPlatform} 平台的链接 (得分: ${bestScore})`);
+    }
+
+    // 移除可能指向错误资源的链接
+    for (const [platform, url] of Object.entries(platformLinks)) {
+        const urlLower = url.toLowerCase();
+
+        // 跳过特定仓库的冲突检测 - 新增特例处理
+        if (urlLower.includes('gui.for.singbox') || urlLower.includes('gui-for-cores')) {
+            console.log(`跳过对 ${platform} 平台的冲突检测: ${url} (GUI.for.SingBox特例)`);
+            continue;
+        }
+
+        // 检查链接是否指向不匹配的平台文件
+        for (const [otherPlatform, pattern] of Object.entries(CONFIG.platformPatterns)) {
+            if (otherPlatform !== platform && pattern.test(urlLower)) {
+                // 如果URL包含其他平台的明确标识，且不是可能的通用名称
+                if (!urlLower.includes('universal') && !urlLower.includes('all') &&
+                    !urlLower.includes('multi') && !urlLower.includes('generic')) {
+                    console.warn(`警告: ${platform} 平台的链接可能实际是 ${otherPlatform} 平台的文件: ${url}`);
+                    delete platformLinks[platform];
+                    break;
+                }
+            }
+        }
+    }
 }
 
 // 按照指定顺序排序对象属性
@@ -180,50 +469,142 @@ function sortObjectByOrder(obj, order) {
 async function updateDownloadConfig() {
     try {
         console.log('开始更新下载配置...');
+
+        const configPath = path.join(__dirname, '../public/assets/scripts/configs/download-config.js');
+
         const repos = await getRepositories();
         console.log(`找到 ${repos.length} 个仓库需要更新`);
-        
+
         const downloadLinks = {};
 
-        // 首先添加手动配置的下载链接
-        for (const [name, config] of Object.entries(manualConfig.downloadLinks)) {
-            downloadLinks[name] = sortObjectByOrder(config, CONFIG.platformOrder);
-            console.log(`已添加手动配置的下载链接: ${name}`);
+        // 获取所有自动下载链接
+        const autoDownloadLinks = {};
+
+        // 处理GitHub仓库自动获取链接
+        for (const repo of repos) {
+            console.log(`正在处理 ${repo.owner}/${repo.repo}...`);
+            const release = await getLatestRelease(repo.owner, repo.repo);
+            if (!release) continue;
+
+            const platformLinks = matchPlatformAssets(release.assets, repo.repo);
+
+            // 验证链接有效性
+            if (Object.keys(platformLinks).length > 0) {
+                const links = {
+                    version: formatVersion(release.tag_name),
+                    ...platformLinks,
+                    github: `https://github.com/${repo.owner}/${repo.repo}`
+                };
+                autoDownloadLinks[repo.name] = sortObjectByOrder(links, CONFIG.platformOrder);
+                console.log(`已获取 ${repo.name} 的自动下载链接，版本: ${release.tag_name}`);
+            } else {
+                console.error(`${repo.name} 没有获取到有效的下载链接，将跳过`);
+            }
         }
 
-        // 然后添加iOS应用商店链接
+        // 改进的合并逻辑：添加手动配置的下载链接，与自动获取的链接智能合并
+        for (const [name, config] of Object.entries(manualConfig.downloadLinks)) {
+            // 检查是否保留自动获取的链接（默认为false）
+            const keepAutoLinks = config.keepAutoLinks === true;
+            
+            if (autoDownloadLinks[name] && keepAutoLinks) {
+                // 如果同时存在自动和手动配置，执行智能合并
+                const mergedLinks = { ...autoDownloadLinks[name] };
+                
+                // 对每个平台分别处理
+                for (const platform of [...CONFIG.platformOrder, 'version']) {
+                    // 如果手动配置了此平台
+                    if (platform in config) {
+                        const manualValue = config[platform];
+                        
+                        // 1. 如果手动值是空字符串，保留自动获取的值
+                        if (manualValue === '') {
+                            // 保持自动获取的值不变
+                            console.log(`${name}.${platform}: 使用自动获取的值`);
+                        }
+                        // 2. 如果手动值是非空的，使用手动值
+                        else if (manualValue) {
+                            mergedLinks[platform] = manualValue;
+                            console.log(`${name}.${platform}: 使用手动配置的值`);
+                        }
+                        // 3. 如果手动值是null/undefined，且没有自动值，不添加此平台
+                        else if (manualValue === null) {
+                            delete mergedLinks[platform];
+                            console.log(`${name}.${platform}: 手动禁用，已移除`);
+                        }
+                    }
+                    // 如果没有手动配置此平台，保留自动获取的值
+                }
+                
+                downloadLinks[name] = mergedLinks;
+                console.log(`已智能合并 ${name} 的自动和手动配置下载链接`);
+            } else if (autoDownloadLinks[name] && !keepAutoLinks) {
+                // 如果不保留自动链接，只使用手动配置的链接
+                const manualLinks = { ...config };
+                delete manualLinks.keepAutoLinks;  // 移除特殊属性
+                
+                // 但要保留版本号
+                if (!manualLinks.version && autoDownloadLinks[name].version) {
+                    manualLinks.version = autoDownloadLinks[name].version;
+                }
+                
+                // 确保至少有github链接
+                if (!manualLinks.github && autoDownloadLinks[name].github) {
+                    manualLinks.github = autoDownloadLinks[name].github;
+                }
+                
+                downloadLinks[name] = sortObjectByOrder(manualLinks, CONFIG.platformOrder);
+                console.log(`已使用手动配置替换 ${name} 的下载链接`);
+            } else if (!autoDownloadLinks[name]) {
+                // 如果只有手动配置，直接使用
+                const manualLinks = { ...config };
+                delete manualLinks.keepAutoLinks;  // 移除特殊属性
+                
+                downloadLinks[name] = sortObjectByOrder(manualLinks, CONFIG.platformOrder);
+                console.log(`已添加 ${name} 的手动配置下载链接`);
+            }
+        }
+
+        // 添加自动获取的但没有手动配置的链接
+        for (const [name, links] of Object.entries(autoDownloadLinks)) {
+            if (!downloadLinks[name]) {
+                downloadLinks[name] = links;
+                console.log(`已添加 ${name} 的自动获取下载链接`);
+            }
+        }
+
+        // 然后添加iOS应用商店链接，与现有链接合并
         for (const [appName, appStoreLink] of Object.entries(CONFIG.iosAppStoreLinks)) {
-            if (!downloadLinks[appName]) {  // 如果还没有手动配置
+            if (downloadLinks[appName]) {
+                // 如果已有该应用的配置，则添加iOS链接
+                if (!downloadLinks[appName].ios) {
+                    downloadLinks[appName].ios = appStoreLink;
+                    console.log(`已为 ${appName} 添加iOS应用商店链接`);
+                }
+            } else {
+                // 如果还没有该应用的配置
                 const links = {
                     version: 'N/A',
                     ios: appStoreLink
                 };
                 downloadLinks[appName] = sortObjectByOrder(links, CONFIG.platformOrder);
-                console.log(`已添加iOS应用商店链接: ${appName}`);
+                console.log(`已添加 ${appName} 的iOS应用商店链接`);
             }
         }
 
-        // 最后处理GitHub仓库
-        for (const repo of repos) {
-            // 检查是否已手动配置
-            if (manualConfig.repositories[repo.name]) {
-                console.log(`跳过 ${repo.name}，使用手动配置`);
-                continue;
+        // 最后检查结果，确保每个工具至少有一个有效的下载链接
+        for (const [name, links] of Object.entries(downloadLinks)) {
+            let hasValidLink = false;
+            for (const platform of CONFIG.platformOrder) {
+                if (links[platform] && typeof links[platform] === 'string' && links[platform].startsWith('http')) {
+                    hasValidLink = true;
+                    break;
+                }
             }
 
-            console.log(`正在处理 ${repo.owner}/${repo.repo}...`);
-            const release = await getLatestRelease(repo.owner, repo.repo);
-            if (!release) continue;
-
-            const platformLinks = matchPlatformAssets(release.assets);
-            const links = {
-                version: formatVersion(release.tag_name),
-                ...platformLinks,
-                github: `https://github.com/${repo.owner}/${repo.repo}`
-            };
-            downloadLinks[repo.name] = sortObjectByOrder(links, CONFIG.platformOrder);
-            
-            console.log(`已更新 ${repo.name} 的下载链接，版本: ${release.tag_name}`);
+            if (!hasValidLink) {
+                console.warn(`警告: ${name} 没有有效的下载链接，可能需要手动配置`);
+            }
         }
 
         // 生成新的配置文件内容
@@ -261,7 +642,6 @@ export function getToolVersion(toolName) {
 export { downloadLinks };`;
 
         // 写入配置文件
-        const configPath = path.join(__dirname, '../public/assets/scripts/configs/download-config.js');
         fs.writeFileSync(configPath, configContent);
         console.log('下载配置已更新！');
     } catch (error) {
