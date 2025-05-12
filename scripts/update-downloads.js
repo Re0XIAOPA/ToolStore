@@ -119,6 +119,9 @@ const CONFIG = {
             "windows": /windows.*\.zip$/i,
             "mac": /macos.*\.zip$/i,
             "linux": /linux.*\.zip$/i
+        },
+        "v2rayN": {
+            "windows": /windows.*desktop\.zip$|windows-64-desktop\.zip$|windows-64\.zip$/i
         }
     },
 };
@@ -328,6 +331,10 @@ function calculateAssetScore(platform, assetName, assetUrl, baseScore) {
         if (/win(dows)?[\._-](x64|amd64|64|x86)/i.test(assetName)) score += 5; // 包含架构信息的Windows版本
         if (/[\._-](x64|amd64|64|x86)[\._-]win(dows)?/i.test(assetName)) score += 5; // 另一种架构格式
         if (/\.exe$/i.test(assetName)) score += 10; // .exe文件额外加分
+        
+        // 特别处理windows-64-desktop格式
+        if (/windows-64-desktop/i.test(assetName)) score += 20; // v2rayN特定格式大幅加分
+        if (/v2ray.*windows/i.test(assetName)) score += 15; // v2ray系列Windows版本
     } else if (platform === 'mac' && (assetName.includes('macos') || assetName.includes('mac') || assetName.includes('darwin'))) {
         score += 50;
     } else if (platform === 'linux' && (assetName.includes('linux') || assetName.includes('ubuntu') || assetName.includes('debian'))) {

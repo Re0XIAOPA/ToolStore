@@ -73,6 +73,11 @@ const manualConfig = {
             // "mac": null,
             // "linux": null,
             "keepAutoLinks": true  // 保留android平台的自动链接
+        },
+        // 为v2rayN添加手动配置
+        "v2rayn": {
+            "windows": "",  // 空字符串表示使用自动获取的链接
+            "keepAutoLinks": true  // 保留自动获取的其他平台链接 
         }
     },
     
