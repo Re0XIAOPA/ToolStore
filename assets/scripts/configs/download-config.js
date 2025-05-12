@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/12/2025, 3:16:24 AM
+// 最后更新时间: 5/12/2025, 5:27:20 AM
 
 const downloadLinks = {
     "v2box": {
@@ -27,6 +27,13 @@ const downloadLinks = {
         "android": "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/download/1.3.9/NekoBox-1.3.9-arm64-v8a.apk",
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
+    "v2rayn": {
+        "version": "v7.12.1",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-linux-arm64.deb",
+        "github": "https://github.com/2dust/v2rayN"
+    },
     "clash verge": {
         "version": "v2.2.3",
         "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.3/Clash.Verge_2.2.3_x64-setup.exe",
@@ -50,13 +57,6 @@ const downloadLinks = {
         "version": "v2.24.10",
         "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.24.10/mobile-universal-release.apk",
         "github": "https://github.com/getsurfboard/surfboard"
-    },
-    "v2rayn": {
-        "version": "v7.12.1",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-windows-arm64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-linux-arm64.deb",
-        "github": "https://github.com/2dust/v2rayN"
     },
     "v2rayng": {
         "version": "v1.10.2",
