@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/13/2025, 3:14:36 AM
+// 最后更新时间: 5/14/2025, 3:09:24 AM
 
 const downloadLinks = {
     "v2box": {
@@ -28,10 +28,10 @@ const downloadLinks = {
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.12.1",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.12.1/v2rayN-linux-arm64.deb",
+        "version": "v7.12.3",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.12.3/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.12.3/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.12.3/v2rayN-linux-arm64.deb",
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
@@ -49,8 +49,8 @@ const downloadLinks = {
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
-        "version": "v2.11.10",
-        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/2.11.10/cmfa-2.11.10-meta-universal-release.apk",
+        "version": "v2.11.11",
+        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.11/cmfa-2.11.11-meta-universal-release.apk",
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
