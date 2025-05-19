@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/18/2025, 3:19:27 AM
+// 最后更新时间: 5/19/2025, 3:17:17 AM
 
 const downloadLinks = {
     "v2box": {
@@ -35,10 +35,10 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
-        "version": "v2.2.3",
-        "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.3/Clash.Verge_2.2.3_x64-setup.exe",
-        "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.3/Clash.Verge_2.2.3_x64.dmg",
-        "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.3/Clash.Verge_2.2.3_amd64.deb",
+        "version": "valpha",
+        "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/alpha/Clash.Verge_2.2.4-alpha_x64-setup.exe",
+        "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/alpha/Clash.Verge_2.2.4-alpha_x64.dmg",
+        "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/alpha/Clash.Verge_2.2.4-alpha_amd64.deb",
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
     },
     "mihomo party": {
@@ -64,10 +64,10 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.11.10",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.11.10/sing-box-1.11.10-windows-amd64-legacy.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.11.10/SFM-1.11.10-universal.dmg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.11.10/sing-box_1.11.10_linux_amd64.deb",
+        "version": "v1.11.11",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.11.11/sing-box-1.11.11-windows-amd64-legacy.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.11.11/SFM-1.11.11-universal.dmg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.11.11/sing-box_1.11.11_linux_amd64.deb",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
