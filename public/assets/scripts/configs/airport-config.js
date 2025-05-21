@@ -204,12 +204,12 @@ const airportDetails = {
         packages: [
             {
                 name: '月付套餐',
-                price: '3.58',
+                price: '4.32',
                 period: '月',
                 traffic: '100G/月'
             }
         ],
-        link: 'https://mitce.com/aff.php?aff=3878',
+        link: 'https://mitce.net/aff.php?aff=3878',
         tags: ['稳定', '高速', '性价比']
     },
     // 可以添加更多机场配置...
