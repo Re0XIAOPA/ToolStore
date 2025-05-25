@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/25/2025, 3:21:35 AM
+// 最后更新时间: 5/25/2025, 3:11:23 PM
 
 const downloadLinks = {
     "v2box": {
@@ -28,10 +28,10 @@ const downloadLinks = {
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.12.4",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.12.4/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.12.4/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.12.4/v2rayN-linux-arm64.deb",
+        "version": "v7.12.5",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.12.5/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.12.5/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.12.5/v2rayN-linux-arm64.deb",
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
