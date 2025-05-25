@@ -25,6 +25,8 @@ export const recommendConfig = {
     proxy: [
         '顶级机场',
         '早安云',
-        '魔法喵MAGICAT'
+        'CokeCloud(可乐云)',
+        '魔法喵MAGICAT',
+        'Mitce',
     ]
 };

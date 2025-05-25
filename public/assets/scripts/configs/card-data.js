@@ -220,7 +220,12 @@ export const airportData = [
         name: "Mitce",
         image: "assets/images/airports/Mitce.png",
         link: "https://mitce.com/aff.php?aff=3878"
-    }
+    },
+    {
+        name: "CokeCloud(可乐云)",
+        image: "assets/images/airports/CokeCloud.png",
+        link: "https://test.buyzur.com/#/register?code=F7gWu5IA"
+    },
 ];
 
 // 导出所有卡片数据的集合
