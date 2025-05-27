@@ -203,12 +203,12 @@ export const airportData = [
     },
     {
         name: "Needay",
-        image: "assets/images/default/default.png",
+        image: "assets/images/airports/NeedayCloud.jpg",
         link: "https://needaycloud.xyz/#/register?code=dWkLWMTf"
     },
     {
         name: "星舰云",
-        image: "assets/images/default/default.png",
+        image: "assets/images/airports/xingclouds.jpg",
         link: "https://xingclouds.xyz/#/register?code=L3DcR9kF"
     },
     {
