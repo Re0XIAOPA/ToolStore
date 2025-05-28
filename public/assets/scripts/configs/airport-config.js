@@ -214,17 +214,14 @@ const airportDetails = {
     },
     // CokeCloud(可乐云)
     'CokeCloud(可乐云)': {
-        description: '超便宜、稳定、快速、节点多、节点倍率(1x)',
+        description: '便宜、稳定、专线、专线高速、快速、节点多、多设备、不限速<br>节点倍率(1x)，解锁流媒体，多地区支持（港口/欧美/东南亚等）',
         packages: [
             {
                 name: '早餐套餐 @ 月付',
                 price: '9.90',
                 period: '月',
                 traffic: '200GB/月',
-                resetCost: '5元',
                 speed: '300Mbps',
-                deviceLimit: '5',
-                features: ['解锁流媒体', '多地区支持（港口/欧美/东南亚等）', '电报群售后']
             },
             {
                 name: '客车早餐套餐 @ 月付',
@@ -232,15 +229,12 @@ const airportDetails = {
                 period: '月',
                 traffic: '400GB/月',
                 speed: '200Mbps',
-                deviceLimit: '5',
-                features: ['专线', '不限速', '多设备']
             },
             {
                 name: '奶茶套餐 @ 季付',
                 price: '25.90',
                 period: '季',
                 traffic: '300GB/月',
-                resetCost: '5元',
                 speed: '200Mbps'
             },
             {
@@ -248,56 +242,41 @@ const airportDetails = {
                 price: '38.90',
                 period: '半年',
                 traffic: '200GB/月',
-                resetCost: '4.5元',
-                speed: '200Mbps',
-                deviceLimit: '5',
-                features: ['解锁流媒体', '多地区支持（港口/美/英/韩等）']
+                speed: '200Mbps'
             },
             {
                 name: '游戏机专线 @ 年付',
                 price: '180.00',
                 period: '年',
-                traffic: '100GB/月',
-                features: ['专线高速', '企业级节点', '流量可重置']
+                traffic: '100GB/月'
             },
             {
                 name: '午餐专线 @ 月付',
                 price: '22.00',
                 period: '月',
                 traffic: '200GB/月',
-                resetCost: '10元',
-                speed: '不限速',
-                deviceLimit: '不限',
-                features: ['解锁流媒体', '多设备共享', '多地区支持']
+                speed: '不限速'
             },
             {
                 name: '音乐会专线 @ 月付',
                 price: '40.00',
                 period: '月',
                 traffic: '500GB/月',
-                features: ['超大流量', '专线优先级', '低延迟优化']
+                speed: '不限速'
             },
             {
                 name: '寿司专线 @ 半年付',
                 price: '102.00',
                 period: '半年',
                 traffic: '150GB/月',
-                resetCost: '9元',
-                speed: '不限速',
-                deviceLimit: '不限',
-                features: ['流媒体解锁', '跨境加速', '电报售后支持']
+                speed: '不限速'
             },
             {
                 name: 'TikTok/INS运营专线',
                 price: '200.00',
                 period: '月',
                 traffic: '1000GB/月',
-                features: [
-                    '独享企业级带宽',
-                    '支持多平台运营',
-                    '流量重置服务',
-                    '全球骨干网节点'
-                ]
+                speed: '不限速'
             }
             // 其他套餐可按相同格式继续追加...
         ],

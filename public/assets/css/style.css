@@ -689,6 +689,21 @@ table img {
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/* 大屏幕下下载弹窗更宽 */
+@media screen and (min-width: 1440px) {
+    .download-content {
+        max-width: 1000px;
+        padding: 30px 40px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .download-content {
+        max-width: 1200px;
+        padding: 30px 50px;
+    }
+}
+
 /* 添加内容进入动画 */
 .modal-content-enter {
     animation: modalContentEnter 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
@@ -937,6 +952,19 @@ main {
     position: relative;
 }
 
+/* 大屏幕下机场详情弹窗更宽 */
+@media screen and (min-width: 1440px) {
+    .airport-content {
+        max-width: 1000px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .airport-content {
+        max-width: 1200px;
+    }
+}
+
 .airport-content::-webkit-scrollbar {
     width: 6px;
 }
@@ -973,6 +1001,19 @@ main {
     background: linear-gradient(145deg, rgba(124, 138, 255, 0.1), rgba(124, 138, 255, 0.05));
     border-bottom: 1px solid rgba(124, 138, 255, 0.1);
     position: relative;
+}
+
+/* 大屏幕头部区域适配 */
+@media screen and (min-width: 1440px) {
+    .airport-header {
+        padding: 30px 40px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .airport-header {
+        padding: 30px 50px;
+    }
 }
 
 .airport-header h3 {
@@ -1019,6 +1060,19 @@ main {
 /* 内容区域 */
 .airport-body {
     padding: 30px;
+}
+
+/* 大屏幕内容区域适配 */
+@media screen and (min-width: 1440px) {
+    .airport-body {
+        padding: 30px 40px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .airport-body {
+        padding: 30px 50px;
+    }
 }
 
 /* 描述部分 */

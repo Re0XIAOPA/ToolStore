@@ -4,6 +4,8 @@ i/*
  */
 .packages-section {
     margin: 15px 0;
+    width: 100%; /* 确保容器充满整个宽度 */
+    padding: 0 5px; /* 减少内边距 */
 }
 
 /* 
@@ -12,11 +14,24 @@ i/*
  */
 .packages-content {
     display: grid;
-    grid-template-columns: repeat(5, 130px);
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* 使用自适应布局 */
     gap: 15px;
-    justify-content: center;
-    max-width: 800px;
+    width: 100%; /* 充满整个容器宽度 */
     margin: 0 auto;
+    padding: 0; /* 移除内边距 */
+}
+
+/* 大屏幕适配 */
+@media screen and (min-width: 1440px) {
+    .packages-content {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 更大屏幕更大卡片 */
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .packages-content {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 超宽屏幕更大卡片 */
+    }
 }
 
 /* 
@@ -33,6 +48,7 @@ i/*
     flex-direction: column;
     transition: all 0.3s ease;
     box-shadow: 0 0 4px #96a1ff;
+    min-width: 0; /* 防止内容溢出 */
 }
 
 
@@ -111,14 +127,14 @@ i/*
  */
 @media screen and (max-width: 768px) {
     .packages-content {
-        grid-template-columns: repeat(3, 130px);
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
         gap: 12px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .packages-content {
-        grid-template-columns: repeat(2, 130px);
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 10px;
     }
 

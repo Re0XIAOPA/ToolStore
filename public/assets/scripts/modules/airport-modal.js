@@ -176,21 +176,18 @@ function initAirportCards() {
 function createPriceTags(packages) {
     if (!packages || !packages.length) return '';
 
-    return `
-        <div class="packages-content">
-            ${packages.map(pkg => `
-                <div class="package-row">
-                    <div class="package-name">${pkg.name}</div>
-                    <div class="package-price">
-                        <span class="price-currency">¥</span>
-                        <span class="price-amount">${pkg.price}</span>
-                        <span class="price-period">/${pkg.period}</span>
-                    </div>
-                    <div class="package-traffic">${pkg.traffic}</div>
-                </div>
-            `).join('')}
+    // 直接返回套餐卡片，不再使用额外的包装div
+    return packages.map(pkg => `
+        <div class="package-row">
+            <div class="package-name">${pkg.name}</div>
+            <div class="package-price">
+                <span class="price-currency">¥</span>
+                <span class="price-amount">${pkg.price}</span>
+                <span class="price-period">/${pkg.period}</span>
+            </div>
+            <div class="package-traffic">${pkg.traffic}</div>
         </div>
-    `;
+    `).join('');
 }
 
 // 解析价格文本的辅助函数
