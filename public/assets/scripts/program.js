@@ -7,6 +7,70 @@ import { initSoftwareCards } from './modules/software-cards.js';
 import { initCardRenderer } from './modules/card-renderer.js';
 import { initRippleEffect } from './modules/ripple-effect.js';
 
+// 全局ESC键监听功能
+function setupGlobalEscKeyListener() {
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+            // 获取当前打开的弹窗
+            // 排除公告弹窗
+            const dailyNotice = document.getElementById('dailyNotice');
+            const isNoticeVisible = dailyNotice && dailyNotice.style.display === 'flex';
+            
+            // 如果公告弹窗正在显示，不做任何操作
+            if (isNoticeVisible) {
+                return;
+            }
+            
+            // 检查并关闭机场弹窗
+            const airportModal = document.querySelector('.airport-modal.active');
+            if (airportModal) {
+                const closeButton = airportModal.querySelector('.close-modal');
+                if (closeButton) {
+                    closeButton.click();
+                    return;
+                }
+            }
+            
+            // 检查并关闭下载弹窗
+            const downloadModal = document.querySelector('.download-modal.active');
+            if (downloadModal) {
+                const closeButton = downloadModal.querySelector('.close-modal');
+                if (closeButton) {
+                    closeButton.click();
+                    return;
+                }
+            }
+            
+            // 检查并关闭反馈弹窗相关元素
+            const feedbackElement = document.querySelector('.feedback-modal');
+            if (feedbackElement && feedbackElement.style.display === 'block') {
+                // 触发反馈模块自身的关闭方法
+                // 这里假设反馈模块已经有ESC键处理，如果没有可以手动关闭
+                return;
+            }
+            
+            // 检查并关闭任何具有modal-backdrop的元素
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                // 寻找对应的关闭按钮
+                const modalWithBackdrop = document.querySelector('.modal-content-enter');
+                if (modalWithBackdrop) {
+                    const closeButton = modalWithBackdrop.querySelector('.close-modal');
+                    if (closeButton) {
+                        closeButton.click();
+                        return;
+                    }
+                }
+                
+                // 如果找不到特定的关闭按钮，则移除背景遮罩
+                document.body.removeChild(backdrop);
+                document.body.classList.remove('modal-open');
+                document.body.classList.add('modal-closed');
+            }
+        }
+    });
+}
+
 // 使复制函数在全局可用
 
 console.log('Hello World!');
@@ -60,6 +124,9 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // 初始化波纹效果
     initRippleEffect();
+    
+    // 初始化ESC键全局监听功能
+    setupGlobalEscKeyListener();
     
     // 标记应用已初始化
     window.appInitialized = true;
