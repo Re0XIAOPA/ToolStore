@@ -14,6 +14,9 @@ function createAirportModal(airportName) {
     // 创建背景遮罩
     createBackdrop();
 
+    // 检查是否有任何套餐包含速率信息
+    const hasSpeedInfo = details.packages && details.packages.some(pkg => pkg.speed);
+
     const modal = document.createElement('div');
     modal.className = 'airport-modal';
 
@@ -31,6 +34,19 @@ function createAirportModal(airportName) {
                         ${createPriceTags(details.packages)}
                     </div>
                 </div>
+                
+                    ${hasSpeedInfo ? `
+                        <div class="speed-info">
+                            <div class="speed-info-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#7c8aff" d="M15.9,18.45C17.25,17.24 18,15.7 18,14A6,6 0 0,0 12,8A6,6 0 0,0 6,14C6,15.7 6.75,17.24 8.1,18.45L7,19.5C5.4,17.94 4.5,16 4.5,14C4.5,10.41 7.91,7 12,7A7.5,7.5 0 0,1 19.5,14C19.5,16 18.6,17.94 17,19.5L15.9,18.45M21.1,18.45C23.08,16.62 24,14.38 24,12A12,12 0 0,0 12,0C5.37,0 0,5.37 0,12C0,14.38 0.92,16.62 2.9,18.45L1.8,19.5C0,17.38 -0.06,14.74 0.06,12.5H0.05C0.05,5.93 5.5,0.5 12,0.5A11.5,11.5 0 0,1 23.5,12C23.5,14.76 22.45,17.38 20.65,19.5L21.1,18.45M12,6A8,8 0 0,0 4,14C4,14.5 4.06,15 4.17,15.5H4.18C4.18,15.5 5.26,8.5 12,8.5C18.74,8.5 19.82,15.5 19.82,15.5H19.83C19.94,15 20,14.5 20,14A8,8 0 0,0 12,6M12,13A1,1 0 0,0 11,14A1,1 0 0,0 12,15A1,1 0 0,0 13,14A1,1 0 0,0 12,13Z" />
+                                </svg>
+                            </div>
+                            <div class="speed-info-text">
+                                此机场提供<strong>不同速率限制</strong>的套餐选择，请注意各套餐对应的<strong>网络速率</strong>，选择适合您需求的套餐。
+                            </div>
+                        </div>
+                        ` : ''}
             </div>
             <div class="airport-body">
                 <div class="features-section">
@@ -186,6 +202,13 @@ function createPriceTags(packages) {
                 <span class="price-period">/${pkg.period}</span>
             </div>
             <div class="package-traffic">${pkg.traffic}</div>
+            ${pkg.speed ? `
+            <div class="package-speed">
+                <svg class="speed-icon" viewBox="0 0 24 24">
+                    <path fill="#96a1ff" d="M15.9,18.45C17.25,17.24 18,15.7 18,14A6,6 0 0,0 12,8A6,6 0 0,0 6,14C6,15.7 6.75,17.24 8.1,18.45L7,19.5C5.4,17.94 4.5,16 4.5,14C4.5,10.41 7.91,7 12,7A7.5,7.5 0 0,1 19.5,14C19.5,16 18.6,17.94 17,19.5L15.9,18.45M21.1,18.45C23.08,16.62 24,14.38 24,12A12,12 0 0,0 12,0C5.37,0 0,5.37 0,12C0,14.38 0.92,16.62 2.9,18.45L1.8,19.5C0,17.38 -0.06,14.74 0.06,12.5H0.05C0.05,5.93 5.5,0.5 12,0.5A11.5,11.5 0 0,1 23.5,12C23.5,14.76 22.45,17.38 20.65,19.5L21.1,18.45M12,6A8,8 0 0,0 4,14C4,14.5 4.06,15 4.17,15.5H4.18C4.18,15.5 5.26,8.5 12,8.5C18.74,8.5 19.82,15.5 19.82,15.5H19.83C19.94,15 20,14.5 20,14A8,8 0 0,0 12,6M12,13A1,1 0 0,0 11,14A1,1 0 0,0 12,15A1,1 0 0,0 13,14A1,1 0 0,0 12,13Z" />
+                </svg>
+                ${pkg.speed}
+            </div>` : ''}
         </div>
     `).join('');
 }

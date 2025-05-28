@@ -122,6 +122,33 @@ i/*
 }
 
 /* 
+ * 速率信息
+ * 套餐速率数据的样式
+ */
+.package-speed {
+    font-size: 12px;
+    color: #96a1ff;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    background: rgba(124, 138, 255, 0.05);
+    border-radius: 8px;
+    padding: 2px 5px;
+    display: inline-block;
+    margin: 5px auto 0;
+}
+
+.package-speed .speed-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
+    vertical-align: -1px;
+    opacity: 0.9;
+}
+
+/* 
  * 响应式布局
  * 针对不同屏幕尺寸的布局调整
  */
@@ -160,5 +187,11 @@ i/*
         font-size: 12px;
         padding: 6px 0;
         margin-top: 10px;
+    }
+    
+    .package-speed {
+        font-size: 11px;
+        padding: 2px 4px;
+        margin-top: 3px;
     }
 }
