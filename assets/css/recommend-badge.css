@@ -4,7 +4,7 @@
  * 设置固定宽高(60px)确保视觉一致性
  * 较高z-index(10)确保显示在卡片内容之上
  */
-.recommend-badge {
+ .recommend-badge {
     position: absolute;
     top: -6px;
     left: -6px;
@@ -111,9 +111,10 @@
     border-radius: inherit;
 }
 
-/* 悬停效果 */
+/* 悬停效果 - 修改为与普通卡片一致 */
 .card:has(.recommend-badge):hover {
-    transform: translateY(-3px) scale(1.02);
+    transform: translateY(-8px) !important;
+    border-color: rgba(255, 107, 107, 0.3);
     box-shadow: 0 8px 25px rgba(255, 107, 107, 0.25);
 }
 
@@ -176,15 +177,15 @@
     }
 }
 
-/* 3D悬浮效果 */
+/* 3D悬浮效果 - 移除过度的3D效果 */
 .card:has(.recommend-badge) {
-    transform-style: preserve-3d;
-    perspective: 1000px;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/* 修改为与普通卡片一致的悬停效果 */
 .card:has(.recommend-badge):hover {
-    transform: translateY(-5px) rotateX(5deg) rotateY(5deg) scale(1.02);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(-8px);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 /* 飘带悬停效果 */
@@ -211,7 +212,8 @@
         left: 16px;
     }
     
+    /* 移动端悬停效果调整 */
     .card:has(.recommend-badge):hover {
-        transform: translateY(-3px) scale(1.01);
+        transform: translateY(-5px);
     }
 }

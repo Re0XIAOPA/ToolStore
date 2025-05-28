@@ -689,6 +689,21 @@ table img {
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/* 大屏幕下下载弹窗更宽 */
+@media screen and (min-width: 1440px) {
+    .download-content {
+        max-width: 1000px;
+        padding: 30px 40px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .download-content {
+        max-width: 1200px;
+        padding: 30px 50px;
+    }
+}
+
 /* 添加内容进入动画 */
 .modal-content-enter {
     animation: modalContentEnter 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
@@ -937,6 +952,19 @@ main {
     position: relative;
 }
 
+/* 大屏幕下机场详情弹窗更宽 */
+@media screen and (min-width: 1440px) {
+    .airport-content {
+        max-width: 1000px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .airport-content {
+        max-width: 1200px;
+    }
+}
+
 .airport-content::-webkit-scrollbar {
     width: 6px;
 }
@@ -973,6 +1001,19 @@ main {
     background: linear-gradient(145deg, rgba(124, 138, 255, 0.1), rgba(124, 138, 255, 0.05));
     border-bottom: 1px solid rgba(124, 138, 255, 0.1);
     position: relative;
+}
+
+/* 大屏幕头部区域适配 */
+@media screen and (min-width: 1440px) {
+    .airport-header {
+        padding: 30px 40px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .airport-header {
+        padding: 30px 50px;
+    }
 }
 
 .airport-header h3 {
@@ -1021,6 +1062,19 @@ main {
     padding: 30px;
 }
 
+/* 大屏幕内容区域适配 */
+@media screen and (min-width: 1440px) {
+    .airport-body {
+        padding: 30px 40px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .airport-body {
+        padding: 30px 50px;
+    }
+}
+
 /* 描述部分 */
 .description-section {
     background: rgba(124, 138, 255, 0.05);
@@ -1050,6 +1104,45 @@ main {
     font-size: 16px;
     line-height: 1.6;
     opacity: 0.9;
+}
+
+/* 网络速率提示 */
+.speed-info {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(124, 138, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(124, 138, 255, 0.1);
+}
+
+.speed-info-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: rgba(124, 138, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.speed-info-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.speed-info-text {
+    font-size: 14px;
+    color: #a8b3cf;
+    line-height: 1.5;
+}
+
+.speed-info-text strong {
+    color: #7c8aff;
+    font-weight: 600;
 }
 
 /* 特色功能部分 */

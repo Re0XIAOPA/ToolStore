@@ -14,6 +14,9 @@ function createAirportModal(airportName) {
     // 创建背景遮罩
     createBackdrop();
 
+    // 检查是否有任何套餐包含速率信息
+    const hasSpeedInfo = details.packages && details.packages.some(pkg => pkg.speed);
+
     const modal = document.createElement('div');
     modal.className = 'airport-modal';
 
@@ -31,6 +34,18 @@ function createAirportModal(airportName) {
                         ${createPriceTags(details.packages)}
                     </div>
                 </div>
+                ${hasSpeedInfo ? `
+                    <div class="speed-info">
+                        <div class="speed-info-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="#7c8aff" d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z" />
+                            </svg>
+                        </div>
+                        <div class="speed-info-text">
+                            此机场提供<strong>不同速率限制</strong>的套餐选择，请注意各套餐对应的<strong>网络速率</strong>，选择适合您需求的套餐。
+                        </div>
+                    </div>
+                    ` : ''}
             </div>
             <div class="airport-body">
                 <div class="features-section">
@@ -69,26 +84,26 @@ function createAirportModal(airportName) {
     // 事件处理
     const closeModal = () => {
         const contentElement = modal.querySelector('.airport-content');
-        
+
         // 添加退场动画
         if (contentElement) {
             contentElement.classList.remove('modal-content-enter');
             contentElement.classList.add('modal-content-exit');
         }
-        
+
         // 延迟移除模态框
         setTimeout(() => {
             modal.classList.remove('active');
-            
+
             // 再次延迟，等待淡出动画完成
             setTimeout(() => {
                 if (document.body.contains(modal)) {
                     modal.remove();
                 }
-                
+
                 // 移除背景遮罩
                 removeBackdrop();
-                
+
                 // 恢复背景滚动
                 document.body.classList.remove('modal-open');
                 document.body.classList.add('modal-closed');
@@ -122,19 +137,19 @@ function createBackdrop() {
         backdrop.className = 'modal-backdrop';
         document.body.appendChild(backdrop);
     }
-    
+
     // 显示遮罩层
     backdrop.style.display = 'block';
-    
+
     // 禁用页面滚动
     document.body.classList.add('modal-open');
     document.body.classList.remove('modal-closed');
-    
+
     // 强制回流后添加显示类
     setTimeout(() => {
         backdrop.classList.add('show');
     }, 10);
-    
+
     return backdrop;
 }
 
@@ -144,13 +159,13 @@ function removeBackdrop() {
     if (backdrop) {
         // 移除显示类，触发淡出效果
         backdrop.classList.remove('show');
-        
+
         // 完全移除元素
         setTimeout(() => {
             if (document.body.contains(backdrop)) {
                 document.body.removeChild(backdrop);
             }
-            
+
             // 确保页面可以滚动
             document.body.classList.remove('modal-open');
             document.body.classList.add('modal-closed');
@@ -176,21 +191,25 @@ function initAirportCards() {
 function createPriceTags(packages) {
     if (!packages || !packages.length) return '';
 
-    return `
-        <div class="packages-content">
-            ${packages.map(pkg => `
-                <div class="package-row">
-                    <div class="package-name">${pkg.name}</div>
-                    <div class="package-price">
-                        <span class="price-currency">¥</span>
-                        <span class="price-amount">${pkg.price}</span>
-                        <span class="price-period">/${pkg.period}</span>
-                    </div>
-                    <div class="package-traffic">${pkg.traffic}</div>
-                </div>
-            `).join('')}
+    // 直接返回套餐卡片，不再使用额外的包装div
+    return packages.map(pkg => `
+        <div class="package-row">
+            <div class="package-name">${pkg.name}</div>
+            <div class="package-price">
+                <span class="price-currency">¥</span>
+                <span class="price-amount">${pkg.price}</span>
+                <span class="price-period">/${pkg.period}</span>
+            </div>
+            <div class="package-traffic">${pkg.traffic}</div>
+            ${pkg.speed ? `
+            <div class="package-speed">
+                <svg class="speed-icon" viewBox="0 0 24 24">
+                    <path fill="#96a1ff" d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z" />
+                </svg>
+                ${pkg.speed}
+            </div>` : ''}
         </div>
-    `;
+    `).join('');
 }
 
 // 解析价格文本的辅助函数

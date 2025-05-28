@@ -2,7 +2,7 @@
 const airportDetails = {
     // 顶级机场
     '顶级机场': {
-        description: '超便宜、稳定、快速、节点多、节点倍率消耗低',
+        description: '稳定流媒体解锁、三网运营商高质量线路<br>总线路接入100Gbps以上带宽、单日限制总套餐的10%',
         packages: [
             {
                 name: '年付每月200G',
@@ -18,7 +18,7 @@ const airportDetails = {
             },
             {
                 name: '高级月付套餐',
-                price: '13.60',
+                price: '13.00',
                 period: '月',
                 traffic: '3000G/月'
             },
@@ -52,19 +52,22 @@ const airportDetails = {
                 name: '小份套餐',
                 price: '13.00',
                 period: '年',
-                traffic: '100G/月'
+                traffic: '100G/月',
+                speed: '1000Mbps'
             },
             {
                 name: '中份套餐',
                 price: '9.00',
                 period: '季',
-                traffic: '350G/月'
+                traffic: '350G/月',
+                speed: '1000Mbps'
             },
             {
                 name: '大份套餐',
                 price: '10.00',
                 period: '月',
-                traffic: '120G/月'
+                traffic: '1200G/月',
+                speed: '1000Mbps'
             }
         ],
         link: 'https://dash.fscloud.homes/#/register?code=LQF59pkU',
@@ -75,40 +78,25 @@ const airportDetails = {
         description: '十分优惠推荐备用',
         packages: [
             {
-                name: '月付套餐',
+                name: '日光初显',
                 price: '1.00',
                 period: '月',
-                traffic: '500G/月'
+                traffic: '100G/月',
+                speed: '不限速'
             },
             {
-                name: '年付套餐A',
-                price: '10.00',
-                period: '年',
-                traffic: '500G/月'
-            },
-            {
-                name: '半年付套餐',
-                price: '5.00',
+                name: '彩霞骤至',
+                price: '2.00',
                 period: '月',
-                traffic: '100G/月'
+                traffic: '500G/月',
+                speed: '不限速'
             },
             {
-                name: '年付套餐B',
-                price: '8.00',
-                period: '年',
-                traffic: '100G/月'
-            },
-            {
-                name: '月付进阶',
+                name: '日出东山',
                 price: '3.00',
                 period: '月',
-                traffic: '1000G/月'
-            },
-            {
-                name: '年付套餐C',
-                price: '28.00',
-                period: '年',
-                traffic: '1000G/月'
+                traffic: '1024G/月',
+                speed: '不限速'
             },
         ],
         
@@ -120,10 +108,25 @@ const airportDetails = {
         description: '稳定快速、速度保障秒开4K、价格偏于月付',
         packages: [
             {
-                name: '月付套餐',
-                price: '15.00',
+                name: '标准套餐',
+                price: '15.80',
                 period: '月',
-                traffic: '160G/月'
+                traffic: '160G/月',
+                speed: '150Mbps'
+            },
+            {
+                name: '高级套餐',
+                price: '20.80',
+                period: '月',
+                traffic: '200G/月',
+                speed: '不限速'
+            },
+            {
+                name: '豪华套餐',
+                price: '39.80',
+                period: '月',
+                traffic: '500G/月',
+                speed: '不限速'
             }
         ],
         
@@ -135,8 +138,26 @@ const airportDetails = {
         description: '超便宜、稳定、快速、节点多、节点倍率适中',
         packages: [
             {
-                name: '年付套餐',
+                name: '月付套餐',
+                price: '10.00',
+                period: '月',
+                traffic: '200G/月'
+            },
+            {
+                name: '月付套餐',
                 price: '15.00',
+                period: '月',
+                traffic: '400G/月'
+            },
+            {
+                name: '月付套餐',
+                price: '20.00',
+                period: '月',
+                traffic: '600G/月'
+            },
+            {
+                name: '年付套餐',
+                price: '35.00',
                 period: '年',
                 traffic: '300G/月'
             }
@@ -193,6 +214,12 @@ const airportDetails = {
                 price: '7.00',
                 period: '月',
                 traffic: '120G/月'
+            },
+            {
+                name: '月付套餐',
+                price: '13.00',
+                period: '月',
+                traffic: '238G/月'
             }
         ],
         link: 'https://yunanyun.app/#/register?code=QqGbRwUf',
@@ -203,10 +230,25 @@ const airportDetails = {
         description: '超便宜、全球网站排行17万左右、包稳定',
         packages: [
             {
-                name: '月付套餐',
+                name: '基础套餐',
                 price: '4.32',
                 period: '月',
-                traffic: '100G/月'
+                traffic: '100G/月',
+                speed: '1000Mbps'
+            },
+            {
+                name: '标准套餐',
+                price: '8.63',
+                period: '月',
+                traffic: '500G/月',
+                speed: '1000Mbps'
+            },
+            {
+                name: '专业套餐',
+                price: '14.39',
+                period: '月',
+                traffic: '1000G/月',
+                speed: '1000Mbps'
             }
         ],
         link: 'https://mitce.net/aff.php?aff=3878',
@@ -214,17 +256,14 @@ const airportDetails = {
     },
     // CokeCloud(可乐云)
     'CokeCloud(可乐云)': {
-        description: '超便宜、稳定、快速、节点多、节点倍率(1x)',
+        description: '便宜、稳定、专线、专线高速、快速、节点多、多设备、不限速<br>节点倍率(1x)，解锁流媒体，多地区支持（港口/欧美/东南亚等）',
         packages: [
             {
                 name: '早餐套餐 @ 月付',
                 price: '9.90',
                 period: '月',
                 traffic: '200GB/月',
-                resetCost: '5元',
                 speed: '300Mbps',
-                deviceLimit: '5',
-                features: ['解锁流媒体', '多地区支持（港口/欧美/东南亚等）', '电报群售后']
             },
             {
                 name: '客车早餐套餐 @ 月付',
@@ -232,15 +271,12 @@ const airportDetails = {
                 period: '月',
                 traffic: '400GB/月',
                 speed: '200Mbps',
-                deviceLimit: '5',
-                features: ['专线', '不限速', '多设备']
             },
             {
                 name: '奶茶套餐 @ 季付',
                 price: '25.90',
                 period: '季',
                 traffic: '300GB/月',
-                resetCost: '5元',
                 speed: '200Mbps'
             },
             {
@@ -248,56 +284,42 @@ const airportDetails = {
                 price: '38.90',
                 period: '半年',
                 traffic: '200GB/月',
-                resetCost: '4.5元',
-                speed: '200Mbps',
-                deviceLimit: '5',
-                features: ['解锁流媒体', '多地区支持（港口/美/英/韩等）']
+                speed: '200Mbps'
             },
             {
                 name: '游戏机专线 @ 年付',
                 price: '180.00',
                 period: '年',
                 traffic: '100GB/月',
-                features: ['专线高速', '企业级节点', '流量可重置']
+                speed: '不限速'
             },
             {
                 name: '午餐专线 @ 月付',
                 price: '22.00',
                 period: '月',
                 traffic: '200GB/月',
-                resetCost: '10元',
-                speed: '不限速',
-                deviceLimit: '不限',
-                features: ['解锁流媒体', '多设备共享', '多地区支持']
+                speed: '不限速'
             },
             {
                 name: '音乐会专线 @ 月付',
                 price: '40.00',
                 period: '月',
                 traffic: '500GB/月',
-                features: ['超大流量', '专线优先级', '低延迟优化']
+                speed: '不限速'
             },
             {
                 name: '寿司专线 @ 半年付',
                 price: '102.00',
                 period: '半年',
                 traffic: '150GB/月',
-                resetCost: '9元',
-                speed: '不限速',
-                deviceLimit: '不限',
-                features: ['流媒体解锁', '跨境加速', '电报售后支持']
+                speed: '不限速'
             },
             {
                 name: 'TikTok/INS运营专线',
                 price: '200.00',
                 period: '月',
                 traffic: '1000GB/月',
-                features: [
-                    '独享企业级带宽',
-                    '支持多平台运营',
-                    '流量重置服务',
-                    '全球骨干网节点'
-                ]
+                speed: '不限速'
             }
             // 其他套餐可按相同格式继续追加...
         ],

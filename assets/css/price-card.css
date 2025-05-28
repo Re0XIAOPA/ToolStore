@@ -4,6 +4,8 @@ i/*
  */
 .packages-section {
     margin: 15px 0;
+    width: 100%; /* 确保容器充满整个宽度 */
+    padding: 0 5px; /* 减少内边距 */
 }
 
 /* 
@@ -12,11 +14,24 @@ i/*
  */
 .packages-content {
     display: grid;
-    grid-template-columns: repeat(5, 130px);
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* 使用自适应布局 */
     gap: 15px;
-    justify-content: center;
-    max-width: 800px;
+    width: 100%; /* 充满整个容器宽度 */
     margin: 0 auto;
+    padding: 0; /* 移除内边距 */
+}
+
+/* 大屏幕适配 */
+@media screen and (min-width: 1440px) {
+    .packages-content {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 更大屏幕更大卡片 */
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .packages-content {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 超宽屏幕更大卡片 */
+    }
 }
 
 /* 
@@ -33,8 +48,8 @@ i/*
     flex-direction: column;
     transition: all 0.3s ease;
     box-shadow: 0 0 4px #96a1ff;
+    min-width: 0; /* 防止内容溢出 */
 }
-
 
 /* 
  * 套餐名称
@@ -53,6 +68,7 @@ i/*
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     letter-spacing: 0.3px;
     transition: all 0.3s ease;
+    margin-bottom: 8px;
 }
 
 /* 
@@ -63,8 +79,7 @@ i/*
     display: flex;
     align-items: baseline;
     justify-content: center;
-    margin: auto 0;
-
+    margin: 0 0 12px;
 }
 
 .price-currency,
@@ -100,9 +115,40 @@ i/*
     font-size: 13px;
     color: #fff;
     text-align: center;
+    padding: 8px 0 4px;
     border-top: 1px solid rgba(124, 138, 255, 0.08);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+}
+
+/* 
+ * 速率信息
+ * 套餐速率数据的样式
+ */
+.package-speed {
+    font-size: 12px;
+    color: #96a1ff;
+    text-align: center;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    background: rgba(124, 138, 255, 0.08);
+    border-radius: 12px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 5px auto 0;
+    border: 1px solid rgba(124, 138, 255, 0.15);
+}
+
+.package-speed .speed-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    vertical-align: -2px;
+    opacity: 0.9;
 }
 
 /* 
@@ -111,14 +157,14 @@ i/*
  */
 @media screen and (max-width: 768px) {
     .packages-content {
-        grid-template-columns: repeat(3, 130px);
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
         gap: 12px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .packages-content {
-        grid-template-columns: repeat(2, 130px);
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 10px;
     }
 
@@ -144,5 +190,11 @@ i/*
         font-size: 12px;
         padding: 6px 0;
         margin-top: 10px;
+    }
+    
+    .package-speed {
+        font-size: 11px;
+        padding: 2px 4px;
+        margin-top: 3px;
     }
 }
