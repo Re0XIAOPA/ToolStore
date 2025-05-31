@@ -171,6 +171,11 @@ export const softwareData = [
         name: "ChatGPT",
         image: "assets/images/software/ChatGPT.png",
         link: "https://chatgpt.com/"
+    },
+    {
+        name: "银河录像局",
+        image: "assets/images/software/avatar.png",
+        link: "https://nf.video/C21Ca"
     }
 ];
 
