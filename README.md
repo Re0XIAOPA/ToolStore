@@ -200,4 +200,4 @@ GitHub API 对未认证请求有速率限制（每小时60次），配置 Token 
    - 如遇到 "API rate limit exceeded" 错误，请配置有效的Token
 
 > [!IMPORTANT]
-> 本项目仅仅是个人学习和研究
+> 本项目仅是个人学习和研究
