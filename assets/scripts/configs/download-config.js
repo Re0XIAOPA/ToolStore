@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 7/21/2025, 3:46:35 AM
+// 最后更新时间: 7/22/2025, 3:41:25 AM
 
 const downloadLinks = {
     "v2box": {
@@ -16,66 +16,14 @@ const downloadLinks = {
         "ios": "https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532",
         "github": "https://github.com/hiddify/hiddify-app"
     },
-    "gui.for.singbox": {
-        "version": "v1.9.8",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.9.8-Alpha/GUI.for.SingBox-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.9.8-Alpha/GUI.for.SingBox-linux-amd64.zip",
-        "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
-    },
+    "gui.for.singbox": {},
     "nekobox": {
         "version": "v1.3.9",
         "android": "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/download/1.3.9/NekoBox-1.3.9-arm64-v8a.apk",
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.12.7",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.12.7/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.12.7/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.12.7/v2rayN-linux-arm64.deb",
-        "github": "https://github.com/2dust/v2rayN"
-    },
-    "clash verge": {
-        "version": "v2.3.1",
-        "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.3.1/Clash.Verge_2.3.1_x64-setup.exe",
-        "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.3.1/Clash.Verge_2.3.1_x64.dmg",
-        "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.3.1/Clash.Verge_2.3.1_amd64.deb",
-        "github": "https://github.com/clash-verge-rev/clash-verge-rev"
-    },
-    "mihomo party": {
-        "version": "v1.7.6",
-        "windows": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.6/mihomo-party-windows-1.7.6-x64-setup.exe",
-        "mac": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.6/mihomo-party-macos-1.7.6-arm64.pkg",
-        "linux": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.6/mihomo-party-linux-1.7.6-amd64.deb",
-        "github": "https://github.com/mihomo-party-org/mihomo-party"
-    },
-    "clashmeta": {
-        "version": "v2.11.14",
-        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.14/cmfa-2.11.14-meta-universal-release.apk",
-        "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
-    },
-    "surfboard": {
-        "version": "v2.25.1",
-        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.25.1/mobile-universal-release.apk",
-        "github": "https://github.com/getsurfboard/surfboard"
-    },
-    "v2rayng": {
-        "version": "v1.10.8",
-        "android": "https://github.com/2dust/v2rayNG/releases/download/1.10.8/v2rayNG_1.10.8_universal.apk",
-        "github": "https://github.com/2dust/v2rayNG"
-    },
-    "singbox": {
-        "version": "v1.11.15",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.11.15/sing-box-1.11.15-windows-amd64-legacy.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.11.15/SFM-1.11.15-universal.dmg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.11.15/sing-box_1.11.15_linux_amd64.deb",
-        "github": "https://github.com/SagerNet/sing-box",
-        "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
-    },
-    "gui.for.clash": {
-        "version": "v1.9.8",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.8-Alpha/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.8-Alpha/GUI.for.Clash-linux-amd64.zip",
-        "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
+        "windows": ""
     },
     "flclash": {
         "version": "v0.8.86",
@@ -105,6 +53,10 @@ const downloadLinks = {
     "oneclick": {
         "version": "N/A",
         "ios": "https://apps.apple.com/us/app/oneclick-safe-easy-fast/id1545555197"
+    },
+    "singbox": {
+        "version": "N/A",
+        "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     }
 };
 
