@@ -145,9 +145,17 @@ export function initNoticeHandler() {
             cancelCount++;
             localStorage.setItem('cancelCount', cancelCount.toString());
 
-            const remainingTries = MAX_CANCEL_COUNT - cancelCount;
+            const remainingTries = MAX_CANCEL_COUNT - cancelCount - 1;
 
-            if (cancelCount >= MAX_CANCEL_COUNT) {
+            // 如果剩余次数大于0，显示警告消息
+            if (remainingTries > 0) {
+                // 立即更新并显示警告消息
+                updateWarningMessage(remainingTries);
+                setTimeout(() => {
+                    warningMessage.style.display = 'none';
+                }, 2000);
+            } else {
+                // 剩余次数为0或小于0，直接显示取消消息
                 dailyNotice.style.display = 'none';
                 canceledMessage.style.display = 'flex';
                 mask.style.display = 'block';
@@ -155,35 +163,25 @@ export function initNoticeHandler() {
                 disablePageInteraction(true);
                 
                 // 添加重试按钮的点击事件
-                const retryButton = document.getElementById('retryButton');
-                if (retryButton) {
-                    retryButton.addEventListener('click', () => {
-                        // 重置取消计数器
-                        localStorage.setItem('cancelCount', '0');
-                        // 刷新页面
-                        window.location.reload();
-                    });
-                }
-                
-                return;
+                setupRetryButton();
             }
-
-            // 立即更新并显示警告消息
-            updateWarningMessage(remainingTries);
-            setTimeout(() => {
-                warningMessage.style.display = 'none';
-            }, 2000);
         });
     }
     
-    // 检查是否已存在重试按钮并添加事件监听
-    const retryButton = document.getElementById('retryButton');
-    if (retryButton) {
-        retryButton.addEventListener('click', () => {
-            // 重置取消计数器
-            localStorage.setItem('cancelCount', '0');
-            // 刷新页面
-            window.location.reload();
-        });
+    // 设置重试按钮点击事件
+    function setupRetryButton() {
+        const retryButton = document.getElementById('retryButton');
+        if (retryButton && !retryButton.hasAttribute('data-listener-added')) {
+            retryButton.addEventListener('click', () => {
+                // 重置取消计数器
+                localStorage.setItem('cancelCount', '0');
+                // 刷新页面
+                window.location.reload();
+            });
+            retryButton.setAttribute('data-listener-added', 'true');
+        }
     }
+    
+    // 初始化时检查是否需要设置重试按钮
+    setupRetryButton();
 }

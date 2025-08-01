@@ -271,11 +271,18 @@ footer p {
         max-width: 300px;
         padding: 15px 20px;
         font-size: 14px;
+        top: 40%;
+        transform: translate(-50%, -40%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
     .canceled-message button {
-        padding: 6px 12px;
+        padding: 10px 20px;
         font-size: 14px;
+        margin-top: 0;
     }
 }
 
@@ -439,12 +446,12 @@ footer p {
     font-weight: bold;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
 }
 
-.canceled-message button:hover {
-    background: #f8f8f8;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+.canceled-message button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
 }
 
 /* 警告消息样式 */
@@ -470,7 +477,9 @@ body:not(.wiki-page) table {
 }
 
 /* 确保wiki页面下的表格可见 */
-.wiki-page table, .wiki table, body[class*="wiki"] table {
+.wiki-page table,
+.wiki table,
+body[class*="wiki"] table {
     display: table !important;
 }
 
@@ -1434,6 +1443,10 @@ main {
         font-size: 12px;
         padding: 2px 6px;
         margin-left: 5px;
+    }
+
+    .canceled-message button {
+
     }
 }
 
