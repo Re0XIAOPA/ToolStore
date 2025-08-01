@@ -133,33 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // console.log('应用初始化完成');
 });
 
-// 取消按钮点击事件
-const cancelButton = document.querySelector('.cancel');
-if (cancelButton) {
-    cancelButton.addEventListener('click', () => {
-        let cancelCount = parseInt(localStorage.getItem('cancelCount') || '0');
-        cancelCount++;
-        localStorage.setItem('cancelCount', cancelCount.toString());
-
-        const remainingTries = MAX_CANCEL_COUNT - cancelCount;
-
-        if (cancelCount >= MAX_CANCEL_COUNT) {
-            dailyNotice.style.display = 'none';
-            canceledMessage.style.display = 'flex';
-            mask.style.display = 'block';
-            disableAllNavigation(true);
-            disablePageInteraction(true);
-            return;
-        }
-
-        // 立即更新并显示警告消息
-        updateWarningMessage(remainingTries);
-        setTimeout(() => {
-            warningMessage.style.display = 'none';
-        }, 2000);
-    });
-}
-
 // 所有功能函数已移至独立模块文件
 
 
