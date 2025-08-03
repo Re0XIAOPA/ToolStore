@@ -1,18 +1,18 @@
 <div align="center">
-  <h3>📖 简介</h3>
+  <h3>简介</h3>
   <p>一个简洁的代理工具导航网站，提供各类工具、软件和机场服务的下载链接与介绍。</p>
 </div>
 
-## ✨ 特性
+## 特性
 
-- 🚀 自动从 GitHub 获取最新版本和下载链接
-- 📱 支持多平台（Windows、macOS、Linux、iOS、Android）
-- 🔄 每日自动更新
-- 🎨 美观的现代化界面
-- 📦 支持手动配置下载链接
-- 🌐 自动部署到 GitHub Pages
+- 自动从 GitHub 获取最新版本和下载链接
+- 支持多平台（Windows、macOS、Linux、iOS、Android）
+- 每日自动更新
+- 美观的现代化界面
+- 支持手动配置下载链接
+- 自动部署到 GitHub Pages
 
-## 🛠️ 快速开始
+## 快速开始
 
 ### 1. 添加工具
 
@@ -52,7 +52,7 @@ npm install
 npm run update-downloads
 ```
 
-## 📂 项目结构
+## 项目结构
 
 ```
 ToolStore/
@@ -95,7 +95,7 @@ ToolStore/
 └── README.md              # 项目说明
 ```
 
-## 📝 配置说明
+## 配置说明
 
 ### 1. 源文件配置
 
@@ -161,7 +161,7 @@ on:
     - cron: '0 2 * * *'  # 每天凌晨2点更新
 ```
 
-## 📝 注意事项
+## 注意事项
 
 1. **优先级**：手动配置 > iOS 应用商店链接 > GitHub 仓库
 2. **版本号**：
@@ -169,7 +169,7 @@ on:
    - 手动配置：可自定义版本号
    - iOS 应用：显示 "N/A"
 
-## 🔑 GitHub API Token 配置
+## GitHub API Token 配置
 
 GitHub API 对未认证请求有速率限制（每小时60次），配置 Token 后可提高至每小时5000次：
 
