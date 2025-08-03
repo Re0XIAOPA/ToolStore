@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/2/2025, 3:35:59 AM
+// 最后更新时间: 8/3/2025, 3:52:52 AM
 
 const downloadLinks = {
     "v2box": {
@@ -42,10 +42,10 @@ const downloadLinks = {
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
     },
     "mihomo party": {
-        "version": "v1.7.7",
-        "windows": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.7/mihomo-party-windows-1.7.7-x64-setup.exe",
-        "mac": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.7/mihomo-party-macos-1.7.7-arm64.pkg",
-        "linux": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.7/mihomo-party-linux-1.7.7-amd64.deb",
+        "version": "v1.8.0",
+        "windows": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.0/mihomo-party-windows-1.8.0-x64-setup.exe",
+        "mac": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.0/mihomo-party-macos-1.8.0-arm64.pkg",
+        "linux": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.0/mihomo-party-linux-1.8.0-amd64.deb",
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
@@ -59,8 +59,8 @@ const downloadLinks = {
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
-        "version": "v1.10.8",
-        "android": "https://github.com/2dust/v2rayNG/releases/download/1.10.8/v2rayNG_1.10.8_universal.apk",
+        "version": "v1.10.11",
+        "android": "https://github.com/2dust/v2rayNG/releases/download/1.10.11/v2rayNG_1.10.11_universal.apk",
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
