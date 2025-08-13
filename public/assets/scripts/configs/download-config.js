@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/12/2025, 3:20:05 AM
+// 最后更新时间: 8/13/2025, 3:19:38 AM
 
 const downloadLinks = {
     "v2box": {
@@ -28,10 +28,10 @@ const downloadLinks = {
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.13.7",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.13.7/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.13.7/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.13.7/v2rayN-linux-arm64.deb",
+        "version": "v7.13.8",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.13.8/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.13.8/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.13.8/v2rayN-linux-arm64.deb",
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
@@ -42,10 +42,10 @@ const downloadLinks = {
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
     },
     "mihomo party": {
-        "version": "v1.8.3",
-        "windows": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.3/mihomo-party-windows-1.8.3-x64-setup.exe",
-        "mac": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.3/mihomo-party-macos-1.8.3-arm64.pkg",
-        "linux": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.3/mihomo-party-linux-1.8.3-amd64.deb",
+        "version": "v1.8.4",
+        "windows": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.4/mihomo-party-windows-1.8.4-x64-setup.exe",
+        "mac": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.4/mihomo-party-macos-1.8.4-arm64.pkg",
+        "linux": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.4/mihomo-party-linux-1.8.4-amd64.deb",
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
