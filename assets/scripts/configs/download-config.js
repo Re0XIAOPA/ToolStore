@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/21/2025, 3:10:23 AM
+// 最后更新时间: 8/22/2025, 3:11:10 AM
 
 const downloadLinks = {
     "v2box": {
@@ -64,10 +64,10 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.12.2",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.12.2/sing-box-1.12.2-windows-amd64-legacy-windows-7.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.12.2/SFM-1.12.2-universal.dmg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.12.2/sing-box_1.12.2_linux_amd64.deb",
+        "version": "v1.12.3",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.12.3/sing-box-1.12.3-windows-amd64-legacy-windows-7.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.12.3/SFM-1.12.3-universal.dmg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.12.3/sing-box_1.12.3_linux_amd64.deb",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
