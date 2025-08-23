@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/22/2025, 3:11:10 AM
+// 最后更新时间: 8/23/2025, 3:01:41 AM
 
 const downloadLinks = {
     "v2box": {
@@ -35,10 +35,10 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
-        "version": "v2.3.2",
-        "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.3.2/Clash.Verge_2.3.2_x64-setup.exe",
-        "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.3.2/Clash.Verge_2.3.2_x64.dmg",
-        "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.3.2/Clash.Verge_2.3.2_amd64.deb",
+        "version": "v2.4.0",
+        "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.0/Clash.Verge_2.4.0_x64-setup.exe",
+        "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.0/Clash.Verge_2.4.0_x64.dmg",
+        "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.0/Clash.Verge_2.4.0_amd64.deb",
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
     },
     "mihomo party": {
@@ -59,8 +59,8 @@ const downloadLinks = {
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
-        "version": "v1.10.11",
-        "android": "https://github.com/2dust/v2rayNG/releases/download/1.10.11/v2rayNG_1.10.11_universal.apk",
+        "version": "v1.10.19",
+        "android": "https://github.com/2dust/v2rayNG/releases/download/1.10.19/v2rayNG_1.10.19_universal.apk",
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
