@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/27/2025, 3:05:21 AM
+// 最后更新时间: 8/28/2025, 3:05:18 AM
 
 const downloadLinks = {
     "v2box": {
@@ -42,15 +42,15 @@ const downloadLinks = {
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
     },
     "mihomo party": {
-        "version": "v1.8.4",
-        "windows": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.4/mihomo-party-windows-1.8.4-x64-setup.exe",
-        "mac": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.4/mihomo-party-macos-1.8.4-arm64.pkg",
-        "linux": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.4/mihomo-party-linux-1.8.4-amd64.deb",
+        "version": "v1.8.5",
+        "windows": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.5/mihomo-party-windows-1.8.5-x64-setup.exe",
+        "mac": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.5/mihomo-party-macos-1.8.5-arm64.pkg",
+        "linux": "https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.8.5/mihomo-party-linux-1.8.5-amd64.deb",
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
-        "version": "v2.11.15",
-        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.15/cmfa-2.11.15-meta-universal-release.apk",
+        "version": "v2.11.16",
+        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.16/cmfa-2.11.16-meta-universal-release.apk",
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
