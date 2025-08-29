@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/28/2025, 3:05:18 AM
+// 最后更新时间: 8/29/2025, 3:01:34 AM
 
 const downloadLinks = {
     "v2box": {
@@ -64,17 +64,17 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.12.3",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.12.3/sing-box-1.12.3-windows-amd64-legacy-windows-7.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.12.3/SFM-1.12.3-universal.dmg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.12.3/sing-box_1.12.3_linux_amd64.deb",
+        "version": "v1.12.4",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.12.4/sing-box-1.12.4-windows-amd64-legacy-windows-7.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.12.4/SFM-1.12.4-universal.dmg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.12.4/sing-box_1.12.4_linux_amd64.deb",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
     "gui.for.clash": {
-        "version": "v1.9.9",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.9/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.9/GUI.for.Clash-linux-amd64.zip",
+        "version": "v1.9.10",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.10/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.10/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
