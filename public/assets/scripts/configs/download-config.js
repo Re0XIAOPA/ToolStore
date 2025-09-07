@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 9/7/2025, 10:34:50 AM
+// 最后更新时间: 9/7/2025, 11:41:38 AM
 
 const downloadLinks = {
     "v2box": {
@@ -106,13 +106,13 @@ const downloadLinks = {
         "version": "N/A",
         "ios": "https://apps.apple.com/us/app/oneclick-safe-easy-fast/id1545555197"
     },
-    "streisand": {
+    "Streisand": {
         "version": "N/A",
         "ios": "https://apps.apple.com/us/app/streisand/id6450534064"
     },
-    "npvtunnel": {
+    "NpvTunnel": {
         "version": "N/A",
-        'ios': 'https://apps.apple.com/us/app/npv-tunnel/id1629465476'
+        "ios": "https://apps.apple.com/us/app/npv-tunnel/id1629465476"
     }
 };
 
