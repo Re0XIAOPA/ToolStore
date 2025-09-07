@@ -92,6 +92,16 @@ export const toolsData = [
         name: "V2Box",
         image: "assets/images/tools/V2Box.png",
         link: "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box"
+    },
+    {
+        name: "Streisand",
+        image: "assets/images/tools/Streisand.png",
+        link: "https://apps.apple.com/us/app/streisand/id6450534064"
+    },
+    {
+        name: "NpvTunnel",
+        image: "assets/images/tools/NpvTunnel.png",
+        link: "https://apps.apple.com/us/app/npv-tunnel/id1629465476"
     }
 ];
 
@@ -231,6 +241,11 @@ export const airportData = [
         image: "assets/images/airports/CokeCloud.png",
         link: "https://test.buyzur.com/#/register?code=F7gWu5IA"
     },
+    {
+        name: '快雷GO',
+        image: "assets/images/airports/kuailei.png",
+        link: "https://kuailei.nnbhhxk.com/register?code=XVcVMy4e"
+    }
 ];
 
 // 导出所有卡片数据的集合

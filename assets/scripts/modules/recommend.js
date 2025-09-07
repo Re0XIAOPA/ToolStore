@@ -39,13 +39,34 @@ export class RecommendManager {
             // 获取该区域的所有卡片
             const cards = Array.from(container.children);
 
-            // 根据是否推荐排序
+            // 根据推荐状态和热度排序
             cards.sort((a, b) => {
                 const aRecommended = a.dataset.recommended === 'true';
                 const bRecommended = b.dataset.recommended === 'true';
-
+                
+                // 首先按推荐状态排序，推荐的在前
                 if (aRecommended && !bRecommended) return -1;
                 if (!aRecommended && bRecommended) return 1;
+                
+                // 如果都是推荐的，按 hot 值排序
+                if (aRecommended && bRecommended) {
+                    const aTitle = a.querySelector('.card-title')?.textContent.trim();
+                    const bTitle = b.querySelector('.card-title')?.textContent.trim();
+                    const aHot = this.getHotValue(aTitle, sectionId);
+                    const bHot = this.getHotValue(bTitle, sectionId);
+                    
+                    // 如果都有 hot 值，按 hot 值升序排列（数字越小越靠前）
+                    if (aHot !== null && bHot !== null) {
+                        return aHot - bHot;
+                    }
+                    // 有 hot 值的排在没有 hot 值的前面
+                    if (aHot !== null && bHot === null) return -1;
+                    if (aHot === null && bHot !== null) return 1;
+                    // 都没有 hot 值，保持原顺序
+                    return 0;
+                }
+                
+                // 都不是推荐的，保持原顺序
                 return 0;
             });
 
@@ -69,9 +90,21 @@ export class RecommendManager {
     }
 
     isRecommended(cardTitle, section) {
-        return this.config[section]?.some(item =>
-            item.toLowerCase() === cardTitle.toLowerCase()
-        );
+        return this.config[section]?.some(item => {
+            const itemName = typeof item === 'string' ? item : item.name;
+            return itemName.toLowerCase() === cardTitle.toLowerCase();
+        });
+    }
+
+    getHotValue(cardTitle, section) {
+        const item = this.config[section]?.find(item => {
+            const itemName = typeof item === 'string' ? item : item.name;
+            return itemName.toLowerCase() === cardTitle.toLowerCase();
+        });
+        
+        if (!item) return null;
+        if (typeof item === 'string') return null;
+        return item.hot || null;
     }
 
     addBadgeToCard(card) {
