@@ -105,6 +105,14 @@ const downloadLinks = {
     "oneclick": {
         "version": "N/A",
         "ios": "https://apps.apple.com/us/app/oneclick-safe-easy-fast/id1545555197"
+    },
+    "streisand": {
+        "version": "N/A",
+        "ios": "https://apps.apple.com/us/app/streisand/id6450534064"
+    },
+    "npvtunnel": {
+        "version": "N/A",
+        'ios': 'https://apps.apple.com/us/app/npv-tunnel/id1629465476'
     }
 };
 

@@ -40,7 +40,9 @@ const CONFIG = {
         'quantumultx',
         'surge5',
         'oneclick',
-        'v2box'
+        'v2box',
+        'Streisand',
+        'NpvTunnel'
     ],
     // 仓库名称映射（将GitHub仓库名映射到我们想要的名称）
     repoNameMapping: {
@@ -65,7 +67,9 @@ const CONFIG = {
         'oneclick': 'https://apps.apple.com/us/app/oneclick-safe-easy-fast/id1545555197',
         'v2box': 'https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690',
         'singbox': 'https://apps.apple.com/us/app/sing-box-vt/id6673731168',
-        'hiddify': 'https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532'
+        'hiddify': 'https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532',
+        'Streisand': 'https://apps.apple.com/us/app/streisand/id6450534064',
+        'NpvTunnel': 'https://apps.apple.com/us/app/npv-tunnel/id1629465476'
     },
     // 平台特定的文件匹配模式 - 扩展更多关键词和扩展名
     platformPatterns: {

@@ -325,6 +325,55 @@ const airportDetails = {
         ],
         link: 'https://test.buyzur.com/#/register?code=F7gWu5IA',
         tags: ['稳定', '高速', '性价比']
+    },
+    "快雷GO": {
+        description: '节点支持中转和专线，支持tiktok/推特/ins/油管/奈飞/迪士尼/Chat GPT等',
+        packages: [
+            {
+                name: '小包',
+                price: '20.90',
+                period: '月',
+                traffic: '150G/月',
+                speed: '300Mbps'
+            },
+            {
+                name: '中包',
+                price: '30.00',
+                period: '月',
+                traffic: '300G/月',
+                speed: '500Mbps'
+            },
+            {
+                name: '大包',
+                price: '50.00',
+                period: '月',
+                traffic: '800G/月',
+                speed: '1000Mbps'
+            },
+            {
+                name: '旗舰包',
+                price: '150.00',
+                period: '月',
+                traffic: '3000G/月',
+                speed: '1000Mbps'
+            },
+            {
+                name: '流量包 300G',
+                price: '99.00',
+                period: '',
+                traffic: '一次性(可单独购买)',
+                speed: '1000Mbps'
+            },
+            {
+                name: '流量包 1000G',
+                price: '199.00',
+                period: '',
+                traffic: '一次性(可单独购买)',
+                speed: '1000Mbps'
+            }
+        ],
+        link: 'https://kuailei.nnbhhxk.com/register?code=XVcVMy4e',
+        tags: ['稳定', '高速', '中转', '专线']
     }
     // 可以添加更多机场配置...
 };
