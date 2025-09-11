@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 9/10/2025, 2:57:45 AM
+// 最后更新时间: 9/11/2025, 3:02:33 AM
 
 const downloadLinks = {
     "v2box": {
@@ -28,10 +28,10 @@ const downloadLinks = {
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.14.6",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.14.6/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.14.6/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.14.6/v2rayN-linux-arm64.deb",
+        "version": "v7.14.9",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.14.9/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.14.9/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.14.9/v2rayN-linux-arm64.deb",
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
@@ -64,10 +64,10 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.12.4",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.12.4/sing-box-1.12.4-windows-amd64-legacy-windows-7.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.12.4/SFM-1.12.4-universal.dmg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.12.4/sing-box_1.12.4_linux_amd64.deb",
+        "version": "v1.12.5",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.12.5/sing-box-1.12.5-windows-amd64-legacy-windows-7.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.12.5/SFM-1.12.5-universal.dmg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.12.5/sing-box_1.12.5_linux_amd64.deb",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
