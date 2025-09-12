@@ -194,6 +194,15 @@ main {
 
 /* 图标容器样式优化 */
 .card-icon {
+    pointer-events: none;
+    /* Safari 浏览器 */
+    -webkit-user-drag: none;
+    /* 早期浏览器 */
+    -khtml-user-drag: none;
+    /* Firefox 浏览器 */
+    -moz-user-drag: none;
+    /* Opera 浏览器 */
+    -o-user-drag: none;
     width: 90px;
     height: 90px;
     display: flex;
@@ -1445,9 +1454,7 @@ main {
         margin-left: 5px;
     }
 
-    .canceled-message button {
-
-    }
+    .canceled-message button {}
 }
 
 /* 加载指示器 */
