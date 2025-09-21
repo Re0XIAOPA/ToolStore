@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 9/20/2025, 2:56:40 AM
+// 最后更新时间: 9/21/2025, 3:10:59 AM
 
 const downloadLinks = {
     "v2box": {
@@ -23,8 +23,8 @@ const downloadLinks = {
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
-        "version": "v1.3.9",
-        "android": "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/download/1.3.9/NekoBox-1.3.9-arm64-v8a.apk",
+        "version": "v1.4.0",
+        "android": "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/download/1.4.0/NekoBox-1.4.0-arm64-v8a.apk",
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
