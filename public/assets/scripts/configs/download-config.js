@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 9/22/2025, 3:10:38 AM
+// 最后更新时间: 9/23/2025, 2:56:56 AM
 
 const downloadLinks = {
     "v2box": {
@@ -17,9 +17,9 @@ const downloadLinks = {
         "github": "https://github.com/hiddify/hiddify-app"
     },
     "gui.for.singbox": {
-        "version": "v1.9.9",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.9.9/GUI.for.SingBox-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.9.9/GUI.for.SingBox-linux-amd64.zip",
+        "version": "v1.10.0",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.10.0/GUI.for.SingBox-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.10.0/GUI.for.SingBox-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
@@ -28,10 +28,10 @@ const downloadLinks = {
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.14.10",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.14.10/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.14.10/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.14.10/v2rayN-linux-arm64.deb",
+        "version": "v7.14.12",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.14.12/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.14.12/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.14.12/v2rayN-linux-arm64.deb",
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
@@ -72,9 +72,9 @@ const downloadLinks = {
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
     "gui.for.clash": {
-        "version": "v1.9.10",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.10/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.9.10/GUI.for.Clash-linux-amd64.zip",
+        "version": "v1.10.0",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.10.0/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.10.0/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
