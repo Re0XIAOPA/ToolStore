@@ -1,7 +1,7 @@
 // 卡片数据配置文件
 // 这个文件集中存储所有卡片数据，便于统一管理和修改
 
-// 网络工具数据
+// 代理工具数据
 export const toolsData = [
     {
         name: "Clash Verge",
@@ -257,7 +257,7 @@ export const airportData = [
 export const allCardData = {
     tools: {
         id: "tools",
-        title: "网络工具",
+        title: "代理工具",
         description: "实用工具软件集合，支持多平台使用",
         data: toolsData,
         linkText: "下载"
