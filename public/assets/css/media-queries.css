@@ -128,9 +128,16 @@
         transform: translateY(-2px);
     }
     
+    /* Banner提醒在移动端的样式 */
+    .banner-notice {
+        top: 60px; /* 紧贴在header下方 */
+        padding: 12px;
+        font-size: 13px;
+    }
+    
     /* 内容区域布局 */
     main {
-        padding: 80px 15px 30px;
+        padding: 130px 15px 30px; /* 增加顶部padding以适应banner */
     }
 
     .announcement {

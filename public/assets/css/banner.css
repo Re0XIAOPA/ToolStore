@@ -1,0 +1,45 @@
+.banner-notice {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 15px;
+    margin: 0;
+    font-size: 14px;
+    color: #856404;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 80px; /* 默认桌面端位置 */
+    width: 100%;
+    z-index: 1500; /* 低于header的z-index但高于其他内容 */
+    box-sizing: border-box;
+    transition: top 0.3s ease; /* 平滑过渡效果 */
+}
+
+/* 移动端样式 */
+@media screen and (max-width: 956px) {
+    .banner-notice {
+        top: 60px; /* 移动端紧贴在header下方 */
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+.banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.banner-text {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.banner-link {
+    color: #d35400;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.banner-link:hover {
+    color: #e74c3c;
+}
