@@ -245,7 +245,12 @@ export const airportData = [
         name: '快雷GO',
         image: "assets/images/airports/kuailei.png",
         link: "https://kuailei.nnbhhxk.com/register?code=XVcVMy4e"
-    }
+    },
+    {
+        name: '奶昔机场',
+        image: "assets/images/airports/naixi.png",
+        link: "https://naiixi.com/"
+    },
 ];
 
 // 导出所有卡片数据的集合

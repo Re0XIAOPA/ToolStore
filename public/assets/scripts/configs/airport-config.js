@@ -99,7 +99,7 @@ const airportDetails = {
                 speed: '不限速'
             },
         ],
-        
+
         link: 'https://xn--9kqy92aw5h.com/#/register?code=O0Mcbu1C',
         tags: ['稳定', '高速', '性价比']
     },
@@ -129,7 +129,7 @@ const airportDetails = {
                 speed: '不限速'
             }
         ],
-        
+
         link: 'https://go.dginv.click/#/register?code=FdXt0gA2',
         tags: ['稳定', '高速', '性价比']
     },
@@ -326,6 +326,7 @@ const airportDetails = {
         link: 'https://test.buyzur.com/#/register?code=F7gWu5IA',
         tags: ['稳定', '高速', '性价比']
     },
+    // 快雷GO
     "快雷GO": {
         description: '节点支持中转和专线，支持tiktok/推特/ins/油管/奈飞/迪士尼/Chat GPT等',
         packages: [
@@ -374,6 +375,125 @@ const airportDetails = {
         ],
         link: 'https://kuailei.nnbhhxk.com/register?code=XVcVMy4e',
         tags: ['稳定', '高速', '中转', '专线']
+    },
+    // 奶昔机场
+    "奶昔机场": {
+        description: '佩奇家主站机场，一家全线中转线路的高端机场，成立大概三年多了，机场主也比较佛系，机场是他们公司副业，过于高端的话还有他们家的副机场AmyTelecom',
+        packages: [
+            // 轻量级基础服务
+            {
+                name: '轻量级基础服务',
+                price: '71.00',
+                period: '31天',
+                traffic: '200G/月'
+            },
+            {
+                name: '轻量级基础服务',
+                price: '360.00',
+                period: '186天',
+                traffic: '200G/月'
+            },
+            {
+                name: '轻量级基础服务',
+                price: '624.00',
+                period: '372天',
+                traffic: '200G/月'
+            },
+            // 基础服务
+            {
+                name: '基础服务',
+                price: '117.46',
+                period: '31天',
+                traffic: '200G/月'
+            },
+            {
+                name: '基础服务',
+                price: '594.00',
+                period: '186天',
+                traffic: '200G/月'
+            },
+            {
+                name: '基础服务',
+                price: '1102.44',
+                period: '372天',
+                traffic: '200G/月'
+            },
+            // 附加服务
+            {
+                name: 'Premium Access X 12',
+                price: '162.00',
+                period: '31天',
+                traffic: '500G/月 赠送360天 Netflix、Disney+、Spotify会员任选 需依赖基础服务'
+            },
+            {
+                name: 'Group Access',
+                price: '45.15',
+                period: '31天',
+                traffic: '依赖基础服务'
+            },
+            // 流媒体服务
+            // Netflix 会员
+            {
+                name: 'Netflix 会员',
+                price: '27.30',
+                period: '月',
+                traffic: '30 天'
+            },
+            {
+                name: 'Netflix 会员',
+                price: '163.80',
+                period: '半年',
+                traffic: '180 天'
+            },
+            {
+                name: 'Netflix 会员',
+                price: '327.60',
+                period: '年',
+                traffic: '360 天'
+            },
+            // YouTube 会员
+            {
+                name: 'Netflix 会员',
+                price: '208.00',
+                period: '年',
+                traffic: '360 天'
+            },
+            // Spotify 会员
+            {
+                name: 'Spotify 会员',
+                price: '199.00',
+                period: '年',
+                traffic: '360 天'
+            },
+            // Disney+ 会员
+            {
+                name: 'Disney+ 会员',
+                price: '104.00',
+                period: '年',
+                traffic: '360 天'
+            },
+            // ChatGPT 3.5 账户会员
+            {
+                name: 'ChatGPT 3.5 账户',
+                price: '104.00',
+                period: '年',
+                traffic: '360 天'
+            },
+            // Prime 会员
+            {
+                name: 'Prime 会员',
+                price: '208.00',
+                period: '年',
+                traffic: '360 天'
+            },
+            // Office365 账户
+            {
+                name: 'Office365 账户',
+                price: '104.00'
+            },
+        ],
+        link: 'https://naiixi.com/',
+        tags: ['高端机场', '一线机场', '稳定', '高速', '中转', '专线']
     }
     // 可以添加更多机场配置...
 };

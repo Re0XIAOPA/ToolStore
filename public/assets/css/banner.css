@@ -43,3 +43,38 @@
 .banner-link:hover {
     color: #e74c3c;
 }
+
+/* 法律声明提醒样式 */
+.legal-notice {
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    padding: 15px;
+    margin: 30px 0;
+    font-size: 14px;
+    color: #0c5460;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.legal-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.legal-text {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.legal-text strong {
+    color: #0c5460;
+}
+
+/* 移动端法律声明样式 */
+@media screen and (max-width: 956px) {
+    .legal-notice {
+        padding: 12px;
+        font-size: 13px;
+        margin: 20px 0;
+    }
+}
