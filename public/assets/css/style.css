@@ -318,7 +318,6 @@ footer p {
 
 /* 
  * 提示窗样式优化
- * 全屏模态对话框的样式和动画
  */
 .notice {
     position: fixed;
@@ -343,6 +342,7 @@ footer p {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     animation: slideIn 0.3s ease-out;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative; /* 为页面指示器定位提供参考 */
 }
 
 @keyframes slideIn {
@@ -415,6 +415,12 @@ footer p {
     transform: translateY(-2px);
 }
 
+.buttons button.acknowledge:disabled {
+    background: rgba(124, 138, 255, 0.2);
+    cursor: not-allowed;
+    transform: none;
+}
+
 .buttons button.cancel {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
@@ -424,6 +430,104 @@ footer p {
 .buttons button.cancel:hover {
     background: #ff4747;
     transform: translateY(-2px);
+}
+
+.buttons button.next-page,
+.buttons button.prev-page {
+    background: rgba(124, 138, 255, 0.3);
+    color: #fff;
+}
+
+.buttons button.next-page:hover,
+.buttons button.prev-page:hover {
+    background: rgba(124, 138, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* 页面指示器样式 */
+.page-indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/* 公告页面样式 */
+.notice-page {
+    display: none;
+}
+
+.notice-page.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 免责声明内容样式 */
+.disclaimer-content {
+    margin: 25px 0;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 16px;
+    max-height: 300px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* 添加iOS设备的流畅滚动 */
+    scrollbar-width: thin; /* Firefox滚动条样式 */
+    scrollbar-color: rgba(124, 138, 255, 0.5) rgba(255, 255, 255, 0.1); /* Firefox滚动条颜色 */
+}
+
+/* Webkit浏览器滚动条样式 */
+.disclaimer-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.disclaimer-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.disclaimer-content::-webkit-scrollbar-thumb {
+    background: rgba(124, 138, 255, 0.5);
+    border-radius: 4px;
+}
+
+.disclaimer-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 138, 255, 0.7);
+}
+
+.disclaimer-text p {
+    margin: 15px 0;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.disclaimer-text strong {
+    color: #e6e6e6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.agreement-note {
+    text-align: center;
+    font-style: italic;
+    color: #7c8aff;
+    margin-top: 20px;
+    font-size: 14px;
 }
 
 /* 取消访问提示样式 */
@@ -502,9 +606,6 @@ body[class*="wiki"] table {
     background: rgba(0, 0, 0, 0.8);
     z-index: 2000;
     backdrop-filter: blur(8px);
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 2000;
     display: none;
 }
 

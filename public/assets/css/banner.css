@@ -16,6 +16,8 @@
     box-sizing: border-box;
     transition: top 0.3s ease, height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
     /* 添加所有过渡效果 */
+    /* 默认隐藏，防止页面加载时闪烁 */
+    display: none;
 }
 
 /* 移动端样式 */
@@ -99,6 +101,8 @@
     font-size: 14px;
     color: #0c5460;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 默认隐藏，防止页面加载时闪烁 */
+    display: none;
 }
 
 .legal-content {

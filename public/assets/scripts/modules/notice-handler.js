@@ -15,6 +15,12 @@ export function initNoticeHandler() {
     
     // 阻止滚动函数
     function preventScroll(e) {
+        // 允许公告弹窗内的滚动
+        const isInNotice = e.target.closest && e.target.closest('#dailyNotice');
+        if (isInNotice) {
+            return; // 不阻止公告弹窗内的滚动
+        }
+        
         if (e) {
             e.preventDefault();
             e.stopPropagation();
@@ -120,11 +126,91 @@ export function initNoticeHandler() {
         }
     }
 
+    // 页面切换函数
+    function switchPage(pageNumber) {
+        // 隐藏所有页面
+        const pages = document.querySelectorAll('.notice-page');
+        pages.forEach(page => {
+            page.classList.remove('active');
+        });
+        
+        // 显示指定页面
+        const targetPage = document.getElementById(`page${pageNumber}`);
+        if (targetPage) {
+            targetPage.classList.add('active');
+        }
+        
+        // 更新页面指示器
+        const pageIndicator = document.querySelector('.page-indicator .page-number');
+        if (pageIndicator) {
+            pageIndicator.textContent = `${pageNumber}/2`;
+        }
+        
+        // 如果是第二页，检查滚动位置以启用"我已知晓"按钮
+        if (pageNumber === 2) {
+            checkScrollPosition();
+        }
+    }
+    
+    // 检查免责声明页面的滚动位置
+    function checkScrollPosition() {
+        const disclaimerContent = document.querySelector('.disclaimer-content');
+        const acknowledgeBtn = document.querySelector('.buttons .acknowledge');
+        
+        if (disclaimerContent && acknowledgeBtn) {
+            const { scrollTop, scrollHeight, clientHeight } = disclaimerContent;
+            const isScrolledToBottom = scrollTop + clientHeight >= scrollHeight - 5;
+            
+            if (isScrolledToBottom) {
+                acknowledgeBtn.disabled = false;
+            } else {
+                acknowledgeBtn.disabled = true;
+            }
+        }
+    }
+    
+    // 绑定页面切换事件
+    function bindPageSwitchEvents() {
+        // 下一页按钮
+        const nextButtons = document.querySelectorAll('.next-page');
+        nextButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const nextPage = button.dataset.next;
+                if (nextPage) {
+                    switchPage(nextPage);
+                }
+            });
+        });
+        
+        // 上一页按钮
+        const prevButtons = document.querySelectorAll('.prev-page');
+        prevButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const prevPage = button.dataset.prev;
+                if (prevPage) {
+                    switchPage(prevPage);
+                }
+            });
+        });
+        
+        // 免责声明内容滚动事件
+        const disclaimerContent = document.querySelector('.disclaimer-content');
+        if (disclaimerContent) {
+            disclaimerContent.addEventListener('scroll', checkScrollPosition);
+        }
+    }
+    
     // 总是显示公告
     dailyNotice.style.display = 'flex';
     mask.style.display = 'block';
     disableAllNavigation(true);
     disablePageInteraction(true);
+    
+    // 显示第一页
+    switchPage(1);
+    
+    // 绑定页面切换事件
+    bindPageSwitchEvents();
 
     // 同意按钮点击事件
     document.querySelector('.acknowledge').addEventListener('click', () => {
@@ -138,9 +224,9 @@ export function initNoticeHandler() {
     });
 
     // 取消按钮点击事件
-    const cancelButton = document.querySelector('.cancel');
-    if (cancelButton) {
-        cancelButton.addEventListener('click', () => {
+    const cancelButtons = document.querySelectorAll('.cancel');
+    cancelButtons.forEach(button => {
+        button.addEventListener('click', () => {
             let cancelCount = parseInt(localStorage.getItem('cancelCount') || '0');
             cancelCount++;
             localStorage.setItem('cancelCount', cancelCount.toString());
@@ -166,7 +252,7 @@ export function initNoticeHandler() {
                 setupRetryButton();
             }
         });
-    }
+    });
     
     // 设置重试按钮点击事件
     function setupRetryButton() {

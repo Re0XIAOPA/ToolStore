@@ -24,6 +24,9 @@ function bindBannerEvents() {
         });
     }
     
+    // 显示banner（默认情况下应该显示）
+    showBanner();
+    
     // 不再检查本地存储状态，每次页面加载都显示banner
 }
 
@@ -60,18 +63,22 @@ export function resetBannerState() {
 // 显示banner（可用于重新显示已关闭的banner）
 export function showBanner() {
     const banner = document.querySelector('.banner-notice');
+    const legalNotice = document.querySelector('.legal-notice');
+    
     if (banner) {
         banner.style.display = 'block';
         banner.style.opacity = '1';
         banner.style.transform = 'translateY(0)';
         // 添加过渡效果确保显示时也平滑
         banner.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        // 不再需要清除本地存储
-        // localStorage.removeItem('bannerClosed');
-        
-        // 通知其他模块调整布局
-        window.dispatchEvent(new CustomEvent('bannerOpened'));
     }
+    
+    if (legalNotice) {
+        legalNotice.style.display = 'block';
+    }
+    
+    // 通知其他模块调整布局
+    window.dispatchEvent(new CustomEvent('bannerOpened'));
 }
 
 // 页面加载完成后初始化
