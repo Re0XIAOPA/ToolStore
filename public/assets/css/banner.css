@@ -1,25 +1,31 @@
 .banner-notice {
     background-color: #fff3cd;
     border: 1px solid #ffeaa7;
+    border-left: 5px solid #fdcb6e;
     padding: 15px;
     margin: 0;
     font-size: 14px;
     color: #856404;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 80px; /* 默认桌面端位置 */
+    top: 80px;
+    /* 默认桌面端位置 */
     width: 100%;
-    z-index: 1500; /* 低于header的z-index但高于其他内容 */
+    z-index: 1500;
+    /* 低于header的z-index但高于其他内容 */
     box-sizing: border-box;
-    transition: top 0.3s ease; /* 平滑过渡效果 */
+    transition: top 0.3s ease, height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    /* 添加所有过渡效果 */
 }
 
 /* 移动端样式 */
 @media screen and (max-width: 956px) {
     .banner-notice {
-        top: 60px; /* 移动端紧贴在header下方 */
+        top: 60px;
+        /* 移动端紧贴在header下方 */
         padding: 12px;
         font-size: 13px;
+        transition: top 0.3s ease, height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
     }
 }
 
@@ -34,6 +40,11 @@
     line-height: 1.5;
 }
 
+.banner-text+.banner-text {
+    margin-top: 8px;
+    /* 多行文本之间的间距 */
+}
+
 .banner-link {
     color: #d35400;
     text-decoration: underline;
@@ -44,15 +55,50 @@
     color: #e74c3c;
 }
 
+/* Banner关闭按钮样式 */
+.banner-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(133, 100, 4, 0.1);
+    border: 1px solid rgba(133, 100, 4, 0.2);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.3s ease;
+    color: #856404;
+}
+
+.banner-close-btn:hover {
+    background: rgba(133, 100, 4, 0.2);
+    transform: scale(1.1);
+}
+
+.banner-close-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.banner-close-btn:focus {
+    outline: 2px solid #856404;
+    outline-offset: 2px;
+}
+
 /* 法律声明提醒样式 */
 .legal-notice {
     background-color: #d1ecf1;
     border: 1px solid #bee5eb;
+    border-left: 5px solid #0c5460;
     padding: 15px;
     margin: 30px 0;
     font-size: 14px;
     color: #0c5460;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .legal-content {

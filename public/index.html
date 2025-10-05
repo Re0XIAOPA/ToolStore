@@ -9,6 +9,8 @@
     <script type="module" src="assets/scripts/sponsor.js"></script>
     <script type="module" src="assets/scripts/config.js"></script>
     <script type="module" src="assets/scripts/modules/feedback-modal.js"></script>
+    <script type="module" src="assets/scripts/modules/layout-adjuster.js"></script>
+    <script type="module" src="assets/scripts/modules/banner-handler.js"></script>
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     <link rel="apple-touch-icon"
@@ -113,6 +115,13 @@
                     style="margin-right: 10px;">Linux</a>
             </p>
         </div>
+        <!-- 关闭按钮 -->
+        <button class="banner-close-btn" id="bannerCloseBtn" aria-label="关闭通知">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
     </div>
 
     <main>

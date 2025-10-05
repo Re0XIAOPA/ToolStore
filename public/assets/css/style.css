@@ -514,13 +514,14 @@ body[class*="wiki"] table {
     scroll-margin-top: 100px;
     margin-bottom: 40px;
     margin-top: 20px;
+    /* 减少默认间距，让JavaScript动态控制 */
     margin-bottom: 60px;
     background: rgba(26, 29, 36, 0.95);
     border-radius: 24px;
     padding: 40px 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(124, 138, 255, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, margin-top 0.3s ease;
 }
 
 .tools-section:hover {
@@ -530,7 +531,8 @@ body[class*="wiki"] table {
 
 /* 确保第一个section有足够的上边距 */
 .tools-section:first-child {
-    margin-top: 0;
+    margin-top: 20px;
+    /* 减少默认间距，让JavaScript动态控制 */
 }
 
 .tools-header {
