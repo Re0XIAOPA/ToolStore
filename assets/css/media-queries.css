@@ -128,9 +128,37 @@
         transform: translateY(-2px);
     }
     
+    /* Banner提醒在移动端的样式 */
+    .banner-notice {
+        top: 60px; /* 紧贴在header下方 */
+        padding: 12px;
+        font-size: 13px;
+    }
+    
+    /* 工具区域布局 */
+    .tools-section {
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        margin-top: 20px; /* 减少顶部边距，让JavaScript动态控制 */
+    }
+    
+    .tools-section:first-child {
+        margin-top: 20px; /* 减少第一个section的顶部边距 */
+    }
+
+    .tools-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .tools-header h2 {
+        font-size: 24px;
+    }
+    
     /* 内容区域布局 */
     main {
-        padding: 80px 15px 30px;
+        padding: 130px 15px 30px; /* 增加顶部padding以适应banner */
     }
 
     .announcement {
@@ -147,22 +175,6 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
         padding: 15px;
-    }
-    
-    /* 工具区域布局 */
-    .tools-section {
-        padding: 20px;
-        border-radius: 20px;
-        margin-bottom: 30px;
-    }
-
-    .tools-header {
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-    }
-
-    .tools-header h2 {
-        font-size: 24px;
     }
     
     /* 下载区域布局 */
@@ -231,6 +243,15 @@
         height: 80px;
         margin-bottom: 15px;
     }
+    
+    /* 工具区域布局 */
+    .tools-section {
+        margin-top: 20px; /* 减少顶部边距，让JavaScript动态控制 */
+    }
+    
+    .tools-section:first-child {
+        margin-top: 20px; /* 减少第一个section的顶部边距 */
+    }
 }
 
 /* 
@@ -284,6 +305,11 @@
         padding: 15px;
         border-radius: 16px;
         margin-bottom: 20px;
+        margin-top: 20px; /* 减少顶部边距，让JavaScript动态控制 */
+    }
+    
+    .tools-section:first-child {
+        margin-top: 20px; /* 减少第一个section的顶部边距 */
     }
 
     .tools-header {

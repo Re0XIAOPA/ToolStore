@@ -138,7 +138,7 @@ nav {
 main {
     position: relative;
     z-index: 1000;
-    padding-top: 120px;
+    padding-top: 170px;
     padding-bottom: 40px;
     max-width: 1400px;
     margin: 0 auto;
@@ -318,7 +318,6 @@ footer p {
 
 /* 
  * 提示窗样式优化
- * 全屏模态对话框的样式和动画
  */
 .notice {
     position: fixed;
@@ -343,6 +342,7 @@ footer p {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     animation: slideIn 0.3s ease-out;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative; /* 为页面指示器定位提供参考 */
 }
 
 @keyframes slideIn {
@@ -415,6 +415,12 @@ footer p {
     transform: translateY(-2px);
 }
 
+.buttons button.acknowledge:disabled {
+    background: rgba(124, 138, 255, 0.2);
+    cursor: not-allowed;
+    transform: none;
+}
+
 .buttons button.cancel {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
@@ -424,6 +430,104 @@ footer p {
 .buttons button.cancel:hover {
     background: #ff4747;
     transform: translateY(-2px);
+}
+
+.buttons button.next-page,
+.buttons button.prev-page {
+    background: rgba(124, 138, 255, 0.3);
+    color: #fff;
+}
+
+.buttons button.next-page:hover,
+.buttons button.prev-page:hover {
+    background: rgba(124, 138, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* 页面指示器样式 */
+.page-indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/* 公告页面样式 */
+.notice-page {
+    display: none;
+}
+
+.notice-page.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 免责声明内容样式 */
+.disclaimer-content {
+    margin: 25px 0;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 16px;
+    max-height: 300px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* 添加iOS设备的流畅滚动 */
+    scrollbar-width: thin; /* Firefox滚动条样式 */
+    scrollbar-color: rgba(124, 138, 255, 0.5) rgba(255, 255, 255, 0.1); /* Firefox滚动条颜色 */
+}
+
+/* Webkit浏览器滚动条样式 */
+.disclaimer-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.disclaimer-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.disclaimer-content::-webkit-scrollbar-thumb {
+    background: rgba(124, 138, 255, 0.5);
+    border-radius: 4px;
+}
+
+.disclaimer-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 138, 255, 0.7);
+}
+
+.disclaimer-text p {
+    margin: 15px 0;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.disclaimer-text strong {
+    color: #e6e6e6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.agreement-note {
+    text-align: center;
+    font-style: italic;
+    color: #7c8aff;
+    margin-top: 20px;
+    font-size: 14px;
 }
 
 /* 取消访问提示样式 */
@@ -502,9 +606,6 @@ body[class*="wiki"] table {
     background: rgba(0, 0, 0, 0.8);
     z-index: 2000;
     backdrop-filter: blur(8px);
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 2000;
     display: none;
 }
 
@@ -514,13 +615,14 @@ body[class*="wiki"] table {
     scroll-margin-top: 100px;
     margin-bottom: 40px;
     margin-top: 20px;
+    /* 减少默认间距，让JavaScript动态控制 */
     margin-bottom: 60px;
     background: rgba(26, 29, 36, 0.95);
     border-radius: 24px;
     padding: 40px 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(124, 138, 255, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, margin-top 0.3s ease;
 }
 
 .tools-section:hover {
@@ -530,7 +632,8 @@ body[class*="wiki"] table {
 
 /* 确保第一个section有足够的上边距 */
 .tools-section:first-child {
-    margin-top: 0;
+    margin-top: 20px;
+    /* 减少默认间距，让JavaScript动态控制 */
 }
 
 .tools-header {
@@ -1308,28 +1411,6 @@ main {
     cursor: pointer;
     position: relative;
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.card.clickable::after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 24px;
-    height: 24px;
-    background: rgba(124, 138, 255, 0.1);
-    border-radius: 50%;
-    opacity: 0;
-    transition: all 0.3s ease;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%237c8aff' d='M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .89-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z'/%3E%3C/svg%3E");
-    background-size: 16px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.card.clickable:hover::after {
-    opacity: 1;
-    transform: scale(1.1);
 }
 
 /* 优化卡片悬停效果 */

@@ -43,8 +43,10 @@ export const recommendConfig = {
 
     // 机场类推荐
     proxy: [
-        { name: '顶级机场', hot: 1 },
-        {name: 'Mitce', hot: 2 },
+        { name: '奶昔机场', hot: 1 },
+        { name: '顶级机场', hot: 2 },
+        {name: 'Mitce', hot: 3 },
+        { name: '快雷GO', hot: 4 },
         '早安云',
         'CokeCloud(可乐云)',
         '魔法喵MAGICAT'

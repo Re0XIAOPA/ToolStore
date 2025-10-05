@@ -15,12 +15,16 @@ export function initNavigation() {
     }
     const toggleButton = document.getElementById('toggleButton');
     const navLinks = document.getElementById('navLinks');
+    const bannerNotice = document.querySelector('.banner-notice');
 
     // 切换菜单示/隐藏
     toggleButton.addEventListener('click', function (event) {
         event.stopPropagation(); // 阻止事件冒泡
         this.classList.toggle('active');
         navLinks.classList.toggle('active');
+        
+        // 调整banner位置
+        adjustBannerPosition();
     });
 
     // 点击导航链接时关闭菜单
@@ -28,6 +32,8 @@ export function initNavigation() {
         link.addEventListener('click', () => {
             toggleButton.classList.remove('active');
             navLinks.classList.remove('active');
+            // 调整banner位置
+            adjustBannerPosition();
         });
     });
 
@@ -36,6 +42,8 @@ export function initNavigation() {
         if (!toggleButton.contains(event.target) && !navLinks.contains(event.target)) {
             toggleButton.classList.remove('active');
             navLinks.classList.remove('active');
+            // 调整banner位置
+            adjustBannerPosition();
         }
     });
 
@@ -45,6 +53,8 @@ export function initNavigation() {
             if (event.target.tagName === 'A') {
                 toggleButton.classList.remove('active');
                 navLinks.classList.remove('active');
+                // 调整banner位置
+                adjustBannerPosition();
             }
         });
     }
@@ -54,7 +64,14 @@ export function initNavigation() {
         if (navLinks.classList.contains('active')) {
             toggleButton.classList.remove('active');
             navLinks.classList.remove('active');
+            // 调整banner位置
+            adjustBannerPosition();
         }
+    });
+
+    // 窗口大小改变时调整banner位置
+    window.addEventListener('resize', () => {
+        adjustBannerPosition();
     });
 
     // 修改导航链接点击事件
@@ -92,6 +109,37 @@ export function initNavigation() {
             }
         });
     });
+    
+    // 初始化时调整banner位置
+    adjustBannerPosition();
+}
+
+// 调整banner位置的函数
+function adjustBannerPosition() {
+    const bannerNotice = document.querySelector('.banner-notice');
+    if (!bannerNotice) return;
+    
+    // 检查是否在移动端
+    if (window.innerWidth <= 956) {
+        const navLinks = document.getElementById('navLinks');
+        const header = document.querySelector('header');
+        
+        if (navLinks && navLinks.classList.contains('active')) {
+            // 当导航菜单展开时，banner应该在导航菜单下方
+            const headerHeight = header ? header.offsetHeight : 60;
+            const navLinksHeight = navLinks.offsetHeight;
+            bannerNotice.style.top = (headerHeight + navLinksHeight) + 'px';
+        } else {
+            // 当导航菜单收起时，banner紧贴在header下方
+            const headerHeight = header ? header.offsetHeight : 60;
+            bannerNotice.style.top = headerHeight + 'px';
+        }
+    } else {
+        // 在桌面端，banner始终在header下方
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 80;
+        bannerNotice.style.top = headerHeight + 'px';
+    }
 }
 
 // 初始化显示切换

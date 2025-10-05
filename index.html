@@ -9,6 +9,8 @@
     <script type="module" src="assets/scripts/sponsor.js"></script>
     <script type="module" src="assets/scripts/config.js"></script>
     <script type="module" src="assets/scripts/modules/feedback-modal.js"></script>
+    <script type="module" src="assets/scripts/modules/layout-adjuster.js"></script>
+    <script type="module" src="assets/scripts/modules/banner-handler.js"></script>
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7L12 12L22 7L12 2Z' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 17L12 22L22 17' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 12L12 17L22 12' stroke='%237c8aff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     <link rel="apple-touch-icon"
@@ -24,6 +26,7 @@
     <link rel="stylesheet" href="assets/css/sponsor.css">
     <link rel="stylesheet" href="assets/css/back-to-top.css">
     <link rel="stylesheet" href="assets/css/card-manager.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
 </head>
 
 <body>
@@ -31,15 +34,48 @@
 
     <div id="dailyNotice" class="notice">
         <div class="notice-content">
-            <div class="text-label">--— 公告 —--</div>
-            <div class="nv">
-                <p class="tzText"><strong>本页各类工具基本开源，请合理使用，仅供学习参考</strong></p>
-                <p class="tzText"><strong>加载慢？试试在 <span class="tip">二级域名toolstore</span> 前加 <span class="tipa">cf</span> 看看？</strong></p>
-                <p class="tzText"><s><strong>大陆可以试试在 <span class="tip">二级域名toolstore</span> 前加 <span class="tipa">cn</span> 看看？</strong></s></p>
+            <!-- 页面指示器 -->
+            <div class="page-indicator">
+                <span class="page-number">1/2</span>
             </div>
-            <div class="buttons">
-                <button class="acknowledge">我已知晓</button>
-                <button class="cancel">取消</button>
+            
+            <!-- 第一页：公告 -->
+            <div class="notice-page active" id="page1">
+                <div class="text-label">--— 公告 —--</div>
+                <div class="nv">
+                    <p class="tzText"><strong>本页各类工具基本开源，请合理使用，仅供学习参考</strong></p>
+                    <p class="tzText"><strong>加载慢？试试在 <span class="tip">二级域名toolstore</span> 前加 <span class="tipa">cf</span>
+                            看看？</strong></p>
+                    <p class="tzText"><s><strong>大陆可以试试在 <span class="tip">二级域名toolstore</span> 前加 <span
+                                    class="tipa">cn</span> 看看？</strong></s></p>
+                </div>
+                <div class="buttons">
+                    <button class="next-page" data-next="2">下一页</button>
+                    <button class="cancel">取消</button>
+                </div>
+            </div>
+            
+            <!-- 第二页：免责声明 -->
+            <div class="notice-page" id="page2">
+                <div class="text-label">--— 免责声明 —--</div>
+                <div class="disclaimer-content">
+                    <div class="disclaimer-text">
+                        <p><strong>免责声明：</strong>本站为个人学习项目，所有内容均来源于网络公开资源，仅供学习交流和技术研究使用。</p>
+                        <p>① 本站不提供任何工具的下载、存储或托管服务，所有链接均指向第三方平台，不对链接内容的合法性、安全性、有效性负责；</p>
+                        <p>② 本站整合的工具大部分为开源免费资源，部分iOS工具需付费使用，具体以官方平台说明为准；</p>
+                        <p>③ 使用者应遵守当地法律法规，不得将工具用于非法用途，由此产生的法律责任由使用者自行承担；</p>
+                        <p>④ 本站不对因使用工具而造成的任何直接、间接、特殊或 consequential 损失负责；</p>
+                        <p>⑤ 本站不对工具的功能、性能、适用性作任何保证，不承担任何技术支持义务；</p>
+                        <p>⑥ 本站有权在不另行通知的情况下修改、删除内容或终止服务；</p>
+                        <p>⑦ 访问和使用本站即表示您已完全理解并同意本免责声明的所有条款。</p>
+                        <p class="agreement-note">请仔细阅读以上条款并滚动到页面底部以确认您同意这些条款。</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="prev-page" data-prev="1">上一页</button>
+                    <button class="acknowledge" disabled>我已知晓</button>
+                    <button class="cancel">取消</button>
+                </div>
             </div>
         </div>
     </div>
@@ -73,21 +109,51 @@
                 <div class="button-container">
                     <a href="wiki/wiki.html" target="_blank" class="button">教程</a>
                 </div>
+                <!-- 导航栏下拉按钮 -->
                 <button class="toggle-button" id="toggleButton">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </button>
                 <ul class="nav-links" id="navLinks">
+                    <!-- 快读导航 -->
                     <li><a href="#tools">网络工具</a></li>
                     <li><a href="#software">精选推荐</a></li>
                     <li><a href="#proxy">机场推荐</a></li>
-                    <li><a href="https://asfn.awafuns.cn/" target="_blank">免费节点</a></li>
-                    <li><a href="javascript:void(0)" id="open-feedback-modal">邮箱反馈</a></li>
+                    <!-- 取消邮件反馈 -->
+                    <!-- <li><a href="javascript:void(0)" id="open-feedback-modal">邮箱反馈</a></li> -->
                 </ul>
             </nav>
         </div>
     </header>
+
+    <!-- 免费节点Banner提醒 -->
+    <div class="banner-notice">
+        <div class="banner-content">
+            <p class="banner-text">
+                <strong>提示：</strong>如果您无法正常访问页面，可以尝试使用
+                <a href="https://asfn.awafuns.cn/" target="_blank" class="banner-link">免费节点</a>
+                临时访问。请注意：免费节点不保证安全性与长久可用性，仅作为临时解决方案。
+            </p>
+            <p class="banner-text">因网络环境可临时下载工具，点击下载(若失效只能自行解决)：
+                <a href="https://share.feijipan.com/s/KpXYtkaP" target="_blank" class="banner-link"
+                    style="margin-right: 10px;">Windows</a>
+                <a href="https://share.feijipan.com/s/7EXYtdDQ" target="_blank" class="banner-link"
+                    style="margin-right: 10px;">Android</a>
+                <a href="https://share.feijipan.com/s/XDXYtygl" target="_blank" class="banner-link"
+                    style="margin-right: 10px;">MacOS</a>
+                <a href="https://share.feijipan.com/s/7vXYthh4" target="_blank" class="banner-link"
+                    style="margin-right: 10px;">Linux</a>
+            </p>
+        </div>
+        <!-- 关闭按钮 -->
+        <button class="banner-close-btn" id="bannerCloseBtn" aria-label="关闭通知">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
 
     <main>
         <!-- 内容将通过JavaScript动态生成 -->
@@ -98,11 +164,32 @@
     </main>
 
     <footer>
+        <!-- 法律声明提醒 -->
+        <div class="legal-notice">
+            <div class="legal-content">
+                <p class="legal-text">
+                    <strong>免责声明：</strong>本站为个人学习项目，所有内容均来源于网络公开资源，仅供学习交流和技术研究使用。
+                    ① 本站不提供任何工具的下载、存储或托管服务，所有链接均指向第三方平台，不对链接内容的合法性、安全性、有效性负责；
+                    ② 本站整合的工具大部分为开源免费资源，部分iOS工具需付费使用，具体以官方平台说明为准；
+                    ③ 使用者应遵守当地法律法规，不得将工具用于非法用途，由此产生的法律责任由使用者自行承担；
+                    ④ 本站不对因使用工具而造成的任何直接、间接、特殊或 consequential 损失负责；
+                    ⑤ 本站不对工具的功能、性能、适用性作任何保证，不承担任何技术支持义务；
+                    ⑥ 本站有权在不另行通知的情况下修改、删除内容或终止服务；
+                    ⑦ 访问和使用本站即表示您已完全理解并同意本免责声明的所有条款。
+                </p>
+            </div>
+        </div>
+
         <div class="footer-content">
             <p class="copyright">
-                © <span id="copyright-year"></span>
+                ToolStore © <span id="copyright-year"></span>
                 <span class="divider">|</span>
-                <a href="https://github.com/Re0XIAOPA/ToolStore" class="footer-link" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/></svg>
+                <a href="https://github.com/Re0XIAOPA/ToolStore" class="footer-link" target="_blank"><svg width="16"
+                        height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            fill="currentColor" />
+                    </svg>
                     Github</a>
                 <span class="divider">|</span>
                 仅供学习参考
@@ -120,7 +207,7 @@
     <script type="module">
         // 导入反馈表单模块
         import feedbackModal from './assets/scripts/modules/feedback-modal.js';
-        
+
         // 绑定打开反馈表单的点击事件
         document.addEventListener('DOMContentLoaded', () => {
             const openFeedbackBtn = document.getElementById('open-feedback-modal');
@@ -129,17 +216,17 @@
                     feedbackModal.open();
                 });
             }
-            
+
             // 确保初始状态下模态框是关闭的
             if (feedbackModal && feedbackModal.modal) {
                 feedbackModal.close();
             }
-            
+
             // 动态设置版权年份
             const currentYear = new Date().getFullYear();
             const startYear = 2024;
             const copyrightElement = document.getElementById('copyright-year');
-            
+
             if (copyrightElement) {
                 if (currentYear > startYear) {
                     copyrightElement.textContent = `${startYear} - ${currentYear}`;
@@ -149,7 +236,7 @@
             }
         });
     </script>
-    
+
     <!-- 返回顶部按钮脚本 -->
     <script type="module" src="assets/scripts/modules/back-to-top.js"></script>
 </body>

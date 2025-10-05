@@ -1,0 +1,65 @@
+/* Wiki页面专用样式 */
+.wiki-page {
+    background: linear-gradient(135deg, #171A21 0%, #171A21 100%);
+}
+
+.wiki-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.wiki-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(26, 29, 36, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(124, 138, 255, 0.1);
+}
+
+.wiki-header h1 {
+    color: #7c8aff;
+    font-size: 32px;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.construction-notice {
+    background: rgba(26, 29, 36, 0.9);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 193, 7, 0.2);
+    text-align: center;
+}
+
+.construction-notice h2 {
+    color: #ffc107;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .wiki-container {
+        padding: 10px;
+    }
+    
+    .wiki-header h1 {
+        font-size: 24px;
+    }
+    
+    .wiki-content {
+        padding: 20px;
+    }
+    
+    .construction-notice {
+        padding: 20px;
+    }
+    
+    .construction-notice h2 {
+        font-size: 22px;
+    }
+}
