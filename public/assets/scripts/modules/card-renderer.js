@@ -159,7 +159,7 @@ function createCard(item, sectionData) {
     titleDiv.textContent = item.name;
     titleContainer.appendChild(titleDiv);
     
-    // 如果是网络工具，添加版本号显示
+    // 如果是代理工具，添加版本号显示
     if (sectionData.id === 'tools') {
         const version = getToolVersion(item.name);
         if (version && version !== 'undefined') {
@@ -172,7 +172,7 @@ function createCard(item, sectionData) {
     
     card.appendChild(titleContainer);
     
-    // 如果是网络工具区域，添加平台图标
+    // 如果是代理工具区域，添加平台图标
     if (sectionData.id === 'tools') {
         addPlatformIcons(card, item.name);
     }
@@ -261,7 +261,7 @@ export function initCardEvents() {
             card.parentNode.replaceChild(newCard, card);
             
             newCard.addEventListener('click', () => {
-                // 网络工具使用下载弹窗
+                // 代理工具使用下载弹窗
                 if (newCard.closest('#tools')) {
                     createDownloadModal(toolName);
                 } else if (newCard.closest('#proxy')) {
