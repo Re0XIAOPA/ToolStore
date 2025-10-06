@@ -29,6 +29,62 @@
     .grid-container {
         grid-template-columns: repeat(4, 1fr);
     }
+    
+    /* dailyNotice大屏幕设备样式 */
+    .notice-content {
+        max-width: 550px;
+        padding: 40px;
+    }
+    
+    .text-label {
+        font-size: 22px;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+    }
+    
+    .nv {
+        padding: 25px;
+    }
+    
+    .nv p {
+        font-size: 16px;
+        margin: 20px 0;
+    }
+    
+    .buttons {
+        margin-top: 35px;
+        gap: 20px;
+    }
+    
+    .buttons button {
+        padding: 14px 28px;
+        font-size: 16px;
+        border-radius: 14px;
+    }
+    
+    .page-indicator {
+        bottom: 40px;
+        left: 40px;
+        font-size: 15px;
+        padding: 6px 12px;
+        border-radius: 12px;
+    }
+    
+    .disclaimer-content {
+        padding: 25px;
+        border-radius: 18px;
+        max-height: 350px;
+    }
+    
+    .disclaimer-text p {
+        font-size: 16px;
+        margin: 20px 0;
+    }
+    
+    .agreement-note {
+        font-size: 15px;
+        margin-top: 25px;
+    }
 }
 
 /* 超大屏幕设备(≥1400px) */
@@ -40,6 +96,63 @@
     main {
         max-width: 1400px;
         margin: 0 auto;
+    }
+    
+    /* dailyNotice超大屏幕设备样式 */
+    .notice-content {
+        max-width: 600px;
+        padding: 45px;
+        border-radius: 28px;
+    }
+    
+    .text-label {
+        font-size: 24px;
+        margin-bottom: 35px;
+        padding-bottom: 25px;
+    }
+    
+    .nv {
+        padding: 30px;
+    }
+    
+    .nv p {
+        font-size: 17px;
+        margin: 22px 0;
+    }
+    
+    .buttons {
+        margin-top: 40px;
+        gap: 25px;
+    }
+    
+    .buttons button {
+        padding: 16px 32px;
+        font-size: 17px;
+        border-radius: 16px;
+    }
+    
+    .page-indicator {
+        bottom: 45px;
+        left: 45px;
+        font-size: 16px;
+        padding: 8px 15px;
+        border-radius: 14px;
+    }
+    
+    .disclaimer-content {
+        padding: 30px;
+        border-radius: 20px;
+        max-height: 400px;
+    }
+    
+    .disclaimer-text p {
+        font-size: 17px;
+        margin: 22px 0;
+    }
+    
+    .agreement-note {
+        font-size: 16px;
+        margin-top: 30px;
     }
 }
 
@@ -221,6 +334,54 @@
         height: 20px;
         background-size: 14px;
     }
+    
+    /* dailyNotice平板及以下设备样式 */
+    .notice-content {
+        padding: 30px;
+        width: 95%;
+        max-width: 450px;
+        border-radius: 22px;
+    }
+    
+    .text-label {
+        font-size: 19px;
+        margin-bottom: 22px;
+    }
+    
+    .nv {
+        padding: 18px;
+    }
+    
+    .nv p {
+        font-size: 14px;
+        margin: 14px 0;
+    }
+    
+    .buttons {
+        margin-top: 28px;
+    }
+    
+    .buttons button {
+        padding: 11px 22px;
+        font-size: 14px;
+    }
+    
+    .page-indicator {
+        bottom: 30px;
+        left: 30px;
+        font-size: 13px;
+    }
+    
+    .disclaimer-content {
+        padding: 18px;
+        border-radius: 14px;
+        max-height: 280px;
+    }
+    
+    .disclaimer-text p {
+        font-size: 14px;
+        margin: 14px 0;
+    }
 }
 
 /* 
@@ -251,6 +412,55 @@
     
     .tools-section:first-child {
         margin-top: 20px; /* 减少第一个section的顶部边距 */
+    }
+    
+    /* dailyNotice中等屏幕设备样式 */
+    .notice-content {
+        padding: 28px;
+        width: 95%;
+        max-width: 400px;
+        border-radius: 20px;
+    }
+    
+    .text-label {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .nv {
+        padding: 16px;
+    }
+    
+    .nv p {
+        font-size: 13px;
+        margin: 13px 0;
+    }
+    
+    .buttons {
+        margin-top: 25px;
+        gap: 13px;
+    }
+    
+    .buttons button {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    .page-indicator {
+        bottom: 28px;
+        left: 28px;
+        font-size: 12px;
+    }
+    
+    .disclaimer-content {
+        padding: 16px;
+        border-radius: 13px;
+        max-height: 260px;
+    }
+    
+    .disclaimer-text p {
+        font-size: 13px;
+        margin: 13px 0;
     }
 }
 
@@ -366,6 +576,63 @@
         width: 100%;
         justify-content: center;
     }
+    
+    /* dailyNotice响应式样式 */
+    .notice-content {
+        padding: 25px 20px;
+        width: 95%;
+        border-radius: 20px;
+    }
+    
+    .text-label {
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+    }
+    
+    .nv {
+        padding: 15px;
+    }
+    
+    .nv p {
+        font-size: 14px;
+        margin: 12px 0;
+    }
+    
+    .buttons {
+        margin-top: 25px;
+        gap: 12px;
+    }
+    
+    .buttons button {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+    
+    .page-indicator {
+        bottom: 25px;
+        left: 25px;
+        font-size: 13px;
+        padding: 4px 8px;
+        border-radius: 8px;
+    }
+    
+    .disclaimer-content {
+        padding: 15px;
+        border-radius: 12px;
+        max-height: 250px;
+    }
+    
+    .disclaimer-text p {
+        font-size: 14px;
+        margin: 12px 0;
+    }
+    
+    .agreement-note {
+        font-size: 13px;
+        margin-top: 15px;
+    }
 }
 
 /* 
@@ -408,6 +675,35 @@
         width: 60px !important;
         height: 60px !important;
     }
+    
+    /* dailyNotice超小屏幕优化 */
+    .notice-content {
+        padding: 20px 15px;
+    }
+    
+    .text-label {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .nv p {
+        font-size: 13px;
+    }
+    
+    .buttons button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    .page-indicator {
+        bottom: 20px;
+        left: 20px;
+        font-size: 12px;
+    }
+    
+    .disclaimer-text p {
+        font-size: 13px;
+    }
 }
 
 /* 
@@ -434,5 +730,60 @@
 
     .card-title {
         font-size: 13px;
+    }
+    
+    /* dailyNotice微型屏幕优化 */
+    .notice-content {
+        padding: 15px 12px;
+        border-radius: 16px;
+    }
+    
+    .text-label {
+        font-size: 15px;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+    
+    .nv {
+        padding: 12px;
+    }
+    
+    .nv p {
+        font-size: 12px;
+        margin: 10px 0;
+    }
+    
+    .buttons {
+        margin-top: 20px;
+        gap: 10px;
+    }
+    
+    .buttons button {
+        padding: 8px 15px;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+    
+    .page-indicator {
+        bottom: 15px;
+        left: 15px;
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+    
+    .disclaimer-content {
+        padding: 12px;
+        border-radius: 10px;
+        max-height: 200px;
+    }
+    
+    .disclaimer-text p {
+        font-size: 12px;
+        margin: 10px 0;
+    }
+    
+    .agreement-note {
+        font-size: 12px;
+        margin-top: 12px;
     }
 }

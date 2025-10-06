@@ -343,6 +343,8 @@ footer p {
     animation: slideIn 0.3s ease-out;
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative; /* 为页面指示器定位提供参考 */
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 @keyframes slideIn {
