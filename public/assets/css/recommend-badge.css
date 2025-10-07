@@ -42,6 +42,14 @@
     pointer-events: none; /* 确保不会干扰卡片点击 */
 }
 
+/* 至尊推荐背景样式 */
+.recommend-badge.super-recommend::before {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    box-shadow:
+        0 2px 8px rgba(255, 215, 0, 0.4),
+        inset 0 1px rgba(255, 255, 255, 0.3);
+}
+
 /* 
  * 星星图标
  * 使用SVG内联数据URI确保高清显示
@@ -67,6 +75,12 @@
     pointer-events: none; /* 确保不会干扰卡片点击 */
 }
 
+/* 至尊推荐图标 - 使用皇冠图标 */
+.recommend-badge.super-recommend::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M5,16L3,5L8.5,12L12,5L15.5,12L21,5L19,16H5M19,19A1,1 0 0,1 18,20H6A1,1 0 0,1 5,19V18H19V19Z'/%3E%3C/svg%3E");
+    animation: crownPulse 2s ease-in-out infinite;
+}
+
 /* 卡片光效 */
 .card:has(.recommend-badge) {
     position: relative;
@@ -74,6 +88,12 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(255, 107, 107, 0.15);
     border-color: rgba(255, 107, 107, 0.3);
+}
+
+/* 至尊推荐卡片光效 */
+.card:has(.recommend-badge.super-recommend) {
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.15);
+    border-color: rgba(255, 215, 0, 0.3);
 }
 
 /* 主光效 */
@@ -91,6 +111,17 @@
     animation: cardShine 8s ease-in-out infinite;
     pointer-events: none;
     z-index: 2;
+}
+
+/* 至尊推荐主光效 */
+.card:has(.recommend-badge.super-recommend)::before {
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 215, 0, 0) 20%,
+            rgba(255, 215, 0, 0.15) 50%,
+            rgba(255, 215, 0, 0) 80%,
+            transparent 100%);
+    animation: cardShineGold 8s ease-in-out infinite;
 }
 
 /* 边缘光晕 */
@@ -111,6 +142,13 @@
     border-radius: inherit;
 }
 
+/* 至尊推荐边缘光晕 */
+.card:has(.recommend-badge.super-recommend)::after {
+    background: linear-gradient(90deg,
+            rgba(255, 215, 0, 0.15),
+            rgba(255, 165, 0, 0.15));
+}
+
 /* 悬停效果 - 修改为与普通卡片一致 */
 .card:has(.recommend-badge):hover {
     transform: translateY(-8px) !important;
@@ -118,8 +156,19 @@
     box-shadow: 0 8px 25px rgba(255, 107, 107, 0.25);
 }
 
+/* 至尊推荐悬停效果 */
+.card:has(.recommend-badge.super-recommend):hover {
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.25);
+}
+
 .card:has(.recommend-badge):hover::before {
     animation: cardShine 4s ease-in-out infinite;
+}
+
+/* 至尊推荐主光效悬停 */
+.card:has(.recommend-badge.super-recommend):hover::before {
+    animation: cardShineGold 4s ease-in-out infinite;
 }
 
 .card:hover .recommend-badge::before {
@@ -128,10 +177,26 @@
     background: linear-gradient(135deg, #FF6B6B 0%, #FFD166 100%);
 }
 
+/* 至尊推荐飘带悬停 */
+.card:hover .recommend-badge.super-recommend::before {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    transform: rotate(-45deg) scale(1.05);
+    box-shadow:
+        0 3px 10px rgba(255, 215, 0, 0.5),
+        inset 0 1px rgba(255, 255, 255, 0.4);
+}
+
 /* 星星悬停动画 */
 .card:hover .recommend-badge::after {
     animation: starRotate 2s linear infinite;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'/%3E%3C/svg%3E");
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
+/* 至尊推荐图标悬停 */
+.card:hover .recommend-badge.super-recommend::after {
+    animation: crownPulse 2s ease-in-out infinite;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M5,16L3,5L8.5,12L12,5L15.5,12L21,5L19,16H5M19,19A1,1 0 0,1 18,20H6A1,1 0 0,1 5,19V18H19V19Z'/%3E%3C/svg%3E");
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
 }
 
@@ -144,8 +209,28 @@
     font-weight: 600;
 }
 
+/* 至尊推荐卡片标题效果 */
+.card:has(.recommend-badge.super-recommend) .card-title {
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 /* 动画定义 */
 @keyframes cardShine {
+    0% {
+        transform: translateX(-100%) skewX(-15deg);
+    }
+
+    30%,
+    100% {
+        transform: translateX(200%) skewX(-15deg);
+    }
+}
+
+/* 至尊推荐光效动画 */
+@keyframes cardShineGold {
     0% {
         transform: translateX(-100%) skewX(-15deg);
     }
@@ -167,7 +252,30 @@
     }
 }
 
+/* 至尊推荐脉冲动画 */
+@keyframes crownPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+}
+
 @keyframes starRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 至尊推荐旋转动画 */
+@keyframes crownRotate {
     from {
         transform: rotate(0deg);
     }
@@ -196,6 +304,11 @@
     box-shadow:
         0 3px 10px rgba(255, 107, 107, 0.5),
         inset 0 1px rgba(255, 255, 255, 0.4);
+}
+
+/* 至尊推荐飘带悬停 */
+.card:hover .recommend-badge.super-recommend::before {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
 }
 
 /* 移动端适配 */

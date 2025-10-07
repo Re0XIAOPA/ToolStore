@@ -6,8 +6,11 @@ export class RecommendManager {
     }
 
     init() {
-        this.addRecommendBadges();
-        this.sortRecommendedCards();
+        // 增加延迟确保DOM完全加载
+        setTimeout(() => {
+            this.addRecommendBadges();
+            this.sortRecommendedCards();
+        }, 200);
     }
 
     addRecommendBadges() {
@@ -21,7 +24,7 @@ export class RecommendManager {
             if (!section) return;
 
             if (this.isRecommended(cardTitle, section)) {
-                this.addBadgeToCard(card);
+                this.addBadgeToCard(card, this.isSuperRecommended(cardTitle, section));
                 // 添加推荐标记
                 card.dataset.recommended = 'true';
             }
@@ -96,6 +99,18 @@ export class RecommendManager {
         });
     }
 
+    // 检查是否为至尊推荐
+    isSuperRecommended(cardTitle, section) {
+        const item = this.config[section]?.find(item => {
+            const itemName = typeof item === 'string' ? item : item.name;
+            return itemName.toLowerCase() === cardTitle.toLowerCase();
+        });
+        
+        if (!item) return false;
+        if (typeof item === 'string') return false;
+        return item.supr === true;
+    }
+
     getHotValue(cardTitle, section) {
         const item = this.config[section]?.find(item => {
             const itemName = typeof item === 'string' ? item : item.name;
@@ -107,11 +122,21 @@ export class RecommendManager {
         return item.hot || null;
     }
 
-    addBadgeToCard(card) {
+    addBadgeToCard(card, isSuperRecommended = false) {
+        // 检查是否已经添加了徽章
+        if (card.querySelector('.recommend-badge')) {
+            return;
+        }
+        
         card.style.position = 'relative';
 
         const badge = document.createElement('div');
         badge.className = 'recommend-badge';
+        
+        // 如果是至尊推荐，添加特殊类名
+        if (isSuperRecommended) {
+            badge.classList.add('super-recommend');
+        }
 
         card.appendChild(badge);
 
@@ -125,4 +150,4 @@ export class RecommendManager {
             }, 300);
         });
     }
-} 
+}
