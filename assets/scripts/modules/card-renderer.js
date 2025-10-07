@@ -41,6 +41,11 @@ export async function renderAllCardSections() {
         
         // 渲染完成后，初始化卡片
         initCardEvents();
+        
+        // 确保在所有卡片渲染完成后再初始化推荐系统
+        setTimeout(() => {
+            initRecommendSystem();
+        }, 100);
     } catch (error) {
         console.error('渲染卡片时出错:', error);
         showErrorMessage('加载数据失败，请刷新页面重试。');
@@ -310,13 +315,7 @@ function showErrorMessage(message) {
 
 // 初始化函数 - 由程序主入口调用
 export function initCardRenderer() {
-    renderAllCardSections().then(() => {
-        // 所有卡片渲染完成后初始化推荐系统
-        // 使用较短的延时确保所有DOM元素都已完全加载
-        setTimeout(() => {
-            initRecommendSystem();
-        }, 100);
-    });
+    renderAllCardSections();
 }
 
 // 初始化推荐管理器
@@ -327,4 +326,4 @@ function initRecommendSystem() {
     } catch (error) {
         console.error('初始化推荐系统时出错:', error);
     }
-} 
+}
