@@ -100,7 +100,7 @@ const airportDetails = {
             },
         ],
 
-        link: 'https://xn--9kqy92aw5h.com/#/register?code=O0Mcbu1C',
+        link: 'https://xn--9kqy92aw5h.net/#/register?code=O0Mcbu1C',
         tags: ['稳定', '高速', '性价比']
     },
     // 狗狗加速
