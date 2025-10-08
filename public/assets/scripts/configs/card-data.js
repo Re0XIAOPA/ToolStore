@@ -1,5 +1,6 @@
 // 卡片数据配置文件
 // 这个文件集中存储所有卡片数据，便于统一管理和修改
+// link 可以不用配置 (除开精选推荐数据)
 
 // 代理工具数据
 export const toolsData = [
@@ -106,6 +107,7 @@ export const toolsData = [
 ];
 
 // 精选推荐数据
+// link 数据必须填写
 export const softwareData = [
     {
         name: "Pixiv",
@@ -204,7 +206,7 @@ export const airportData = [
     {
         name: "早安云",
         image: "assets/images/airports/zaoan.png",
-        link: "https://xn--9kqy92aw5h.com/#/register?code=O0Mcbu1C"
+        link: "https://xn--9kqy92aw5h.net/#/register?code=O0Mcbu1C"
     },
     {
         name: "魔法喵MAGICAT",
@@ -251,6 +253,17 @@ export const airportData = [
         image: "assets/images/airports/naixi.png",
         link: "https://naiixi.com/"
     },
+    // 测试推荐（预留）
+    {
+        name: '哆啦a梦',
+        image: "assets/images/airports/Doraemon.png",
+        link: "https://ygpy.yyds2-doraemon.art/#/register?code=mUFHGigd"
+    },
+    {
+        name: '雪山机场',
+        image: "assets/images/default/default.png",
+        link: "https://x2.xueshan.shop/#/register?code=P5oHEFpJ"
+    }
 ];
 
 // 导出所有卡片数据的集合
@@ -274,6 +287,6 @@ export const allCardData = {
         title: "机场推荐",
         description: "稳定高速的网络代理服务，一键连接全球",
         data: airportData,
-        linkText: "官网链接"
+        linkText: "访问官网"
     }
 }; 
