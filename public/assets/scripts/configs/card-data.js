@@ -231,7 +231,7 @@ export const airportData = [
     {
         name: "云安云",
         image: "assets/images/airports/yunan.png",
-        link: "https://yunanyun.app/#/register?code=QqGbRwUf"
+        link: "https://yay520.com/login?code=QqGbRwUf"
     },
     {
         name: "Mitce",
