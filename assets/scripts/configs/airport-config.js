@@ -1,3 +1,35 @@
+/**
+ * 机场配置数据
+ * 
+ * 配置示例:
+ * '机场名称': {
+ *   description: '机场详细描述',
+ *   packages: [  // 套餐信息区域
+ *     {
+ *       name: '套餐名称',
+ *       price: '价格',
+ *       period: '周期',
+ *       traffic: '流量',
+ *       speed: '速率' // 可选
+ *     }
+ *   ],
+ *   moreContent: {  // 更多内容区域（显示在套餐区域下方）
+ *     text: '这里是额外的文本内容',  // 可选
+ *     images: [  // 可选
+ *       {
+ *         url: '图片链接',
+ *         alt: '图片描述',  // 可选
+ *         width: '图片宽度',  // 可选
+ *         height: '图片高度'  // 可选
+ *       }
+ *     ]
+ *   },
+ *   link: '注册链接',
+ *   tags: ['标签1', '标签2']
+ * }
+ */
+
+
 // 机场配置数据
 const airportDetails = {
     // 顶级机场
@@ -41,6 +73,13 @@ const airportDetails = {
                 traffic: '6000G/一次性'
             }
         ],
+        moreContent: {
+            images: [
+                {
+                    url: 'assets/images/airports-imgs/dingji.png',
+                }
+            ]
+        },
         link: 'https://xn--mes358a9urctx.com/#/register?code=fY6Y8I3k',
         tags: ['稳定', '高速', '性价比']
     },
