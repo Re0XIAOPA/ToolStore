@@ -382,6 +382,15 @@
         font-size: 14px;
         margin: 14px 0;
     }
+    
+    /* 更多内容区域响应式样式 */
+    .more-content-images {
+        gap: 10px;
+    }
+    
+    .more-content-image {
+        border-radius: 10px;
+    }
 }
 
 /* 
@@ -461,6 +470,15 @@
     .disclaimer-text p {
         font-size: 13px;
         margin: 13px 0;
+    }
+    
+    /* 更多内容区域响应式样式 */
+    .more-content-text {
+        font-size: 15px;
+    }
+    
+    .more-content-images {
+        gap: 8px;
     }
 }
 
@@ -633,6 +651,26 @@
         font-size: 13px;
         margin-top: 15px;
     }
+    
+    /* 更多内容区域响应式样式 */
+    .packages-more {
+        padding: 12px;
+        border-radius: 14px;
+    }
+    
+    .more-content-text {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+    
+    .more-content-images {
+        gap: 6px;
+    }
+    
+    .more-content-image {
+        border-radius: 8px;
+        border-width: 0.5px;
+    }
 }
 
 /* 
@@ -703,6 +741,11 @@
     
     .disclaimer-text p {
         font-size: 13px;
+    }
+    
+    /* 更多内容区域响应式样式 */
+    .more-content-image {
+        border-radius: 6px;
     }
 }
 
@@ -785,5 +828,19 @@
     .agreement-note {
         font-size: 12px;
         margin-top: 12px;
+    }
+    
+    /* 更多内容区域响应式样式 */
+    .packages-more {
+        padding: 10px;
+        border-radius: 12px;
+    }
+    
+    .more-content-text {
+        font-size: 13px;
+    }
+    
+    .more-content-image {
+        border-radius: 6px;
     }
 }

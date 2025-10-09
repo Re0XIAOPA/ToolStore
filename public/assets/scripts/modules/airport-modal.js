@@ -18,6 +18,10 @@ function createAirportModal(airportName) {
     // 检查是否有任何套餐包含速率信息
     const hasSpeedInfo = details.packages && details.packages.some(pkg => pkg.speed);
 
+    // 检查是否存在packages或moreContent
+    const hasPackages = details.packages && details.packages.length > 0;
+    const hasMoreContent = details.moreContent && (details.moreContent.text || details.moreContent.images);
+
     const modal = document.createElement('div');
     modal.className = 'airport-modal';
 
@@ -30,11 +34,18 @@ function createAirportModal(airportName) {
                     ${details.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                 </div>
 
+                ${hasPackages ? `
                 <div class="packages-section">
                     <div class="packages-content">
                         ${createPriceTags(details.packages)}
                     </div>
-                </div>
+                </div>` : ''}
+                
+                ${hasMoreContent ? `
+                <div class="packages-more">
+                    ${createMoreContent(details.moreContent)}
+                </div>` : ''}
+                
                 ${hasSpeedInfo ? `
                     <div class="speed-info">
                         <div class="speed-info-icon">
@@ -212,6 +223,33 @@ function createPriceTags(packages) {
             </div>` : ''}
         </div>
     `).join('');
+}
+
+// 新增创建更多内容区域的函数
+function createMoreContent(moreContent) {
+    if (!moreContent) return '';
+    
+    let contentHtml = '<div class="more-content-section">';
+    
+    // 如果有文本内容
+    if (moreContent.text) {
+        contentHtml += `<div class="more-content-text">${moreContent.text}</div>`;
+    }
+    
+    // 如果有图片内容
+    if (moreContent.images && moreContent.images.length > 0) {
+        contentHtml += '<div class="more-content-images">';
+        moreContent.images.forEach(img => {
+            if (img.url) {
+                contentHtml += `<img src="${img.url}" alt="${img.alt || ''}" class="more-content-image"${img.width ? ` width="${img.width}"` : ''}${img.height ? ` height="${img.height}"` : ''}>`;
+            }
+        });
+        contentHtml += '</div>';
+    }
+    
+    contentHtml += '</div>';
+    
+    return contentHtml;
 }
 
 // 解析价格文本的辅助函数

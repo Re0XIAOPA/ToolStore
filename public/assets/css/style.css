@@ -342,7 +342,8 @@ footer p {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     animation: slideIn 0.3s ease-out;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative; /* 为页面指示器定位提供参考 */
+    position: relative;
+    /* 为页面指示器定位提供参考 */
     max-height: 90vh;
     overflow-y: auto;
 }
@@ -474,6 +475,7 @@ footer p {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -489,9 +491,12 @@ footer p {
     border-radius: 16px;
     max-height: 300px;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* 添加iOS设备的流畅滚动 */
-    scrollbar-width: thin; /* Firefox滚动条样式 */
-    scrollbar-color: rgba(124, 138, 255, 0.5) rgba(255, 255, 255, 0.1); /* Firefox滚动条颜色 */
+    -webkit-overflow-scrolling: touch;
+    /* 添加iOS设备的流畅滚动 */
+    scrollbar-width: thin;
+    /* Firefox滚动条样式 */
+    scrollbar-color: rgba(124, 138, 255, 0.5) rgba(255, 255, 255, 0.1);
+    /* Firefox滚动条颜色 */
 }
 
 /* Webkit浏览器滚动条样式 */
@@ -1635,4 +1640,45 @@ main {
     padding: 4px 8px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
+}
+
+/* 更多内容区域样式 */
+.packages-more {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(124, 138, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(124, 138, 255, 0.1);
+}
+
+.more-content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.more-content-text {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 10px 0;
+}
+
+.more-content-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.more-content-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(124, 138, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    justify-content: center;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
 }
