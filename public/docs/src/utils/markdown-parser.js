@@ -40,11 +40,11 @@ export function parseMarkdown(markdown) {
     // 解析删除线
     html = html.replace(/~~(.*?)~~/g, '<del>$1</del>');
     
+    // 解析图片（必须在链接解析之前）- 添加懒加载属性
+    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">');
+    
     // 解析链接
     html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
-    
-    // 解析图片
-    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
     
     // 解析代码块
     html = html.replace(/```([a-z]*)\n([\s\S]*?)\n```/g, '<pre class="language-$1"><code>$2</code></pre>');

@@ -328,10 +328,39 @@ body {
     margin: 24px 0;
 }
 
+/* 默认图片样式 */
 #content img {
     max-width: 100%;
-    border-radius: 8px;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(124, 138, 255, 0.2);
     margin: 16px 0;
+    box-sizing: border-box;
+}
+
+/* 文档开头的图片（紧跟在标题后的图片） */
+#content h1 + p img,
+#content h2 + p img,
+#content h3 + p img,
+#content h4 + p img,
+#content h5 + p img,
+#content h6 + p img {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* 列表项下的图片 */
+#content li img {
+    max-width: 80%;
+    margin: 8px 0 8px 20px;
+    display: block;
+}
+
+/* 段落中的图片 */
+#content p img {
+    max-width: 100%;
+    display: block;
+    margin: 16px auto;
 }
 
 #content table {
@@ -463,5 +492,21 @@ body {
     
     .main-content {
         min-height: auto;
+    }
+    
+    /* 移动端图片样式 */
+    #content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border: 1px solid rgba(124, 138, 255, 0.2);
+        margin: 16px 0;
+        box-sizing: border-box;
+    }
+    
+    /* 移动端列表项下的图片 */
+    #content li img {
+        max-width: 100%;
+        margin: 8px 0;
     }
 }

@@ -1,4 +1,5 @@
-import { config } from './configs/site-config.js';
+import { config as defaultConfig } from './configs/site-config.js';
+import { mainConfig, navbarConfig, sidebarConfig } from './configs/site-config.js';
 import { renderSidebar, renderNavbar } from './components/navigation.js';
 import { loadMarkdownContent, parseMarkdown } from './utils/markdown-parser.js';
 import { ConfigLoader } from './utils/config-loader.js';
@@ -7,6 +8,14 @@ import { Router } from './utils/router.js';
 
 // 初始化文档系统
 document.addEventListener('DOMContentLoaded', async () => {
+    // 异步初始化配置
+    const docsStructure = await ConfigLoader.parseDocsStructure();
+    const config = {
+        ...mainConfig,
+        navbar: navbarConfig,
+        sidebar: ConfigLoader.generateSidebarConfig(docsStructure)
+    };
+    
     // 渲染导航栏
     renderNavbar(config.navbar);
     
@@ -19,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 初始化路由系统
     const router = new Router();
     router.addRoute('*', async (path) => {
-        await loadDocument(path);
+        await loadDocument(path, config);
     });
     router.start();
     
@@ -41,16 +50,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupMobileMenuToggle();
     
     // 渲染移动端侧边栏
-    renderMobileSidebar();
+    renderMobileSidebar(config);
+    
+    // 检查并应用图片懒加载降级处理
+    checkAndApplyLazyLoadFallback();
 });
 
 // 加载文档内容
-async function loadDocument(docPath) {
+async function loadDocument(docPath, config) {
     try {
         const content = await loadMarkdownContent(docPath);
         
         // 提取元数据
         const metadata = ConfigLoader.extractMetadata(content);
+        
+        // 检查是否隐藏文档
+        if (metadata.hidden) {
+            document.getElementById('content').innerHTML = '<h1>文档未找到</h1><p>该文档已被隐藏。</p>';
+            return;
+        }
         
         // 更新页面标题
         if (metadata.title) {
@@ -64,6 +82,9 @@ async function loadDocument(docPath) {
         
         // 高亮当前选中的侧边栏项
         highlightActiveLink(docPath);
+        
+        // 应用图片懒加载降级处理（如果需要）
+        checkAndApplyLazyLoadFallback();
     } catch (error) {
         console.error('加载文档失败:', error);
         document.getElementById('content').innerHTML = '<h1>文档未找到</h1><p>抱歉，您请求的文档不存在。</p>';
@@ -141,7 +162,7 @@ function setupMobileMenuToggle() {
 }
 
 // 渲染移动端侧边栏
-function renderMobileSidebar() {
+function renderMobileSidebar(config) {
     const mobileSidebarContent = document.getElementById('mobileSidebarContent');
     if (mobileSidebarContent) {
         // 渲染侧边栏内容到移动端容器
@@ -152,4 +173,49 @@ function renderMobileSidebar() {
             setupSidebarToggle();
         }, 0);
     }
+}
+
+// 检查并应用图片懒加载降级处理
+function checkAndApplyLazyLoadFallback() {
+    // 检测浏览器是否支持loading属性
+    if (!('loading' in HTMLImageElement.prototype)) {
+        // 降级处理：使用Intersection Observer
+        lazyLoadImages();
+    }
+}
+
+// 降级处理：使用Intersection Observer实现懒加载
+function lazyLoadImages() {
+    if (!('IntersectionObserver' in window)) {
+        // 如果不支持Intersection Observer，则立即加载所有图片
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            if (!img.src && img.dataset.src) {
+                img.src = img.dataset.src;
+            }
+        });
+        return;
+    }
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                // 如果图片有data-src属性，使用它作为src
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        // 如果图片还没有src，则使用data-src存储真实URL
+        if (!img.src || img.src === window.location.href || img.src.startsWith('data:image')) {
+            img.dataset.src = img.getAttribute('src');
+            img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100"%3E%3C/svg%3E'; // 占位符
+        }
+        imageObserver.observe(img);
+    });
 }

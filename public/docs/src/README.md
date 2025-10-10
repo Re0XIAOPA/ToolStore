@@ -1,17 +1,5 @@
 # ToolStore 文档系统
 
-这是一个类似于 VitePress 的静态文档系统，专为 ToolStore 项目设计。
-
-## 特性
-
-- **配置驱动**: 通过配置文件控制侧边栏和导航栏
-- **Markdown 支持**: 使用 Markdown 编写文档内容
-- **动态侧边栏**: 自动从 Markdown 文件中提取配置信息
-- **搜索功能**: 内置文档搜索功能
-- **响应式设计**: 适配各种设备屏幕
-- **代码高亮**: 支持代码块语法高亮
-- **目录生成**: 自动生成页面目录
-
 ## 目录结构
 
 ```
@@ -28,17 +16,50 @@ src/
 
 ## 配置文件
 
-### site-config.js
-
-站点配置文件，包含导航栏、侧边栏等配置：
+### 主配置 (main-config.js)
 
 ```javascript
-export const config = {
-    title: 'ToolStore 文档',
-    defaultDocument: 'index.md',
-    navbar: [...],
-    sidebar: {...}
+export const mainConfig = {
+    title: 'ToolStore 文档',           // 站点标题
+    defaultDocument: 'index.md',       // 默认文档
+    meta: {                           // 页面元数据
+        author: 're0xiaopa',
+        description: 'ToolStore 工具文档中心',
+        keywords: '代理工具,网络工具,教程,文档'
+    }
 };
+```
+
+### 导航栏配置 (navbar-config.js)
+
+```javascript
+export const navbarConfig = [
+    { text: '首页', link: '../../index.html' },
+    { text: '文档', link: './index.html' },
+    { text: 'GitHub', link: 'https://github.com/Re0XIAOPA/ToolStore' }
+];
+```
+
+### 侧边栏配置 (sidebar-config.js)
+
+```javascript
+export const sidebarConfig = [
+    {
+        title: '入门指南',    // 组标题
+        dir: '.',            // 对应docs目录下的子目录
+        order: 1            // 组排序
+    },
+    {
+        title: '工具使用',
+        dir: 'tools',
+        order: 2
+    },
+    {
+        title: '开发指南',
+        dir: 'development',
+        order: 3
+    }
+];
 ```
 
 ### Markdown 文件元数据
@@ -47,36 +68,31 @@ export const config = {
 
 ```markdown
 ---
-title: 页面标题
-order: 1
+title: 页面标题        # 显示在侧边栏的标题
+order: 1              # 在侧边栏中的排序
+hidden: true          # 是否在侧边栏中隐藏（可选）
 ---
 
 # 文档内容
 ```
 
-## 开发指南
+## 如何贡献
+
+1. Fork 项目仓库
+2. 创建您的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启一个 Pull Request
 
 ### 添加新文档
 
-1. 在 `docs/` 目录下创建新的 Markdown 文件
-2. 在相应的目录中添加文档内容
-3. 更新侧边栏配置（如果需要）
+1. 在 `docs/` 目录下相应的子目录中创建新的 Markdown 文件
+2. 在文件顶部添加元数据（标题、排序等）
+3. 编写文档内容
 
-### 自定义样式
+### 修改配置
 
-1. 修改 `styles/docs.css` 文件来自定义样式
-2. 添加新的样式文件并在 `index.html` 中引入
-
-### 扩展功能
-
-1. 在 `components/` 目录中添加新的组件
-2. 在 `utils/` 目录中添加工具函数
-3. 在 `main.js` 中初始化新功能
-
-## 部署
-
-将 `src/` 目录中的所有文件部署到 Web 服务器即可。
-
-## 许可证
-
-MIT
+1. 修改 `configs/` 目录下的相应配置文件
+2. 侧边栏组结构在 `sidebar-config.js` 中定义
+3. 导航栏项在 `navbar-config.js` 中定义
+4. 站点基本信息在 `main-config.js` 中定义
