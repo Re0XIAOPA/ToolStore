@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolStore 文档</title>
+    <link rel="stylesheet" href="./styles/docs.css">
+    <link rel="stylesheet" href="./styles/highlight.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+</head>
+<body>
+    <div id="app">
+        <header class="doc-header">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="./index.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#7c8aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="#7c8aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="#7c8aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>ToolStore 文档</span>
+                    </a>
+                </div>
+                <nav class="doc-nav">
+                    <ul id="nav-menu"></ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 移动端侧边栏容器 -->
+        <div class="sider-container" id="siderContainer">
+            <div class="sidebar-content" id="mobileSidebarContent"></div>
+        </div>
+
+        <div class="container">
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-content" id="sidebar-content"></div>
+            </aside>
+
+            <main class="main-content">
+                <div class="content-wrapper">
+                    <div id="content"></div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="doc-footer">
+            <div class="footer-container">
+                <p>&copy; 2023-2025 ToolStore. 保留所有权利。</p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
