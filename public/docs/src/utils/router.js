@@ -13,7 +13,7 @@ export class Router {
     
     // 导航到指定路径
     navigateTo(path) {
-        // 更新URL但不刷新页面
+        // 更新URL但不刷新页面，使用简化路径
         history.pushState({ path }, '', `#${path}`);
         this.handleRouteChange(path);
     }
@@ -58,7 +58,14 @@ export class Router {
     
     // 获取当前路径
     getCurrentPath() {
-        return window.location.hash.substring(1) || this.getDefaultPath();
+        // 获取hash值并移除开头的#
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+            return hash;
+        }
+        
+        // 如果没有hash，返回默认路径
+        return this.getDefaultPath();
     }
     
     // 获取默认路径

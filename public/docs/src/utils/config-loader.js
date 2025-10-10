@@ -1,4 +1,5 @@
 import { sidebarConfig } from '../configs/sidebar-config.js';
+import { docsStructureConfig } from '../configs/docs-structure.js';
 
 // 配置加载器，支持从Markdown文件中提取配置信息
 export class ConfigLoader {
@@ -136,18 +137,8 @@ export class ConfigLoader {
     
     // 获取目录中的文件列表
     static async getFilesInDirectory(dir) {
-        // 在浏览器环境中，我们无法直接访问文件系统
-        // 这里我们返回预定义的文件列表
-        // 在实际项目中，这应该通过服务器API获取
-        
-        const fileMap = {
-            '.': ['index.md'],
-            'guide': ['quick-start.md', 'installation.md'],
-            'tools': ['clash-verge.md', 'clashmeta.md', 'shadowrocket.md'],
-            'development': ['contributing.md', 'architecture.md']
-        };
-        
-        return fileMap[dir] || [];
+        // 使用从配置文件导入的文档结构配置
+        return docsStructureConfig[dir] || [];
     }
     
     // 加载文件内容

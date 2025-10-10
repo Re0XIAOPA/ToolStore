@@ -24,11 +24,13 @@ export function renderSidebar(sidebarConfig, containerElement = null) {
                 <span class="toggle-icon">▼</span>
             </div>
             <ul class="sidebar-group-items">
-                ${group.items.map(item => `
+                ${group.items.map(item => {
+                    // 使用简化的路径格式
+                    return `
                     <li class="sidebar-item">
                         <a href="#${item.link}">${item.text}</a>
                     </li>
-                `).join('')}
+                `}).join('')}
             </ul>
         </div>
     `).join('');
