@@ -59,7 +59,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 // 加载文档内容
 async function loadDocument(docPath, config) {
     try {
-        const content = await loadMarkdownContent(docPath);
+        // 处理简化路径格式
+        const normalizedPath = normalizeDocPath(docPath);
+        const content = await loadMarkdownContent(normalizedPath);
         
         // 提取元数据
         const metadata = ConfigLoader.extractMetadata(content);
@@ -81,7 +83,7 @@ async function loadDocument(docPath, config) {
         document.getElementById('content').innerHTML = parsedContent;
         
         // 高亮当前选中的侧边栏项
-        highlightActiveLink(docPath);
+        highlightActiveLink(normalizedPath);
         
         // 应用图片懒加载降级处理（如果需要）
         checkAndApplyLazyLoadFallback();
@@ -89,6 +91,22 @@ async function loadDocument(docPath, config) {
         console.error('加载文档失败:', error);
         document.getElementById('content').innerHTML = '<h1>文档未找到</h1><p>抱歉，您请求的文档不存在。</p>';
     }
+}
+
+// 规范化文档路径
+function normalizeDocPath(path) {
+    // 如果路径为空或根路径，返回默认文档
+    if (!path || path === '/' || path === '') {
+        return 'index.md';
+    }
+    
+    // 如果路径已经以.md结尾，直接返回
+    if (path.endsWith('.md')) {
+        return path;
+    }
+    
+    // 如果路径不以.md结尾，添加.md后缀
+    return `${path}.md`;
 }
 
 // 高亮当前选中的链接
