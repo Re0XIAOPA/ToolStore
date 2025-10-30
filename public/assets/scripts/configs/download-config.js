@@ -3,7 +3,7 @@
 
 const downloadLinks = {
     "v2box": {
-        "version": "N/A",
+        "version": "Free",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690"
     },
@@ -91,27 +91,27 @@ const downloadLinks = {
         "github": "https://github.com/yanue/V2rayU"
     },
     "shadowrocket": {
-        "version": "N/A",
+        "version": "$2.99",
         "ios": "https://apps.apple.com/us/app/shadowrocket/id932747118"
     },
     "quantumultx": {
-        "version": "N/A",
+        "version": "$9.99",
         "ios": "https://apps.apple.com/us/app/quantumult-x/id1443988620"
     },
     "surge5": {
-        "version": "N/A",
+        "version": "Free",
         "ios": "https://apps.apple.com/us/app/surge-5/id1442620678"
     },
     "oneclick": {
-        "version": "N/A",
+        "version": "Free",
         "ios": "https://apps.apple.com/us/app/oneclick-safe-easy-fast/id1545555197"
     },
     "streisand": {
-        "version": "N/A",
+        "version": "Free",
         "ios": "https://apps.apple.com/us/app/streisand/id6450534064"
     },
     "npvtunnel": {
-        "version": "N/A",
+        "version": "Free",
         "ios": "https://apps.apple.com/us/app/npv-tunnel/id1629465476"
     }
 };
