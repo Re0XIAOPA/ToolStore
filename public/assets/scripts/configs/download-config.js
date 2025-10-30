@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 10/29/2025, 3:18:50 AM
+// 最后更新时间: 10/30/2025, 3:10:39 AM
 
 const downloadLinks = {
     "v2box": {
@@ -86,8 +86,8 @@ const downloadLinks = {
         "github": "https://github.com/chen08209/FlClash"
     },
     "v2rayu": {
-        "version": "v4.2.7",
-        "mac": "https://github.com/yanue/V2rayU/releases/download/v4.2.7/V2rayU-arm64.dmg",
+        "version": "v4.2.8",
+        "mac": "https://github.com/yanue/V2rayU/releases/download/v4.2.8/V2rayU-arm64.dmg",
         "github": "https://github.com/yanue/V2rayU"
     },
     "shadowrocket": {
