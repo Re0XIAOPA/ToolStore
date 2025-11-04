@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 11/3/2025, 3:21:08 AM
+// 最后更新时间: 11/4/2025, 3:09:45 AM
 
 const downloadLinks = {
     "v2box": {
@@ -72,9 +72,9 @@ const downloadLinks = {
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
     "gui.for.clash": {
-        "version": "v1.14.0",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.14.0/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.14.0/GUI.for.Clash-linux-amd64.zip",
+        "version": "v1.14.1",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.14.1/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.14.1/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
