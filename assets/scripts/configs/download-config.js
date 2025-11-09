@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 11/8/2025, 3:06:18 AM
+// 最后更新时间: 11/9/2025, 3:16:38 AM
 
 const downloadLinks = {
     "v2box": {
@@ -35,10 +35,10 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
-        "version": "v2.4.2",
-        "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.2/Clash.Verge_2.4.2_x64-setup.exe",
-        "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.2/Clash.Verge_2.4.2_x64.dmg",
-        "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.2/Clash.Verge_2.4.2_amd64.deb",
+        "version": "v2.4.3",
+        "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.3/Clash.Verge_2.4.3_x64-setup.exe",
+        "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.3/Clash.Verge_2.4.3_x64.dmg",
+        "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.3/Clash.Verge_2.4.3_amd64.deb",
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
     },
     "mihomo party": {
@@ -49,8 +49,8 @@ const downloadLinks = {
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
-        "version": "v2.11.18",
-        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.18/cmfa-2.11.18-meta-universal-release.apk",
+        "version": "v2.11.19",
+        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.19/cmfa-2.11.19-meta-universal-release.apk",
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
