@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 11/18/2025, 3:16:07 AM
+// 最后更新时间: 11/19/2025, 3:11:16 AM
 
 const downloadLinks = {
     "v2box": {
@@ -42,10 +42,10 @@ const downloadLinks = {
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
     },
     "mihomo party": {
-        "version": "v1.8.8",
-        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.8/clash-party-windows-1.8.8-x64-setup.exe",
-        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.8/clash-party-macos-1.8.8-arm64.pkg",
-        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.8/clash-party-linux-1.8.8-amd64.deb",
+        "version": "v1.8.9",
+        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.9/clash-party-windows-1.8.9-x64-setup.exe",
+        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.9/clash-party-macos-1.8.9-arm64.pkg",
+        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.9/clash-party-linux-1.8.9-amd64.deb",
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
