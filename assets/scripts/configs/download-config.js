@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 11/20/2025, 3:13:37 AM
+// 最后更新时间: 11/21/2025, 3:14:15 AM
 
 const downloadLinks = {
     "v2box": {
@@ -17,9 +17,9 @@ const downloadLinks = {
         "github": "https://github.com/hiddify/hiddify-app"
     },
     "gui.for.singbox": {
-        "version": "v1.14.0",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.14.0/GUI.for.SingBox-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.14.0/GUI.for.SingBox-linux-amd64.zip",
+        "version": "v1.15.1",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.15.1/GUI.for.SingBox-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.15.1/GUI.for.SingBox-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
@@ -72,9 +72,9 @@ const downloadLinks = {
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
     "gui.for.clash": {
-        "version": "v1.14.1",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.14.1/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.14.1/GUI.for.Clash-linux-amd64.zip",
+        "version": "v1.15.1",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.15.1/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.15.1/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
