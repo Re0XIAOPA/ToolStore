@@ -44,7 +44,7 @@ jobs:
       - name: Commit and Push Changes
         run: |
           git add .
-          git commit -m "Update download links and versions [skip ci]" || echo "No changes to commit"
+          git commit -m "🚀 更新下载链接和版本 | 🔄 同步最新发布信息 [skip ci]" || echo "No changes to commit"
           git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" master
 
       - name: Deploy to GitHub Pages
@@ -53,5 +53,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-          commit_message: "Update site content"
+          commit_message: "🌐 部署网站更新 | 📦 更新内容和资源文件"
           force_orphan: false 
