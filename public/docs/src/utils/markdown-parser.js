@@ -17,7 +17,7 @@ export async function loadMarkdownContent(filePath) {
     }
 }
 
-export function parseMarkdown(markdown) {
+export function parseMarkdown(markdown, filePath) {
     // 更完整的Markdown解析实现
     let html = markdown;
     
@@ -40,8 +40,12 @@ export function parseMarkdown(markdown) {
     // 解析删除线
     html = html.replace(/~~(.*?)~~/g, '<del>$1</del>');
     
-    // 解析图片（必须在链接解析之前）- 添加懒加载属性
-    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">');
+    // 解析图片（必须在链接解析之前）- 添加懒加载属性和路径转换
+    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+        // 转换图片路径
+        const convertedSrc = convertImagePath(src, filePath);
+        return `<img src="${convertedSrc}" alt="${alt}" loading="lazy">`;
+    });
     
     // 解析链接
     html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
@@ -73,4 +77,37 @@ export function parseMarkdown(markdown) {
     html = html.replace(/\n/g, '\n');
     
     return html;
+}
+
+// 转换图片路径的函数
+function convertImagePath(src, filePath) {
+    // 如果已经是绝对路径或完整的URL，直接返回
+    if (src.startsWith('/') || src.startsWith('http') || src.startsWith('https')) {
+        return src;
+    }
+    
+    // 如果是相对路径，需要根据文件位置进行转换
+    if (src.startsWith('./') || src.startsWith('../')) {
+        // 获取文件所在目录
+        const fileDir = filePath.substring(0, filePath.lastIndexOf('/'));
+        // 构建相对于docs/src目录的路径
+        if (fileDir) {
+            return `docs/${fileDir}/${src.substring(2)}`;
+        } else {
+            return `docs/${src.substring(2)}`;
+        }
+    }
+    
+    // 如果是直接的相对路径（不以./开头），也需要转换
+    if (!src.includes(':') && !src.startsWith('/')) {
+        const fileDir = filePath.substring(0, filePath.lastIndexOf('/'));
+        if (fileDir) {
+            return `docs/${fileDir}/${src}`;
+        } else {
+            return `docs/${src}`;
+        }
+    }
+    
+    // 默认情况直接返回
+    return src;
 }

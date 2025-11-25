@@ -330,12 +330,14 @@ body {
 
 /* 默认图片样式 */
 #content img {
+    width: 100%;
     max-width: 100%;
     height: auto;
     border-radius: 12px;
     border: 1px solid rgba(124, 138, 255, 0.2);
     margin: 16px 0;
     box-sizing: border-box;
+    display: block;
 }
 
 /* 文档开头的图片（紧跟在标题后的图片） */
@@ -351,13 +353,15 @@ body {
 
 /* 列表项下的图片 */
 #content li img {
-    max-width: 80%;
+    width: 100%;
+    max-width: 100%;
     margin: 8px 0 8px 20px;
     display: block;
 }
 
 /* 段落中的图片 */
 #content p img {
+    width: 100%;
     max-width: 100%;
     display: block;
     margin: 16px auto;
@@ -496,16 +500,19 @@ body {
     
     /* 移动端图片样式 */
     #content img {
+        width: 100%;
         max-width: 100%;
         height: auto;
         border-radius: 12px;
         border: 1px solid rgba(124, 138, 255, 0.2);
         margin: 16px 0;
         box-sizing: border-box;
+        display: block;
     }
     
     /* 移动端列表项下的图片 */
     #content li img {
+        width: 100%;
         max-width: 100%;
         margin: 8px 0;
     }

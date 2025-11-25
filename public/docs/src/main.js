@@ -79,7 +79,7 @@ async function loadDocument(docPath, config) {
         
         // 渲染内容（移除元数据部分）
         const contentWithoutMetadata = content.replace(/^---\s*\n[\s\S]*?\n---\s*\n/, '');
-        const parsedContent = parseMarkdown(contentWithoutMetadata);
+        const parsedContent = parseMarkdown(contentWithoutMetadata, normalizedPath);
         document.getElementById('content').innerHTML = parsedContent;
         
         // 高亮当前选中的侧边栏项
@@ -96,7 +96,7 @@ async function loadDocument(docPath, config) {
 // 规范化文档路径
 function normalizeDocPath(path) {
     // 如果路径为空或根路径，返回默认文档
-    if (!path || path === '/' || path === '') {
+    if (!path || path === '/' || path === '') { 
         return 'index.md';
     }
     
