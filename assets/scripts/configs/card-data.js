@@ -115,6 +115,11 @@ export const softwareData = [
         link: "https://www.pixiv.net/"
     },
     {
+        name: "Gemini",
+        image: "assets/images/software/gemini.svg",
+        link: "https://gemini.google.com/"
+    },
+    {
         name: "TikTok",
         image: "assets/images/software/TikTok.png",
         link: "https://www.tiktok.com/"
