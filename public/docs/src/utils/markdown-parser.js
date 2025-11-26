@@ -62,12 +62,24 @@ export function parseMarkdown(markdown, filePath) {
     // 解析删除线
     html = html.replace(/~~(.*?)~~/g, '<del>$1</del>');
     
-    // 解析图片（必须在链接解析之前）- 添加懒加载属性和路径转换
+    // 解析图片 - 支持转换图片路径
     html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
         const convertedSrc = convertImagePath(src, filePath);
         return `<img src="${convertedSrc}" alt="${alt}" loading="lazy">`;
     });
-    
+
+    // 解析视频标签 - 支持转换视频路径
+    html = html.replace(/<video([^>]*)src="([^"]+)"([^>]*)>/g, (match, beforeSrc, src, afterSrc) => {
+        const convertedSrc = convertImagePath(src, filePath);
+        return `<video${beforeSrc}src="${convertedSrc}"${afterSrc}>`;
+    });
+
+    // 解析source标签 - 支持转换视频源路径
+    html = html.replace(/<source([^>]*)src="([^"]+)"([^>]*)>/g, (match, beforeSrc, src, afterSrc) => {
+        const convertedSrc = convertImagePath(src, filePath);
+        return `<source${beforeSrc}src="${convertedSrc}"${afterSrc}>`;
+    });
+
     // 解析链接
     html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
     
@@ -86,7 +98,7 @@ export function parseMarkdown(markdown, filePath) {
     html = html.replace(/(<li>.*<\/li>)/gs, '<ol>$1</ol>');
     
     // 解析段落（允许行内HTML，例如链接）
-    const blockTagPattern = /^(?:\s*<(?:\/)?(?:h[1-6]|ul|ol|li|pre|blockquote|code|img|hr))/i;
+    const blockTagPattern = /^(?:\s*<(?:\/)?(?:h[1-6]|ul|ol|li|pre|blockquote|code|img|hr|video|source))/i;
     html = html.split('\n').map(line => {
         if (!line.trim()) {
             return line;
@@ -132,7 +144,15 @@ function convertImagePath(src, filePath) {
         const fileDir = filePath.substring(0, filePath.lastIndexOf('/'));
         // 构建相对于docs/src目录的路径
         if (fileDir) {
-            return `docs/${fileDir}/${src.substring(2)}`;
+            // 特殊处理：如果src以./开头，应该相对于当前文件目录
+            if (src.startsWith('./')) {
+                return `docs/${fileDir}/${src.substring(2)}`;
+            } 
+            // 如果src以../开头，需要向上一级目录
+            else if (src.startsWith('../')) {
+                const parentDir = fileDir.substring(0, fileDir.lastIndexOf('/'));
+                return `docs/${parentDir}/${src.substring(3)}`;
+            }
         } else {
             return `docs/${src.substring(2)}`;
         }
