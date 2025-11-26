@@ -13,6 +13,13 @@ order: 1
 [项目地址：【点击访问】](https://github.com/eishare/Singbox-nodejs)
 
 
+<!-- <video width="100%" height="auto" controls playsinline>
+    <source src="./hot01/videoplayback.mp4" type="video/mp4">
+    您的浏览器不支持视频播放。
+</video> -->
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/4hcCSh5kxKk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 选择Nodejs
 
 ![10002](./hot01/10002.png)

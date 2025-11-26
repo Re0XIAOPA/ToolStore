@@ -30,13 +30,19 @@ export function initNoticeHandler() {
 
     // 禁用所有导航和链接
     function disableAllNavigation(disable = true) {
-        // 禁用导航链接
+        // 禁用导航链接（排除公告区域内的链接）
         const links = document.querySelectorAll('a');
         links.forEach(link => {
-            if (disable) {
-                link.style.opacity = '0.5';
-            } else {
-                link.style.opacity = '';
+            // 检查链接是否在公告区域内
+            const isInNotice = link.closest && (link.closest('#dailyNotice') || link.closest('.banner-notice'));
+            
+            // 只对不在公告区域内的链接应用透明度
+            if (!isInNotice) {
+                if (disable) {
+                    link.style.opacity = '0.5';
+                } else {
+                    link.style.opacity = '';
+                }
             }
         });
 
