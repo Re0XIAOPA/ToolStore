@@ -19,6 +19,9 @@ const CHECK_ICON = `
 </svg>
 `;
 
+const pendingHighlightElements = new Set();
+setupHighlightWatcher();
+
 // 初始化文档系统
 document.addEventListener('DOMContentLoaded', async () => {
     // 异步初始化配置
@@ -272,9 +275,7 @@ function enhanceCodeBlocks() {
         }
         
         // 应用语法高亮
-        if (window.hljs && typeof window.hljs.highlightElement === 'function') {
-            window.hljs.highlightElement(codeElement);
-        }
+        applySyntaxHighlight(codeElement);
         
         const wrapper = document.createElement('div');
         wrapper.className = 'code-block-wrapper';
@@ -369,4 +370,37 @@ function showCopyFeedback(button, message, success = true) {
         button.dataset.feedback = '';
         button.innerHTML = CLIPBOARD_ICON;
     }, 2000);
+}
+
+function setupHighlightWatcher() {
+    if (window.hljs && typeof window.hljs.highlightElement === 'function') {
+        flushPendingHighlights();
+        return;
+    }
+    
+    const script = document.querySelector('script[src*="highlight.min.js"]');
+    if (script) {
+        script.addEventListener('load', flushPendingHighlights, { once: true });
+    }
+}
+
+function applySyntaxHighlight(codeElement) {
+    if (window.hljs && typeof window.hljs.highlightElement === 'function') {
+        window.hljs.highlightElement(codeElement);
+    } else {
+        pendingHighlightElements.add(codeElement);
+    }
+}
+
+function flushPendingHighlights() {
+    if (!window.hljs || typeof window.hljs.highlightElement !== 'function') {
+        return;
+    }
+    
+    pendingHighlightElements.forEach(codeEl => {
+        if (document.contains(codeEl)) {
+            window.hljs.highlightElement(codeEl);
+        }
+    });
+    pendingHighlightElements.clear();
 }

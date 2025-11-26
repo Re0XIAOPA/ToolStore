@@ -4,7 +4,7 @@ order: 1
 ---
 
 ```js
- // 设置侧边栏展开/收缩功能（桌面端和移动端）
+ // 设置侧边栏展开/收缩功能（桌面端和移动端）栏展开/收缩功能（桌面端和移动端）栏展开/收缩功能（桌面端和移动端）栏展开/收缩功能（桌面端和移动端）栏展开/收缩功能（桌面端和移动端）
 function setupSidebarToggle() {
     const bindToggle = (container) => {
         if (!container || container.dataset.toggleBound === 'true') {

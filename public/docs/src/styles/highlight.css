@@ -1,110 +1,83 @@
-/* 代码高亮样式 */
+/* 代码高亮样式（VS Code Dark+ 配色） */
 pre code {
     display: block;
     overflow-x: auto;
     padding: 1em;
-    background: #2d323c;
-    color: #e0e0e0;
-    font-family: 'Fira Code', 'Consolas', monospace;
-    font-size: 0.9em;
-    line-height: 1.5;
-    border-radius: 8px;
+    background: #1e1f28;
+    color: #d4d4d4;
+    font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+    font-size: 0.92em;
+    line-height: 1.55;
+    border-radius: 10px;
 }
 
 code {
-    font-family: 'Fira Code', 'Consolas', monospace;
+    font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
     font-size: 0.9em;
-    padding: 0.2em 0.4em;
-    background-color: rgba(124, 138, 255, 0.15);
+    padding: 0.15em 0.4em;
+    background-color: rgba(124, 138, 255, 0.2);
     border-radius: 4px;
-    color: #7c8aff;
+    color: #d4d4d4;
 }
 
-/* 代码高亮主题 */
 .hljs {
     display: block;
     overflow-x: auto;
     padding: 0.5em;
-    background: #2d323c;
-    color: #e0e0e0;
+    background: #1e1f28;
+    color: #d4d4d4;
 }
 
 .hljs-comment,
 .hljs-quote {
-    color: #a8b3cf;
+    color: #70b362;
     font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
-.hljs-subst {
-    color: #7c8aff;
-    font-weight: bold;
+.hljs-literal,
+.hljs-meta .hljs-keyword {
+    color: #d38fd5;
 }
 
 .hljs-number,
-.hljs-literal,
-.hljs-variable,
+.hljs-attr,
 .hljs-template-variable,
-.hljs-tag .hljs-attr {
-    color: #ff6b6b;
+.hljs-variable {
+    color: #b5cea8;
 }
 
 .hljs-string,
-.hljs-doctag {
-    color: #51cf66;
+.hljs-doctag,
+.hljs-meta .hljs-string,
+.hljs-regexp {
+    color: #ffb482;
 }
 
 .hljs-title,
+.hljs-name,
 .hljs-section,
-.hljs-selector-id {
-    color: #ffd43b;
-    font-weight: bold;
+.hljs-selector-id,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name {
+    color: #4ec9b0;
+}
+
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet {
+    color: #82c6ff;
+}
+
+.hljs-params,
+.hljs-title.class_ {
+    color: #dcdCAA;
 }
 
 .hljs-subst {
-    font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-    color: #51cf66;
-    font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-    color: #7c8aff;
-    font-weight: normal;
-}
-
-.hljs-regexp,
-.hljs-link {
-    color: #51cf66;
-}
-
-.hljs-symbol,
-.hljs-bullet {
-    color: #ff6b6b;
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-    color: #51cf66;
-}
-
-.hljs-meta {
-    color: #ff6b6b;
-    font-weight: bold;
-}
-
-.hljs-deletion {
-    background: #ff6b6b;
-}
-
-.hljs-addition {
-    background: #51cf66;
+    color: #d4d4d4;
 }
 
 .hljs-emphasis {
@@ -113,4 +86,16 @@ code {
 
 .hljs-strong {
     font-weight: bold;
+}
+
+.hljs-meta {
+    color: #82c6ff;
+}
+
+.hljs-addition {
+    background-color: rgba(97, 218, 251, 0.12);
+}
+
+.hljs-deletion {
+    background-color: rgba(255, 99, 71, 0.12);
 }
