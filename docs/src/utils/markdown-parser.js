@@ -21,6 +21,28 @@ export function parseMarkdown(markdown, filePath) {
     // 更完整的Markdown解析实现
     let html = markdown;
     
+    const codeBlockPlaceholders = [];
+    const inlineCodePlaceholders = [];
+    
+    // 提前处理代码块，防止后续替换破坏格式
+    const codeBlockRegex = /```([a-z0-9]*)[ \t]*\r?\n([\s\S]*?)\r?\n?```/gi;
+    html = html.replace(codeBlockRegex, (match, lang = '', code) => {
+        const token = `%%CODEBLOCK${codeBlockPlaceholders.length}%%`;
+        const normalized = code.replace(/^\n+|\n+$/g, '');
+        codeBlockPlaceholders.push({
+            token,
+            value: `<pre class="code-block"><code class="language-${lang || 'text'}">${escapeHtml(normalized)}</code></pre>`
+        });
+        return token;
+    });
+    
+    // 解析行内代码，保持原样
+    html = html.replace(/`([^`\n]+)`/g, (match, code) => {
+        const token = `%%INLINECODE${inlineCodePlaceholders.length}%%`;
+        inlineCodePlaceholders.push({ token, value: `<code>${escapeHtml(code)}</code>` });
+        return token;
+    });
+    
     // 解析标题
     html = html.replace(/^# (.*$)/gm, '<h1>$1</h1>');
     html = html.replace(/^## (.*$)/gm, '<h2>$1</h2>');
@@ -42,19 +64,12 @@ export function parseMarkdown(markdown, filePath) {
     
     // 解析图片（必须在链接解析之前）- 添加懒加载属性和路径转换
     html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
-        // 转换图片路径
         const convertedSrc = convertImagePath(src, filePath);
         return `<img src="${convertedSrc}" alt="${alt}" loading="lazy">`;
     });
     
     // 解析链接
     html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
-    
-    // 解析代码块
-    html = html.replace(/```([a-z]*)\n([\s\S]*?)\n```/g, '<pre class="language-$1"><code>$2</code></pre>');
-    
-    // 解析行内代码
-    html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
     
     // 解析引用块
     html = html.replace(/^> (.*$)/gm, '<blockquote>$1</blockquote>');
@@ -70,11 +85,36 @@ export function parseMarkdown(markdown, filePath) {
     html = html.replace(/^\s*\d+\.\s(.*)$/gm, '<li>$1</li>');
     html = html.replace(/(<li>.*<\/li>)/gs, '<ol>$1</ol>');
     
-    // 解析段落
-    html = html.replace(/^([^\n<]+)$/gm, '<p>$1</p>');
+    // 解析段落（允许行内HTML，例如链接）
+    const blockTagPattern = /^(?:\s*<(?:\/)?(?:h[1-6]|ul|ol|li|pre|blockquote|code|img|hr))/i;
+    html = html.split('\n').map(line => {
+        if (!line.trim()) {
+            return line;
+        }
+        
+        if (blockTagPattern.test(line.trim())) {
+            return line;
+        }
+        
+        if (line.includes('%%CODEBLOCK')) {
+            return line;
+        }
+        
+        if (line.trim().startsWith('<p') && line.trim().endsWith('</p>')) {
+            return line;
+        }
+        
+        return `<p>${line}</p>`;
+    }).join('\n');
     
-    // 处理换行
-    html = html.replace(/\n/g, '\n');
+    // 恢复代码块与行内代码
+    codeBlockPlaceholders.forEach(({ token, value }) => {
+        html = html.replace(new RegExp(token, 'g'), value);
+    });
+    
+    inlineCodePlaceholders.forEach(({ token, value }) => {
+        html = html.replace(new RegExp(token, 'g'), value);
+    });
     
     return html;
 }
@@ -110,4 +150,13 @@ function convertImagePath(src, filePath) {
     
     // 默认情况直接返回
     return src;
+}
+
+function escapeHtml(str) {
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
 }

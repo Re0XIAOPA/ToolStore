@@ -23,7 +23,7 @@ order: 1
 
 进入Files创建3个文件index.js/package.json/start.sh （文件内容在Github项目里面）
 [Github地址：【点击访问】](https://github.com/eishare/Singbox-nodejs)
-无法访问Github？你可以使用[Steamcommunity 302](https://www.dogfight360.com/blog/18682/) 加速访问（这是不需要梯子可以访问Github的，有梯子那还说啥干就完事了，免费节点过渡的也可以直接使用）
+无法访问Github？你可以使用 [Steamcommunity 302](https://www.dogfight360.com/blog/18682/) 加速访问（这是不需要梯子可以访问Github的，有梯子那还说啥干就完事了，免费节点过渡的也可以直接使用）
 
 ![10004](./hot01/10004.png)
 
