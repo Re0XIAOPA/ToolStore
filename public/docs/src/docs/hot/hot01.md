@@ -3,6 +3,36 @@ title: 白嫖免费主机一键搭建高速节点！
 order: 1
 ---
 
+```js
+ // 设置侧边栏展开/收缩功能（桌面端和移动端）
+function setupSidebarToggle() {
+    const bindToggle = (container) => {
+        if (!container || container.dataset.toggleBound === 'true') {
+            return;
+        }
+        
+        container.addEventListener('click', (event) => {
+            const title = event.target.closest('.sidebar-group-title');
+            if (!title || !container.contains(title)) {
+                return;
+            }
+            
+            const items = title.nextElementSibling;
+            title.classList.toggle('collapsed');
+            
+            if (items && items.classList.contains('sidebar-group-items')) {
+                items.classList.toggle('collapsed');
+            }
+        });
+        
+        container.dataset.toggleBound = 'true';
+    };
+    
+    bindToggle(document.querySelector('.sidebar'));
+    bindToggle(document.querySelector('.sider-container'));
+}
+```
+
 # 白嫖永久免费主机，小白零基础一键搭建 TUIC+hysteria2+Vless reality高速节点！无限流量！先到先得！实测YouTube晚高峰4K秒开，流媒体 奈飞 chatgpt完美解锁 |Katabump免费续期！自动保活
 
 ![10001](./hot01/10001.jpeg)

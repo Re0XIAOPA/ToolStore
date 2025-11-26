@@ -6,6 +6,19 @@ import { ConfigLoader } from './utils/config-loader.js';
 import { AdvancedNavigation } from './components/advanced-navigation.js';
 import { Router } from './utils/router.js';
 
+const CLIPBOARD_ICON = `
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9 4H7C5.89543 4 5 4.89543 5 6V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V6C19 4.89543 18.1046 4 17 4H15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="9" y="2" width="6" height="4" rx="1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+const CHECK_ICON = `
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
 // 初始化文档系统
 document.addEventListener('DOMContentLoaded', async () => {
     // 异步初始化配置
@@ -81,6 +94,7 @@ async function loadDocument(docPath, config) {
         const contentWithoutMetadata = content.replace(/^---\s*\n[\s\S]*?\n---\s*\n/, '');
         const parsedContent = parseMarkdown(contentWithoutMetadata, normalizedPath);
         document.getElementById('content').innerHTML = parsedContent;
+        enhanceCodeBlocks();
         
         // 高亮当前选中的侧边栏项
         highlightActiveLink(normalizedPath);
@@ -241,4 +255,118 @@ function lazyLoadImages() {
         }
         imageObserver.observe(img);
     });
+}
+
+// 增强代码块：语法高亮、语言标签、复制按钮
+function enhanceCodeBlocks() {
+    const blocks = document.querySelectorAll('.code-block');
+    
+    blocks.forEach(block => {
+        if (block.dataset.enhanced === 'true') {
+            return;
+        }
+        
+        const codeElement = block.querySelector('code');
+        if (!codeElement) {
+            return;
+        }
+        
+        // 应用语法高亮
+        if (window.hljs && typeof window.hljs.highlightElement === 'function') {
+            window.hljs.highlightElement(codeElement);
+        }
+        
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper';
+        
+        const header = document.createElement('div');
+        header.className = 'code-block-header';
+        
+        const langBadge = document.createElement('span');
+        langBadge.className = 'code-block-lang';
+        langBadge.textContent = formatLanguageLabel(codeElement);
+        
+        const copyButton = document.createElement('button');
+        copyButton.type = 'button';
+        copyButton.className = 'code-copy-button';
+        copyButton.innerHTML = CLIPBOARD_ICON;
+        copyButton.dataset.feedback = '';
+        copyButton.setAttribute('aria-label', '复制代码');
+        copyButton.setAttribute('title', '复制代码');
+        copyButton.addEventListener('click', async () => {
+            const success = await copyCodeToClipboard(codeElement.innerText);
+            if (success) {
+                showCopyFeedback(copyButton, '已复制', true);
+            } else {
+                showCopyFeedback(copyButton, '复制失败', false);
+            }
+        });
+        
+        header.appendChild(langBadge);
+        header.appendChild(copyButton);
+        
+        // 注入结构
+        block.parentNode.insertBefore(wrapper, block);
+        wrapper.appendChild(header);
+        wrapper.appendChild(block);
+        
+        block.dataset.enhanced = 'true';
+    });
+}
+
+function formatLanguageLabel(codeElement) {
+    const langClass = Array.from(codeElement.classList || []).find(cls => cls.startsWith('language-'));
+    const lang = langClass ? langClass.replace('language-', '') : 'text';
+    if (!lang || lang === 'text') {
+        return 'text';
+    }
+    return lang.replace(/[^a-z0-9+#]+/gi, ' ').trim().toLowerCase() || 'text';
+}
+
+async function copyCodeToClipboard(text) {
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+            return true;
+        }
+    } catch (error) {
+        console.warn('使用Clipboard API复制失败:', error);
+    }
+    
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    
+    try {
+        const successful = document.execCommand('copy');
+        return successful;
+    } catch (err) {
+        console.warn('使用execCommand复制失败:', err);
+        return false;
+    } finally {
+        document.body.removeChild(textarea);
+    }
+}
+
+function showCopyFeedback(button, message, success = true) {
+    button.classList.remove('copied', 'copy-error');
+    button.dataset.feedback = message;
+    if (success) {
+        button.classList.add('copied');
+        button.innerHTML = CHECK_ICON;
+    } else {
+        button.classList.add('copy-error');
+        button.innerHTML = CLIPBOARD_ICON;
+    }
+    
+    clearTimeout(button._feedbackTimer);
+    button._feedbackTimer = setTimeout(() => {
+        button.classList.remove('copied', 'copy-error');
+        button.dataset.feedback = '';
+        button.innerHTML = CLIPBOARD_ICON;
+    }, 2000);
 }
