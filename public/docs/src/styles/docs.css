@@ -8,7 +8,7 @@
     --text-color: #e0e0e0;
     --text-muted: #a8b3cf;
     --border-color: #333742;
-    --code-bg: #2d323c;
+    --code-bg: #161618;  /* 调暗代码块背景色 */
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     --success-color: #51cf66;
     --warning-color: #ffd43b;
@@ -297,7 +297,7 @@ body {
     background-color: var(--code-bg);
     padding: 2px 6px;
     border-radius: 4px;
-    font-family: 'Courier New', monospace;
+    font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;  /* 使用VS Code字体 */
     font-size: 0.9em;
 }
 
@@ -390,8 +390,7 @@ body {
     border-radius: 12px;
     overflow-x: auto;
     scrollbar-width: thin;
-    scrollbar-color: rgba(124, 138, 255, 0.7) rgba(255, 255, 255, 0.05);
-    margin: 0;
+    scrollbar-color: rgba(124, 138, 255, 0.3) rgba(255, 255, 255, 0.02);  /* 调浅滚动条颜色 */
 }
 
 .code-block::-webkit-scrollbar {
@@ -399,17 +398,17 @@ body {
 }
 
 .code-block::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);  /* 调浅滚动条轨道颜色 */
     border-radius: 999px;
 }
 
 .code-block::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, rgba(124, 138, 255, 0.7), rgba(130, 200, 255, 0.8));
+    background: linear-gradient(90deg, rgba(124, 138, 255, 0.3), rgba(130, 200, 255, 0.4));  /* 调浅滚动条滑块颜色 */
     border-radius: 999px;
 }
 
 .code-block::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(90deg, rgba(124, 138, 255, 0.9), rgba(130, 200, 255, 1));
+    background: linear-gradient(90deg, rgba(124, 138, 255, 0.5), rgba(130, 200, 255, 0.6));  /* 调浅滚动条滑块悬停颜色 */
 }
 
 .code-block code {
@@ -428,6 +427,26 @@ body {
     border-radius: 8px;
     overflow-x: auto;
     margin: 20px 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(124, 138, 255, 0.3) rgba(255, 255, 255, 0.02);  /* 调浅滚动条颜色 */
+}
+
+#content pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+#content pre::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);  /* 调浅滚动条轨道颜色 */
+    border-radius: 999px;
+}
+
+#content pre::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, rgba(124, 138, 255, 0.3), rgba(130, 200, 255, 0.4));  /* 调浅滚动条滑块颜色 */
+    border-radius: 999px;
+}
+
+#content pre::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, rgba(124, 138, 255, 0.5), rgba(130, 200, 255, 0.6));  /* 调浅滚动条滑块悬停颜色 */
 }
 
 #content pre code {
