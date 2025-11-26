@@ -70,8 +70,25 @@ export function parseMarkdown(markdown, filePath) {
     html = html.replace(/^\s*\d+\.\s(.*)$/gm, '<li>$1</li>');
     html = html.replace(/(<li>.*<\/li>)/gs, '<ol>$1</ol>');
     
-    // 解析段落
-    html = html.replace(/^([^\n<]+)$/gm, '<p>$1</p>');
+    // 解析段落（允许行内HTML，例如链接）
+    const blockTagPattern = /^(?:\s*<(?:\/)?(?:h[1-6]|ul|ol|li|pre|blockquote|code|img|hr))/i;
+    html = html.split('\n').map(line => {
+        if (!line.trim()) {
+            return line;
+        }
+        
+        // 已经是块级标签的行跳过
+        if (blockTagPattern.test(line.trim())) {
+            return line;
+        }
+        
+        // 已经是段落的行跳过
+        if (line.trim().startsWith('<p') && line.trim().endsWith('</p>')) {
+            return line;
+        }
+        
+        return `<p>${line}</p>`;
+    }).join('\n');
     
     // 处理换行
     html = html.replace(/\n/g, '\n');

@@ -44,7 +44,7 @@ export function updateActiveSidebarItem(docPath) {
     });
     
     // 高亮当前链接（桌面端和移动端）
-    const currentLink = document.querySelector(`.sidebar-item a[href="#${docPath}"]`);
+    const currentLink = document.querySelector(`.sidebar .sidebar-item a[href="#${docPath}"]`);
     const mobileCurrentLink = document.querySelector(`.sider-container .sidebar-item a[href="#${docPath}"]`);
     
     if (currentLink) {

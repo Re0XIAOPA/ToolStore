@@ -265,13 +265,21 @@ body {
     color: var(--text-muted);
 }
 
-#content a {
+#content a,
+#content a:visited {
     color: var(--primary-color);
     text-decoration: none;
 }
 
 #content a:hover {
     text-decoration: underline;
+}
+
+#content blockquote a,
+#content blockquote a:visited,
+#content p a,
+#content li a {
+    color: var(--primary-color);
 }
 
 #content ul,

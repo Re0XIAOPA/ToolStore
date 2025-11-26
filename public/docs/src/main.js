@@ -117,7 +117,7 @@ function highlightActiveLink(docPath) {
     });
     
     // 高亮当前链接（桌面端和移动端）
-    const currentLink = document.querySelector(`.sidebar-item a[href="#${docPath}"]`);
+    const currentLink = document.querySelector(`.sidebar .sidebar-item a[href="#${docPath}"]`);
     const mobileCurrentLink = document.querySelector(`.sider-container .sidebar-item a[href="#${docPath}"]`);
     
     if (currentLink) {
@@ -137,25 +137,30 @@ function setupRouting() {
 
 // 设置侧边栏展开/收缩功能（桌面端和移动端）
 function setupSidebarToggle() {
-    // 为桌面端侧边栏添加展开/收缩功能
-    const sidebarTitles = document.querySelectorAll('.sidebar .sidebar-group-title');
-    sidebarTitles.forEach(title => {
-        title.addEventListener('click', () => {
+    const bindToggle = (container) => {
+        if (!container || container.dataset.toggleBound === 'true') {
+            return;
+        }
+        
+        container.addEventListener('click', (event) => {
+            const title = event.target.closest('.sidebar-group-title');
+            if (!title || !container.contains(title)) {
+                return;
+            }
+            
             const items = title.nextElementSibling;
             title.classList.toggle('collapsed');
-            items.classList.toggle('collapsed');
+            
+            if (items && items.classList.contains('sidebar-group-items')) {
+                items.classList.toggle('collapsed');
+            }
         });
-    });
+        
+        container.dataset.toggleBound = 'true';
+    };
     
-    // 为移动端侧边栏添加展开/收缩功能
-    const mobileSidebarTitles = document.querySelectorAll('.sider-container .sidebar-group-title');
-    mobileSidebarTitles.forEach(title => {
-        title.addEventListener('click', () => {
-            const items = title.nextElementSibling;
-            title.classList.toggle('collapsed');
-            items.classList.toggle('collapsed');
-        });
-    });
+    bindToggle(document.querySelector('.sidebar'));
+    bindToggle(document.querySelector('.sider-container'));
 }
 
 // 设置移动端菜单切换功能
