@@ -59,19 +59,26 @@ export function initNavigation() {
         });
     }
 
-    // 滚动时收起菜单
+    // 滚动时收起菜单（使用防抖避免频繁触发）
+    let scrollTimer = null;
     window.addEventListener('scroll', () => {
-        if (navLinks.classList.contains('active')) {
-            toggleButton.classList.remove('active');
-            navLinks.classList.remove('active');
-            // 调整banner位置
-            adjustBannerPosition();
-        }
-    });
+        if (scrollTimer) clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+            if (navLinks.classList.contains('active')) {
+                toggleButton.classList.remove('active');
+                navLinks.classList.remove('active');
+                adjustBannerPosition();
+            }
+        }, 150); // 延迟150ms执行，减少频繁调用
+    }, { passive: true });
 
-    // 窗口大小改变时调整banner位置
+    // 窗口大小改变时调整banner位置（使用防抖避免频繁调用）
+    let resizeTimer = null;
     window.addEventListener('resize', () => {
-        adjustBannerPosition();
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            adjustBannerPosition();
+        }, 200);
     });
 
     // 修改导航链接点击事件
@@ -100,11 +107,15 @@ export function initNavigation() {
                     // 计算目标位置，考虑header高度
                     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
-                    // 执行平滑滚动
+                    // 执行平滑滚动（移除冗余的调用adjustBannerPosition）
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
                     });
+                    // 在滚动完成后调整banner（延迟调用）
+                    setTimeout(() => {
+                        adjustBannerPosition();
+                    }, 500);
                 }
             }
         });

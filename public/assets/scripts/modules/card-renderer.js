@@ -85,10 +85,19 @@ function createSection(sectionData) {
         const tr = document.createElement('tr');
         
         const tdName = document.createElement('td');
-        tdName.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" style="display:none">
-            <span class="tool-name">${item.name}</span>
-        `;
+        // 判断 image 是路径还是 emoji/字符串
+        const isEmojiOrString = !item.image.includes('/') && !item.image.includes('\\');
+        
+        if (isEmojiOrString) {
+            // 如果是 emoji，不创建 img 标签
+            tdName.innerHTML = `<span class="tool-name">${item.name}</span>`;
+        } else {
+            // 如果是路径，正常创建 img 标签
+            tdName.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" style="display:none">
+                <span class="tool-name">${item.name}</span>
+            `;
+        }
         
         const tdLink = document.createElement('td');
         tdLink.innerHTML = `<a href="${item.link}">${sectionData.linkText}</a>`;
@@ -101,6 +110,124 @@ function createSection(sectionData) {
     table.appendChild(tbody);
     content.appendChild(table);
     
+    // 如果是机场分类（支持分组），使用分组渲染
+    if (sectionData.id === 'proxy') {
+        renderAirportGroupedCards(content, sectionData);
+    } else {
+        // 其他分类使用普通网格渲染
+        renderSimpleCards(content, sectionData);
+    }
+    
+    section.appendChild(content);
+    
+    return section;
+}
+
+// 机场卡片分组渲染
+function renderAirportGroupedCards(content, sectionData) {
+    // 按category和tier分组
+    const groupedData = {};
+    
+    sectionData.data.forEach(item => {
+        // 从機垠對象本身中獲取category和tier信息
+        const category = item.category || 'other';
+        const tier = item.tier || 'default';
+        
+        if (!groupedData[category]) {
+            groupedData[category] = {};
+        }
+        if (!groupedData[category][tier]) {
+            groupedData[category][tier] = [];
+        }
+        groupedData[category][tier].push(item);
+    });
+    
+    // 定义分类名称和排序
+    const categoryNames = {
+        'paid': '付费机场',
+        'free': '免费机场',
+        'other': '其他'
+    };
+    
+    const tierNames = {
+        'first-tier': '一线',
+        'second-tier': '二线',
+        'third-tier': '三线',
+        'admin-pick': '站长自用',
+        'admin-recommend': '推荐',
+        'default': '其他'
+    };
+    
+    const categoryOrder = ['paid', 'free', 'other'];
+    const tierOrder = ['first-tier', 'second-tier', 'third-tier', 'admin-pick', 'admin-recommend', 'default'];
+    
+    // 按顺序渲染分组
+    categoryOrder.forEach(category => {
+        if (!groupedData[category]) return;
+        
+        // 创建分类容器
+        const categoryContainer = document.createElement('div');
+        categoryContainer.className = `airport-category-group ${category}`;
+        
+        // 创建分类标题
+        const categoryTitle = document.createElement('h3');
+        categoryTitle.className = 'airport-category-title';
+        categoryTitle.textContent = categoryNames[category];
+        categoryContainer.appendChild(categoryTitle);
+        
+        // 按tier渲染
+        tierOrder.forEach(tier => {
+            if (!groupedData[category][tier]) return;
+            
+            // 创建tier容器
+            const tierContainer = document.createElement('div');
+            tierContainer.className = `airport-tier-group ${tier}`;
+            
+            // 创建tier标题（仅在tier不是default时显示）
+            if (tier !== 'default') {
+                const tierTitle = document.createElement('h4');
+                tierTitle.className = 'airport-tier-title';
+                tierTitle.textContent = tierNames[tier];
+                
+                // 为admin-pick增加详细说明
+                if (tier === 'admin-pick') {
+                    const tierDescription = document.createElement('p');
+                    tierDescription.className = 'airport-tier-description';
+                    tierDescription.textContent = '站长经使用之后推荐';
+                    tierTitle.appendChild(tierDescription);
+                }
+                
+                // 为admin-recommend增加详细说明
+                if (tier === 'admin-recommend') {
+                    const tierDescription = document.createElement('p');
+                    tierDescription.className = 'airport-tier-description';
+                    tierDescription.textContent = '站长高度推荐';
+                    tierTitle.appendChild(tierDescription);
+                }
+                
+                tierContainer.appendChild(tierTitle);
+            }
+            
+            // 创建卡片网格
+            const gridContainer = document.createElement('div');
+            gridContainer.className = 'grid-container';
+            
+            // 为每个项目创建卡片
+            groupedData[category][tier].forEach(item => {
+                const card = createCard(item, sectionData);
+                gridContainer.appendChild(card);
+            });
+            
+            tierContainer.appendChild(gridContainer);
+            categoryContainer.appendChild(tierContainer);
+        });
+        
+        content.appendChild(categoryContainer);
+    });
+}
+
+// 普通卡片渲染（用于工具和软件）
+function renderSimpleCards(content, sectionData) {
     // 创建卡片容器
     const gridContainer = document.createElement('div');
     gridContainer.className = 'grid-container';
@@ -112,9 +239,6 @@ function createSection(sectionData) {
     });
     
     content.appendChild(gridContainer);
-    section.appendChild(content);
-    
-    return section;
 }
 
 // 创建单个卡片
@@ -127,6 +251,9 @@ function createCard(item, sectionData) {
     if (sectionData.id === 'tools') {
         cardClass += ' tool-card';
     }
+    if (sectionData.id === 'links') {
+        cardClass += ' links-card';
+    }
     
     const card = document.createElement('div');
     card.className = cardClass;
@@ -137,22 +264,40 @@ function createCard(item, sectionData) {
     const iconElement = document.createElement('div');
     iconElement.className = 'card-icon';
     
-    const imgElement = document.createElement('img');
-    imgElement.src = item.image;
-    imgElement.alt = item.name;
+    // 判断 image 是路径还是 emoji/字符串
+    const isEmojiOrString = !item.image.includes('/') && !item.image.includes('\\');
     
-    // 预加载图片以防闪烁
-    const preloadImg = new Image();
-    preloadImg.src = item.image;
-    
-    imgElement.onerror = () => {
-        imgElement.src = 'assets/images/default/default.png';
-    };
-    
-    // 确保图片显示
-    imgElement.style.display = 'block';
-    
-    iconElement.appendChild(imgElement);
+    if (isEmojiOrString) {
+        // 如果是 emoji 或字符串，直接显示
+        const emojiElement = document.createElement('span');
+        emojiElement.className = 'card-emoji';
+        emojiElement.textContent = item.image;
+        emojiElement.style.fontSize = '48px';
+        emojiElement.style.display = 'flex';
+        emojiElement.style.alignItems = 'center';
+        emojiElement.style.justifyContent = 'center';
+        emojiElement.style.height = '100%';
+        iconElement.appendChild(emojiElement);
+    } else {
+        // 如果是路径，正常加载图片
+        const imgElement = document.createElement('img');
+        imgElement.src = item.image;
+        imgElement.alt = item.name;
+        
+        // 预加载图片以防闪烁
+        const preloadImg = new Image();
+        preloadImg.src = item.image;
+        
+        imgElement.onerror = () => {
+            imgElement.src = 'assets/images/default/default.png';
+        };
+        
+        // 确保图片显示
+        imgElement.style.display = 'block';
+        
+        iconElement.appendChild(imgElement);
+    }
+
     card.appendChild(iconElement);
     
     // 创建标题和版本号容器
@@ -184,7 +329,6 @@ function createCard(item, sectionData) {
     
     // 如果是机场卡片，添加特殊描述
     if (sectionData.id === 'proxy') {
-        // 可以在这里添加机场卡片特有的元素，如价格等
         const descriptionDiv = document.createElement('div');
         descriptionDiv.className = 'card-description';
         descriptionDiv.textContent = '点击查看详情';
@@ -286,6 +430,10 @@ export function initCardEvents() {
                         const link = newCard.getAttribute('data-link');
                         if (link) window.open(link, '_blank');
                     });
+                } else if (newCard.closest('#links')) {
+                    // 友链卡片直接打开链接
+                    const link = newCard.getAttribute('data-link');
+                    if (link) window.open(link, '_blank');
                 } else {
                     // 其他卡片直接跳转链接
                     const link = newCard.getAttribute('data-link');

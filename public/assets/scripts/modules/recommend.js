@@ -36,52 +36,75 @@ export class RecommendManager {
         const sections = ['tools', 'software', 'proxy'];
 
         sections.forEach(sectionId => {
-            const container = document.querySelector(`#${sectionId} .grid-container`);
-            if (!container) return;
+            // 获取该区域下的所有 grid-container
+            const section = document.querySelector(`#${sectionId}`);
+            if (!section) return;
 
-            // 获取该区域的所有卡片
-            const cards = Array.from(container.children);
+            // 对于 proxy 部分，需要处理分组结构
+            if (sectionId === 'proxy') {
+                // 获取所有 tier group 内的 grid-container
+                const tierGroups = section.querySelectorAll('.airport-tier-group');
+                
+                tierGroups.forEach(tierGroup => {
+                    const container = tierGroup.querySelector('.grid-container');
+                    if (!container) return;
 
-            // 根据推荐状态和热度排序
-            cards.sort((a, b) => {
-                const aRecommended = a.dataset.recommended === 'true';
-                const bRecommended = b.dataset.recommended === 'true';
+                    this.sortCardsInContainer(container, sectionId);
+                });
+            } else {
+                // 对于其他部分，直接获取 grid-container
+                const container = section.querySelector('.grid-container');
+                if (!container) return;
+
+                this.sortCardsInContainer(container, sectionId);
+            }
+        });
+    }
+
+    // 为容器内的卡片排序
+    sortCardsInContainer(container, sectionId) {
+        // 获取该区域的所有卡片
+        const cards = Array.from(container.children);
+
+        // 根据推荐状态和热度排序
+        cards.sort((a, b) => {
+            const aRecommended = a.dataset.recommended === 'true';
+            const bRecommended = b.dataset.recommended === 'true';
+            
+            // 首先按推荐状态排序，推荐的在前
+            if (aRecommended && !bRecommended) return -1;
+            if (!aRecommended && bRecommended) return 1;
+            
+            // 如果都是推荐的，按 hot 值排序
+            if (aRecommended && bRecommended) {
+                const aTitle = a.querySelector('.card-title')?.textContent.trim();
+                const bTitle = b.querySelector('.card-title')?.textContent.trim();
+                const aHot = this.getHotValue(aTitle, sectionId);
+                const bHot = this.getHotValue(bTitle, sectionId);
                 
-                // 首先按推荐状态排序，推荐的在前
-                if (aRecommended && !bRecommended) return -1;
-                if (!aRecommended && bRecommended) return 1;
-                
-                // 如果都是推荐的，按 hot 值排序
-                if (aRecommended && bRecommended) {
-                    const aTitle = a.querySelector('.card-title')?.textContent.trim();
-                    const bTitle = b.querySelector('.card-title')?.textContent.trim();
-                    const aHot = this.getHotValue(aTitle, sectionId);
-                    const bHot = this.getHotValue(bTitle, sectionId);
-                    
-                    // 如果都有 hot 值，按 hot 值升序排列（数字越小越靠前）
-                    if (aHot !== null && bHot !== null) {
-                        return aHot - bHot;
-                    }
-                    // 有 hot 值的排在没有 hot 值的前面
-                    if (aHot !== null && bHot === null) return -1;
-                    if (aHot === null && bHot !== null) return 1;
-                    // 都没有 hot 值，保持原顺序
-                    return 0;
+                // 如果都有 hot 值，按 hot 值升序排列（数字越小越靠前）
+                if (aHot !== null && bHot !== null) {
+                    return aHot - bHot;
                 }
-                
-                // 都不是推荐的，保持原顺序
+                // 有 hot 值的排在没有 hot 值的前面
+                if (aHot !== null && bHot === null) return -1;
+                if (aHot === null && bHot !== null) return 1;
+                // 都没有 hot 值，保持原顺序
                 return 0;
-            });
+            }
+            
+            // 都不是推荐的，保持原顺序
+            return 0;
+        });
 
-            // 重新添加排序后的卡片
-            cards.forEach(card => {
-                container.appendChild(card);
-            });
+        // 重新添加排序后的卡片
+        cards.forEach(card => {
+            container.appendChild(card);
+        });
 
-            // 添加过渡动画
-            cards.forEach(card => {
-                card.style.transition = 'all 0.3s ease';
-            });
+        // 添加过渡动画
+        cards.forEach(card => {
+            card.style.transition = 'all 0.3s ease';
         });
     }
 
