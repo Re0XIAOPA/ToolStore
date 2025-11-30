@@ -1,10 +1,11 @@
 // 导入机场配置
-import { airportDetails } from '../configs/airport-config.js';
+import { airportData } from '../configs/airports-data.js';
 import { allCardData } from '../configs/card-data.js';
 
 // 创建机场详情弹窗
 function createAirportModal(airportName) {
-    const details = airportDetails[airportName];
+    // 从 airportData 中查找机场信息
+    const details = airportData.find(airport => airport.name === airportName);
     if (!details) return;
 
     const existingModal = document.querySelector('.airport-modal');

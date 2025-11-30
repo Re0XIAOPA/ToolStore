@@ -31,7 +31,8 @@ html {
 /* 确保内容区域有正确的定位 */
 #tools,
 #software,
-#proxy {
+#proxy,
+#links {
     scroll-margin-top: 80px;
     /* 与header高度相同 */
 }
@@ -726,10 +727,91 @@ body[class*="wiki"] table {
     margin-top: 8px;
 }
 
+/* 友链卡片样式 */
+.card.links-card {
+    background: linear-gradient(145deg, #1e222b, #252a35);
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card.links-card:hover {
+    border-color: rgba(76, 175, 80, 0.4);
+    box-shadow: 0 8px 24px rgba(76, 175, 80, 0.15);
+    transform: translateY(-4px);
+}
+
+/* 机场分类样式 */
+/* 机场分类容器 */
+.airport-category-group {
+    margin-bottom: 50px;
+}
+
+.airport-category-group:last-child {
+    margin-bottom: 0;
+}
+
+/* 机场分类标题 */
+.airport-category-title {
+    font-size: 24px;
+    color: #7c8aff;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(124, 138, 255, 0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 机场tier容器 */
+.airport-tier-group {
+    margin-bottom: 30px;
+}
+
+.airport-tier-group:last-child {
+    margin-bottom: 0;
+}
+
+/* 机场tier标题 */
+.airport-tier-title {
+    font-size: 16px;
+    color: #a8b3cf;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 3px solid #7c8aff;
+    font-weight: 600;
+}
+
+/* admin-pick稳長自用tier样式 */
+.airport-tier-group.admin-pick .airport-tier-title {
+    color: #ffd700;
+    border-left-color: #ffd700;
+}
+
+/* admin-recommend站长超推荐tier样式 */
+.airport-tier-group.admin-recommend .airport-tier-title {
+    color: #ff6b6b;
+    border-left-color: #ff6b6b;
+}
+
+/* tier详细说明文字 */
+.airport-tier-description {
+    font-size: 12px;
+    color: #a8b3cf;
+    margin-top: 4px;
+    font-weight: 400;
+}
+
+/* 机场grid-container */
+.airport-tier-group .grid-container {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
 /* 添加ID以支持导航跳转 */
 #tools,
 #software,
-#proxy {
+#proxy,
+#links {
     scroll-margin-top: 100px;
     scroll-snap-margin-top: 100px;
     /* Safari 支持 */

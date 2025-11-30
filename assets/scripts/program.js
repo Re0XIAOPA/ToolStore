@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
         window.scrollTo(0, 0);
         new NavScroll();
-    }, 0);
+    }, 100);
     
     // 再次添加一个延迟更长的滚动，确保在所有资源加载后执行
     setTimeout(() => {
