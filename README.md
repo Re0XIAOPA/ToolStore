@@ -1,8 +1,9 @@
-# ToolStore - 工具和机场推荐平台
+<div align="center">
+  <h3>简介</h3>
+  <p>一个简洁的代理工具导航网站，提供各类工具、软件和机场服务的下载链接与介绍。</p>
+</div>
 
-一个现代化的网站，用于展示和推荐各类实用工具、软件、代理机场和友情链接。
-
-## 📋 目录
+## 目录
 
 - [项目结构](#项目结构)
 - [机场配置维护指南](#机场配置维护指南)
@@ -238,61 +239,144 @@ export const paidAirports = {
 
 管理工具的多平台下载链接。
 
-## 快速开始
+## 注意事项
 
+1. **优先级**：手动配置 > iOS 应用商店链接 > GitHub 仓库
+2. **版本号**：
+   - GitHub 仓库：自动获取最新 release 版本
+   - 手动配置：可自定义版本号
+   - iOS 应用：显示 "N/A"
 
-## 🎨 样式定制
+## GitHub API 配置与自动更新
 
-所有样式在 `assets/css/style.css` 中定义，主要包括：
+### 本地开发环境
 
-- **卡片样式**: 工具卡片、机场卡片、友链卡片
-- **机场分组样式**: 付费/免费/其他、一线/二线/三线/站长自用
-- **弹窗样式**: 详情弹窗、下载弹窗
-- **动画**: 过渡效果、缓冲曲线
+如果在本地运行 `npm run update-downloads`，GitHub API 对未认证请求有速率限制（每小时 60 次），建议配置 Token 以提高至每小时 5000 次：
 
-## 📱 响应式设计
+```bash
+# 方法1: 通过环境变量（推荐）
+export GITHUB_TOKEN=你的GitHub Token    # Linux/Mac
+set GITHUB_TOKEN=你的GitHub Token      # Windows
 
-网站采用响应式设计，适配：
-- 桌面端 (1200px+)
-- 平板端 (768px - 1199px)
-- 移动端 (小于 768px)
+# 方法2: 创建 scripts/config.js
+# 仅用于本地开发，不要提交到版本库
+module.exports = { githubToken: '你的Token' };
+```
 
-## 🔗 重要链接
+### GitHub Actions 自动更新（推荐！）
 
-- 机场配置聚合: `airport-config.js`
-- 机场分类文件: `airports/*.js`
-- 卡片渲染逻辑: `card-renderer.js`
-- 机场详情弹窗: `airport-modal.js`
-- 全局样式: `style.css`
+**优势：无需配置，定时自动执行，完全无需担心 Token 泄露**
 
-## 💡 常见维护任务
+项目已配置 GitHub Actions，每日凌晨 2 点自动执行更新。工作流已中预配置，优先使用 **PAT_TOKEN**。
 
-### 更新机场等级
+#### **配置选项**
 
-1. 打开对应分类文件 (`paid-airports.js` 等)
-2. 在目标 tier 数组中修改机场对象
-3. 保存文件，自动更新页面
+| 配置 | 推荐 | 总结 |
+|------|------|------|
+| **加上 PAT_TOKEN** | ⭐⭐⭐⭐⭐ 速度很快 | 流量 5000/小时，推荐用（来辅 2、不配置也可以） |
+| **默认 GITHUB_TOKEN** | ⭐⭐⭐ | 流量上限不需要配置，每次自动提供 |
 
-### 添加新的机场分类
+#### **方案 A：不配置（开箱即用）**
 
-1. 编辑 `airport-config.js` 的聚合逻辑
-2. 在新分类的 tier 中添加机场
-3. 更新 CSS 中的分类样式
+即上即用，不需要任何配置：
+- GitHub 自动提供 GITHUB_TOKEN
+- 每天执行更新，流量充足
+- 适合日常更新
 
-### 调整卡片布局
+#### **方案 B：添加 PAT_TOKEN（可选，中提高流量）**
 
-编辑 `style.css` 中的网格和 flex 相关属性。
+如果想有更高的 API 流量限制或本地开发测试，按以下步骤添加 PAT_TOKEN：
 
-### 更改推荐算法
+**1. 创建个人访问令牌 (PAT)**
+   - 打开 GitHub > **Settings** > **Developer settings** > **Personal access tokens** > **Tokens (classic)**
+   - 点击 **Generate new token (classic)**
+   - 填写：
+     - Note: `ToolStore Auto Update`
+     - Expiration: `90 days` 或 `No expiration`
+     - Scopes: 仅勾选 `public_repo`
+   - 领取并复制 Token
 
-编辑 `recommend.js` 中的推荐逻辑。
+**2. 在仓库 Secrets 中添加**
+   - 打开你的仓库 > **Settings** > **Secrets and variables** > **Actions**
+   - 点击 **New repository secret**
+   - 填写：
+     - Name: `PAT_TOKEN`
+     - Secret: 粘贴你的 Token
+   - 点击 **Add secret**
 
-## 📄 许可证
+**3. 完成！**
+   - 工作流已配置、会自动检测并优先使用 PAT_TOKEN
+   - 仅需认证一次，无需修改工作流
 
-MIT
+#### **开箱流程**
 
----
+工作流自动处理：
 
-**最后更新**: 2024年11月30日
+```
+每天凌晨 2 点 (UTC)
+    ↓
+检测 Secrets 中是否有 PAT_TOKEN
+    ↓
+✅ 有 PAT_TOKEN → 优先使用
+❌ 没有 → 自动降级到 GITHUB_TOKEN
+    ↓
+执行 npm run update-downloads
+    ↓
+自动提交并部署
+```
 
-**维护者**: ToolStore Team
+#### **上传程序配置示例**
+
+工作流文件 `.github/workflows/update-downloads.yml` 已预配置，具体配置：
+
+```yaml
+# 验证：优先使用 PAT_TOKEN（如果配置了）
+# 验证：没有 PAT_TOKEN → 自动降级到 GITHUB_TOKEN
+
+token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+env:
+  GITHUB_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+```
+
+否则不需要修改工作流！
+
+#### **方案对比**
+
+| 数据 | 方案 A | 方案 B |
+|------|--------|--------|
+| **配置复杂度** | ✅ 极简 | ❌ 需要投一次 |
+| **API 流量** | ✅ 无需担心 | ✅✅ 至贵 5000/h |
+| **本地开发** | ❌ 需要自己设置 | ✅ 一个 Token 搞定 |
+| **常见应用** | ✅ 特点 | ✅ 提高流量 |
+
+#### **操作操流**
+
+创建了 PAT_TOKEN 后，你也可以在本地开发中使用：
+
+```bash
+# Linux/Mac
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxx
+npm run update-downloads
+
+# Windows
+set GITHUB_TOKEN=ghp_xxxxxxxxxxxx
+npm run update-downloads
+```
+
+#### **故障排除**
+
+| 问题 | 解决方案 |
+|------|----------|
+| 常常触发了 API 上限 | 日常更新数据需求清低，不配置 ✅ |
+| 需要更高流量 | 添加 PAT_TOKEN，提高到 5000/h ✅ |
+| 工作流失败 | 查看 Actions 日志，检查 Token 是否配置正常 |
+| 不能推送代码 | 检查 Secrets 中的 Token 是否有效 |
+
+> [!TIP]
+> 推荐直接使用默认，无需任何配置。也可选添加 PAT_TOKEN 来提升流量！
+
+## 许可证
+
+GPL-3.0 License
+
+阅读 [LICENSE](./LICENSE) 文件了解详情。
