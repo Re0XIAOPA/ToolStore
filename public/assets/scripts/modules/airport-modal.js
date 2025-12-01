@@ -71,6 +71,16 @@ function createAirportModal(airportName) {
                     <div class="description-section">
                         <div class="airport-description">${details.description}</div>
                     </div>
+                    ${details.warning ? `
+                    <div class="warning-section">
+                        <div class="warning-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="#ff8a50" d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                            </svg>
+                        </div>
+                        <div class="warning-text">${details.warning}</div>
+                    </div>
+                    ` : ''}
                 </div>
             </div>
             <div class="airport-actions">

@@ -12,6 +12,9 @@
  * - description: 机场描述 (支持 HTML 标签如 <br>)
  * - link: 官网或下载链接
  * - tags: 标签数组 ['免费', '稳定', '性价比']
+ * - warning: (可选) 警告提示信息，会在详情弹窗中以警告样式显示
+ *   示例: '需进官方频道或群组获取优惠码'
+ * - tip: (可选) 提示信息，会在详情弹窗中以提示样式显示
  * - moreContent: (可选) 详情弹窗额外内容
  *   - images: 图片数组 [{url: 'assets/images/airports-imgs/xxx.png', alt: '说明'}]
  * 
@@ -22,6 +25,7 @@
  *     category: 'free',
  *     tier: 'first-tier',
  *     description: '一个不错的免费机场',
+ *     warning: '需进官方频道获取优惠码',
  *     moreContent: {
  *         images: [
  *             { url: 'assets/images/airports-imgs/free1.png' }
@@ -38,6 +42,7 @@
  *     category: 'free',
  *     tier: 'admin-recommend',
  *     description: '免费且很不错',
+ *     tip: '推荐使用此机场',
  *     link: 'https://free-airport.example.com/',
  *     tags: ['免费', '正规', '有心']
  * }
@@ -55,13 +60,44 @@ export const freeAirports = {
     // 站长推荐
     'adminRecommend': [
         {
+            name: '白嫖机场',
+            image: '✨',
+            category: 'free',
+            tier: 'admin-recommend',
+            description: '免费机场',
+            warning: '需进官方频道或群组获取优惠码',
+            link: 'https://xn--mesv7f5toqlp.ink/#/register?code=UesQ8MMb',
+            tags: ['免费', '需优惠码']
+        },
+        {
+            name: '小飞云',
+            image: '☁️',
+            category: 'free',
+            tier: 'admin-recommend',
+            description: '免费机场服务',
+            warning: '需进官方频道或群组获取优惠码',
+            link: 'https://xiaofeiyun.sylu.cc/#/register?code=Z97M4hgx',
+            tags: ['免费', '需优惠码']
+        },
+        {
+            name: '华夏联盟 Accelerate',
+            image: '🚀',
+            category: 'free',
+            tier: 'admin-recommend',
+            description: '免费加速服务',
+            warning: '需进官方频道或群组获取优惠码',
+            link: 'https://www.huaxia.cyou/#/register?code=R57K9WFf',
+            tags: ['免费', '需优惠码']
+        },
+        {
             name: '乐猫机场',
             image: '🐱',
             category: 'free',
             tier: 'admin-recommend',
-            description: '这是站长自用的机场，欢迎使用！',
+            warning: '需进官方频道或群组获取优惠码',
+            description: '跑测速和滥用会封用户ip，免费节点是给大伙正常FQ用的，不是拿来24小时跑SpeedTest刷流量。 资源有限，一起珍惜，才有良好的白嫖环境。',
             link: 'https://a1.lemao888.top/#/register?code=T2NQkPvx',
-            tags: ['站长自用', '免费']
+            tags: ['免费', '需优惠码']
         }
     ]
 };
