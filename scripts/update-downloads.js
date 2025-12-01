@@ -153,30 +153,46 @@ if (process.env.GITHUB_TOKEN) {
     console.log('使用配置文件中的GitHub Token进行API请求认证');
 }
 
-// 从card-data.js中读取仓库信息
+// 从拆分后的数据文件中读取仓库信息
 async function getRepositories() {
-    const cardDataPath = path.join(__dirname, '../public/assets/scripts/configs/card-data.js');
-    const content = fs.readFileSync(cardDataPath, 'utf8');
-
-    // 使用正则表达式提取GitHub仓库链接
-    const repoRegex = /link:\s*"https:\/\/github\.com\/([^\/]+)\/([^\/]+)\/releases"/g;
     const repos = [];
-    let match;
-
-    while ((match = repoRegex.exec(content)) !== null) {
-        const [_, owner, repo] = match;
-        const repoName = repo.toLowerCase();
-        if (!CONFIG.excludeRepos.includes(repoName)) {
-            // 使用映射的名称，如果没有映射则使用原始名称
-            const mappedName = CONFIG.repoNameMapping[repo] || repoName;
-            repos.push({
-                owner,
-                repo,
-                name: mappedName.toLowerCase()
-            });
+    
+    // 读取三个数据文件
+    const dataFiles = [
+        'tools-data.js',
+        'software-data.js',
+        'airports-data.js'
+    ];
+    
+    for (const dataFile of dataFiles) {
+        const filePath = path.join(__dirname, `../public/assets/scripts/configs/${dataFile}`);
+        try {
+            const content = fs.readFileSync(filePath, 'utf8');
+            
+            // 使用正则表达式提取GitHub仓库链接
+            // 匹配 link: "https://github.com/owner/repo/releases" 格式
+            const repoRegex = /link:\s*["']https:\/\/github\.com\/([^\/]+)\/([^\/]+)\/releases["']/g;
+            let match;
+            
+            while ((match = repoRegex.exec(content)) !== null) {
+                const [_, owner, repo] = match;
+                const repoName = repo.toLowerCase();
+                
+                if (!CONFIG.excludeRepos.includes(repoName)) {
+                    // 使用映射的名称，如果没有映射则使用原始名称
+                    const mappedName = CONFIG.repoNameMapping[repo] || repoName;
+                    repos.push({
+                        owner,
+                        repo,
+                        name: mappedName.toLowerCase()
+                    });
+                }
+            }
+        } catch (err) {
+            console.warn(`读取文件 ${dataFile} 失败:`, err.message);
         }
     }
-
+    
     return repos;
 }
 
