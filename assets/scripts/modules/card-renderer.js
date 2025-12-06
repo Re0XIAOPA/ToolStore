@@ -241,6 +241,35 @@ function renderSimpleCards(content, sectionData) {
     content.appendChild(gridContainer);
 }
 
+// 创建随机背景色的辅助函数
+function generateRandomColor() {
+    // 七个色系：红、橙、黄、绿、青、蓝、紫
+    const colorPalettes = [
+        // 红色系
+        ['#FF6B6B', '#FF8A80', '#FF6B6B', '#E74C3C', '#C0392B'],
+        // 橙色系
+        ['#FFA500', '#FF9F43', '#FF8C42', '#FF7F50', '#FF6B35'],
+        // 黄色系
+        ['#FFD700', '#FFC700', '#FFB700', '#FFA500', '#F0AD4E'],
+        // 绿色系
+        ['#52C41A', '#5CDBD3', '#1ABC9C', '#27AE60', '#2ECC71'],
+        // 青色系
+        ['#00BCD4', '#06C', '#0891B2', '#06B6D4', '#0DCAF0'],
+        // 蓝色系
+        ['#1E90FF', '#3498DB', '#2980B9', '#0066CC', '#1976D2'],
+        // 紫色系
+        ['#9C27B0', '#9370DB', '#B19CD9', '#DDA0DD', '#BA55D3']
+    ];
+    
+    // 随机选择一个色系
+    const paletteIndex = Math.floor(Math.random() * colorPalettes.length);
+    const palette = colorPalettes[paletteIndex];
+    
+    // 在选中的色系中随机选择一个颜色
+    const colorIndex = Math.floor(Math.random() * palette.length);
+    return palette[colorIndex];
+}
+
 // 创建单个卡片
 function createCard(item, sectionData) {
     // 根据不同类型应用不同样式
@@ -264,10 +293,48 @@ function createCard(item, sectionData) {
     const iconElement = document.createElement('div');
     iconElement.className = 'card-icon';
     
-    // 判断 image 是路径还是 emoji/字符串
-    const isEmojiOrString = !item.image.includes('/') && !item.image.includes('\\');
+    // 判断 image 是路径、emoji、字符串还是空串
+    const isEmptyImage = item.image === '' || item.image === null || item.image === undefined;
+    const isEmojiOrString = !isEmptyImage && !item.image.includes('/') && !item.image.includes('\\');
     
-    if (isEmojiOrString) {
+    if (isEmptyImage) {
+        // 如果是空串，使用名字作为头像
+        const charElement = document.createElement('div');
+        charElement.className = 'card-char-avatar';
+        
+        // 提取显示文字：中文1个字，英文2个字母
+        let displayText = '';
+        for (let i = 0; i < item.name.length; i++) {
+            const char = item.name.charAt(i);
+            // 检查是否是中文字符
+            if (/[\u4e00-\u9fa5]/.test(char)) {
+                displayText += char;
+                if (displayText.length >= 1) break;
+            } else if (/[a-zA-Z]/.test(char)) {
+                displayText += char;
+                if (displayText.length >= 2) break;
+            }
+        }
+        // 如果没有收集到任何字符，使用第一个字符
+        if (!displayText) {
+            displayText = item.name.charAt(0);
+        }
+        charElement.textContent = displayText.toUpperCase();
+        
+        // 随机背景色
+        const randomColor = generateRandomColor();
+        charElement.style.backgroundColor = randomColor;
+        charElement.style.color = '#fff';
+        charElement.style.fontSize = '32px';
+        charElement.style.fontWeight = 'bold';
+        charElement.style.display = 'flex';
+        charElement.style.alignItems = 'center';
+        charElement.style.justifyContent = 'center';
+        charElement.style.height = '100%';
+        charElement.style.borderRadius = '16px';
+        
+        iconElement.appendChild(charElement);
+    } else if (isEmojiOrString) {
         // 如果是 emoji 或字符串，直接显示
         const emojiElement = document.createElement('span');
         emojiElement.className = 'card-emoji';
