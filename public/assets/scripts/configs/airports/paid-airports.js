@@ -92,7 +92,7 @@ export const paidAirports = {
             description: '这款运营超十年的老牌一线机场，是跨境出行、海外娱乐与办公的优质网络后盾。它全面接入163PP、CN2GIA、9929等多类高端线路，覆盖港、日、台、美、德等全球多区域节点，还提供专线、中转、直连、游戏优化等多元接入方式，在延迟、稳定性和带宽上均达一流水准；不仅能轻松解锁Netflix、Disney+等流媒体及ChatGPT等AI工具，还支持多订阅格式与主流客户端，全程不限速且不限制连接数，仅不兼容QuantumX、Surge等无Vless-Xtls-Reality协议的软件，凭借深厚技术积累成为长期用户信赖的网络服务之选。',
             moreContent: {
                 images: [
-                    { url: 'assets/images/airports-imgs/iNets.png' }
+                    { url: 'assets/images/airports-imgs/iNetS.png' }
                 ]
             },
             link: 'https://inets.io/#/register?code=EquCu65T',
