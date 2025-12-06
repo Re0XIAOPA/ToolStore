@@ -98,6 +98,6 @@ export const freeAirports = {
             description: '跑测速和滥用会封用户ip，免费节点是给大伙正常FQ用的，不是拿来24小时跑SpeedTest刷流量。 资源有限，一起珍惜，才有良好的白嫖环境。',
             link: 'https://a1.lemao888.top/#/register?code=T2NQkPvx',
             tags: ['免费', '需优惠码']
-        }
+        },
     ]
 };

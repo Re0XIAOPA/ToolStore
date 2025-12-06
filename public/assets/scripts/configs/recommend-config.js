@@ -50,6 +50,8 @@ export const recommendConfig = {
         { name: '快雷GO', hot: 4 },
         '早安云',
         'CokeCloud(可乐云)',
-        '魔法喵MAGICAT'
+        '魔法喵MAGICAT',
+        'DlerCloud',
+        'iNets',
     ]
 };

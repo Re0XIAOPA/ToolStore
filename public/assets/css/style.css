@@ -230,6 +230,37 @@ main {
     transform: translate(-50%, -50%);
 }
 
+/* 字符上头像牌样式 */
+.card-char-avatar {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    letter-spacing: 0;
+    font-size: 32px;
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 16px;
+    /* 精细文字阴影 - 增强可读性但不影响外观 */
+    text-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.5),
+        0 0px 1px rgba(0, 0, 0, 0.3);
+    /* 极细描边 - 在亮色背景上微调对比 */
+    -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+/* emoji 样式 */
+.card-emoji {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
 /* 卡片标题样式 */
 .card-title {
     color: #fff;
