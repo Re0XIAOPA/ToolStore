@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 12/12/2025, 3:26:58 AM
+// 最后更新时间: 12/13/2025, 3:19:50 AM
 
 const downloadLinks = {
     "v2box": {
@@ -59,8 +59,8 @@ const downloadLinks = {
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
-        "version": "v1.10.28",
-        "android": "https://github.com/2dust/v2rayNG/releases/download/1.10.28/v2rayNG_1.10.28_universal.apk",
+        "version": "v1.10.31",
+        "android": "https://github.com/2dust/v2rayNG/releases/download/1.10.31/v2rayNG_1.10.31_universal.apk",
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
@@ -78,11 +78,11 @@ const downloadLinks = {
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
-        "version": "v0.8.90",
-        "windows": "https://github.com/chen08209/FlClash/releases/download/v0.8.90/FlClash-0.8.90-windows-amd64-setup.exe",
-        "mac": "https://github.com/chen08209/FlClash/releases/download/v0.8.90/FlClash-0.8.90-macos-arm64.dmg",
-        "linux": "https://github.com/chen08209/FlClash/releases/download/v0.8.90/FlClash-0.8.90-linux-amd64.deb",
-        "android": "https://github.com/chen08209/FlClash/releases/download/v0.8.90/FlClash-0.8.90-android-arm64-v8a.apk",
+        "version": "v0.8.91",
+        "windows": "https://github.com/chen08209/FlClash/releases/download/v0.8.91/FlClash-0.8.91-windows-amd64-setup.exe",
+        "mac": "https://github.com/chen08209/FlClash/releases/download/v0.8.91/FlClash-0.8.91-macos-arm64.dmg",
+        "linux": "https://github.com/chen08209/FlClash/releases/download/v0.8.91/FlClash-0.8.91-linux-amd64.deb",
+        "android": "https://github.com/chen08209/FlClash/releases/download/v0.8.91/FlClash-0.8.91-android-arm64-v8a.apk",
         "github": "https://github.com/chen08209/FlClash"
     },
     "v2rayu": {
