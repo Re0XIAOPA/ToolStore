@@ -151,7 +151,6 @@
 
 /* 悬停效果 - 修改为与普通卡片一致 */
 .card:has(.recommend-badge):hover {
-    transform: translateY(-8px) !important;
     border-color: rgba(255, 107, 107, 0.3);
     box-shadow: 0 8px 25px rgba(255, 107, 107, 0.25);
 }
@@ -292,7 +291,6 @@
 
 /* 修改为与普通卡片一致的悬停效果 */
 .card:has(.recommend-badge):hover {
-    transform: translateY(-8px);
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -326,7 +324,6 @@
     }
     
     /* 移动端悬停效果调整 */
-    .card:has(.recommend-badge):hover {
-        transform: translateY(-5px);
-    }
+    /* .card:has(.recommend-badge):hover {
+    } */
 }

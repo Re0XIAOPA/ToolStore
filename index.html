@@ -108,6 +108,39 @@
     </div>
 
     <header>
+        <!-- 免费节点Banner提醒 -->
+        <div class="banner-notice" id="topBanner">
+            <!-- 装饰性模糊背景 -->
+            <div class="banner-blur-bg banner-blur-left" aria-hidden="true"></div>
+            <div class="banner-blur-bg banner-blur-right" aria-hidden="true"></div>
+            
+            <!-- 内容区域 -->
+            <div class="banner-inner">
+                <div class="banner-content">
+                    <p class="banner-text">
+                        <strong>提示</strong>
+                        <span class="banner-dot"></span>
+                        无法访问？尝试使用 <a href="https://asfn.awafuns.cn/" target="_blank" class="banner-link">免费节点</a>
+                    </p>
+                    <div class="banner-buttons">
+                        <span class="banner-download-text">临时下载工具：</span>
+                        <a href="https://pan.huang1111.cn/s/4Ra3lFg" target="_blank" class="banner-btn">Windows</a>
+                        <a href="https://pan.huang1111.cn/s/A6vOgCB" target="_blank" class="banner-btn">Android</a>
+                        <a href="https://pan.huang1111.cn/s/5XvOqUl" target="_blank" class="banner-btn">MacOS</a>
+                        <a href="https://pan.huang1111.cn/s/byAQzfY" target="_blank" class="banner-btn">Linux</a>
+                    </div>
+                </div>
+                
+                <!-- 关闭按钮 -->
+                <div class="banner-close-wrapper">
+                    <button class="banner-close-btn" id="bannerCloseBtn" aria-label="关闭通知">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                            <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <div class="header-content">
             <h1>
@@ -146,37 +179,6 @@
             </nav>
         </div>
     </header>
-
-    <!-- 免费节点Banner提醒 -->
-    <div class="banner-notice">
-        <div class="banner-content">
-            <p class="banner-text">
-                <strong>提示：</strong>如果您无法正常访问页面，可以尝试使用
-                <a href="https://asfn.awafuns.cn/" target="_blank" class="banner-link">免费节点</a>
-                临时访问。请注意：免费节点不保证安全性与长久可用性，仅作为临时解决方案。
-            </p>
-            <p class="banner-text">因网络环境可临时下载工具，点击下载( <span
-                    style="background-color: red; color: white;">若失效只能自行解决</span>)：
-                <a href="https://pan.huang1111.cn/s/4Ra3lFg" target="_blank" class="banner-link"
-                    style="margin-right: 10px;">Windows</a>
-                <a href="https://pan.huang1111.cn/s/A6vOgCB" target="_blank" class="banner-link"
-                    style="margin-right: 10px;">Android</a>
-                <a href="https://pan.huang1111.cn/s/5XvOqUl" target="_blank" class="banner-link"
-                    style="margin-right: 10px;">MacOS</a>
-                <a href="https://pan.huang1111.cn/s/byAQzfY" target="_blank" class="banner-link"
-                    style="margin-right: 10px;">Linux</a>
-            </p>
-        </div>
-        <!-- 关闭按钮 -->
-        <button class="banner-close-btn" id="bannerCloseBtn" aria-label="关闭通知">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-        </button>
-    </div>
 
     <main>
         <!-- 内容将通过JavaScript动态生成 -->
