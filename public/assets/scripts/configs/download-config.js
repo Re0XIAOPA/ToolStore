@@ -1,5 +1,9 @@
 // 下载链接配置  全是小写
+<<<<<<< Updated upstream
 // 最后更新时间: 12/20/2025, 3:19:55 AM
+=======
+// 最后更新时间: 12/20/2025, 11:47:46 AM
+>>>>>>> Stashed changes
 
 const downloadLinks = {
     "v2box": {
