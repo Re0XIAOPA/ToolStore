@@ -1,5 +1,9 @@
 // Banner处理模块
-// 处理banner的关闭功能和其他交互
+// 处理banner的关闭功能
+// Banner显示在header内部，通过flex-direction: column自然垂直排列
+
+// 导入配置文件
+import { bannerConfig } from '../../config/banner-config.js';
 
 // 初始化banner处理
 export function initBannerHandler() {
@@ -15,34 +19,38 @@ export function initBannerHandler() {
 function bindBannerEvents() {
     // 获取关闭按钮
     const closeBtn = document.getElementById('bannerCloseBtn');
+    const closeWrapper = document.querySelector('.banner-close-wrapper');
     const banner = document.querySelector('.banner-notice');
     
-    // 如果存在关闭按钮和banner，则绑定点击事件
-    if (closeBtn && banner) {
-        closeBtn.addEventListener('click', function() {
-            closeBanner(banner);
-        });
+    // 根据配置控制关闭按钮显示
+    if (closeBtn && closeWrapper) {
+        if (bannerConfig.showCloseButton) {
+            closeWrapper.style.display = 'block';
+            // 如果存在关闭按钮和banner，则绑定点击事件
+            if (banner) {
+                closeBtn.addEventListener('click', function() {
+                    closeBanner(banner);
+                });
+            }
+        } else {
+            closeWrapper.style.display = 'none';
+        }
     }
     
     // 显示banner（默认情况下应该显示）
     showBanner();
-    
-    // 不再检查本地存储状态，每次页面加载都显示banner
 }
 
 // 关闭banner函数
 function closeBanner(bannerElement) {
-    // 添加关闭动画
+    // 添加关闭动画 - 淡出和高度收缩
     bannerElement.style.opacity = '0';
-    bannerElement.style.transform = 'translateY(-20px)';
-    bannerElement.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    bannerElement.style.maxHeight = '0';
+    bannerElement.classList.remove('banner-visible');
     
-    // 延迟移除元素
+    // 延迟完全隐藏
     setTimeout(() => {
         bannerElement.style.display = 'none';
-        
-        // 不再保存关闭状态到本地存储
-        // localStorage.setItem('bannerClosed', 'true');
         
         // 通知其他模块调整布局
         window.dispatchEvent(new CustomEvent('bannerClosed'));
@@ -66,11 +74,13 @@ export function showBanner() {
     const legalNotice = document.querySelector('.legal-notice');
     
     if (banner) {
+        // 先设置display，然后添加visible类触发动画
         banner.style.display = 'block';
-        banner.style.opacity = '1';
-        banner.style.transform = 'translateY(0)';
-        // 添加过渡效果确保显示时也平滑
-        banner.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        
+        // 使用setTimeout确保display生效后再添加动画类
+        setTimeout(() => {
+            banner.classList.add('banner-visible');
+        }, 10);
     }
     
     if (legalNotice) {

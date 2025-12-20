@@ -32,7 +32,7 @@
     
     /* dailyNotice大屏幕设备样式 */
     .notice-content {
-        max-width: 550px;
+        max-width: 700px;
         padding: 40px;
     }
     
@@ -243,7 +243,6 @@
     
     /* Banner提醒在移动端的样式 */
     .banner-notice {
-        top: 60px; /* 紧贴在header下方 */
         padding: 12px;
         font-size: 13px;
     }

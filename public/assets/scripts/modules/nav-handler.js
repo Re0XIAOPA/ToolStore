@@ -125,31 +125,18 @@ export function initNavigation() {
     adjustBannerPosition();
 }
 
-// 调整banner位置的函数
+// 调整banner位置的函数 - 移除了不必要的top样式设置
 function adjustBannerPosition() {
     const bannerNotice = document.querySelector('.banner-notice');
     if (!bannerNotice) return;
     
+    // 清除可能存在的top样式，让banner按照正常文档流显示
+    bannerNotice.style.top = '';
+    
     // 检查是否在移动端
     if (window.innerWidth <= 956) {
         const navLinks = document.getElementById('navLinks');
-        const header = document.querySelector('header');
-        
-        if (navLinks && navLinks.classList.contains('active')) {
-            // 当导航菜单展开时，banner应该在导航菜单下方
-            const headerHeight = header ? header.offsetHeight : 60;
-            const navLinksHeight = navLinks.offsetHeight;
-            bannerNotice.style.top = (headerHeight + navLinksHeight) + 'px';
-        } else {
-            // 当导航菜单收起时，banner紧贴在header下方
-            const headerHeight = header ? header.offsetHeight : 60;
-            bannerNotice.style.top = headerHeight + 'px';
-        }
-    } else {
-        // 在桌面端，banner始终在header下方
-        const header = document.querySelector('header');
-        const headerHeight = header ? header.offsetHeight : 80;
-        bannerNotice.style.top = headerHeight + 'px';
+        // 移动端不需要特殊的banner位置调整，让它自然显示
     }
 }
 

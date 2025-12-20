@@ -1,94 +1,296 @@
+/* ================================
+   Tailwind 风格 Banner 样式
+   Banner 显示在 header 内部最上方
+   ================================ */
+
 .banner-notice {
-    background-color: #fff3cd;
-    border: 1px solid #ffeaa7;
-    /* border-left: 5px solid #fdcb6e; */
-    padding: 15px;
-    margin: 0;
-    font-size: 14px;
-    color: #856404;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 80px;
-    /* 默认桌面端位置 */
+    /* 相对定位，在header内部流式排列 */
+    position: relative;
     width: 100%;
-    z-index: 1500;
-    /* 低于header的z-index但高于其他内容 */
+    /* 深色半透明背景 */
+    background: rgba(31, 41, 55, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 12px 24px;
+    margin-bottom: 0;
     box-sizing: border-box;
-    transition: top 0.3s ease, height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-    /* 添加所有过渡效果 */
-    /* 默认隐藏，防止页面加载时闪烁 */
+    overflow: hidden;
+    isolation: isolate;
+    /* 底部细线 */
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    /* 默认隐藏 */
     display: none;
+    transition: all 0.3s ease;
+    max-height: 0;
+    opacity: 0;
 }
 
-/* 移动端样式 */
-@media screen and (max-width: 956px) {
-    .banner-notice {
-        top: 60px;
-        /* 移动端紧贴在header下方 */
-        padding: 12px;
-        font-size: 13px;
-        transition: top 0.3s ease, height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-    }
+/* 显示状态 */
+.banner-notice.banner-visible {
+    display: block;
+    max-height: 300px;
+    opacity: 1;
+}
+
+/* 装饰性模糊背景 */
+.banner-blur-bg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 580px;
+    height: 310px;
+    background: linear-gradient(135deg, #ff80b5 0%, #9089fc 100%);
+    opacity: 0.25;
+    filter: blur(60px);
+    z-index: -1;
+    clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%);
+}
+
+.banner-blur-left {
+    left: max(-7rem, calc(50% - 52rem));
+}
+
+.banner-blur-right {
+    left: max(45rem, calc(50% + 8rem));
+}
+
+/* 内容容器 */
+.banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 20px;
 }
 
 .banner-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex: 1;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
+/* 文本样式 */
 .banner-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(243, 244, 246, 0.95);
     margin: 0;
-    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    white-space: nowrap;
 }
 
-.banner-text+.banner-text {
-    margin-top: 8px;
-    /* 多行文本之间的间距 */
+.banner-text strong {
+    font-weight: 600;
+    color: #fff;
 }
 
+/* 分隔圆点 */
+.banner-dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: currentColor;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+/* 链接样式 */
 .banner-link {
-    color: #d35400;
-    text-decoration: underline;
-    font-weight: bold;
+    color: #a5b4fc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 .banner-link:hover {
-    color: #e74c3c;
+    color: #c4b5fd;
+    text-decoration: underline;
 }
 
-/* Banner关闭按钮样式 */
+/* 按钮组 */
+.banner-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+/* 下载提示文字 */
+.banner-download-text {
+    font-size: 13px;
+    color: rgba(243, 244, 246, 0.8);
+    margin-right: 4px;
+}
+
+/* 按钮样式 */
+.banner-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.banner-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+}
+
+/* 关闭按钮容器 */
+.banner-close-wrapper {
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+/* 关闭按钮 */
 .banner-close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(133, 100, 4, 0.1);
-    border: 1px solid rgba(133, 100, 4, 0.2);
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
-    transition: all 0.3s ease;
-    color: #856404;
+    width: 32px;
+    height: 32px;
+    margin: -8px;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: rgba(243, 244, 246, 0.8);
+    transition: all 0.2s ease;
 }
 
 .banner-close-btn:hover {
-    background: rgba(133, 100, 4, 0.2);
-    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.banner-close-btn:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -4px;
 }
 
 .banner-close-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
 }
 
-.banner-close-btn:focus {
-    outline: 2px solid #856404;
-    outline-offset: 2px;
+/* main的位置不受影响，因为banner在header内部 */
+
+/* 移动端样式 */
+@media screen and (max-width: 768px) {
+    .banner-notice {
+        padding: 12px 16px;
+        padding-right: 48px; /* 为关闭按钮留出空间 */
+    }
+    
+    .banner-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .banner-content {
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .banner-text {
+        font-size: 12px;
+        line-height: 1.6;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        white-space: normal;
+        width: 100%;
+    }
+    
+    .banner-text strong {
+        display: inline-block;
+        margin-right: 6px;
+    }
+    
+    /* 移动端显示分隔点 */
+    .banner-dot {
+        display: inline-block;
+    }
+    
+    .banner-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+    
+    .banner-download-text {
+        font-size: 11px;
+        margin-right: 4px;
+        color: rgba(243, 244, 246, 0.7);
+        width: 100%;
+        margin-bottom: 6px;
+        display: block;
+    }
+    
+    .banner-btn {
+        flex: none;
+        min-width: 60px;
+        padding: 5px 12px;
+        font-size: 10px;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .banner-close-wrapper {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        margin-left: 0;
+    }
+    
+    .banner-close-btn {
+        width: 28px;
+        height: 28px;
+        padding: 6px;
+    }
+    
+    .banner-close-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    /* 移动端保持装饰性背景 */
+    .banner-blur-bg {
+        display: block;
+        width: 300px;
+        height: 150px;
+    }
+    
+    .banner-blur-left {
+        left: -10rem;
+    }
+    
+    .banner-blur-right {
+        left: 15rem;
+    }
 }
 
 /* 法律声明提醒样式 */

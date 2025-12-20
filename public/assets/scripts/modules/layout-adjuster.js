@@ -59,21 +59,15 @@ export function adjustLayout() {
             return;
         }
         
-        // 获取banner的高度
-        const bannerHeight = bannerNotice.offsetHeight || 0;
-        
-        // 获取header的高度
+        // 获取header的高度（已包含banner高度）
         const header = document.querySelector('header');
         const headerHeight = header ? header.offsetHeight : (window.innerWidth <= 956 ? 60 : 80);
-        
-        // 计算banner底部位置
-        const bannerBottomPosition = headerHeight + bannerHeight;
         
         // 调整main区域的padding-top
         const main = document.querySelector('main');
         if (main) {
-            // 确保main区域有足够的顶部padding来避免与banner重叠
-            const requiredPadding = bannerBottomPosition + 20; // 减少间距到20px
+            // 确保main区域有足够的顶部padding来避免与header重叠
+            const requiredPadding = headerHeight + 20; // headerHeight已包含banner高度，只需加20px间距
             main.style.paddingTop = requiredPadding + 'px';
         }
         
@@ -98,7 +92,7 @@ export function adjustLayout() {
         // 调整锚点滚动偏移量
         const scrollTargets = document.querySelectorAll('#tools, #software, #proxy');
         scrollTargets.forEach(target => {
-            target.style.scrollMarginTop = (bannerBottomPosition + 15) + 'px';
+            target.style.scrollMarginTop = (headerHeight + 15) + 'px';
         });
         
         // 调整footer中的法律声明（如果存在）

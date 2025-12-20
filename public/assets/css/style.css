@@ -410,12 +410,33 @@ footer p {
     background: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 16px;
+    max-height: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    white-space: normal;
 }
 
 .nv p {
     margin: 15px 0;
     line-height: 1.6;
     font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* 修正 .nv 容器内的 banner-text 样式，确保文本正常换行 */
+.nv .banner-text {
+    display: block;
+    flex-wrap: wrap;
+    white-space: normal;
+    width: 100%;
+    flex-direction: column;
 }
 
 .nv strong {
@@ -769,7 +790,6 @@ body[class*="wiki"] table {
 .card.links-card:hover {
     border-color: rgba(76, 175, 80, 0.4);
     box-shadow: 0 8px 24px rgba(76, 175, 80, 0.15);
-    transform: translateY(-4px);
 }
 
 /* 机场分类样式 */
@@ -1571,7 +1591,6 @@ main {
 
 /* 优化卡片悬停效果 */
 .card.clickable:hover {
-    transform: translateY(-8px);
     border-color: rgba(124, 138, 255, 0.3);
     box-shadow: 0 8px 25px rgba(124, 138, 255, 0.15);
 }
@@ -1605,7 +1624,6 @@ main {
 }
 
 .card.tool-card:hover {
-    transform: translateY(-5px);
     border-color: rgba(124, 138, 255, 0.3);
     box-shadow: 0 8px 25px rgba(124, 138, 255, 0.15);
 }
