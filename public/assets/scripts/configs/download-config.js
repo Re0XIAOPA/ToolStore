@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 12/21/2025, 1:20:02 PM
+// 最后更新时间: 12/21/2025, 1:24:54 PM
 
 const downloadLinks = {
     "v2box": {
@@ -49,8 +49,8 @@ const downloadLinks = {
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
-        "version": "v2.11.20",
-        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.20/cmfa-2.11.20-meta-universal-release.apk",
+        "version": "v2.11.21",
+        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.21/cmfa-2.11.21-meta-universal-release.apk",
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
