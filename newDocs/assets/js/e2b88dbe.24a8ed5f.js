@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkdocs=globalThis.webpackChunkdocs||[]).push([[1139],{3246(s){s.exports=JSON.parse('{"tags":[{"label":"\u65e5\u5e38 / Daily","permalink":"/newDocs/blog/tags/\u65e5\u5e38","description":"\u65e5\u5e38\u5206\u4eab\u3001\u601d\u8003\u611f\u609f\u3001\u968f\u7b14\u788e\u788e\u5ff5","count":2}]}')}}]);
