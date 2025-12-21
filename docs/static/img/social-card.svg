@@ -1,0 +1,92 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>ToolStore Social Card</title>
+  
+  <!-- 渐变背景 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 发光效果 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- 装饰性网格 -->
+  <g opacity="0.1">
+    <path d="M0 0 L1200 630" stroke="#25C2A0" stroke-width="1"/>
+    <path d="M0 630 L1200 0" stroke="#25C2A0" stroke-width="1"/>
+    <circle cx="200" cy="200" r="100" stroke="#25C2A0" stroke-width="2" fill="none"/>
+    <circle cx="1000" cy="430" r="150" stroke="#25C2A0" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Logo区域 -->
+  <g transform="translate(150, 315)">
+    <!-- Logo背景圆 -->
+    <circle cx="0" cy="0" r="120" fill="white" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="115" fill="none" stroke="#25C2A0" stroke-width="3"/>
+    
+    <!-- Logo图标 -->
+    <g transform="scale(4.5)">
+      <path d="M0 -6L-6 -3L0 0L6 -3L0 -6Z" 
+            stroke="#25C2A0" 
+            stroke-width="2.5" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            fill="none"/>
+      <path d="M-6 3L0 6L6 3" 
+            stroke="#25C2A0" 
+            stroke-width="2.5" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"/>
+      <path d="M-6 0L0 3L6 0" 
+            stroke="#25C2A0" 
+            stroke-width="2.5" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"/>
+    </g>
+  </g>
+  
+  <!-- 文字内容 -->
+  <g transform="translate(350, 250)">
+    <!-- 标题 -->
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#1e293b">
+      ToolStore Wiki
+    </text>
+    
+    <!-- 副标题 -->
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="36" fill="#64748b">
+      最新工具软件、实用教程分享平台
+    </text>
+    
+    <!-- 装饰性标签 -->
+    <g transform="translate(0, 140)">
+      <rect x="0" y="0" width="140" height="45" rx="22.5" fill="#25C2A0" opacity="0.9"/>
+      <text x="70" y="30" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="500">
+        系统教程
+      </text>
+      
+      <rect x="160" y="0" width="140" height="45" rx="22.5" fill="#25C2A0" opacity="0.9"/>
+      <text x="230" y="30" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="500">
+        软件教程
+      </text>
+      
+      <rect x="320" y="0" width="140" height="45" rx="22.5" fill="#25C2A0" opacity="0.9"/>
+      <text x="390" y="30" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="500">
+        热门推荐
+      </text>
+    </g>
+  </g>
+  
+  <!-- 底部装饰线 -->
+  <line x1="350" y1="550" x2="1050" y2="550" stroke="#25C2A0" stroke-width="3" opacity="0.3"/>
+</svg>

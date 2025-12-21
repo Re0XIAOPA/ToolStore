@@ -1,29 +1,42 @@
 ---
 slug: welcome
-title: Welcome
-authors: [slorber, yangshun]
-tags: [facebook, hello, docusaurus]
+title: 🙋 欢迎来到 ToolStore
+authors: [Re0XIAOPA]
+tags: [公告更新]
 ---
 
-[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+欢迎来到 **ToolStore Wiki**！这是一个专注于分享实用工具的推荐平台。
 
-Here are a few tips you might find useful.
+在这里，你可以找到：
 
 <!-- truncate -->
 
-Simply add Markdown files (or folders) to the `blog` directory.
+## 📦 可以找到什么
 
-Regular blog authors can be added to `authors.yml`.
+### 📚 实用教程
+- 操作系统教程（Windows、macOS、Linux、iOS、Android）
+- 软件使用指南（开发、设计、办公）
+- 配置与优化教程
 
-The blog post date can be extracted from filenames, such as:
+### 💡 工具推荐
+- 免费开源项目
+- 实用软件
+- 推荐详解
 
-- `2019-05-30-welcome.md`
-- `2019-05-30-welcome/index.md`
+### 💱 技术文章
+- 开发经验
+- 代码优化
+- 最佳实践
 
-A blog post folder can be convenient to co-locate blog post images:
+### 🌟 资源整理
+- 优质推荐
+- 书籍清单
+- 学习之路
 
-![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)
+## 🌐 后续展望
 
-The blog supports tags as well!
+感谢你的访问！我会不断更新平台内容，努力提供更好的体验。
 
-**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config.
+希望你能在这里找到自己需要的最好工具。
+
+![](docusaurus-plushie-banner.jpeg)

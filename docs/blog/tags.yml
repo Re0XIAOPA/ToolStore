@@ -1,19 +1,30 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+工具推荐:
+  label: 工具推荐
+  permalink: /工具推荐
+  description: 最新工具软件和实用工具推荐
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+教程分享:
+  label: 教程分享
+  permalink: /教程分享
+  description: 系统、软件、开发等各类教程分享
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+技术文章:
+  label: 技术文章
+  permalink: /技术文章
+  description: 技术分析、代码优化、最佳实践
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+资源分享:
+  label: 资源分享
+  permalink: /资源分享
+  description: 优质开源项目、设计资源、学习资料
+
+经验总结:
+  label: 经验总结
+  permalink: /经验总结
+  description: 实战经验、踩坑记录、问题解决方案
+
+公告更新:
+  label: 公告更新
+  permalink: /公告更新
+  description: 网站更新、功能发布、重要通知
+

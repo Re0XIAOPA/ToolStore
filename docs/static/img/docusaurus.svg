@@ -1,0 +1,28 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>ToolStore Icon</title>
+  <!-- 白色背景 -->
+  <rect width="200" height="200" rx="40" fill="white"/>
+  
+  <!-- Logo图案 - 居中放大 -->
+  <g transform="translate(100, 100) scale(3.5)">
+    <path d="M0 -6L-6 -3L0 0L6 -3L0 -6Z" 
+          stroke="#25C2A0" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          fill="none"/>
+    <path d="M-6 3L0 6L6 3" 
+          stroke="#25C2A0" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    <path d="M-6 0L0 3L6 0" 
+          stroke="#25C2A0" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+  </g>
+  
+  <!-- 装饰性边框 -->
+  <rect x="4" y="4" width="192" height="192" rx="36" stroke="#25C2A0" stroke-width="2" fill="none" opacity="0.3"/>
+</svg>

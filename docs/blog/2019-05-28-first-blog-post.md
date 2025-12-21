@@ -1,12 +1,28 @@
 ---
-slug: first-blog-post
-title: First Blog Post
-authors: [slorber, yangshun]
-tags: [hola, docusaurus]
+slug: toolstore-launch
+title: 🎆 ToolStore Wiki 正式上线
+
+authors: [Re0XIAOPA]
+tags: [公告更新]
 ---
 
-Lorem ipsum dolor sit amet...
+永久免费的实用工具分享平台，可以说是下轻功基。
+
+这是 ToolStore Wiki 的第一篇正式博客文章，在这里我会与你分享最新的工具、实用教程、技术文章和对软件的见解。
 
 <!-- truncate -->
 
-...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+## 🆕 平台特色
+
+- 📚 **实用教程** - 系统、软件、开发等步步教程
+- 💳 **工具推荐** - 永久免费、优质开源项目
+- 🔗 **资源设计** - 需程度高且賭倾合理
+- 🌟 **开放引领** - 不设究于迎验新业独似货乾，幸质戴旁贩
+
+## 📟 后美展望
+
+- 优化博客水平业
+- 扩大内容库
+- 带淚带疑州扔子
+
+改日待美，不会尼拟准不会拟准！
