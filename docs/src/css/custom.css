@@ -39,3 +39,13 @@
   --ifm-hero-background-color: none;
   --ifm-hero-text-color: none;
 }
+
+/* 修改博客侧边栏标题为中文 */
+.sidebarItemTitle_pO2u {
+  font-size: 0;
+}
+
+.sidebarItemTitle_pO2u::after {
+  content: '最近文章';
+  font-size: 1rem;
+}

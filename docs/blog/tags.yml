@@ -1,30 +1,60 @@
 工具推荐:
-  label: 工具推荐
+  label: 工具推荐 / Tools
   permalink: /工具推荐
   description: 最新工具软件和实用工具推荐
 
 教程分享:
-  label: 教程分享
+  label: 教程分享 / Tutorials
   permalink: /教程分享
   description: 系统、软件、开发等各类教程分享
 
 技术文章:
-  label: 技术文章
+  label: 技术文章 / Tech
   permalink: /技术文章
   description: 技术分析、代码优化、最佳实践
 
 资源分享:
-  label: 资源分享
+  label: 资源分享 / Resources
   permalink: /资源分享
   description: 优质开源项目、设计资源、学习资料
 
 经验总结:
-  label: 经验总结
+  label: 经验总结 / Experience
   permalink: /经验总结
   description: 实战经验、踩坑记录、问题解决方案
 
 公告更新:
-  label: 公告更新
+  label: 公告更新 / News
   permalink: /公告更新
   description: 网站更新、功能发布、重要通知
+
+日常:
+  label: 日常 / Daily
+  permalink: /日常
+  description: 日常分享、思考感悟、随笔碎碎念
+
+开发:
+  label: 开发 / Dev
+  permalink: /开发
+  description: 开发工具、编程技巧、代码实践
+
+系统安全:
+  label: 系统安全 / Security
+  permalink: /系统安全
+  description: 安全加固、防护措施、风险规避
+
+科普:
+  label: 科普 / Science
+  permalink: /科普
+  description: 技术扫盲、知识普及、原理解析
+
+DevOps:
+  label: DevOps / DevOps
+  permalink: /DevOps
+  description: 容器化、自动化部署、基础设施
+
+Docker:
+  label: Docker / Docker
+  permalink: /Docker
+  description: Docker 容器、镜像构建、容器编排
 
