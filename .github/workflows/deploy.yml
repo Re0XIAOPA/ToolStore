@@ -29,14 +29,43 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
-      - name: Install Dependencies
+      # 安装根目录依赖
+      - name: Install Root Dependencies
         run: npm install
 
+      # 更新下载链接
       - name: Update Downloads
         run: npm run update-downloads
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+
+      # 检查 docs 目录是否有变化,如果有则构建文档
+      - name: Check docs changes
+        id: docs-check
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep -q '^docs/'; then
+            echo "docs_changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "docs_changed=false" >> $GITHUB_OUTPUT
+          fi
+        continue-on-error: true
+
+      # 安装文档依赖(只在 docs 有变化时)
+      - name: Install Docs Dependencies
+        if: steps.docs-check.outputs.docs_changed == 'true'
+        run: |
+          cd docs
+          npm ci
+
+      # 构建文档(只在 docs 有变化时)
+      - name: Build Documentation
+        if: steps.docs-check.outputs.docs_changed == 'true'
+        run: |
+          cd docs
+          npm run build
 
       - name: Configure Git
         run: |
@@ -49,8 +78,16 @@ jobs:
       - name: Commit and Push Changes
         run: |
           git add .
-          git commit -m "🚀 更新下载链接和版本 | 🔄 同步最新发布信息 [skip ci]" || echo "No changes to commit"
-          git push origin master
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            if [ "${{ steps.docs-check.outputs.docs_changed }}" == "true" ]; then
+              git commit -m "🚀 更新下载链接和文档 | 🔄 同步最新发布信息 [skip ci]"
+            else
+              git commit -m "🚀 更新下载链接和版本 | 🔄 同步最新发布信息 [skip ci]"
+            fi
+            git push origin master
+          fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

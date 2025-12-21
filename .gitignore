@@ -7,6 +7,11 @@ npm-debug.log
 yarn-debug.log
 yarn-error.log
 
+# Docusaurus
+docs/node_modules/
+docs/.docusaurus/
+docs/.cache-loader/
+
 # 环境配置
 .env
 .env.local
@@ -23,6 +28,10 @@ yarn-error.log
 dist/
 build/
 out/
+
+# 注意: public/newDocs 是构建输出,需要提交到仓库以便 GitHub Pages 访问
+# 如果不需要提交构建结果,可以取消下面这行注释:
+# public/newDocs/
 
 # 日志文件
 *.log

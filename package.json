@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Tool Store with automatic GitHub release updates",
   "scripts": {
-    "update-downloads": "node scripts/update-downloads.js"
+    "update-downloads": "node scripts/update-downloads.js",
+    "docs:start": "cd docs && npm start",
+    "docs:build": "cd docs && npm run build",
+    "docs:serve": "cd docs && npm run serve"
   },
   "dependencies": {
     "axios": "^1.6.7"
