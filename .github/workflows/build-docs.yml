@@ -53,7 +53,7 @@ jobs:
       - name: Check for changes
         id: check-changes
         run: |
-          git add public/newDocs
+          git add -f public/newDocs
           if git diff --staged --quiet; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
