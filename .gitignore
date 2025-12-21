@@ -29,9 +29,6 @@ dist/
 build/
 out/
 
-# Docusaurus 构建输出 - 由 GitHub Actions 自动生成
-# 本地不需要追踪,远程通过 CI/CD 自动构建
-public/newDocs/
 
 # 日志文件
 *.log
