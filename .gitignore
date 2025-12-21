@@ -29,9 +29,9 @@ dist/
 build/
 out/
 
-# 注意: public/newDocs 是构建输出,需要提交到仓库以便 GitHub Pages 访问
-# 如果不需要提交构建结果,可以取消下面这行注释:
-# public/newDocs/
+# Docusaurus 构建输出 - 由 GitHub Actions 自动生成
+# 本地不需要追踪,远程通过 CI/CD 自动构建
+public/newDocs/
 
 # 日志文件
 *.log
