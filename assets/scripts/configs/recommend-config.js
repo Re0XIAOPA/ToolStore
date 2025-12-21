@@ -26,6 +26,7 @@ export const recommendConfig = {
         { name: 'Clash Verge', hot: 1, supr: true },
         { name: 'Mihomo Party', hot: 2 },
         { name: 'Shadowrocket', hot: 3 },
+        { name: 'FlClash', hot: 4 },
         'ClashMeta',
         'Surfboard',
         'singbox',
