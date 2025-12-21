@@ -83,6 +83,8 @@ const config: Config = {
       isCloseable: false, // 可关闭
     },
     colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
       respectPrefersColorScheme: true,
     },
     navbar: {
