@@ -63,7 +63,11 @@ jobs:
       - name: Commit and push if changed
         if: steps.check-changes.outputs.has_changes == 'true'
         run: |
+          # 使用 stash 临时保存更改，避免 rebase 冲突
+          git stash push -m "temp-stash-before-rebase"
           git pull --rebase origin master
+          # 恢复之前暂存的更改
+          git stash pop || true
           git commit -m "📚 自动构建文档 | 🔄 更新 Docusaurus 静态页面 [skip ci]"
           git push origin master
         env:
