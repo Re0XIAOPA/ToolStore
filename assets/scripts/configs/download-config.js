@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 12/27/2025, 3:26:36 AM
+// 最后更新时间: 12/28/2025, 3:50:34 AM
 
 const downloadLinks = {
     "v2box": {
@@ -59,8 +59,8 @@ const downloadLinks = {
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
-        "version": "v1.10.31",
-        "android": "https://github.com/2dust/v2rayNG/releases/download/1.10.31/v2rayNG_1.10.31_universal.apk",
+        "version": "v1.10.32",
+        "android": "https://github.com/2dust/v2rayNG/releases/download/1.10.32/v2rayNG_1.10.32_universal.apk",
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
