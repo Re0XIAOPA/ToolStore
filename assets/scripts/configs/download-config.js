@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 1/15/2026, 3:44:39 AM
+// 最后更新时间: 1/16/2026, 3:42:53 AM
 
 const downloadLinks = {
     "v2box": {
@@ -28,10 +28,10 @@ const downloadLinks = {
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.16.9",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.16.9/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.16.9/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.16.9/v2rayN-linux-arm64.deb",
+        "version": "v7.17.0",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.17.0/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.17.0/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.17.0/v2rayN-linux-arm64.deb",
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
@@ -42,10 +42,10 @@ const downloadLinks = {
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
     },
     "mihomo party": {
-        "version": "v1.8.9",
-        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.9/clash-party-windows-1.8.9-x64-setup.exe",
-        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.9/clash-party-macos-1.8.9-arm64.pkg",
-        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.9/clash-party-linux-1.8.9-amd64.deb",
+        "version": "v1.9.1",
+        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.1/clash-party-windows-1.9.0-x64-setup.exe",
+        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.1/clash-party-macos-1.9.0-arm64.pkg",
+        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.1/clash-party-linux-1.9.0-amd64.deb",
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
