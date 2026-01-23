@@ -3,6 +3,7 @@ import { fetchAllCardData } from './api.js';
 import { downloadLinks, getToolVersion } from '../configs/download-config.js';
 import { createDownloadModal } from './download-modal.js';
 import { RecommendManager } from './recommend.js';
+import { badgeConfig } from '../configs/badge-config.js';
 
 // 预先加载平台图标模块
 let platformIconsModule = null;
@@ -376,14 +377,56 @@ function createCard(item, sectionData) {
     titleDiv.textContent = item.name;
     titleContainer.appendChild(titleDiv);
     
-    // 如果是代理工具，添加版本号显示
+    // 添加自定义徽章
+    if (item.badges && item.badges.length > 0) {
+        const badgesContainer = document.createElement('div');
+        badgesContainer.className = 'custom-badges';
+        
+        item.badges.forEach(badgeType => {
+            const config = badgeConfig[badgeType];
+            if (config) {
+                const badge = document.createElement('span');
+                badge.className = `custom-badge ${config.className || ''}`;
+                badge.textContent = config.text;
+                // 使用配置的颜色，如果有className也可以在css中定义
+                if (config.color) badge.style.color = config.color;
+                if (config.bgColor) badge.style.backgroundColor = config.bgColor;
+                badgesContainer.appendChild(badge);
+            }
+        });
+        
+        titleContainer.appendChild(badgesContainer);
+    }
+    
+    // 如果是代理工具，添加版本号和价格显示
     if (sectionData.id === 'tools') {
         const version = getToolVersion(item.name);
         if (version && version !== 'undefined') {
+            const versionPriceContainer = document.createElement('div');
+            versionPriceContainer.className = 'version-price-container';
+            
             const versionDiv = document.createElement('div');
             versionDiv.className = 'tool-version';
             versionDiv.textContent = version;
-            titleContainer.appendChild(versionDiv);
+            versionPriceContainer.appendChild(versionDiv);
+            
+            // 获取iOS价格信息
+            const normalizedName = item.name.toLowerCase().trim();
+            const toolLinks = downloadLinks[normalizedName];
+            if (toolLinks && toolLinks.iosPrice) {
+                const priceDiv = document.createElement('div');
+                priceDiv.className = 'ios-price';
+                // 根据是否免费添加不同的样式类
+                if (toolLinks.iosPrice === 'Free') {
+                    priceDiv.classList.add('free');
+                } else {
+                    priceDiv.classList.add('paid');
+                }
+                priceDiv.textContent = toolLinks.iosPrice;
+                versionPriceContainer.appendChild(priceDiv);
+            }
+            
+            titleContainer.appendChild(versionPriceContainer);
         }
     }
     
@@ -414,7 +457,7 @@ function addPlatformIcons(card, toolName) {
     
     // 获取支持的平台
     const supportedPlatforms = Object.keys(links).filter(
-        platform => platform !== 'github' && platform !== 'version'
+        platform => platform !== 'github' && platform !== 'version' && platform !== 'iosPrice'
     );
     
     if (supportedPlatforms.length === 0) return;
