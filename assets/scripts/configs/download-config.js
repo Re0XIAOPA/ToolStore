@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 1/23/2026, 11:08:47 AM
+// 最后更新时间: 1/23/2026, 2:35:36 PM
 
 const downloadLinks = {
     "v2box": {
@@ -92,6 +92,26 @@ const downloadLinks = {
         "mac": "https://github.com/yanue/V2rayU/releases/download/v4.2.8/V2rayU-arm64.dmg",
         "github": "https://github.com/yanue/V2rayU"
     },
+    "karing": {
+        "version": "v1.2.11",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.11.1406/karing_1.2.11.1406_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.11.1406/karing_1.2.11.1406_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.11.1406/karing_1.2.11.1406_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.11.1406/karing_1.2.11.1406_android_arm64-v8a.apk",
+        "github": "https://github.com/KaringX/karing",
+        "ios": "https://apps.apple.com/us/app/karing/id6472431552",
+        "iosPrice": "Free"
+    },
+    "clashmi": {
+        "version": "v1.0.16",
+        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.16.211/clashmi_1.0.16.211_windows_x64.exe",
+        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.16.211/clashmi_1.0.16.211_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.16.211/clashmi_1.0.16.211_linux_amd64.deb",
+        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.16.211/clashmi_1.0.16.211_android_arm64-v8a.apk",
+        "github": "https://github.com/KaringX/clashmi",
+        "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
+        "iosPrice": "Free"
+    },
     "shadowrocket": {
         "version": "v2.2.77",
         "ios": "https://apps.apple.com/us/app/shadowrocket/id932747118",
@@ -126,16 +146,6 @@ const downloadLinks = {
         "version": "v3.2.4",
         "ios": "https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349",
         "iosPrice": "$5.99"
-    },
-    "karing": {
-        "version": "v1.2.11",
-        "ios": "https://apps.apple.com/us/app/karing/id6472431552",
-        "iosPrice": "Free"
-    },
-    "clashmi": {
-        "version": "v1.0.15",
-        "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
-        "iosPrice": "Free"
     }
 };
 
