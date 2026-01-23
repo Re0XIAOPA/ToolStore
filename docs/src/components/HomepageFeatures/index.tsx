@@ -1,57 +1,61 @@
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
+import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  emoji: string;
+  link: string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: '系统教程',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    emoji: '📚',
+    link: '/docs/category/system-tutorial',
     description: (
       <>
-        全面覆盖 Windows、macOS、Linux、iOS、Android 等主流操作系统，
-        从入门到进阶，助你精通各平台的使用技巧与优化方案。
+        全面覆盖 Windows、macOS、Linux、iOS、Android 等主要操作系统使用技巧。
       </>
     ),
   },
   {
     title: '软件教程',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    emoji: '🛠️',
+    link: '/docs/category/software-tutorial',
     description: (
       <>
-        涵盖开发工具、设计软件、办公应用、多媒体处理等热门软件，
-        提供详细的安装配置指南和实用技巧，让你快速上手各类工具。
+        提供开发工具、效率软件、多媒体处理等热门软件的安装配置与使用指南。
       </>
     ),
   },
   {
     title: '热门推荐',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    emoji: '🔥',
+    link: '/docs/category/hot-recommend',
     description: (
       <>
-        精选当下最火的开源项目、实用工具和技术资源，
-        第一时间为你推送优质内容，保持技术前沿视野。
+        精选开源项目与实用工具资源，第一时间推送优质内容，保持前沿视野。
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, emoji, link, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
+      <Link to={link} className={styles.featureLink}>
+        <div className={styles.featureCard}>
+          <div className={styles.featureHeader}>
+            <span className={styles.featureEmoji}>{emoji}</span>
+            <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
+          </div>
+          <p className={styles.featureDescription}>{description}</p>
+        </div>
+      </Link>
     </div>
   );
 }

@@ -43,9 +43,7 @@ const CONFIG = {
         'v2box',
         'streisand',
         'npvtunnel',
-        'stash',
-        'karing',
-        'clashmi'
+        'stash'
     ],
     // 仓库名称映射（将GitHub仓库名映射到我们想要的名称）
     repoNameMapping: {

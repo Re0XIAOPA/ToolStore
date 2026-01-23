@@ -323,6 +323,14 @@ footer p {
     gap: 15px;
   }
 
+  .card-icon {
+    border-radius: 6px;
+  }
+
+  .card-icon img {
+    border-radius: 6px;
+  }
+
   .canceled-message {
     width: 80%;
     max-width: 300px;

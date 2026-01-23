@@ -129,13 +129,13 @@ export const toolsData = [
   {
     name: "Karing",
     image: "assets/images/tools/Karing.png",
-    link: "https://apps.apple.com/us/app/karing/id6472431552",
+    link: "https://github.com/KaringX/karing/releases",
     badges: ["opensource"],
   },
   {
     name: "ClashMi",
     image: "assets/images/tools/ClashMi.png",
-    link: "https://apps.apple.com/us/app/clash-mi/id6744321968",
-    badges: ["closedsource"],
+    link: "https://github.com/KaringX/clashmi/releases",
+    badges: ["opensource"],
   },
 ];

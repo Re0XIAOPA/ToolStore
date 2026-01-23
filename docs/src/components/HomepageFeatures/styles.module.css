@@ -5,7 +5,53 @@
   width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.featureLink {
+  text-decoration: none !important;
+  color: inherit !important;
+  height: 100%;
+  display: block;
+}
+
+.featureCard {
+  background-color: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.featureHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.featureEmoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.featureTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.featureDescription {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
