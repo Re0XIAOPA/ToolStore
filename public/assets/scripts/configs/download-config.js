@@ -1,11 +1,12 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 1/23/2026, 3:46:01 AM
+// 最后更新时间: 2026/1/23 17:06:34
 
 const downloadLinks = {
     "v2box": {
-        "version": "N/A",
+        "version": "9.8.7",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
-        "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690"
+        "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
+        "iosPrice": "Free"
     },
     "hiddify": {
         "version": "v2.0.5",
@@ -14,7 +15,8 @@ const downloadLinks = {
         "linux": "https://github.com/hiddify/hiddify-app/releases/download/v2.0.5/Hiddify-Debian-x64.deb",
         "android": "https://github.com/hiddify/hiddify-app/releases/download/v2.0.5/Hiddify-Android-universal.apk",
         "ios": "https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532",
-        "github": "https://github.com/hiddify/hiddify-app"
+        "github": "https://github.com/hiddify/hiddify-app",
+        "iosPrice": "Free"
     },
     "gui.for.singbox": {
         "version": "v1.19.0",
@@ -68,7 +70,8 @@ const downloadLinks = {
         "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.12.17/sing-box-1.12.17-windows-amd64-legacy-windows-7.zip",
         "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.12.17/sing-box_1.12.17_linux_amd64.deb",
         "github": "https://github.com/SagerNet/sing-box",
-        "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
+        "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168",
+        "iosPrice": "Free"
     },
     "gui.for.clash": {
         "version": "v1.19.0",
@@ -90,28 +93,49 @@ const downloadLinks = {
         "github": "https://github.com/yanue/V2rayU"
     },
     "shadowrocket": {
-        "version": "N/A",
-        "ios": "https://apps.apple.com/us/app/shadowrocket/id932747118"
+        "version": "2.2.77",
+        "ios": "https://apps.apple.com/us/app/shadowrocket/id932747118",
+        "iosPrice": "$2.99"
     },
     "quantumultx": {
-        "version": "N/A",
-        "ios": "https://apps.apple.com/us/app/quantumult-x/id1443988620"
+        "version": "1.5.5",
+        "ios": "https://apps.apple.com/us/app/quantumult-x/id1443988620",
+        "iosPrice": "$9.99"
     },
     "surge5": {
-        "version": "N/A",
-        "ios": "https://apps.apple.com/us/app/surge-5/id1442620678"
+        "version": "5.17.0",
+        "ios": "https://apps.apple.com/us/app/surge-5/id1442620678",
+        "iosPrice": "Free"
     },
     "oneclick": {
-        "version": "N/A",
-        "ios": "https://apps.apple.com/us/app/oneclick-safe-easy-fast/id1545555197"
+        "version": "2.5.0",
+        "ios": "https://apps.apple.com/us/app/oneclick-safe-easy-fast/id1545555197",
+        "iosPrice": "Free"
     },
     "streisand": {
-        "version": "N/A",
-        "ios": "https://apps.apple.com/us/app/streisand/id6450534064"
+        "version": "1.6.68",
+        "ios": "https://apps.apple.com/us/app/streisand/id6450534064",
+        "iosPrice": "Free"
     },
     "npvtunnel": {
-        "version": "N/A",
-        "ios": "https://apps.apple.com/us/app/npv-tunnel/id1629465476"
+        "version": "56.2",
+        "ios": "https://apps.apple.com/us/app/npv-tunnel/id1629465476",
+        "iosPrice": "Free"
+    },
+    "stash": {
+        "version": "3.2.4",
+        "ios": "https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349",
+        "iosPrice": "$5.99"
+    },
+    "karing": {
+        "version": "1.2.11.1406",
+        "ios": "https://apps.apple.com/us/app/karing/id6472431552",
+        "iosPrice": "Free"
+    },
+    "clashmi": {
+        "version": "1.0.15.191",
+        "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
+        "iosPrice": "Free"
     }
 };
 

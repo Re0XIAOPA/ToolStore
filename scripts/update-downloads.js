@@ -42,7 +42,10 @@ const CONFIG = {
         'oneclick',
         'v2box',
         'streisand',
-        'npvtunnel'
+        'npvtunnel',
+        'stash',
+        'karing',
+        'clashmi'
     ],
     // 仓库名称映射（将GitHub仓库名映射到我们想要的名称）
     repoNameMapping: {
@@ -69,7 +72,10 @@ const CONFIG = {
         'singbox': 'https://apps.apple.com/us/app/sing-box-vt/id6673731168',
         'hiddify': 'https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532',
         'streisand': 'https://apps.apple.com/us/app/streisand/id6450534064',
-        'npvtunnel': 'https://apps.apple.com/us/app/npv-tunnel/id1629465476'
+        'npvtunnel': 'https://apps.apple.com/us/app/npv-tunnel/id1629465476',
+        'stash': 'https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349',
+        'karing': 'https://apps.apple.com/us/app/karing/id6472431552',
+        'clashmi': 'https://apps.apple.com/us/app/clash-mi/id6744321968'
     },
     // 平台特定的文件匹配模式 - 扩展更多关键词和扩展名
     platformPatterns: {
@@ -234,6 +240,50 @@ async function getLatestRelease(owner, repo, retryCount = 0) {
         } else {
             console.error(`获取 ${owner}/${repo} 的最新版本失败:`, error.message);
         }
+        return null;
+    }
+}
+
+// 从App Store URL中提取应用ID
+function extractAppIdFromUrl(url) {
+    if (!url) return null;
+    const match = url.match(/\/id(\d+)/);
+    return match ? match[1] : null;
+}
+
+// 从iTunes API获取iOS应用价格和版本信息
+async function fetchAppPrice(appId, country = 'us', retryCount = 0) {
+    try {
+        console.log(`正在获取App ID ${appId} 的价格和版本信息...`);
+        const response = await axiosInstance.get(
+            `https://itunes.apple.com/lookup?id=${appId}&country=${country}`,
+            { timeout: 5000 }
+        );
+
+        if (response.data && response.data.results && response.data.results.length > 0) {
+            const app = response.data.results[0];
+            const appInfo = {
+                price: app.price,
+                formattedPrice: app.formattedPrice || (app.price === 0 ? 'Free' : `$${app.price}`),
+                currency: app.currency,
+                version: app.version || 'N/A'
+            };
+            console.log(`成功获取 ${app.trackName} - 版本: ${appInfo.version}, 价格: ${appInfo.formattedPrice}`);
+            return appInfo;
+        } else {
+            console.warn(`未找到App ID ${appId} 的信息`);
+            return null;
+        }
+    } catch (error) {
+        // 处理超时和网络错误，最多重试3次
+        if ((error.code === 'ECONNABORTED' || error.code === 'ETIMEDOUT') && retryCount < 3) {
+            const waitTime = (retryCount + 1) * 1000;
+            console.log(`iTunes API请求超时，等待${waitTime / 1000}秒后重试(${retryCount + 1}/3)...`);
+            await new Promise(resolve => setTimeout(resolve, waitTime));
+            return fetchAppPrice(appId, country, retryCount + 1);
+        }
+        
+        console.error(`获取App ID ${appId} 的价格失败:`, error.message);
         return null;
     }
 }
@@ -634,6 +684,33 @@ async function updateDownloadConfig() {
                 console.log(`已添加 ${appName} 的iOS应用商店链接`);
             }
         }
+
+        // 获取iOS应用的价格和版本信息
+        console.log('\n开始获取iOS应用价格和版本信息...');
+        for (const [appName, appStoreLink] of Object.entries(CONFIG.iosAppStoreLinks)) {
+            if (downloadLinks[appName] && downloadLinks[appName].ios) {
+                const appId = extractAppIdFromUrl(appStoreLink);
+                if (appId) {
+                    const appInfo = await fetchAppPrice(appId);
+                    if (appInfo) {
+                        // 更新版本号（如果当前是N/A）
+                        if (downloadLinks[appName].version === 'N/A' && appInfo.version) {
+                            downloadLinks[appName].version = appInfo.version;
+                        }
+                        // 添加价格信息
+                        downloadLinks[appName].iosPrice = appInfo.formattedPrice;
+                        console.log(`已为 ${appName} 添加信息 - 版本: ${appInfo.version}, 价格: ${appInfo.formattedPrice}`);
+                    } else {
+                        console.warn(`无法获取 ${appName} 的信息，将跳过`);
+                    }
+                    // 添加延迟以避免API速率限制
+                    await new Promise(resolve => setTimeout(resolve, 200));
+                } else {
+                    console.warn(`无法从URL中提取 ${appName} 的App ID: ${appStoreLink}`);
+                }
+            }
+        }
+        console.log('iOS应用信息获取完成\n');
 
         // 最后检查结果，确保每个工具至少有一个有效的下载链接
         for (const [name, links] of Object.entries(downloadLinks)) {

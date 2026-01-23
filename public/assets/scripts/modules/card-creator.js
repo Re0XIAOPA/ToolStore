@@ -8,8 +8,8 @@ export function getSupportedPlatforms(toolName) {
     const normalizedName = toolName.toLowerCase().trim();
     const links = downloadLinks[normalizedName];
     if (!links) return [];
-    // 过滤掉 github 和 version，因为它们是通用的或非平台
-    return Object.keys(links).filter(platform => platform !== 'github' && platform !== 'version');
+    // 过滤掉 github, version 和 iosPrice，因为它们是通用的或非平台
+    return Object.keys(links).filter(platform => platform !== 'github' && platform !== 'version' && platform !== 'iosPrice');
 }
 
 // 创建卡片函数
@@ -66,12 +66,33 @@ export function createCards() {
             titleDiv.textContent = name;
             titleContainer.appendChild(titleDiv);
             
-            // 添加版本号显示
+            // 添加版本号和价格显示
             if (version && version !== 'undefined') {
+                const versionPriceContainer = document.createElement('div');
+                versionPriceContainer.className = 'version-price-container';
+                
                 const versionDiv = document.createElement('div');
                 versionDiv.className = 'tool-version';
                 versionDiv.textContent = version;
-                titleContainer.appendChild(versionDiv);
+                versionPriceContainer.appendChild(versionDiv);
+                
+                // 获取iOS价格信息
+                const normalizedName = name.toLowerCase().trim();
+                const toolLinks = downloadLinks[normalizedName];
+                if (toolLinks && toolLinks.iosPrice) {
+                    const priceDiv = document.createElement('div');
+                    priceDiv.className = 'ios-price';
+                    // 根据是否免费添加不同的样式类
+                    if (toolLinks.iosPrice === 'Free') {
+                        priceDiv.classList.add('free');
+                    } else {
+                        priceDiv.classList.add('paid');
+                    }
+                    priceDiv.textContent = toolLinks.iosPrice;
+                    versionPriceContainer.appendChild(priceDiv);
+                }
+                
+                titleContainer.appendChild(versionPriceContainer);
             }
             
             card.appendChild(titleContainer);

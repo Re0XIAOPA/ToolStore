@@ -24,14 +24,13 @@ export const recommendConfig = {
     // 工具类推荐
     tools: [
         { name: 'Clash Verge', hot: 1, supr: true },
-        { name: 'Mihomo Party', hot: 2 },
-        { name: 'Shadowrocket', hot: 3 },
-        { name: 'FlClash', hot: 4 },
-        'ClashMeta',
-        'Surfboard',
-        'singbox',
-        'Hiddify',
-        'Surge5'
+        { name: 'Shadowrocket', hot: 2, supr: true },
+        { name: 'Hiddify', hot: 3 },
+        { name: 'Karing', hot: 4 },
+        { name: 'Mihomo Party', hot: 5 },
+        { name: 'V2rayN', hot: 6 },
+        { name: 'ClashMeta', hot: 7 },
+        { name: 'FlClash', hot: 8 }
     ],
 
     // 软件类推荐
