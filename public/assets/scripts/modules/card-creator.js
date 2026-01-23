@@ -2,6 +2,7 @@
 import { platformIcons, getPlatformName } from './platform-icons.js';
 import { downloadLinks, getToolVersion } from '../configs/download-config.js';
 import { createDownloadModal } from './download-modal.js';
+import { badgeConfig } from '../configs/badge-config.js';
 
 // 获取支持平台的函数
 export function getSupportedPlatforms(toolName) {
@@ -65,6 +66,27 @@ export function createCards() {
             titleDiv.className = 'card-title';
             titleDiv.textContent = name;
             titleContainer.appendChild(titleDiv);
+            
+            // 添加自定义徽章
+            const toolData = downloadLinks[name.toLowerCase().trim()];
+            if (toolData && toolData.badges && toolData.badges.length > 0) {
+                const badgesContainer = document.createElement('div');
+                badgesContainer.className = 'custom-badges';
+                
+                toolData.badges.forEach(badgeType => {
+                    const config = badgeConfig[badgeType];
+                    if (config) {
+                        const badge = document.createElement('span');
+                        badge.className = `custom-badge ${config.className || ''}`;
+                        badge.textContent = config.text;
+                        if (config.color) badge.style.color = config.color;
+                        if (config.bgColor) badge.style.backgroundColor = config.bgColor;
+                        badgesContainer.appendChild(badge);
+                    }
+                });
+                
+                titleContainer.appendChild(badgesContainer);
+            }
             
             // 添加版本号和价格显示
             if (version && version !== 'undefined') {

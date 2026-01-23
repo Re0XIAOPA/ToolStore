@@ -1712,7 +1712,7 @@ main {
   color: #7c8aff;
   background-color: rgba(124, 138, 255, 0.1);
   padding: 3px 8px;
-  border-radius: 4px;
+  border-radius: 12px;
   display: inline-block;
   font-weight: 500;
   vertical-align: middle;
@@ -1749,6 +1749,44 @@ main {
   justify-content: center;
   margin-top: 8px;
   flex-wrap: wrap;
+}
+
+/* 自定义徽章样式 */
+.custom-badges {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+  margin-bottom: 2px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.custom-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-block;
+  border: 1px solid currentColor;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.card:hover .custom-badge {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .custom-badges {
+    gap: 4px;
+    margin-top: 4px;
+  }
+  
+  .custom-badge {
+    font-size: 10px;
+    padding: 1px 6px;
+  }
 }
 
 /* iOS价格徽章样式 */

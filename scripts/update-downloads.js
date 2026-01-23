@@ -695,7 +695,7 @@ async function updateDownloadConfig() {
                     if (appInfo) {
                         // 更新版本号（如果当前是N/A）
                         if (downloadLinks[appName].version === 'N/A' && appInfo.version) {
-                            downloadLinks[appName].version = appInfo.version;
+                            downloadLinks[appName].version = formatVersion(appInfo.version);
                         }
                         // 添加价格信息
                         downloadLinks[appName].iosPrice = appInfo.formattedPrice;

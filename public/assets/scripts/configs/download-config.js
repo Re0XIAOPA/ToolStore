@@ -1,9 +1,9 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 2026/1/23 17:06:34
+// 最后更新时间: 2026/1/23 18:47:04
 
 const downloadLinks = {
     "v2box": {
-        "version": "9.8.7",
+        "version": "v9.8.7",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
         "iosPrice": "Free"
@@ -93,47 +93,47 @@ const downloadLinks = {
         "github": "https://github.com/yanue/V2rayU"
     },
     "shadowrocket": {
-        "version": "2.2.77",
+        "version": "v2.2.77",
         "ios": "https://apps.apple.com/us/app/shadowrocket/id932747118",
         "iosPrice": "$2.99"
     },
     "quantumultx": {
-        "version": "1.5.5",
+        "version": "v1.5.5",
         "ios": "https://apps.apple.com/us/app/quantumult-x/id1443988620",
         "iosPrice": "$9.99"
     },
     "surge5": {
-        "version": "5.17.0",
+        "version": "v5.17.0",
         "ios": "https://apps.apple.com/us/app/surge-5/id1442620678",
         "iosPrice": "Free"
     },
     "oneclick": {
-        "version": "2.5.0",
+        "version": "v2.5.0",
         "ios": "https://apps.apple.com/us/app/oneclick-safe-easy-fast/id1545555197",
         "iosPrice": "Free"
     },
     "streisand": {
-        "version": "1.6.68",
+        "version": "v1.6.68",
         "ios": "https://apps.apple.com/us/app/streisand/id6450534064",
         "iosPrice": "Free"
     },
     "npvtunnel": {
-        "version": "56.2",
+        "version": "v56.2",
         "ios": "https://apps.apple.com/us/app/npv-tunnel/id1629465476",
         "iosPrice": "Free"
     },
     "stash": {
-        "version": "3.2.4",
+        "version": "v3.2.4",
         "ios": "https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349",
         "iosPrice": "$5.99"
     },
     "karing": {
-        "version": "1.2.11.1406",
+        "version": "v1.2.11",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
     },
     "clashmi": {
-        "version": "1.0.15.191",
+        "version": "v1.0.15",
         "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
         "iosPrice": "Free"
     }
