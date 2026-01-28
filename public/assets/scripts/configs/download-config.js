@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 1/27/2026, 10:52:43 AM
+// 最后更新时间: 1/28/2026, 3:45:01 AM
 
 const downloadLinks = {
     "v2box": {
@@ -56,8 +56,8 @@ const downloadLinks = {
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
-        "version": "v2.25.4",
-        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.25.4/mobile-universal-release.apk",
+        "version": "v2.25.5",
+        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.25.5/mobile-universal-release.apk",
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
@@ -105,7 +105,7 @@ const downloadLinks = {
     "clashmi": {
         "version": "v1.0.17",
         "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.17.300/clashmi_1.0.17.300_windows_x64.exe",
-        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.17.300/clashmi_1.0.16.300_macos_universal.dmg",
+        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.17.300/clashmi_1.0.17.300_macos_universal.dmg",
         "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.17.300/clashmi_1.0.17.300_linux_amd64.deb",
         "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.17.300/clashmi_1.0.17.300_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/clashmi",
