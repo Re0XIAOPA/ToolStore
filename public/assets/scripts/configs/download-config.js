@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 1/30/2026, 4:12:11 AM
+// 最后更新时间: 1/31/2026, 4:05:32 AM
 
 const downloadLinks = {
     "v2box": {
@@ -66,9 +66,9 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.12.17",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.12.17/sing-box-1.12.17-windows-amd64-legacy-windows-7.zip",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.12.17/sing-box_1.12.17_linux_amd64.deb",
+        "version": "v1.12.18",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.12.18/sing-box-1.12.18-windows-amd64-legacy-windows-7.zip",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.12.18/sing-box_1.12.18_linux_amd64.deb",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168",
         "iosPrice": "Free"
@@ -133,7 +133,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "streisand": {
-        "version": "v1.6.68",
+        "version": "v1.6.69",
         "ios": "https://apps.apple.com/us/app/streisand/id6450534064",
         "iosPrice": "Free"
     },
