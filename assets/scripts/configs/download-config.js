@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 2/8/2026, 4:34:51 AM
+// 最后更新时间: 2/9/2026, 4:30:14 AM
 
 const downloadLinks = {
     "v2box": {
@@ -25,8 +25,8 @@ const downloadLinks = {
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
-        "version": "v1.4.1",
-        "android": "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/download/1.4.1/NekoBox-1.4.1-arm64-v8a.apk",
+        "version": "v1.4.2",
+        "android": "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/download/1.4.2/NekoBox-1.4.2-arm64-v8a.apk",
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
@@ -51,13 +51,13 @@ const downloadLinks = {
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
-        "version": "v2.11.22",
-        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.22/cmfa-2.11.22-meta-universal-release.apk",
+        "version": "v2.11.23",
+        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.23/cmfa-2.11.23-meta-universal-release.apk",
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
-        "version": "v2.25.5",
-        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.25.5/mobile-universal-release.apk",
+        "version": "v2.26.0",
+        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.26.0/mobile-universal-release.apk",
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
