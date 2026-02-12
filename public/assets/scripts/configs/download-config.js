@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 2/11/2026, 4:32:39 AM
+// 最后更新时间: 2/12/2026, 4:24:44 AM
 
 const downloadLinks = {
     "v2box": {
@@ -93,21 +93,21 @@ const downloadLinks = {
         "github": "https://github.com/yanue/V2rayU"
     },
     "karing": {
-        "version": "v1.2.13",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.13.1600/karing_1.2.13.1600_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.13.1600/karing_1.2.13.1600_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.13.1600/karing_1.2.13.1600_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.13.1600/karing_1.2.13.1600_android_arm64-v8a.apk",
+        "version": "v1.2.14",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.14.1701/karing_1.2.14.1701_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.14.1701/karing_1.2.14.1701_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.14.1701/karing_1.2.14.1701_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.14.1701/karing_1.2.14.1701_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
     },
     "clashmi": {
-        "version": "v1.0.17",
-        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.17.300/clashmi_1.0.17.300_windows_x64.exe",
-        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.17.300/clashmi_1.0.17.300_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.17.300/clashmi_1.0.17.300_linux_amd64.deb",
-        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.17.300/clashmi_1.0.17.300_android_arm64-v8a.apk",
+        "version": "v1.0.18",
+        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.18.403/clashmi_1.0.18.403_windows_x64.exe",
+        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.18.403/clashmi_1.0.18.403_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.18.403/clashmi_1.0.18.403_linux_amd64.deb",
+        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.18.403/clashmi_1.0.18.403_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/clashmi",
         "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
         "iosPrice": "Free"
