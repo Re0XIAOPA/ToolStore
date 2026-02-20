@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 2/19/2026, 4:24:01 AM
+// 最后更新时间: 2/20/2026, 4:19:08 AM
 
 const downloadLinks = {
     "v2box": {
@@ -9,13 +9,13 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "hiddify": {
-        "version": "v2.0.5",
-        "windows": "https://github.com/hiddify/hiddify-app/releases/download/v2.0.5/Hiddify-Windows-Setup-x64.exe",
-        "mac": "https://github.com/hiddify/hiddify-app/releases/download/v2.0.5/Hiddify-MacOS-Installer.pkg",
-        "linux": "https://github.com/hiddify/hiddify-app/releases/download/v2.0.5/Hiddify-Debian-x64.deb",
-        "android": "https://github.com/hiddify/hiddify-app/releases/download/v2.0.5/Hiddify-Android-universal.apk",
-        "ios": "https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532",
+        "version": "v4.0.4",
+        "windows": "https://github.com/hiddify/hiddify-app/releases/download/v4.0.4/Hiddify-Windows-Setup-x64.exe",
+        "mac": "https://github.com/hiddify/hiddify-app/releases/download/v4.0.4/Hiddify-MacOS-Installer.pkg",
+        "linux": "https://github.com/hiddify/hiddify-app/releases/download/v4.0.4/Hiddify-Debian-x64.deb",
+        "android": "https://github.com/hiddify/hiddify-app/releases/download/v4.0.4/Hiddify-Android-universal.apk",
         "github": "https://github.com/hiddify/hiddify-app",
+        "ios": "https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532",
         "iosPrice": "Free"
     },
     "gui.for.singbox": {
@@ -37,10 +37,10 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
-        "version": "v2.4.5",
-        "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.5/Clash.Verge_2.4.5_x64-setup.exe",
-        "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.5/Clash.Verge_2.4.5_x64.dmg",
-        "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.5/Clash.Verge_2.4.5_amd64.deb",
+        "version": "v2.4.6",
+        "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.6/Clash.Verge_2.4.6_x64-setup.exe",
+        "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.6/Clash.Verge_2.4.6_x64.dmg",
+        "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.6/Clash.Verge_2.4.6_amd64.deb",
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
     },
     "mihomo party": {
@@ -113,7 +113,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "shadowrocket": {
-        "version": "v2.2.79",
+        "version": "v2.2.80",
         "ios": "https://apps.apple.com/us/app/shadowrocket/id932747118",
         "iosPrice": "$2.99"
     },
