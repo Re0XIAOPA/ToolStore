@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 2/24/2026, 4:22:44 AM
+// 最后更新时间: 2/25/2026, 4:24:04 AM
 
 const downloadLinks = {
     "v2box": {
@@ -20,8 +20,8 @@ const downloadLinks = {
     },
     "gui.for.singbox": {
         "version": "v1.20.0",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.20.0-dev.2/GUI.for.SingBox-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.20.0-dev.2/GUI.for.SingBox-linux-amd64.zip",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.20.0-dev.3/GUI.for.SingBox-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.20.0-dev.3/GUI.for.SingBox-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
@@ -75,8 +75,8 @@ const downloadLinks = {
     },
     "gui.for.clash": {
         "version": "v1.20.0",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.20.0-dev.2/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.20.0-dev.2/GUI.for.Clash-linux-amd64.zip",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.20.0-dev.3/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.20.0-dev.3/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
@@ -143,7 +143,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "stash": {
-        "version": "v3.2.4",
+        "version": "v3.3.0",
         "ios": "https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349",
         "iosPrice": "$5.99"
     }
