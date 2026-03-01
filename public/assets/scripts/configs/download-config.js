@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 2/28/2026, 3:58:12 AM
+// 最后更新时间: 3/1/2026, 4:22:28 AM
 
 const downloadLinks = {
     "v2box": {
@@ -20,8 +20,8 @@ const downloadLinks = {
     },
     "gui.for.singbox": {
         "version": "v1.20.0",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.20.0-dev.3/GUI.for.SingBox-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.20.0-dev.3/GUI.for.SingBox-linux-amd64.zip",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.20.0/GUI.for.SingBox-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.20.0/GUI.for.SingBox-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
@@ -66,17 +66,19 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.12.23",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.12.23/sing-box-1.12.23-windows-amd64-legacy-windows-7.zip",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.12.23/sing-box_1.12.23_linux_amd64.deb",
+        "version": "v1.13.0",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0/sing-box-1.13.0-windows-amd64-legacy-windows-7.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0/SFM-1.13.0-Universal.pkg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0/sing-box_1.13.0_linux_amd64.deb",
+        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0/SFA-1.13.0-legacy-android-5-universal.apk",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168",
         "iosPrice": "Free"
     },
     "gui.for.clash": {
         "version": "v1.20.0",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.20.0-dev.3/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.20.0-dev.3/GUI.for.Clash-linux-amd64.zip",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.20.0/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.20.0/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
