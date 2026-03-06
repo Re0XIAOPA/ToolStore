@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 3/5/2026, 4:16:08 AM
+// 最后更新时间: 3/6/2026, 4:12:44 AM
 
 const downloadLinks = {
     "v2box": {
@@ -9,11 +9,11 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "hiddify": {
-        "version": "v4.0.4",
-        "windows": "https://github.com/hiddify/hiddify-app/releases/download/v4.0.4/Hiddify-Windows-Setup-x64.exe",
-        "mac": "https://github.com/hiddify/hiddify-app/releases/download/v4.0.4/Hiddify-MacOS-Installer.pkg",
-        "linux": "https://github.com/hiddify/hiddify-app/releases/download/v4.0.4/Hiddify-Debian-x64.deb",
-        "android": "https://github.com/hiddify/hiddify-app/releases/download/v4.0.4/Hiddify-Android-universal.apk",
+        "version": "v4.1.1",
+        "windows": "https://github.com/hiddify/hiddify-app/releases/download/v4.1.1/Hiddify-Windows-Setup-x64.exe",
+        "mac": "https://github.com/hiddify/hiddify-app/releases/download/v4.1.1/Hiddify-MacOS-Installer.pkg",
+        "linux": "https://github.com/hiddify/hiddify-app/releases/download/v4.1.1/Hiddify-Debian-x64.deb",
+        "android": "https://github.com/hiddify/hiddify-app/releases/download/v4.1.1/Hiddify-Android-universal.apk",
         "github": "https://github.com/hiddify/hiddify-app",
         "ios": "https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532",
         "iosPrice": "Free"
@@ -66,11 +66,11 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.13.0",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0/sing-box-1.13.0-windows-amd64-legacy-windows-7.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0/SFM-1.13.0-Universal.pkg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0/sing-box_1.13.0_linux_amd64.deb",
-        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0/SFA-1.13.0-legacy-android-5-universal.apk",
+        "version": "v1.13.1",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.13.1/sing-box-1.13.1-windows-amd64-legacy-windows-7.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.13.1/SFM-1.13.1-Universal.pkg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.1/sing-box_1.13.1_linux_amd64.deb",
+        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.1/SFA-1.13.1-legacy-android-5-universal.apk",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168",
         "iosPrice": "Free"
