@@ -9,7 +9,7 @@ export const toolsData = [
   {
     name: "Clash Nyanpasu",
     image: "assets/images/tools/ClashNyanpasu.png",
-    link: "https://github.com/libnyanpasu/clash-nyanpasu",
+    link: "https://github.com/libnyanpasu/clash-nyanpasu/releases",
     badges: ["opensource", "recommended"],
   },
   {
