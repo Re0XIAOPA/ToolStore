@@ -49,6 +49,7 @@ const CONFIG = {
     repoNameMapping: {
         'clash-verge-rev': 'clash verge',
         'mihomo-party': 'mihomo party',
+        'clash-nyanpasu': 'clash nyanpasu',
         'ClashMetaForAndroid': 'clashmeta',
         'surfboard': 'surfboard',
         'v2rayN': 'v2rayn',
