@@ -30,7 +30,8 @@ export const recommendConfig = {
         { name: 'Mihomo Party', hot: 5 },
         { name: 'V2rayN', hot: 6 },
         { name: 'ClashMeta', hot: 7 },
-        { name: 'FlClash', hot: 8 }
+        { name: 'FlClash', hot: 8 },
+        { name: 'Clash Nyanpasu', hot: 9 }
     ],
 
     // 软件类推荐

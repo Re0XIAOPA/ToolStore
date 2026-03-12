@@ -7,6 +7,12 @@ export const toolsData = [
     badges: ["opensource", "recommended"],
   },
   {
+    name: "Clash Nyanpasu",
+    image: "assets/images/tools/ClashNyanpasu.png",
+    link: "https://github.com/libnyanpasu/clash-nyanpasu",
+    badges: ["opensource", "recommended"],
+  },
+  {
     name: "Mihomo Party",
     image: "assets/images/tools/mihomoparty.png",
     link: "https://github.com/mihomo-party-org/mihomo-party/releases",
