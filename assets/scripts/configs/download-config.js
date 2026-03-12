@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 3/11/2026, 4:13:39 AM
+// 最后更新时间: 3/12/2026, 4:18:27 AM
 
 const downloadLinks = {
     "v2box": {
@@ -56,8 +56,8 @@ const downloadLinks = {
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
-        "version": "v2.28.0",
-        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.28.0/mobile-universal-release.apk",
+        "version": "v2.28.1",
+        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.28.1/mobile-universal-release.apk",
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
@@ -76,9 +76,9 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "gui.for.clash": {
-        "version": "v1.20.0",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.20.0/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.20.0/GUI.for.Clash-linux-amd64.zip",
+        "version": "v1.21.1",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.21.1/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.21.1/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
@@ -95,11 +95,11 @@ const downloadLinks = {
         "github": "https://github.com/yanue/V2rayU"
     },
     "karing": {
-        "version": "v1.2.14",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.14.1701/karing_1.2.14.1701_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.14.1701/karing_1.2.14.1701_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.14.1701/karing_1.2.14.1701_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.14.1701/karing_1.2.14.1701_android_arm64-v8a.apk",
+        "version": "v1.2.15",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.15.1806/karing_1.2.15.1806_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.15.1806/karing_1.2.15.1806_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.15.1806/karing_1.2.15.1806_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.15.1806/karing_1.2.15.1806_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
