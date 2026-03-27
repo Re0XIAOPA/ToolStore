@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 3/26/2026, 4:36:41 AM
+// 最后更新时间: 3/27/2026, 4:37:08 AM
 
 const downloadLinks = {
     "v2box": {
@@ -73,11 +73,11 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.13.3",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.13.3/sing-box-1.13.3-windows-amd64-legacy-windows-7.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.13.3/SFM-1.13.3-Universal.pkg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.3/sing-box_1.13.3_linux_amd64.deb",
-        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.3/SFA-1.13.3-legacy-android-5-universal.apk",
+        "version": "v1.13.4",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.13.4/sing-box-1.13.4-windows-amd64-legacy-windows-7.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.13.4/SFM-1.13.4-Universal.pkg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.4/sing-box_1.13.4_linux_amd64.deb",
+        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.4/SFA-1.13.4-legacy-android-5-universal.apk",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168",
         "iosPrice": "Free"
