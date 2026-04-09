@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 4/8/2026, 4:40:58 AM
+// 最后更新时间: 4/9/2026, 4:37:48 AM
 
 const downloadLinks = {
     "v2box": {
@@ -112,11 +112,11 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "clashmi": {
-        "version": "v1.0.19",
-        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.19.502/clashmi_1.0.19.502_windows_x64.exe",
-        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.19.502/clashmi_1.0.19.502_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.19.502/clashmi_1.0.19.502_linux_amd64.deb",
-        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.19.502/clashmi_1.0.19.502_android_arm64-v8a.apk",
+        "version": "v1.0.20",
+        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.20.607/clashmi_1.0.20.607_windows_x64.exe",
+        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.20.607/clashmi_1.0.20.607_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.20.607/clashmi_1.0.20.607_linux_amd64.deb",
+        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.20.607/clashmi_1.0.20.607_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/clashmi",
         "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
         "iosPrice": "Free"
