@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 4/9/2026, 4:37:48 AM
+// 最后更新时间: 4/10/2026, 4:50:53 AM
 
 const downloadLinks = {
     "v2box": {
@@ -63,8 +63,8 @@ const downloadLinks = {
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
-        "version": "v2.29.1",
-        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.29.1/mobile-universal-release.apk",
+        "version": "v2.29.2",
+        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.29.2/mobile-universal-release.apk",
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
@@ -102,11 +102,11 @@ const downloadLinks = {
         "github": "https://github.com/yanue/V2rayU"
     },
     "karing": {
-        "version": "v1.2.15",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.15.1806/karing_1.2.15.1806_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.15.1806/karing_1.2.15.1806_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.15.1806/karing_1.2.15.1806_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.15.1806/karing_1.2.15.1806_android_arm64-v8a.apk",
+        "version": "v1.2.16",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.16.1912/karing_1.2.16.1912_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.16.1912/karing_1.2.16.1912_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.16.1912/karing_1.2.16.1912_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.16.1912/karing_1.2.16.1912_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
