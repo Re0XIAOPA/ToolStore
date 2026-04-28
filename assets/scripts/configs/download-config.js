@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 4/27/2026, 5:28:59 AM
+// 最后更新时间: 4/28/2026, 5:34:56 AM
 
 const downloadLinks = {
     "v2box": {
@@ -102,11 +102,11 @@ const downloadLinks = {
         "github": "https://github.com/yanue/V2rayU"
     },
     "karing": {
-        "version": "v1.2.17",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.17.2006/karing_1.2.17.2006_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.17.2006/karing_1.2.17.2006_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.17.2006/karing_1.2.17.2006_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.17.2006/karing_1.2.17.2006_android_arm64-v8a.apk",
+        "version": "v1.2.18",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.18.2101/karing_1.2.18.2101_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.18.2101/karing_1.2.18.2101_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.18.2101/karing_1.2.18.2101_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.18.2101/karing_1.2.18.2101_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
