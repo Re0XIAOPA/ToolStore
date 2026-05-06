@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/5/2026, 5:19:03 AM
+// 最后更新时间: 5/6/2026, 5:29:13 AM
 
 const downloadLinks = {
     "v2box": {
@@ -19,9 +19,9 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "gui.for.singbox": {
-        "version": "v1.23.2",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.23.2/GUI.for.SingBox-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.23.2/GUI.for.SingBox-linux-amd64.zip",
+        "version": "v1.24.0",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.24.0/GUI.for.SingBox-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.24.0/GUI.for.SingBox-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
@@ -83,9 +83,9 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "gui.for.clash": {
-        "version": "v1.23.2",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.23.2/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.23.2/GUI.for.Clash-linux-amd64.zip",
+        "version": "v1.24.0",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.24.0/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.24.0/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
@@ -112,11 +112,11 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "clashmi": {
-        "version": "v1.0.21",
-        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.21.703/clashmi_1.0.21.703_windows_x64.exe",
-        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.21.703/clashmi_1.0.21.703_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.21.703/clashmi_1.0.21.703_linux_amd64.deb",
-        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.21.703/clashmi_1.0.21.703_android_arm64-v8a.apk",
+        "version": "v1.0.22",
+        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.22.802/clashmi_1.0.22.802_windows_x64.exe",
+        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.22.802/clashmi_1.0.22.802_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.22.802/clashmi_1.0.22.802_linux_amd64.deb",
+        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.22.802/clashmi_1.0.22.802_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/clashmi",
         "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
         "iosPrice": "Free"
