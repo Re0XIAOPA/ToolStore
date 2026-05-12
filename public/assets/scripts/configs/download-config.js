@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/11/2026, 6:03:05 AM
+// 最后更新时间: 5/12/2026, 5:38:04 AM
 
 const downloadLinks = {
     "v2box": {
@@ -30,10 +30,10 @@ const downloadLinks = {
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.20.4",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.20.4/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.20.4/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.20.4/v2rayN-linux-arm64.deb",
+        "version": "v7.21.3",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.21.3/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.21.3/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.21.3/v2rayN-linux-rhel-riscv64.rpm",
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
@@ -51,10 +51,10 @@ const downloadLinks = {
         "github": "https://github.com/libnyanpasu/clash-nyanpasu"
     },
     "mihomo party": {
-        "version": "v1.9.4",
-        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.4/clash-party-windows-1.9.4-x64-setup.exe",
-        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.4/clash-party-macos-1.9.4-arm64.pkg",
-        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.4/clash-party-linux-1.9.4-amd64.deb",
+        "version": "v1.9.5",
+        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.5/clash-party-windows-1.9.5-x64-setup.exe",
+        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.5/clash-party-macos-1.9.5-arm64.pkg",
+        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.5/clash-party-linux-1.9.5-amd64.deb",
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
@@ -68,8 +68,8 @@ const downloadLinks = {
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
-        "version": "v2.0.18",
-        "android": "https://github.com/2dust/v2rayNG/releases/download/2.0.18/v2rayNG_2.0.18-fdroid_universal.apk",
+        "version": "v2.1.7",
+        "android": "https://github.com/2dust/v2rayNG/releases/download/2.1.7/v2rayNG_2.1.7-fdroid_universal.apk",
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
@@ -112,11 +112,11 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "clashmi": {
-        "version": "v1.0.22",
-        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.22.802/clashmi_1.0.22.802_windows_x64.exe",
-        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.22.802/clashmi_1.0.22.802_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.22.802/clashmi_1.0.22.802_linux_amd64.deb",
-        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.22.802/clashmi_1.0.22.802_android_arm64-v8a.apk",
+        "version": "v1.0.23",
+        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.23.904/clashmi_1.0.23.904_windows_x64.exe",
+        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.23.904/clashmi_1.0.23.904_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.23.904/clashmi_1.0.23.904_linux_amd64.deb",
+        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.23.904/clashmi_1.0.23.904_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/clashmi",
         "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
         "iosPrice": "Free"
