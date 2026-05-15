@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/14/2026, 5:51:54 AM
+// 最后更新时间: 5/15/2026, 5:54:37 AM
 
 const downloadLinks = {
     "v2box": {
@@ -122,7 +122,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "shadowrocket": {
-        "version": "v2.2.80",
+        "version": "v2.2.81",
         "ios": "https://apps.apple.com/us/app/shadowrocket/id932747118",
         "iosPrice": "$2.99"
     },
