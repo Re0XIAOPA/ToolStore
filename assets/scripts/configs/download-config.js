@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/16/2026, 5:31:00 AM
+// 最后更新时间: 5/17/2026, 5:52:36 AM
 
 const downloadLinks = {
     "v2box": {
@@ -19,9 +19,9 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "gui.for.singbox": {
-        "version": "v1.24.0",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.24.0/GUI.for.SingBox-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.24.0/GUI.for.SingBox-linux-amd64.zip",
+        "version": "v1.24.1",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.24.1/GUI.for.SingBox-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.24.1/GUI.for.SingBox-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
@@ -58,8 +58,8 @@ const downloadLinks = {
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
-        "version": "v2.11.27",
-        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.27/cmfa-2.11.27-meta-universal-release.apk",
+        "version": "v2.11.28",
+        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.28/cmfa-2.11.28-meta-universal-release.apk",
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
@@ -83,9 +83,9 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "gui.for.clash": {
-        "version": "v1.24.0",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.24.0/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.24.0/GUI.for.Clash-linux-amd64.zip",
+        "version": "v1.24.1",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.24.1/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.24.1/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
