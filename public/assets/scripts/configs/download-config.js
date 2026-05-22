@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/21/2026, 6:14:38 AM
+// 最后更新时间: 5/22/2026, 6:06:40 AM
 
 const downloadLinks = {
     "v2box": {
@@ -30,10 +30,10 @@ const downloadLinks = {
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.21.3",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.21.3/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.21.3/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.21.3/v2rayN-linux-rhel-riscv64.rpm",
+        "version": "v7.22.2",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.22.2/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.22.2/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.22.2/v2rayN-linux-arm64.deb",
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
@@ -127,7 +127,7 @@ const downloadLinks = {
         "iosPrice": "$2.99"
     },
     "quantumultx": {
-        "version": "v1.5.5",
+        "version": "v1.6.0",
         "ios": "https://apps.apple.com/us/app/quantumult-x/id1443988620",
         "iosPrice": "$9.99"
     },
