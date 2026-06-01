@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 5/31/2026, 6:24:25 AM
+// 最后更新时间: 6/1/2026, 7:05:23 AM
 
 const downloadLinks = {
     "v2box": {
@@ -30,10 +30,10 @@ const downloadLinks = {
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.22.3",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.22.3/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.22.3/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.22.3/v2rayN-linux-arm64.deb",
+        "version": "v7.22.4",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.22.4/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.22.4/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.22.4/v2rayN-linux-arm64.deb",
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
@@ -58,8 +58,8 @@ const downloadLinks = {
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
-        "version": "v2.11.28",
-        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.28/cmfa-2.11.28-meta-universal-release.apk",
+        "version": "v2.11.29",
+        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.29/cmfa-2.11.29-meta-universal-release.apk",
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
@@ -68,8 +68,8 @@ const downloadLinks = {
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
-        "version": "v2.1.8",
-        "android": "https://github.com/2dust/v2rayNG/releases/download/2.1.8/v2rayNG_2.1.8-fdroid_universal.apk",
+        "version": "v2.2.1",
+        "android": "https://github.com/2dust/v2rayNG/releases/download/2.2.1/v2rayNG_2.2.1-fdroid_universal.apk",
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
