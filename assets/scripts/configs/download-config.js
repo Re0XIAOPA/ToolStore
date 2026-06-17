@@ -1,9 +1,9 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 6/16/2026, 7:32:16 AM
+// 最后更新时间: 6/17/2026, 7:18:27 AM
 
 const downloadLinks = {
     "v2box": {
-        "version": "v9.8.9",
+        "version": "v10.0.8",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
         "iosPrice": "Free"
@@ -68,8 +68,8 @@ const downloadLinks = {
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
-        "version": "v2.2.3",
-        "android": "https://github.com/2dust/v2rayNG/releases/download/2.2.3/v2rayNG_2.2.3-fdroid_universal.apk",
+        "version": "v2.2.4",
+        "android": "https://github.com/2dust/v2rayNG/releases/download/2.2.4/v2rayNG_2.2.4-fdroid_universal.apk",
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
