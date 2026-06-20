@@ -1,9 +1,9 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 6/19/2026, 7:16:53 AM
+// 最后更新时间: 6/20/2026, 6:20:43 AM
 
 const downloadLinks = {
     "v2box": {
-        "version": "v10.1.1",
+        "version": "v10.1.2",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
         "iosPrice": "Free"
