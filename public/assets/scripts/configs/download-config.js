@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 6/21/2026, 6:55:59 AM
+// 最后更新时间: 6/22/2026, 7:23:48 AM
 
 const downloadLinks = {
     "v2box": {
@@ -19,9 +19,9 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "gui.for.singbox": {
-        "version": "v1.25.2",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.2/GUI.for.SingBox-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.2/GUI.for.SingBox-linux-amd64.zip",
+        "version": "v1.25.3",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.3/GUI.for.SingBox-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.3/GUI.for.SingBox-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
@@ -51,10 +51,10 @@ const downloadLinks = {
         "github": "https://github.com/libnyanpasu/clash-nyanpasu"
     },
     "mihomo party": {
-        "version": "v1.9.5",
-        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.5/clash-party-windows-1.9.5-x64-setup.exe",
-        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.5/clash-party-macos-1.9.5-arm64.pkg",
-        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.5/clash-party-linux-1.9.5-amd64.deb",
+        "version": "v1.9.6",
+        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.6/clash-party-windows-1.9.6-x64-setup.exe",
+        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.6/clash-party-macos-1.9.6-arm64.pkg",
+        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.9.6/clash-party-linux-1.9.6-amd64.deb",
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
@@ -68,8 +68,8 @@ const downloadLinks = {
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
-        "version": "v2.2.4",
-        "android": "https://github.com/2dust/v2rayNG/releases/download/2.2.4/v2rayNG_2.2.4-fdroid_universal.apk",
+        "version": "v2.2.5",
+        "android": "https://github.com/2dust/v2rayNG/releases/download/2.2.5/v2rayNG_2.2.5-fdroid_universal.apk",
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
@@ -83,9 +83,9 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "gui.for.clash": {
-        "version": "v1.25.2",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.25.2/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.25.2/GUI.for.Clash-linux-amd64.zip",
+        "version": "v1.25.3",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.25.3/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.25.3/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
@@ -97,8 +97,9 @@ const downloadLinks = {
         "github": "https://github.com/chen08209/FlClash"
     },
     "v2rayu": {
-        "version": "v4.2.8",
-        "mac": "https://github.com/yanue/V2rayU/releases/download/v4.2.8/V2rayU-arm64.dmg",
+        "version": "v5.1.0",
+        "windows": "https://github.com/yanue/V2rayU/releases/download/v5.1.0/V2rayU-dSYM.zip",
+        "mac": "https://github.com/yanue/V2rayU/releases/download/v5.1.0/V2rayU-arm64.dmg",
         "github": "https://github.com/yanue/V2rayU"
     },
     "karing": {
