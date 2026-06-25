@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 6/24/2026, 6:11:25 AM
+// 最后更新时间: 6/25/2026, 6:07:04 AM
 
 const downloadLinks = {
     "v2box": {
@@ -103,11 +103,11 @@ const downloadLinks = {
         "github": "https://github.com/yanue/V2rayU"
     },
     "karing": {
-        "version": "v1.2.19",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.19.2209/karing_1.2.19.2209_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.19.2209/karing_1.2.19.2209_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.19.2209/karing_1.2.19.2209_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.19.2209/karing_1.2.19.2209_android_arm64-v8a.apk",
+        "version": "v1.2.20",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.20.2308/karing_1.2.20.2308_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.20.2308/karing_1.2.20.2308_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.20.2308/karing_1.2.20.2308_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.20.2308/karing_1.2.20.2308_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
@@ -143,7 +143,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "streisand": {
-        "version": "v1.6.71",
+        "version": "v1.6.72",
         "ios": "https://apps.apple.com/us/app/streisand/id6450534064",
         "iosPrice": "Free"
     },
