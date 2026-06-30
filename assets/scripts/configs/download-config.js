@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 6/29/2026, 6:54:51 AM
+// 最后更新时间: 6/30/2026, 6:17:43 AM
 
 const downloadLinks = {
     "v2box": {
@@ -19,9 +19,9 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "gui.for.singbox": {
-        "version": "v1.25.3",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.3/GUI.for.SingBox-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.3/GUI.for.SingBox-linux-amd64.zip",
+        "version": "v1.25.4",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.4/GUI.for.SingBox-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.4/GUI.for.SingBox-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
@@ -79,13 +79,12 @@ const downloadLinks = {
         "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.14/sing-box_1.13.14_linux_amd64.deb",
         "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.14/SFA-1.13.14-legacy-android-5-universal.apk",
         "github": "https://github.com/SagerNet/sing-box",
-        "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168",
-        "iosPrice": "Free"
+        "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
     "gui.for.clash": {
-        "version": "v1.25.3",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.25.3/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.25.3/GUI.for.Clash-linux-amd64.zip",
+        "version": "v1.25.4",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.25.4/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.25.4/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
@@ -104,20 +103,20 @@ const downloadLinks = {
     },
     "karing": {
         "version": "v1.2.21",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.21.2402/karing_1.2.21.2402_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.21.2402/karing_1.2.21.2402_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.21.2402/karing_1.2.21.2402_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.21.2402/karing_1.2.21.2402_android_arm64-v8a.apk",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.21.2403/karing_1.2.21.2403_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.21.2403/karing_1.2.21.2403_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.21.2403/karing_1.2.21.2403_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.21.2403/karing_1.2.21.2403_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
     },
     "clashmi": {
         "version": "v1.0.26",
-        "windows": "https://github.com/KaringX/clashmi/releases/download/1.0.26.1200/clashmi_1.0.26.1200_windows_x64.exe",
-        "mac": "https://github.com/KaringX/clashmi/releases/download/1.0.26.1200/clashmi_1.0.26.1200_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/clashmi/releases/download/1.0.26.1200/clashmi_1.0.26.1200_linux_amd64.deb",
-        "android": "https://github.com/KaringX/clashmi/releases/download/1.0.26.1200/clashmi_1.0.26.1200_android_arm64-v8a.apk",
+        "windows": "https://github.com/KaringX/clashmi/releases/download/1.0.26.1201/clashmi_1.0.26.1201_windows_x64.exe",
+        "mac": "https://github.com/KaringX/clashmi/releases/download/1.0.26.1201/clashmi_1.0.26.1201_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/clashmi/releases/download/1.0.26.1201/clashmi_1.0.26.1201_linux_amd64.deb",
+        "android": "https://github.com/KaringX/clashmi/releases/download/1.0.26.1201/clashmi_1.0.26.1201_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/clashmi",
         "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
         "iosPrice": "Free"
