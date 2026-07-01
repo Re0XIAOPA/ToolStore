@@ -1,9 +1,9 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 6/30/2026, 6:17:43 AM
+// 最后更新时间: 7/1/2026, 6:26:24 AM
 
 const downloadLinks = {
     "v2box": {
-        "version": "v10.1.2",
+        "version": "v10.1.3",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
         "iosPrice": "Free"
@@ -103,10 +103,10 @@ const downloadLinks = {
     },
     "karing": {
         "version": "v1.2.21",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.21.2403/karing_1.2.21.2403_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.21.2403/karing_1.2.21.2403_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.21.2403/karing_1.2.21.2403_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.21.2403/karing_1.2.21.2403_android_arm64-v8a.apk",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.21.2405/karing_1.2.21.2405_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.21.2405/karing_1.2.21.2405_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.21.2405/karing_1.2.21.2405_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.21.2405/karing_1.2.21.2405_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
@@ -142,7 +142,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "streisand": {
-        "version": "v1.6.72",
+        "version": "v1.6.73",
         "ios": "https://apps.apple.com/us/app/streisand/id6450534064",
         "iosPrice": "Free"
     },
