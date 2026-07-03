@@ -1,9 +1,9 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 7/2/2026, 6:04:15 AM
+// 最后更新时间: 7/3/2026, 5:53:25 AM
 
 const downloadLinks = {
     "v2box": {
-        "version": "v10.1.3",
+        "version": "v10.1.4",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
         "iosPrice": "Free"
@@ -63,8 +63,8 @@ const downloadLinks = {
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
-        "version": "v2.32.2",
-        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.32.2/mobile-universal-release.apk",
+        "version": "v2.32.3",
+        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.32.3/mobile-universal-release.apk",
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
@@ -103,10 +103,10 @@ const downloadLinks = {
     },
     "karing": {
         "version": "v1.2.21",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.21.2406/karing_1.2.21.2406_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.21.2406/karing_1.2.21.2406_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.21.2406/karing_1.2.21.2406_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.21.2406/karing_1.2.21.2406_android_arm64-v8a.apk",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.21.2407/karing_1.2.21.2407_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.21.2407/karing_1.2.21.2407_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.21.2407/karing_1.2.21.2407_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.21.2407/karing_1.2.21.2407_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
