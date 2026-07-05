@@ -197,10 +197,8 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1990;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999999;
   display: none;
 }
 
@@ -210,13 +208,11 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2100;
+  z-index: 999999;
 }
 
 .notice-content {
@@ -239,7 +235,7 @@ main {
 
 .text-label {
   text-align: center;
-  color: var(--text-secondary);
+  color: var(--text);
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 24px;

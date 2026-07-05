@@ -49,6 +49,7 @@
   transition: all 0.3s var(--ease);
   width: 140px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .sponsor-card:hover {
