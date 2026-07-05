@@ -373,7 +373,7 @@ main {
   font-size: 15px;
   display: none;
   text-align: center;
-  z-index: 2200;
+  z-index: 9999999;
   box-shadow: 0 8px 28px rgba(255, 59, 48, 0.3);
 }
 
@@ -400,7 +400,7 @@ main {
   border-radius: var(--radius);
   font-size: 13px;
   display: none;
-  z-index: 2200;
+  z-index: 9999999;
   animation: slideDown 0.3s ease;
   box-shadow: 0 4px 16px rgba(255, 59, 48, 0.25);
 }
