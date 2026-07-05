@@ -1,95 +1,87 @@
-/* 
- * 赞助商标题样式
- * 赞助商部分的标题样式和布局
+/*
+ * Apple Style 赞助商
  */
 .sponsors-title {
   text-align: center;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 600;
   margin-bottom: 20px;
-  color: #7c8aff;
-  width: 100%;
+  color: var(--text);
+  letter-spacing: -0.015em;
 }
 
-/* 
- * 赞助商容器
- * 主要赞助商容器的布局和间距
- */
 .sponsors-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 40px;
-  padding: 0 0 60px 0;
+  gap: 32px;
+  padding: 48px 0 48px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 
- * 主要赞助商容器
- * 顶级赞助商的特殊样式和布局
- */
 .primary-sponsors-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  /* background: rgba(124, 138, 255, 0.1); */
-  border-radius: 16px;
-  margin-bottom: 20px;
+  gap: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
 }
 
-/* 
- * 次要赞助商容器
- * 普通赞助商的布局样式
- */
 .secondary-sponsors-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 14px;
 }
 
-/* 
- * 赞助商卡片基础样式
- * 单个赞助商卡片的基本布局
- */
 .sponsor-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100px;
-  text-align: center;
+  gap: 8px;
+  padding: 20px 16px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s var(--ease);
+  width: 140px;
+  text-decoration: none;
 }
 
-.sponsor-card.primary {
-  transform: scale(1.1);
+.sponsor-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
 }
 
-.sponsor-card.primary .sponsor-name {
-  font-weight: bold;
-}
+.sponsor-card.primary { width: 160px; }
 
-/* 
- * 赞助商头像
- * 赞助商logo的圆形样式和动画效果
- */
 .sponsor-avatar {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease;
+  overflow: hidden;
+  background: var(--bg);
 }
 
-.sponsor-avatar:hover {
-  transform: scale(1.1);
+.sponsor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sponsor-name {
   font-size: 14px;
-  color: #7c8aff;
+  font-weight: 500;
+  color: var(--text);
+  text-align: center;
+}
+
+.sponsor-description {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.4;
 }

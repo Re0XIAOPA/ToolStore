@@ -71,22 +71,10 @@ export function adjustLayout() {
             main.style.paddingTop = requiredPadding + 'px';
         }
         
-        // 调整tools-section的margin-top
+        // 调整tools-section的margin-top (全幅布局不需要section间距)
         const toolsSections = document.querySelectorAll('.tools-section');
         toolsSections.forEach((section, index) => {
-            // 根据屏幕尺寸设置不同的间距
-            let marginTop = 20; // 减少默认间距
-            if (window.innerWidth <= 480) {
-                marginTop = 15;
-            } else if (window.innerWidth <= 767) {
-                marginTop = 15;
-            } else if (window.innerWidth <= 956) {
-                marginTop = 15;
-            }
-            
-            // 第一个section需要额外的顶部间距，但不需要包含整个banner高度
-            // banner已经通过main的padding-top占据了空间，所以这里只需要基础间距
-            section.style.marginTop = marginTop + 'px';
+            section.style.marginTop = '0';
         });
         
         // 调整锚点滚动偏移量
@@ -118,21 +106,10 @@ function adjustLayoutAfterBannerClosed() {
             main.style.paddingTop = (headerHeight + 20) + 'px'; // 减少间距
         }
         
-        // 调整tools-section的margin-top
+        // 调整tools-section的margin-top (全幅布局不需要section间距)
         const toolsSections = document.querySelectorAll('.tools-section');
         toolsSections.forEach((section, index) => {
-            // 根据屏幕尺寸设置不同的间距
-            let marginTop = 20; // 减少默认间距
-            if (window.innerWidth <= 480) {
-                marginTop = 15;
-            } else if (window.innerWidth <= 767) {
-                marginTop = 15;
-            } else if (window.innerWidth <= 956) {
-                marginTop = 15;
-            }
-            
-            // 所有section使用相同的顶部间距
-            section.style.marginTop = marginTop + 'px';
+            section.style.marginTop = '0';
         });
         
         // 调整锚点滚动偏移量

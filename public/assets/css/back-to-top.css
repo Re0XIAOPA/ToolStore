@@ -1,58 +1,59 @@
+/*
+ * Apple Style 返回顶部
+ */
 .back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--card-bg-color);
-    border: 1px solid rgba(124, 138, 255, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1000;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-    visibility: hidden;
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.3s var(--ease);
+  visibility: hidden;
+  border: none;
 }
 
 .back-to-top.visible {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
 
 .back-to-top:hover {
-    background: var(--card-secondary-bg-color);
-    border-color: rgba(124, 138, 255, 0.5);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  background: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .back-to-top:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
 }
 
 .back-to-top svg {
-    width: 24px;
-    height: 24px;
-    color: var(--primary-color);
-    transition: all 0.3s ease;
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
 }
 
 .back-to-top:hover svg {
-    transform: translateY(-2px);
+  color: var(--accent);
 }
 
 @media (max-width: 768px) {
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-    }
-} 
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
