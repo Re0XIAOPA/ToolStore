@@ -1,9 +1,9 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 7/7/2026, 6:13:36 AM
+// 最后更新时间: 7/8/2026, 5:21:02 AM
 
 const downloadLinks = {
     "v2box": {
-        "version": "v10.1.4",
+        "version": "v10.1.5",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
         "iosPrice": "Free"
@@ -58,8 +58,8 @@ const downloadLinks = {
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
-        "version": "v2.11.30",
-        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.30/cmfa-2.11.30-meta-universal-release.apk",
+        "version": "v2.11.31",
+        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.31/cmfa-2.11.31-meta-universal-release.apk",
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
@@ -142,7 +142,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "streisand": {
-        "version": "v1.6.73",
+        "version": "v1.6.74",
         "ios": "https://apps.apple.com/us/app/streisand/id6450534064",
         "iosPrice": "Free"
     },
