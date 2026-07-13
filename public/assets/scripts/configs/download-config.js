@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 7/12/2026, 5:33:26 AM
+// 最后更新时间: 7/13/2026, 5:36:56 AM
 
 const downloadLinks = {
     "v2box": {
@@ -30,10 +30,10 @@ const downloadLinks = {
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.23.3",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.23.3/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.23.3/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.23.3/v2rayN-linux-arm64.deb",
+        "version": "v7.23.4",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.23.4/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.23.4/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.23.4/v2rayN-linux-arm64.deb",
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
@@ -102,11 +102,11 @@ const downloadLinks = {
         "github": "https://github.com/yanue/V2rayU"
     },
     "karing": {
-        "version": "v1.2.21",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.21.2409/karing_1.2.21.2409_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.21.2409/karing_1.2.21.2409_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.21.2409/karing_1.2.21.2409_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.21.2409/karing_1.2.21.2409_android_arm64-v8a.apk",
+        "version": "v1.2.22",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.22.2502/karing_1.2.22.2502_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.22.2502/karing_1.2.22.2502_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.22.2502/karing_1.2.22.2502_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.22.2502/karing_1.2.22.2502_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
