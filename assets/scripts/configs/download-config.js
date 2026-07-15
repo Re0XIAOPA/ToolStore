@@ -1,9 +1,9 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 7/14/2026, 4:55:28 AM
+// 最后更新时间: 7/15/2026, 4:55:33 AM
 
 const downloadLinks = {
     "v2box": {
-        "version": "v10.1.5",
+        "version": "v10.1.6",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
         "iosPrice": "Free"
@@ -142,7 +142,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "streisand": {
-        "version": "v1.6.74",
+        "version": "v1.6.75",
         "ios": "https://apps.apple.com/us/app/streisand/id6450534064",
         "iosPrice": "Free"
     },
