@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 7/16/2026, 5:15:04 AM
+// 最后更新时间: 7/17/2026, 5:13:16 AM
 
 const downloadLinks = {
     "v2box": {
@@ -152,7 +152,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "stash": {
-        "version": "v3.4.0",
+        "version": "v3.4.1",
         "ios": "https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349",
         "iosPrice": "$5.99"
     }
