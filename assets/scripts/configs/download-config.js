@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/2/2026, 5:32:25 AM
+// 最后更新时间: 8/3/2026, 5:47:51 AM
 
 const downloadLinks = {
     "v2box": {
@@ -63,8 +63,8 @@ const downloadLinks = {
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
-        "version": "v2.33.0",
-        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.33.0/mobile-universal-release.apk",
+        "version": "v1.1.1",
+        "android": "https://github.com/getsurfboard/surfboard/releases/download/tv-1.1.1/tv-universal-release.apk",
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
@@ -96,9 +96,9 @@ const downloadLinks = {
         "github": "https://github.com/chen08209/FlClash"
     },
     "v2rayu": {
-        "version": "v5.1.0",
-        "windows": "https://github.com/yanue/V2rayU/releases/download/v5.1.0/V2rayU-dSYM.zip",
-        "mac": "https://github.com/yanue/V2rayU/releases/download/v5.1.0/V2rayU-arm64.dmg",
+        "version": "v5.2.0",
+        "windows": "https://github.com/yanue/V2rayU/releases/download/v5.2.0/V2rayU-dSYM.zip",
+        "mac": "https://github.com/yanue/V2rayU/releases/download/v5.2.0/V2rayU-arm64.dmg",
         "github": "https://github.com/yanue/V2rayU"
     },
     "karing": {
