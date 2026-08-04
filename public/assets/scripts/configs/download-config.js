@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/3/2026, 5:47:51 AM
+// 最后更新时间: 8/4/2026, 5:14:27 AM
 
 const downloadLinks = {
     "v2box": {
@@ -63,8 +63,8 @@ const downloadLinks = {
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
-        "version": "v1.1.1",
-        "android": "https://github.com/getsurfboard/surfboard/releases/download/tv-1.1.1/tv-universal-release.apk",
+        "version": "v2.34.1",
+        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.34.1/mobile-universal-release.apk",
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
@@ -73,11 +73,11 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.13.15",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.13.15/sing-box-1.13.15-windows-amd64-legacy-windows-7.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.13.15/SFM-1.13.15-Universal.pkg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.15/sing-box_1.13.15_linux_amd64.deb",
-        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.15/SFA-1.13.15-legacy-android-5-universal.apk",
+        "version": "v1.13.16",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.13.16/sing-box-1.13.16-windows-amd64-legacy-windows-7.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.13.16/SFM-1.13.16-Universal.pkg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.16/sing-box_1.13.16_linux_amd64.deb",
+        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.16/SFA-1.13.16-legacy-android-5-universal.apk",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
