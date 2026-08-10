@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/9/2026, 3:47:06 AM
+// 最后更新时间: 8/10/2026, 3:53:49 AM
 
 const downloadLinks = {
     "v2box": {
@@ -73,11 +73,11 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.13.16",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.13.16/sing-box-1.13.16-windows-amd64-legacy-windows-7.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.13.16/SFM-1.13.16-Universal.pkg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.16/sing-box_1.13.16_linux_amd64.deb",
-        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.16/SFA-1.13.16-legacy-android-5-universal.apk",
+        "version": "v1.13.18",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.13.18/sing-box-1.13.18-windows-amd64-legacy-windows-7.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.13.18/SFM-1.13.18-Universal.pkg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.18/sing-box_1.13.18_linux_amd64.deb",
+        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.18/SFA-1.13.18-legacy-android-5-universal.apk",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
@@ -113,10 +113,10 @@ const downloadLinks = {
     },
     "clashmi": {
         "version": "v1.0.28",
-        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1404/clashmi_1.0.28.1404_windows_x64.exe",
-        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1404/clashmi_1.0.28.1404_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1404/clashmi_1.0.28.1404_linux_amd64.deb",
-        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1404/clashmi_1.0.28.1404_android_arm64-v8a.apk",
+        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1406/clashmi_1.0.28.1406_windows_x64.exe",
+        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1406/clashmi_1.0.28.1406_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1406/clashmi_1.0.28.1406_linux_amd64.deb",
+        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1406/clashmi_1.0.28.1406_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/clashmi",
         "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
         "iosPrice": "Free"
