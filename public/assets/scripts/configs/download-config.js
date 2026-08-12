@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/11/2026, 3:48:34 AM
+// 最后更新时间: 8/12/2026, 4:07:24 AM
 
 const downloadLinks = {
     "v2box": {
@@ -51,10 +51,10 @@ const downloadLinks = {
         "github": "https://github.com/libnyanpasu/clash-nyanpasu"
     },
     "mihomo party": {
-        "version": "v2.0.0",
-        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.0/clash-party-windows-2.0.0-x64-setup.exe",
-        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.0/clash-party-macos-2.0.0-arm64.pkg",
-        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.0/clash-party-linux-2.0.0-amd64.deb",
+        "version": "v2.0.1",
+        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.1/clash-party-windows-2.0.1-x64-setup.exe",
+        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.1/clash-party-macos-2.0.1-arm64.pkg",
+        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.1/clash-party-linux-2.0.1-amd64.deb",
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
@@ -132,7 +132,7 @@ const downloadLinks = {
         "iosPrice": "$9.99"
     },
     "surge5": {
-        "version": "v5.20.0",
+        "version": "v5.21.1",
         "ios": "https://apps.apple.com/us/app/surge-5/id1442620678",
         "iosPrice": "Free"
     },
