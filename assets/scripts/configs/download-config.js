@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/14/2026, 4:12:00 AM
+// 最后更新时间: 8/15/2026, 2:55:27 AM
 
 const downloadLinks = {
     "v2box": {
@@ -51,10 +51,10 @@ const downloadLinks = {
         "github": "https://github.com/libnyanpasu/clash-nyanpasu"
     },
     "mihomo party": {
-        "version": "v2.0.1",
-        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.1/clash-party-windows-2.0.1-x64-setup.exe",
-        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.1/clash-party-macos-2.0.1-arm64.pkg",
-        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.1/clash-party-linux-2.0.1-amd64.deb",
+        "version": "v2.0.2",
+        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.2/clash-party-windows-2.0.2-x64-setup.exe",
+        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.2/clash-party-macos-2.0.2-arm64.pkg",
+        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.2/clash-party-linux-2.0.2-amd64.deb",
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
@@ -88,11 +88,11 @@ const downloadLinks = {
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
-        "version": "v0.8.94",
-        "windows": "https://github.com/chen08209/FlClash/releases/download/v0.8.94/FlClash-0.8.94-windows-amd64-setup.exe",
-        "mac": "https://github.com/chen08209/FlClash/releases/download/v0.8.94/FlClash-0.8.94-macos-arm64.dmg",
-        "linux": "https://github.com/chen08209/FlClash/releases/download/v0.8.94/FlClash-0.8.94-linux-amd64.deb",
-        "android": "https://github.com/chen08209/FlClash/releases/download/v0.8.94/FlClash-0.8.94-android-arm64-v8a.apk",
+        "version": "v0.8.95",
+        "windows": "https://github.com/chen08209/FlClash/releases/download/v0.8.95/FlClash-0.8.95-windows-amd64-setup.exe",
+        "mac": "https://github.com/chen08209/FlClash/releases/download/v0.8.95/FlClash-0.8.95-macos-arm64.dmg",
+        "linux": "https://github.com/chen08209/FlClash/releases/download/v0.8.95/FlClash-0.8.95-linux-amd64.deb",
+        "android": "https://github.com/chen08209/FlClash/releases/download/v0.8.95/FlClash-0.8.95-android-arm64-v8a.apk",
         "github": "https://github.com/chen08209/FlClash"
     },
     "v2rayu": {
