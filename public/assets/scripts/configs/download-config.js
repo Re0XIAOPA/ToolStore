@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/15/2026, 2:55:27 AM
+// 最后更新时间: 8/16/2026, 2:58:36 AM
 
 const downloadLinks = {
     "v2box": {
@@ -127,7 +127,7 @@ const downloadLinks = {
         "iosPrice": "$2.99"
     },
     "quantumultx": {
-        "version": "v1.6.0",
+        "version": "v1.7.0",
         "ios": "https://apps.apple.com/us/app/quantumult-x/id1443988620",
         "iosPrice": "$9.99"
     },
