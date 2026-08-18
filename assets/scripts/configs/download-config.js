@@ -1,9 +1,9 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 8/17/2026, 3:04:21 AM
+// 最后更新时间: 8/18/2026, 2:59:08 AM
 
 const downloadLinks = {
     "v2box": {
-        "version": "v10.1.6",
+        "version": "v10.1.7",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
         "iosPrice": "Free"
@@ -73,11 +73,11 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.13.18",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.13.18/sing-box-1.13.18-windows-amd64-legacy-windows-7.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.13.18/SFM-1.13.18-Universal.pkg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.18/sing-box_1.13.18_linux_amd64.deb",
-        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.18/SFA-1.13.18-legacy-android-5-universal.apk",
+        "version": "v1.13.19",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.13.19/sing-box-1.13.19-windows-amd64-legacy-windows-7.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.13.19/SFM-1.13.19-Universal.pkg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.13.19/sing-box_1.13.19_linux_amd64.deb",
+        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.13.19/SFA-1.13.19-legacy-android-5-universal.apk",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
@@ -88,11 +88,11 @@ const downloadLinks = {
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
-        "version": "v0.8.95",
-        "windows": "https://github.com/chen08209/FlClash/releases/download/v0.8.95/FlClash-0.8.95-windows-amd64-setup.exe",
-        "mac": "https://github.com/chen08209/FlClash/releases/download/v0.8.95/FlClash-0.8.95-macos-arm64.dmg",
-        "linux": "https://github.com/chen08209/FlClash/releases/download/v0.8.95/FlClash-0.8.95-linux-amd64.deb",
-        "android": "https://github.com/chen08209/FlClash/releases/download/v0.8.95/FlClash-0.8.95-android-arm64-v8a.apk",
+        "version": "v0.8.96",
+        "windows": "https://github.com/chen08209/FlClash/releases/download/v0.8.96/FlClash-0.8.96-windows-amd64-setup.exe",
+        "mac": "https://github.com/chen08209/FlClash/releases/download/v0.8.96/FlClash-0.8.96-macos-arm64.dmg",
+        "linux": "https://github.com/chen08209/FlClash/releases/download/v0.8.96/FlClash-0.8.96-linux-amd64.deb",
+        "android": "https://github.com/chen08209/FlClash/releases/download/v0.8.96/FlClash-0.8.96-android-arm64-v8a.apk",
         "github": "https://github.com/chen08209/FlClash"
     },
     "v2rayu": {
