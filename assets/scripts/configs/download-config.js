@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 9/1/2026, 7:34:38 AM
+// 最后更新时间: 9/2/2026, 6:58:45 AM
 
 const downloadLinks = {
     "v2box": {
@@ -30,10 +30,10 @@ const downloadLinks = {
         "github": "https://github.com/MatsuriDayo/NekoBoxForAndroid"
     },
     "v2rayn": {
-        "version": "v7.24.8",
-        "windows": "https://github.com/2dust/v2rayN/releases/download/7.24.8/v2rayN-windows-64-desktop.zip",
-        "mac": "https://github.com/2dust/v2rayN/releases/download/7.24.8/v2rayN-macos-arm64.dmg",
-        "linux": "https://github.com/2dust/v2rayN/releases/download/7.24.8/v2rayN-linux-arm64.deb",
+        "version": "v7.24.9",
+        "windows": "https://github.com/2dust/v2rayN/releases/download/7.24.9/v2rayN-windows-64-desktop.zip",
+        "mac": "https://github.com/2dust/v2rayN/releases/download/7.24.9/v2rayN-macos-arm64.dmg",
+        "linux": "https://github.com/2dust/v2rayN/releases/download/7.24.9/v2rayN-linux-arm64.deb",
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
@@ -63,8 +63,8 @@ const downloadLinks = {
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
-        "version": "v2.34.3",
-        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.34.3/mobile-universal-release.apk",
+        "version": "v2.34.4",
+        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.34.4/mobile-universal-release.apk",
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
@@ -102,21 +102,21 @@ const downloadLinks = {
         "github": "https://github.com/yanue/V2rayU"
     },
     "karing": {
-        "version": "v1.2.23",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.23.2606/karing_1.2.23.2606_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.23.2606/karing_1.2.23.2606_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.23.2606/karing_1.2.23.2606_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.23.2606/karing_1.2.23.2606_android_arm64-v8a.apk",
+        "version": "v1.2.24",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.24.2709/karing_1.2.24.2709_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.24.2709/karing_1.2.24.2709_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.24.2709/karing_1.2.24.2709_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.24.2709/karing_1.2.24.2709_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
     },
     "clashmi": {
-        "version": "v1.0.28",
-        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1406/clashmi_1.0.28.1406_windows_x64.exe",
-        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1406/clashmi_1.0.28.1406_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1406/clashmi_1.0.28.1406_linux_amd64.deb",
-        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.28.1406/clashmi_1.0.28.1406_android_arm64-v8a.apk",
+        "version": "v1.0.29",
+        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.29.1503/clashmi_1.0.29.1503_windows_x64.exe",
+        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.29.1503/clashmi_1.0.29.1503_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.29.1503/clashmi_1.0.29.1503_linux_amd64.deb",
+        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.29.1503/clashmi_1.0.29.1503_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/clashmi",
         "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
         "iosPrice": "Free"
