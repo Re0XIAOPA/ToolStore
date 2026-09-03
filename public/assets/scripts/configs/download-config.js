@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 9/2/2026, 6:58:45 AM
+// 最后更新时间: 9/3/2026, 6:54:02 AM
 
 const downloadLinks = {
     "v2box": {
@@ -132,7 +132,7 @@ const downloadLinks = {
         "iosPrice": "$9.99"
     },
     "surge5": {
-        "version": "v5.21.1",
+        "version": "v5.22.0",
         "ios": "https://apps.apple.com/us/app/surge-5/id1442620678",
         "iosPrice": "Free"
     },
