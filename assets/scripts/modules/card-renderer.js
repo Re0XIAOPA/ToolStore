@@ -42,6 +42,11 @@ export async function renderAllCardSections() {
         
         // 渲染完成后，初始化卡片
         initCardEvents();
+
+        // 卡片事件会克隆节点重建监听，因此状态徽章必须在这之后挂载
+        import('./uptime-checker.js')
+            .then(module => module.initUptimeBadges())
+            .catch(err => console.error('初始化机场在线状态失败:', err));
         
         // 确保在所有卡片渲染完成后再初始化推荐系统
         setTimeout(() => {

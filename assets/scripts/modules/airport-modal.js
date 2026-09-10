@@ -1,6 +1,7 @@
 // 导入机场配置
 import { airportData } from '../configs/airports-data.js';
 import { allCardData } from '../configs/card-data.js';
+import { buildUptimeBar } from './uptime-checker.js';
 
 // 创建机场详情页
 function createAirportModal(airportName) {
@@ -58,6 +59,7 @@ function createAirportModal(airportName) {
             </div>
             <div class="airport-panel-right">
                 <h3>${airportName}</h3>
+                ${buildUptimeBar(airportName)}
                 <div class="airport-tags">
                     ${details.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                 </div>
