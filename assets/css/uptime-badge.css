@@ -75,6 +75,19 @@
     box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.16);
 }
 
+/* 无法探测 —— 灰色虚线，中性：浏览器策略拦住，没测成，既非在线也非离线 */
+.uptime-badge.is-undetectable {
+    color: #6b7280;
+    background: rgba(242, 242, 247, 0.94);
+    border-color: rgba(107, 114, 128, 0.22);
+    border-style: dashed;
+}
+
+.uptime-badge.is-undetectable .uptime-dot {
+    background: #9ca3af;
+    box-shadow: none;
+}
+
 /* 离线 —— 红色 */
 .uptime-badge.is-offline {
     color: #c0392b;
@@ -138,6 +151,30 @@
     background: #34c759;
     flex: none;
     animation: uptime-blink 2.4s ease-in-out infinite;
+}
+
+.uptime-meta-text {
+    line-height: 1.5;
+}
+
+/* 「网络环境」选择：网页读不到系统代理，只能让用户显式声明 */
+.uptime-netenv {
+    flex: none;
+    padding: 2px 9px;
+    font-family: inherit;
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    background: rgba(120, 120, 128, 0.10);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.uptime-netenv:hover {
+    background: rgba(120, 120, 128, 0.18);
+    color: var(--text);
 }
 
 /* ==============================
@@ -205,6 +242,14 @@
 
 .uptime-bar-blocked .uptime-bar-dot { background: #378add; }
 .uptime-bar-blocked .uptime-bar-text strong { color: #185fa5; }
+
+.uptime-bar-undetectable {
+    background: rgba(120, 120, 128, 0.10);
+    border-color: rgba(107, 114, 128, 0.24);
+}
+
+.uptime-bar-undetectable .uptime-bar-dot { background: #9ca3af; }
+.uptime-bar-undetectable .uptime-bar-text strong { color: #4b5563; }
 
 .uptime-bar-offline {
     background: rgba(255, 59, 48, 0.09);

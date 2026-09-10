@@ -226,7 +226,7 @@ export const paidAirports = {
                     { url: 'assets/images/airports-imgs/CokeCloud.png' }
                 ]
             },
-            link: 'https://test.buyzur.com/#/register?code=F7gWu5IA',
+            link: 'https://cokecloud.net/#/register?code=F7gWu5IA',
             tags: ['稳定', '高速', '性价比']
         },
         {
