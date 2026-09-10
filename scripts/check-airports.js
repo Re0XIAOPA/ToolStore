@@ -2,7 +2,10 @@
  * 机场在线状态检测脚本
  *
  * 从机场配置中读取所有机场的官网链接，逐个发起真实 HTTP 请求，
- * 把结果写入 public/assets/data/airport-status.json 供前端读取。
+ * 把结果写入 public/assets/data/airport-status.json 供前端首屏读取。
+ *
+ * 该产物已在 .gitignore 中排除，不进源码分支：
+ * 正常由 deploy.yml 在构建阶段调用，生成后随构建发布到部署分支。
  *
  * 用法：npm run check-airports
  */

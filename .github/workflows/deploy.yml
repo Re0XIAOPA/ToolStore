@@ -89,6 +89,11 @@ jobs:
             git push origin master
           fi
 
+      # 构建阶段生成机场在线状态数据。
+      # 该产物已在 .gitignore 中排除，不会回写源码分支，只随本次构建发布到部署分支
+      - name: 检测机场在线状态
+        run: npm run check-airports
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

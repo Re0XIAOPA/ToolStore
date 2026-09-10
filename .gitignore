@@ -46,5 +46,10 @@ logs/
 Thumbs.db
 desktop.ini
 
+# 构建产物 —— 机场在线状态数据
+# 由构建流程（npm run check-airports）在部署时生成，不进源码分支，
+# 重新构建后部署分支自动同步。本地预览可手动执行该命令生成
+public/assets/data/
+
 # WorkBuddy 工作记录（仅本地使用，不进版本库）
 .workbuddy/
