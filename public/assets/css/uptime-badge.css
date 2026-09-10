@@ -1,0 +1,219 @@
+/* ==============================
+   机场在线状态徽章
+   ============================== */
+
+.uptime-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 12;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px 3px 7px;
+    border-radius: 980px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--text-secondary);
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: color 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.uptime-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #c7c7cc;
+    flex: none;
+}
+
+/* 检测中 —— 灰色呼吸 */
+.uptime-badge.is-checking .uptime-dot {
+    background: #c7c7cc;
+    animation: uptime-blink 1.2s ease-in-out infinite;
+}
+
+/* 在线 —— 绿色脉冲 */
+.uptime-badge.is-online {
+    color: #1d8a3e;
+}
+
+.uptime-badge.is-online .uptime-dot {
+    background: #34c759;
+    box-shadow: 0 0 0 3px rgba(52, 199, 89, 0.16);
+    animation: uptime-pulse 2.4s ease-in-out infinite;
+}
+
+/* 异常 —— 橙色常亮 */
+.uptime-badge.is-degraded {
+    color: #b25000;
+}
+
+.uptime-badge.is-degraded .uptime-dot {
+    background: #ff9f0a;
+    box-shadow: 0 0 0 3px rgba(255, 159, 10, 0.16);
+}
+
+/* 离线 —— 红色 */
+.uptime-badge.is-offline {
+    color: #c0392b;
+    background: rgba(255, 245, 244, 0.94);
+    border-color: rgba(255, 59, 48, 0.18);
+}
+
+.uptime-badge.is-offline .uptime-dot {
+    background: #ff3b30;
+    box-shadow: 0 0 0 3px rgba(255, 59, 48, 0.14);
+}
+
+/* 未知 */
+.uptime-badge.is-unknown .uptime-dot {
+    background: #c7c7cc;
+}
+
+@keyframes uptime-pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(52, 199, 89, 0.16); }
+    50% { box-shadow: 0 0 0 6px rgba(52, 199, 89, 0); }
+}
+
+@keyframes uptime-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* 离线卡片整体置灰，hover 时恢复便于查看 */
+#proxy .card.proxy-card.airport-offline {
+    opacity: 0.55;
+    filter: grayscale(0.65);
+    box-shadow: none;
+    transition: opacity 0.35s var(--ease), filter 0.35s var(--ease),
+                transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+#proxy .card.proxy-card.airport-offline:hover {
+    opacity: 0.9;
+    filter: grayscale(0.2);
+    box-shadow: var(--shadow-hover);
+}
+
+/* 分区标题下的说明行 */
+.uptime-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.uptime-meta:empty {
+    display: none;
+}
+
+.uptime-meta-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #34c759;
+    flex: none;
+    animation: uptime-blink 2.4s ease-in-out infinite;
+}
+
+/* ==============================
+   详情弹窗里的状态提示条
+   ============================== */
+
+.uptime-bar {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 10px 13px;
+    margin: 12px 0 2px;
+    border-radius: var(--radius-sm);
+    background: rgba(120, 120, 128, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.uptime-bar-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex: none;
+    background: #c7c7cc;
+}
+
+.uptime-bar-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.uptime-bar-text strong {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.uptime-bar-text span {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.uptime-bar-online {
+    background: rgba(52, 199, 89, 0.09);
+    border-color: rgba(52, 199, 89, 0.18);
+}
+
+.uptime-bar-online .uptime-bar-dot { background: #34c759; }
+.uptime-bar-online .uptime-bar-text strong { color: #1d8a3e; }
+
+.uptime-bar-degraded {
+    background: rgba(255, 159, 10, 0.10);
+    border-color: rgba(255, 159, 10, 0.22);
+}
+
+.uptime-bar-degraded .uptime-bar-dot { background: #ff9f0a; }
+.uptime-bar-degraded .uptime-bar-text strong { color: #b25000; }
+
+.uptime-bar-offline {
+    background: rgba(255, 59, 48, 0.09);
+    border-color: rgba(255, 59, 48, 0.22);
+}
+
+.uptime-bar-offline .uptime-bar-dot { background: #ff3b30; }
+.uptime-bar-offline .uptime-bar-text strong { color: #c0392b; }
+
+/* 小屏收窄，避免和推荐飘带挤在一起 */
+@media (max-width: 768px) {
+    .uptime-badge {
+        top: 7px;
+        right: 7px;
+        padding: 2px 7px 2px 5px;
+        font-size: 10px;
+        gap: 4px;
+    }
+
+    .uptime-dot {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* 尊重系统的减弱动效设置 */
+@media (prefers-reduced-motion: reduce) {
+    .uptime-dot,
+    .uptime-meta-dot {
+        animation: none !important;
+    }
+}

@@ -4,6 +4,7 @@
   "description": "Tool Store with automatic GitHub release updates",
   "scripts": {
     "update-downloads": "node scripts/update-downloads.js",
+    "check-airports": "node scripts/check-airports.js",
     "docs:start": "cd docs && npm start",
     "docs:build": "cd docs && npm run build",
     "docs:serve": "cd docs && npm run serve"

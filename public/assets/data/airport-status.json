@@ -1,0 +1,201 @@
+{
+  "updatedAt": "2026-09-10T18:28:21.239Z",
+  "durationMs": 124276,
+  "summary": {
+    "total": 18,
+    "online": 9,
+    "degraded": 1,
+    "offline": 8,
+    "unknown": 0
+  },
+  "airports": [
+    {
+      "name": "奶昔机场",
+      "category": "paid",
+      "tier": "first-tier",
+      "url": "https://naiixi.com",
+      "status": "online",
+      "code": 403,
+      "latency": 187,
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "Dlercloud",
+      "category": "paid",
+      "tier": "first-tier",
+      "url": "https://dler.pro",
+      "status": "online",
+      "code": 403,
+      "latency": 509,
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "iNets",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://inets.io",
+      "status": "online",
+      "code": 403,
+      "latency": 3697,
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "顶级机场",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://xn--mes358a9urctx.com",
+      "status": "offline",
+      "code": null,
+      "latency": 10006,
+      "error": "TIMEOUT",
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "FSCloud",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://dash.fscloud.homes",
+      "status": "online",
+      "code": 200,
+      "latency": 260,
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "狗狗加速",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://go.dginv.click",
+      "status": "online",
+      "code": 200,
+      "latency": 85,
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "快雷GO",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://kuailei.nnbhhxk.com",
+      "status": "offline",
+      "code": null,
+      "latency": 10005,
+      "error": "TIMEOUT",
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "早安云",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://xn--9kqy92aw5h.net",
+      "status": "online",
+      "code": 403,
+      "latency": 576,
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "Needay",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://needaycloud.xyz",
+      "status": "online",
+      "code": 200,
+      "latency": 677,
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "魔法喵MAGICAT",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://magicat.click",
+      "status": "online",
+      "code": 200,
+      "latency": 731,
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "Mitce",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://mitce.net",
+      "status": "offline",
+      "code": null,
+      "latency": 10016,
+      "error": "TIMEOUT",
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "CokeCloud(可乐云)",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://test.buyzur.com",
+      "status": "offline",
+      "code": null,
+      "latency": 1,
+      "error": "ENOTFOUND",
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "星舰云",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://xingclouds.xyz",
+      "status": "online",
+      "code": 200,
+      "latency": 586,
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "云安云",
+      "category": "paid",
+      "tier": "admin-recommend",
+      "url": "https://yay520.com",
+      "status": "offline",
+      "code": null,
+      "latency": 10001,
+      "error": "TIMEOUT",
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "白嫖机场",
+      "category": "free",
+      "tier": "admin-recommend",
+      "url": "https://xn--mesv7f5toqlp.ink",
+      "status": "degraded",
+      "code": 523,
+      "latency": 869,
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "小飞云",
+      "category": "free",
+      "tier": "admin-recommend",
+      "url": "https://xiaofeiyun.sylu.cc",
+      "status": "offline",
+      "code": null,
+      "latency": 10001,
+      "error": "TIMEOUT",
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "华夏联盟 Accelerate",
+      "category": "free",
+      "tier": "admin-recommend",
+      "url": "https://www.huaxia.cyou",
+      "status": "offline",
+      "code": null,
+      "latency": 0,
+      "error": "ENOTFOUND",
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    },
+    {
+      "name": "乐猫机场",
+      "category": "free",
+      "tier": "admin-recommend",
+      "url": "https://a1.lemao888.top",
+      "status": "offline",
+      "code": null,
+      "latency": 10003,
+      "error": "TIMEOUT",
+      "checkedAt": "2026-09-10T18:26:16.963Z"
+    }
+  ]
+}

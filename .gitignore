@@ -45,3 +45,6 @@ logs/
 # 系统文件
 Thumbs.db
 desktop.ini
+
+# WorkBuddy 工作记录（仅本地使用，不进版本库）
+.workbuddy/
