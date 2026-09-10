@@ -36,11 +36,15 @@ const CALIBRATION_TTL = 30 * 60 * 1000;
 const CACHE_KEY = 'airportUptimeLocal';
 
 const STATUS_META = {
-    checking: { text: '检测中', word: '正在检测' },
-    online: { text: '在线', word: '站点可正常访问' },
-    degraded: { text: '异常', word: '站点有响应，但返回了错误' },
-    offline: { text: '离线', word: '站点无法访问' },
-    unknown: { text: '未检测', word: '没有可用的检测数据' }
+    checking: { text: '检测中', word: '正在检测站点可达性' },
+    online: { text: '在线', word: '当前网络可正常访问该站点' },
+    degraded: { text: '异常', word: '站点有响应，但返回了错误状态' },
+    blocked: {
+        text: '无法访问',
+        word: '当前网络环境无法连通该站点（可能需要代理），不代表站点离线'
+    },
+    offline: { text: '离线', word: '各检测点均无法连通该站点，可能已停止服务' },
+    unknown: { text: '未检测', word: '暂无可用的检测数据' }
 };
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -58,7 +62,7 @@ const ERROR_TEXT = {
     EAI_AGAIN: '域名解析失败',
     CERT_HAS_EXPIRED: '证书已过期',
     DEPTH_ZERO_SELF_SIGNED_CERT: '证书不受信任',
-    ROBOTS_DISALLOWED: '站点 robots.txt 不允许自动访问，已跳过'
+    ROBOTS_DISALLOWED: 'robots.txt 限制，未探测'
 };
 
 // name -> 检测结果（服务端结果，本地结果挂在 entry.local 上）
@@ -71,7 +75,7 @@ let metaUpdatedAt = null;
 let calibrating = false;
 let calibrated = false;
 let calibratedFromCache = false;
-let mismatchCount = 0;
+let blockedCount = 0;
 
 /**
  * 读取本地探测结果的缓存，过期或不可用时返回 null
@@ -139,24 +143,34 @@ function formatRelative(iso) {
 /**
  * 最终展示给访客的状态
  *
- * 服务端在境外，看到的是境外视角；访客自己的网络才是真正要用的。
- * 所以两者冲突时以本地结果为准，但把服务端结论保留在提示里。
+ * 两个探测点各有各的局限：服务端看得到状态码，但网络环境和访客不同；
+ * 访客本地反映的是真实体验，但 no-cors 探测拿不到状态码。
+ * 两者合起来才能区分「站点死了」和「你访问不到」这两件完全不同的事。
  */
 function effectiveStatus(entry) {
     if (!entry) return 'unknown';
 
     const local = entry.local;
+    // 还没有本地结果时，先给服务端的结论
     if (!local || local.status === 'unknown') return entry.status;
-    // 服务端数据缺失时，直接用本地结果
-    if (entry.status === 'unknown' || entry.status === 'checking') return local.status;
 
-    if (local.status === 'offline' && entry.status !== 'offline') return 'offline';
-    if (local.status === 'online' && entry.status === 'offline') return 'online';
+    // 本地能连通，对访客来说就是能打开
+    if (local.status === 'online') return 'online';
+
+    // 本地连不上：只有当另一个检测点也连不上，才能说站点离线。
+    // 否则只能说明当前网络环境访问不了（地区限制、需要代理等），站点可能仍在运行
+    if (local.status === 'offline') {
+        return entry.status === 'offline' ? 'offline' : 'blocked';
+    }
+
     return entry.status;
 }
 
 /**
  * 生成徽章的悬浮提示文案
+ *
+ * 统一按「结论 · 本地探测结果 · 服务端检测结果 · 检测时间」组织，
+ * 各检测点的结论逐条列出，不做“谁推翻谁”的判断，标签与文案始终一致。
  */
 function describe(entry) {
     if (!entry) return '暂无检测数据';
@@ -166,39 +180,24 @@ function describe(entry) {
 
     let word = STATUS_META[shown] ? STATUS_META[shown].word : '状态未知';
     // 4xx 说明服务器确实在响应，只是拒绝了自动访问（WAF、反爬、地区限制等）
-    if (shown === 'online' && entry.code >= 400 && entry.code < 500) {
+    if (entry.code >= 400 && entry.code < 500 && (shown === 'online' || shown === 'degraded')) {
         word = '站点已响应，可能限制了自动访问';
     }
 
     const parts = [word];
 
-    // 本地结果推翻了境外结论时，服务端的状态码/耗时只会造成困惑，索性不展示
-    const conflict = local && local.status !== 'unknown' &&
-        entry.status !== 'unknown' && entry.status !== 'checking' &&
-        shown !== entry.status;
-
-    if (!conflict) {
-        // 服务端拿得到状态码，本地探测（no-cors）拿不到，所以两者都提一下
-        if (entry.source !== 'browser' && entry.code) {
-            parts.push(`服务端 HTTP ${entry.code}`);
-        } else if (entry.error) {
-            parts.push(ERROR_TEXT[entry.error] || entry.error);
-        }
-
-        if (typeof entry.latency === 'number' && entry.latency > 0) {
-            parts.push(`服务端响应 ${entry.latency}ms`);
-        }
+    if (local && local.status !== 'unknown') {
+        parts.push(local.status === 'online' ? '本地探测可连通' : '本地探测无法连通');
     }
 
-    // 本地和境外结论不一致时说清楚，避免访客困惑
-    if (local && local.status !== 'unknown') {
-        if (local.status === 'offline' && entry.status !== 'offline' && entry.status !== 'unknown') {
-            parts.push(`你的网络连不上（境外服务端检测为${STATUS_META[entry.status].text}）`);
-        } else if (local.status === 'online' && entry.status === 'offline') {
-            parts.push('你的网络可以打开（境外服务端检测为离线）');
-        } else if (entry.status === 'unknown' || entry.status === 'checking') {
-            parts.push('结果来自当前浏览器实时探测');
+    if (entry.source !== 'browser' && entry.status !== 'unknown' && entry.status !== 'checking') {
+        if (entry.code) {
+            parts.push(`服务端 HTTP ${entry.code}`);
+        } else if (entry.error) {
+            parts.push(`服务端 ${ERROR_TEXT[entry.error] || entry.error}`);
         }
+    } else if (entry.error) {
+        parts.push(ERROR_TEXT[entry.error] || entry.error);
     }
 
     const when = formatRelative((local && local.checkedAt) || entry.checkedAt);
@@ -320,10 +319,10 @@ function renderSectionMeta() {
     if (calibrating) {
         text = '正在按你的网络校准站点状态…';
     } else if (calibrated) {
-        const tail = mismatchCount > 0
-            ? `${mismatchCount} 个站点与境外服务端结果不一致`
-            : '与服务端结果一致';
-        text = `状态已按你的网络校准 · ${tail}${calibratedFromCache ? '（近 30 分钟内的结果）' : ''}`;
+        const tail = blockedCount > 0
+            ? `${blockedCount} 个站点在当前网络下无法连通`
+            : '所列站点均可正常访问';
+        text = `状态已结合当前网络校准 · ${tail}${calibratedFromCache ? '（近 30 分钟内的结果）' : ''}`;
     } else if (metaSource === 'server') {
         text = `站点状态由服务端每 6 小时自动检测 · 更新于${formatRelative(metaUpdatedAt) || '刚刚'}`;
     } else if (metaSource === 'browser') {
@@ -360,12 +359,9 @@ function applyLocalResults(results) {
         setStatus(name, merged);
     });
 
-    // 统计本地和境外结论不一致的数量（服务端没有结论的不算）
-    mismatchCount = Array.from(uptimeMap.values()).filter(e =>
-        e.local && e.local.status !== 'unknown' &&
-        e.status !== 'unknown' && e.status !== 'checking' &&
-        effectiveStatus(e) !== e.status
-    ).length;
+    // 统计「站点可能仍在运行、只是当前网络访问不了」的站点数
+    blockedCount = Array.from(uptimeMap.values())
+        .filter(e => effectiveStatus(e) === 'blocked').length;
 
     calibrated = true;
     renderSectionMeta();
@@ -412,7 +408,7 @@ export async function initUptimeBadges() {
     calibrating = false;
     calibrated = false;
     calibratedFromCache = false;
-    mismatchCount = 0;
+    blockedCount = 0;
 
     cards.forEach(card => {
         const title = card.querySelector('.card-title');

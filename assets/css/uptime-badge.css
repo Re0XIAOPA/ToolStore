@@ -63,6 +63,18 @@
     box-shadow: 0 0 0 3px rgba(255, 159, 10, 0.16);
 }
 
+/* 无法访问 —— 蓝色，中性提示：站点可能仍在运行，只是当前网络连不上 */
+.uptime-badge.is-blocked {
+    color: #185fa5;
+    background: rgba(230, 241, 251, 0.94);
+    border-color: rgba(24, 95, 165, 0.18);
+}
+
+.uptime-badge.is-blocked .uptime-dot {
+    background: #378add;
+    box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.16);
+}
+
 /* 离线 —— 红色 */
 .uptime-badge.is-offline {
     color: #c0392b;
@@ -185,6 +197,14 @@
 
 .uptime-bar-degraded .uptime-bar-dot { background: #ff9f0a; }
 .uptime-bar-degraded .uptime-bar-text strong { color: #b25000; }
+
+.uptime-bar-blocked {
+    background: rgba(55, 138, 221, 0.09);
+    border-color: rgba(55, 138, 221, 0.22);
+}
+
+.uptime-bar-blocked .uptime-bar-dot { background: #378add; }
+.uptime-bar-blocked .uptime-bar-text strong { color: #185fa5; }
 
 .uptime-bar-offline {
     background: rgba(255, 59, 48, 0.09);
