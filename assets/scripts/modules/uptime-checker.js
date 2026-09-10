@@ -53,9 +53,11 @@ const STATUS_URL = 'assets/data/airport-status.json';
 
 // 关掉后只用服务端数据，不再用访客网络重测
 const ENABLE_LOCAL_CALIBRATION = true;
-// 本地探测的超时时间。走代理时握手更慢，给足 8 秒，减少「代理慢 → 误判超时」
-const PROBE_TIMEOUT = 8000;
-// 失败后重试次数与两次尝试之间的间隔：单次抖动不该被判成不可达
+// 本地探测的超时时间：4 秒。健康站点通常在 1 秒内就有响应，走代理也只是稍慢；
+// 只有「超时」才会重试一次，所以一个慢站累计仍有约 9 秒耐心（4 + 1.2 + 4），
+// 比原来「单次等 8 秒」更宽容，而真正连不上的站点能更快收敛（原来 8 + 1.2 + 8 ≈ 17 秒）
+const PROBE_TIMEOUT = 4000;
+// 失败后重试次数与两次尝试之间的间隔
 const PROBE_RETRY = 1;
 const RETRY_GAP_MS = 1200;
 // 并发数。每个站点只会收到 1 个 HEAD 请求，谈不上压力，
@@ -67,6 +69,15 @@ const PROBE_GAP_MS = 200;
 const STALE_MS = 26 * 60 * 60 * 1000;
 // 等首屏渲染完再开始本地探测，避免和图片等资源抢带宽
 const CALIBRATION_DELAY = 800;
+// 用 requestIdleCallback 排队时的最长等待上限。
+// 注意这是「兜底上限」而非固定延迟：页面空闲就立刻跑，一直忙才等到这里
+const IDLE_TIMEOUT_MS = 1200;
+// 本地探测要不要覆盖 robots.txt 禁止自动访问的站点
+//
+// robots.txt 约束的是「爬虫」，而本地探测是访客自己浏览器发起的一次 HEAD，
+// 和用户手动打开网站没有区别，不属于爬虫行为。对访客来说，能看到真实状态
+// 远比一句「未检测」有用，所以这里默认照测；服务端那个 bot 仍严格遵守 robots.txt。
+const PROBE_ROBOTS_BLOCKED_SITES = true;
 // 本地探测结果在浏览器里的缓存时长，避免刷新一次就重打一遍所有站点
 const CALIBRATION_TTL = 30 * 60 * 1000;
 const CACHE_KEY = 'airportUptimeLocal';
@@ -141,6 +152,8 @@ let networkDown = false;
 let allUnreachable = false;
 // 用户声明的网络环境，仅用于校准文案
 let netEnv = 'auto';
+// 校准进度，用于「正在校准 x/y」的提示
+let calibrationProgress = { done: 0, total: 0 };
 
 /**
  * 读取本地探测结果的缓存，过期或不可用时返回 null
@@ -323,10 +336,7 @@ async function probeFromBrowser(origin) {
     let lastError = 'NETWORK_ERROR';
     let lastLatency = null;
 
-    // 失败重试一次：偶发抖动（尤其代理握手的第一次连接）不该直接判不可达
     for (let attempt = 0; attempt <= PROBE_RETRY; attempt++) {
-        if (attempt > 0) await sleep(RETRY_GAP_MS);
-
         const started = performance.now();
         const result = await probeOnce(`${origin}/?_uptime=${Date.now()}`);
         lastLatency = Math.round(performance.now() - started);
@@ -339,7 +349,13 @@ async function probeFromBrowser(origin) {
                 checkedAt
             };
         }
+
         lastError = result.name === 'AbortError' ? 'TIMEOUT' : 'NETWORK_ERROR';
+
+        // 只有超时才值得重试：DNS 解析不了、连接被拒、被策略拦截都是确定性结果，
+        // 隔一秒再来一次基本还是失败，白白多等一轮
+        if (lastError !== 'TIMEOUT') break;
+        if (attempt < PROBE_RETRY) await sleep(RETRY_GAP_MS);
     }
 
     return {
@@ -530,7 +546,10 @@ function renderSectionMeta() {
 
     let text;
     if (calibrating) {
-        text = '正在按你的网络校准站点状态…';
+        const { done, total } = calibrationProgress;
+        text = total
+            ? `正在按你的网络校准站点状态… ${done}/${total}`
+            : '正在按你的网络校准站点状态…';
     } else if (calibrated) {
         let tail;
         if (networkDown) {
@@ -577,45 +596,87 @@ function renderSectionMeta() {
 function scheduleCalibration() {
     const run = () => { calibrate(); };
     if (typeof requestIdleCallback === 'function') {
-        requestIdleCallback(run, { timeout: 3000 });
+        requestIdleCallback(run, { timeout: IDLE_TIMEOUT_MS });
     } else {
         setTimeout(run, CALIBRATION_DELAY);
     }
 }
 
 /**
- * 把本地探测结果合并进检测结果并刷新徽章
- * @param {Object} results name -> 本地探测结果
+ * 把某个站点的本地结果合并进检测结果，并立刻刷新它的徽章
+ *
+ * 逐站刷新（而不是等全部跑完再一起刷）是体感上的关键：一轮校准里快站 1 秒内就有
+ * 结论，慢站可能要 9 秒；一次性的批量刷新会让用户在前几秒什么都看不到。
  */
-function applyLocalResults(results) {
-    badgeMap.forEach((_, name) => {
-        const base = uptimeMap.get(name) || { name, status: 'unknown' };
-        const merged = results[name] ? { ...base, local: results[name] } : base;
-        uptimeMap.set(name, merged);
-        setStatus(name, merged);
-    });
+function mergeLocalResult(name, local) {
+    const base = uptimeMap.get(name) || { name, status: 'unknown' };
+    const merged = { ...base, local };
+    uptimeMap.set(name, merged);
+    setStatus(name, merged);
+}
 
+/**
+ * 重算分区说明用到的计数
+ */
+function refreshCalibrationSummary() {
     const all = Array.from(uptimeMap.values());
 
     // 「站点可能仍在运行、只是当前网络访问不了」的站点数
     blockedCount = all.filter(e => effectiveStatus(e) === 'blocked').length;
 
-    // 真正测出去的结果里，一个都没连通 —— 多半是本机代理/VPN 的问题
+    // 真正测出去的结果里一个都没连通 —— 多半是本机代理/VPN 的问题
     const probed = all.filter(e => e.local
         && (e.local.status === 'online' || e.local.status === 'offline'));
     const reachable = probed.filter(e => e.local.status === 'online').length;
     allUnreachable = !networkDown && probed.length > 0 && reachable === 0;
+}
 
+/**
+ * 批量套用一组本地结果（读取 30 分钟缓存时使用）
+ * @param {Object} results name -> 本地探测结果
+ */
+function applyLocalResults(results) {
+    badgeMap.forEach((_, name) => {
+        if (results[name]) mergeLocalResult(name, results[name]);
+    });
+
+    refreshCalibrationSummary();
     calibrated = true;
     renderSectionMeta();
 }
 
 /**
- * 用访客自己的网络重测所有机场，并覆盖徽章
+ * 判断某个站点要不要做本地探测
+ *
+ * 只有拿不到可用链接时才跳过（没法构造请求）。robots.txt 禁止自动访问的服务端站点
+ * 默认仍然探测：那是访客自己浏览器的请求，不是爬虫，让用户看到状态更有意义。
+ */
+function localProbeTarget(name) {
+    const base = uptimeMap.get(name);
+    if (!PROBE_ROBOTS_BLOCKED_SITES && base && base.error === 'ROBOTS_DISALLOWED') {
+        return { skip: true };
+    }
+
+    const item = airportData.find(a => a.name === name);
+    const origin = item ? getOrigin(item.link) : null;
+    if (!origin) return { skip: true };
+
+    return { skip: false, origin };
+}
+
+/**
+ * 用访客自己的网络重测所有机场，结果逐站刷新到对应卡片上
  */
 async function calibrate() {
     if (calibrating) return;
     calibrating = true;
+    calibrated = false;
+
+    const names = Array.from(badgeMap.keys());
+    const results = {};
+
+    // 先亮出进度，比「转圈几十秒后一起变」好得多
+    calibrationProgress = { done: 0, total: names.length };
     renderSectionMeta();
 
     // 先确认本机能不能上网，再逐站探测：
@@ -623,27 +684,36 @@ async function calibrate() {
     const baseline = await probeNetworkBaseline();
     networkDown = !baseline.ok;
 
-    const names = Array.from(badgeMap.keys());
-    const results = {};
-
     if (networkDown) {
         names.forEach(name => {
-            results[name] = {
+            const local = {
                 status: 'undetectable',
                 error: baseline.error === 'DEVICE_OFFLINE' ? 'DEVICE_OFFLINE' : 'DEVICE_NETWORK',
                 source: 'browser',
                 checkedAt: baseline.checkedAt
             };
+            results[name] = local;
+            mergeLocalResult(name, local);
         });
+        calibrationProgress = { done: names.length, total: names.length };
     } else {
         let cursor = 0;
         const runners = Array.from({ length: Math.min(CONCURRENCY, names.length) }, async () => {
             while (cursor < names.length) {
                 const name = names[cursor++];
-                await sleep(PROBE_GAP_MS);
-                const item = airportData.find(a => a.name === name);
-                const origin = item ? getOrigin(item.link) : null;
-                results[name] = await probeFromBrowser(origin);
+                const target = localProbeTarget(name);
+
+                if (!target.skip) {
+                    await sleep(PROBE_GAP_MS);
+                    const local = await probeFromBrowser(target.origin);
+                    results[name] = local;
+                    // 每站一完成就刷新，状态一个个亮起来
+                    mergeLocalResult(name, local);
+                }
+
+                calibrationProgress.done++;
+                refreshCalibrationSummary();
+                renderSectionMeta();
             }
         });
 
@@ -652,7 +722,9 @@ async function calibrate() {
 
     saveLocalCache(results);
     calibrating = false;
-    applyLocalResults(results);
+    calibrated = true;
+    refreshCalibrationSummary();
+    renderSectionMeta();
 }
 
 /**
@@ -670,6 +742,7 @@ export async function initUptimeBadges() {
     blockedCount = 0;
     networkDown = false;
     allUnreachable = false;
+    calibrationProgress = { done: 0, total: 0 };
     netEnv = loadNetEnv();
 
     cards.forEach(card => {
