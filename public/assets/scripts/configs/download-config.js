@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 9/13/2026, 7:20:59 AM
+// 最后更新时间: 9/14/2026, 7:36:06 AM
 
 const downloadLinks = {
     "v2box": {
@@ -88,11 +88,11 @@ const downloadLinks = {
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
-        "version": "v0.8.97",
-        "windows": "https://github.com/chen08209/FlClash/releases/download/v0.8.97/FlClash-0.8.97-windows-amd64-setup.exe",
-        "mac": "https://github.com/chen08209/FlClash/releases/download/v0.8.97/FlClash-0.8.97-macos-arm64.dmg",
-        "linux": "https://github.com/chen08209/FlClash/releases/download/v0.8.97/FlClash-0.8.97-linux-amd64.deb",
-        "android": "https://github.com/chen08209/FlClash/releases/download/v0.8.97/FlClash-0.8.97-android-arm64-v8a.apk",
+        "version": "v0.8.98",
+        "windows": "https://github.com/chen08209/FlClash/releases/download/v0.8.98/FlClash-0.8.98-windows-amd64-setup.exe",
+        "mac": "https://github.com/chen08209/FlClash/releases/download/v0.8.98/FlClash-0.8.98-macos-arm64.dmg",
+        "linux": "https://github.com/chen08209/FlClash/releases/download/v0.8.98/FlClash-0.8.98-linux-amd64.deb",
+        "android": "https://github.com/chen08209/FlClash/releases/download/v0.8.98/FlClash-0.8.98-android-arm64-v8a.apk",
         "github": "https://github.com/chen08209/FlClash"
     },
     "v2rayu": {
@@ -132,7 +132,7 @@ const downloadLinks = {
         "iosPrice": "$9.99"
     },
     "surge5": {
-        "version": "v5.22.0",
+        "version": "v5.22.1",
         "ios": "https://apps.apple.com/us/app/surge-5/id1442620678",
         "iosPrice": "Free"
     },
