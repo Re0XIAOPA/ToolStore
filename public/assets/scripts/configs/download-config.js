@@ -1,9 +1,9 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 9/14/2026, 7:45:33 AM
+// 最后更新时间: 9/15/2026, 7:14:27 AM
 
 const downloadLinks = {
     "v2box": {
-        "version": "v10.1.7",
+        "version": "v10.1.8",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
         "iosPrice": "Free"
@@ -58,8 +58,8 @@ const downloadLinks = {
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
-        "version": "v2.11.33",
-        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.33/cmfa-2.11.33-meta-universal-release.apk",
+        "version": "v2.11.34",
+        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.34/cmfa-2.11.34-meta-universal-release.apk",
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
@@ -73,11 +73,11 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.14.0",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0/sing-box-1.14.0-windows-amd64-legacy-windows-7.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0/SFM-1.14.0-Universal.pkg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0/sing-box_1.14.0_linux_amd64.deb",
-        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.14.0/SFA-1.14.0-legacy-android-5-universal.apk",
+        "version": "v1.14.1",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.14.1/sing-box-1.14.1-windows-amd64-legacy-windows-7.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.14.1/SFM-1.14.1-Universal.pkg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.14.1/sing-box_1.14.1_linux_amd64.deb",
+        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.14.1/SFA-1.14.1-legacy-android-5-universal.apk",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
