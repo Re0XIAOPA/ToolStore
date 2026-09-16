@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 9/15/2026, 7:29:48 AM
+// 最后更新时间: 9/16/2026, 7:17:37 AM
 
 const downloadLinks = {
     "v2box": {
@@ -127,7 +127,7 @@ const downloadLinks = {
         "iosPrice": "$2.99"
     },
     "quantumultx": {
-        "version": "v1.7.0",
+        "version": "v1.8.0",
         "ios": "https://apps.apple.com/us/app/quantumult-x/id1443988620",
         "iosPrice": "$9.99"
     },
@@ -147,7 +147,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "npvtunnel": {
-        "version": "v56.2",
+        "version": "v57.0",
         "ios": "https://apps.apple.com/us/app/npv-tunnel/id1629465476",
         "iosPrice": "Free"
     },
