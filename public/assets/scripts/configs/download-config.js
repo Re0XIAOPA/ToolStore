@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 9/19/2026, 7:03:55 AM
+// 最后更新时间: 9/19/2026, 7:12:10 AM
 
 const downloadLinks = {
     "v2box": {
@@ -147,7 +147,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "npvtunnel": {
-        "version": "v57.0",
+        "version": "v57.1",
         "ios": "https://apps.apple.com/us/app/npv-tunnel/id1629465476",
         "iosPrice": "Free"
     },
