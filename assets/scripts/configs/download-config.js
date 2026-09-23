@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 9/22/2026, 7:32:38 AM
+// 最后更新时间: 9/23/2026, 7:35:37 AM
 
 const downloadLinks = {
     "v2box": {
@@ -37,10 +37,10 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayN"
     },
     "clash verge": {
-        "version": "v2.5.2",
-        "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.2/Clash.Verge_2.5.2_x64-setup.exe",
-        "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.2/Clash.Verge_2.5.2_x64.dmg",
-        "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.2/Clash.Verge_2.5.2_amd64.deb",
+        "version": "v2.5.5",
+        "windows": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.5/Clash.Verge_2.5.5_x64-setup.exe",
+        "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.5/Clash.Verge_2.5.5_x64.dmg",
+        "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.5/Clash.Verge_2.5.5_amd64.deb",
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
     },
     "clash nyanpasu": {
