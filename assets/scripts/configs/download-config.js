@@ -1,9 +1,9 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 10/7/2026, 8:24:02 AM
+// 最后更新时间: 10/8/2026, 8:39:59 AM
 
 const downloadLinks = {
     "v2box": {
-        "version": "v10.1.8",
+        "version": "v10.1.9",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
         "iosPrice": "Free"
@@ -45,9 +45,9 @@ const downloadLinks = {
     },
     "clash nyanpasu": {
         "version": "v2.0.0",
-        "windows": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-beta.2/Clash.Nyanpasu_2.0.0-beta.2_fixed-webview-x64-setup.exe",
-        "mac": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-beta.2/Clash.Nyanpasu_2.0.0-beta.2_x64.dmg",
-        "linux": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-beta.2/Clash.Nyanpasu_2.0.0-beta.2_amd64.deb",
+        "windows": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-beta.3/Clash.Nyanpasu_2.0.0-beta.3_fixed-webview-x64-setup.exe",
+        "mac": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-beta.3/Clash.Nyanpasu_2.0.0-beta.3_x64.dmg",
+        "linux": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-beta.3/Clash.Nyanpasu_2.0.0-beta.3_amd64.deb",
         "github": "https://github.com/libnyanpasu/clash-nyanpasu"
     },
     "mihomo party": {
@@ -127,7 +127,7 @@ const downloadLinks = {
         "iosPrice": "$2.99"
     },
     "quantumultx": {
-        "version": "v1.8.0",
+        "version": "v1.8.1",
         "ios": "https://apps.apple.com/us/app/quantumult-x/id1443988620",
         "iosPrice": "$9.99"
     },
