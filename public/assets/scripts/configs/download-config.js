@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 10/14/2026, 7:20:39 AM
+// 最后更新时间: 10/15/2026, 7:00:46 AM
 
 const downloadLinks = {
     "v2box": {
@@ -45,9 +45,9 @@ const downloadLinks = {
     },
     "clash nyanpasu": {
         "version": "v2.0.0",
-        "windows": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-rc.1/Clash.Nyanpasu_2.0.0-rc.1_fixed-webview-x64-setup.exe",
-        "mac": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-rc.1/Clash.Nyanpasu_2.0.0-rc.1_x64.dmg",
-        "linux": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-rc.1/Clash.Nyanpasu_2.0.0-rc.1_amd64.deb",
+        "windows": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-rc.2/Clash.Nyanpasu_2.0.0-rc.2_fixed-webview-x64-setup.exe",
+        "mac": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-rc.2/Clash.Nyanpasu_2.0.0-rc.2_x64.dmg",
+        "linux": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-rc.2/Clash.Nyanpasu_2.0.0-rc.2_amd64.deb",
         "github": "https://github.com/libnyanpasu/clash-nyanpasu"
     },
     "mihomo party": {
@@ -152,7 +152,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "stash": {
-        "version": "v3.6.2",
+        "version": "v3.6.3",
         "ios": "https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349",
         "iosPrice": "$5.99"
     }
