@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 10/18/2026, 7:06:30 AM
+// 最后更新时间: 10/19/2026, 7:32:15 AM
 
 const downloadLinks = {
     "v2box": {
@@ -51,10 +51,10 @@ const downloadLinks = {
         "github": "https://github.com/libnyanpasu/clash-nyanpasu"
     },
     "mihomo party": {
-        "version": "v2.0.3",
-        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.3/clash-party-windows-2.0.3-x64-setup.exe",
-        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.3/clash-party-macos-2.0.3-arm64.pkg",
-        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.3/clash-party-linux-2.0.3-amd64.deb",
+        "version": "v2.0.4",
+        "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.4/clash-party-windows-2.0.4-x64-setup.exe",
+        "mac": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.4/clash-party-macos-2.0.4-arm64.pkg",
+        "linux": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.4/clash-party-linux-2.0.4-amd64.deb",
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
