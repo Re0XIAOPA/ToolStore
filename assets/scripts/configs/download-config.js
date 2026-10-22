@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 10/21/2026, 7:20:34 AM
+// 最后更新时间: 10/22/2026, 7:21:23 AM
 
 const downloadLinks = {
     "v2box": {
@@ -19,9 +19,9 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "gui.for.singbox": {
-        "version": "v1.27.0",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.27.0/GUI.for.SingBox-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.27.0/GUI.for.SingBox-linux-amd64.zip",
+        "version": "v1.28.1",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.28.1/GUI.for.SingBox-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.28.1/GUI.for.SingBox-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
@@ -58,8 +58,8 @@ const downloadLinks = {
         "github": "https://github.com/mihomo-party-org/mihomo-party"
     },
     "clashmeta": {
-        "version": "v2.11.35",
-        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.35/cmfa-2.11.35-meta-universal-release.apk",
+        "version": "v2.11.36",
+        "android": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.36/cmfa-2.11.36-meta-universal-release.apk",
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
@@ -82,9 +82,9 @@ const downloadLinks = {
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
     "gui.for.clash": {
-        "version": "v1.27.0",
-        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.27.0/GUI.for.Clash-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.27.0/GUI.for.Clash-linux-amd64.zip",
+        "version": "v1.28.1",
+        "windows": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.28.1/GUI.for.Clash-windows-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.Clash/releases/download/v1.28.1/GUI.for.Clash-linux-amd64.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
@@ -152,7 +152,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "stash": {
-        "version": "v3.6.4",
+        "version": "v3.6.5",
         "ios": "https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349",
         "iosPrice": "$5.99"
     }
