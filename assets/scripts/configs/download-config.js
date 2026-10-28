@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 10/27/2026, 7:34:58 AM
+// 最后更新时间: 10/28/2026, 8:06:51 AM
 
 const downloadLinks = {
     "v2box": {
@@ -45,9 +45,9 @@ const downloadLinks = {
     },
     "clash nyanpasu": {
         "version": "v2.0.0",
-        "windows": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-rc.3/Clash.Nyanpasu_979da4bbd_windows-x86_64_symbols.7z",
-        "mac": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-rc.3/Clash.Nyanpasu_2.0.0-rc.3_x64.dmg",
-        "linux": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0-rc.3/Clash.Nyanpasu_2.0.0-rc.3_amd64.deb",
+        "windows": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0/Clash.Nyanpasu_80dc5656f_windows-x86_64_symbols.7z",
+        "mac": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0/Clash.Nyanpasu_2.0.0_x64.dmg",
+        "linux": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0/Clash.Nyanpasu_2.0.0_amd64.deb",
         "github": "https://github.com/libnyanpasu/clash-nyanpasu"
     },
     "mihomo party": {
