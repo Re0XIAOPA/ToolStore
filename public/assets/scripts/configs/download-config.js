@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 10/30/2026, 8:22:35 AM
+// 最后更新时间: 10/31/2026, 8:00:54 AM
 
 const downloadLinks = {
     "v2box": {
@@ -43,13 +43,6 @@ const downloadLinks = {
         "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.8/Clash.Verge_2.5.8_amd64.deb",
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
     },
-    "clash nyanpasu": {
-        "version": "v2.0.0",
-        "windows": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0/Clash.Nyanpasu_80dc5656f_windows-x86_64_symbols.7z",
-        "mac": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0/Clash.Nyanpasu_2.0.0_x64.dmg",
-        "linux": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.0/Clash.Nyanpasu_2.0.0_amd64.deb",
-        "github": "https://github.com/libnyanpasu/clash-nyanpasu"
-    },
     "mihomo party": {
         "version": "v2.0.4",
         "windows": "https://github.com/mihomo-party-org/clash-party/releases/download/v2.0.4/clash-party-windows-2.0.4-x64-setup.exe",
@@ -68,8 +61,8 @@ const downloadLinks = {
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
-        "version": "v2.3.11",
-        "android": "https://github.com/2dust/v2rayNG/releases/download/2.3.11/v2rayNG_2.3.11-fdroid_universal.apk",
+        "version": "v2.3.14",
+        "android": "https://github.com/2dust/v2rayNG/releases/download/2.3.14/v2rayNG_2.3.14-fdroid_universal.apk",
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
@@ -96,9 +89,9 @@ const downloadLinks = {
         "github": "https://github.com/chen08209/FlClash"
     },
     "v2rayu": {
-        "version": "v5.3.2",
-        "windows": "https://github.com/yanue/V2rayU/releases/download/v5.3.2/V2rayU-dSYM.zip",
-        "mac": "https://github.com/yanue/V2rayU/releases/download/v5.3.2/V2rayU-arm64.dmg",
+        "version": "v5.4.0",
+        "windows": "https://github.com/yanue/V2rayU/releases/download/v5.4.0/V2rayU-dSYM.zip",
+        "mac": "https://github.com/yanue/V2rayU/releases/download/v5.4.0/V2rayU-arm64.dmg",
         "github": "https://github.com/yanue/V2rayU"
     },
     "karing": {
