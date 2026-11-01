@@ -1,9 +1,9 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 10/31/2026, 8:12:55 AM
+// 最后更新时间: 11/1/2026, 8:46:14 AM
 
 const downloadLinks = {
     "v2box": {
-        "version": "v10.1.9",
+        "version": "v10.2.0",
         "android": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
         "ios": "https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690",
         "iosPrice": "Free"
@@ -42,6 +42,13 @@ const downloadLinks = {
         "mac": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.8/Clash.Verge_2.5.8_x64.dmg",
         "linux": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.5.8/Clash.Verge_2.5.8_amd64.deb",
         "github": "https://github.com/clash-verge-rev/clash-verge-rev"
+    },
+    "clash nyanpasu": {
+        "version": "v2.0.1",
+        "windows": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.1/Clash.Nyanpasu_518bf4984_windows-x86_64_symbols.7z",
+        "mac": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.1/Clash.Nyanpasu_2.0.1_x64.dmg",
+        "linux": "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v2.0.1/Clash.Nyanpasu_2.0.1_amd64.deb",
+        "github": "https://github.com/libnyanpasu/clash-nyanpasu"
     },
     "mihomo party": {
         "version": "v2.0.4",
