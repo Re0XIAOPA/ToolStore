@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 11/8/2026, 8:47:58 AM
+// 最后更新时间: 11/9/2026, 9:12:14 AM
 
 const downloadLinks = {
     "v2box": {
@@ -96,9 +96,9 @@ const downloadLinks = {
         "github": "https://github.com/chen08209/FlClash"
     },
     "v2rayu": {
-        "version": "v5.4.0",
-        "windows": "https://github.com/yanue/V2rayU/releases/download/v5.4.0/V2rayU-dSYM.zip",
-        "mac": "https://github.com/yanue/V2rayU/releases/download/v5.4.0/V2rayU-arm64.dmg",
+        "version": "v5.4.1",
+        "windows": "https://github.com/yanue/V2rayU/releases/download/v5.4.1/V2rayU-dSYM.zip",
+        "mac": "https://github.com/yanue/V2rayU/releases/download/v5.4.1/V2rayU-arm64.dmg",
         "github": "https://github.com/yanue/V2rayU"
     },
     "karing": {
@@ -112,11 +112,11 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "clashmi": {
-        "version": "v1.0.31",
-        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.31.1703/clashmi_1.0.31.1703_windows_x64.exe",
-        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.31.1703/clashmi_1.0.31.1703_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.31.1703/clashmi_1.0.31.1703_linux_amd64.deb",
-        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.31.1703/clashmi_1.0.31.1703_android_arm64-v8a.apk",
+        "version": "v1.0.32",
+        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.32.1803/clashmi_1.0.32.1803_windows_x64.exe",
+        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.32.1803/clashmi_1.0.32.1803_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.32.1803/clashmi_1.0.32.1803_linux_amd64.deb",
+        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.32.1803/clashmi_1.0.32.1803_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/clashmi",
         "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
         "iosPrice": "Free"
