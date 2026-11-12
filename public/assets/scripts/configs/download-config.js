@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 11/11/2026, 9:04:37 AM
+// 最后更新时间: 11/12/2026, 9:20:53 AM
 
 const downloadLinks = {
     "v2box": {
@@ -21,7 +21,7 @@ const downloadLinks = {
     "gui.for.singbox": {
         "version": "v1.29.0",
         "windows": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.29.0/GUI.for.SingBox-windows-amd64.zip",
-        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.29.0/GUI.for.SingBox-linux-amd64.zip",
+        "linux": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.29.0/GUI.for.SingBox-linux-amd64-v1.zip",
         "github": "https://github.com/GUI-for-Cores/GUI.for.SingBox"
     },
     "nekobox": {
@@ -103,10 +103,10 @@ const downloadLinks = {
     },
     "karing": {
         "version": "v1.2.26",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.26.2927/karing_1.2.26.2927_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.26.2927/karing_1.2.26.2927_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.26.2927/karing_1.2.26.2927_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.26.2927/karing_1.2.26.2927_android_arm64-v8a.apk",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.26.2928/karing_1.2.26.2928_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.26.2928/karing_1.2.26.2928_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.26.2928/karing_1.2.26.2928_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.26.2928/karing_1.2.26.2928_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
@@ -142,7 +142,7 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "streisand": {
-        "version": "v1.7.0",
+        "version": "v1.7.1",
         "ios": "https://apps.apple.com/us/app/streisand/id6450534064",
         "iosPrice": "Free"
     },
