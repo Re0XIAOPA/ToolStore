@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 11/18/2026, 9:56:08 AM
+// 最后更新时间: 11/19/2026, 10:03:00 AM
 
 const downloadLinks = {
     "v2box": {
@@ -88,11 +88,11 @@ const downloadLinks = {
         "github": "https://github.com/GUI-for-Cores/GUI.for.Clash"
     },
     "flclash": {
-        "version": "v0.9.3",
-        "windows": "https://github.com/chen08209/FlClash/releases/download/v0.9.3/FlClash-0.9.3-windows-amd64-setup.exe",
-        "mac": "https://github.com/chen08209/FlClash/releases/download/v0.9.3/FlClash-0.9.3-macos-arm64.dmg",
-        "linux": "https://github.com/chen08209/FlClash/releases/download/v0.9.3/FlClash-0.9.3-linux-amd64.deb",
-        "android": "https://github.com/chen08209/FlClash/releases/download/v0.9.3/FlClash-0.9.3-android-arm64-v8a.apk",
+        "version": "v0.9.4",
+        "windows": "https://github.com/chen08209/FlClash/releases/download/v0.9.4/FlClash-0.9.4-windows-amd64-setup.exe",
+        "mac": "https://github.com/chen08209/FlClash/releases/download/v0.9.4/FlClash-dev-0.9.4-macos-arm64.dmg",
+        "linux": "https://github.com/chen08209/FlClash/releases/download/v0.9.4/FlClash-dev-0.9.4-linux-amd64.deb",
+        "android": "https://github.com/chen08209/FlClash/releases/download/v0.9.4/FlClash-0.9.4-android-arm64-v8a.apk",
         "github": "https://github.com/chen08209/FlClash"
     },
     "v2rayu": {
@@ -103,10 +103,10 @@ const downloadLinks = {
     },
     "karing": {
         "version": "v1.2.26",
-        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.26.2933/karing_1.2.26.2933_windows_x64.exe",
-        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.26.2933/karing_1.2.26.2933_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.26.2933/karing_1.2.26.2933_linux_amd64.deb",
-        "android": "https://github.com/KaringX/karing/releases/download/v1.2.26.2933/karing_1.2.26.2933_android_arm64-v8a.apk",
+        "windows": "https://github.com/KaringX/karing/releases/download/v1.2.26.2934/karing_1.2.26.2934_windows_x64.exe",
+        "mac": "https://github.com/KaringX/karing/releases/download/v1.2.26.2934/karing_1.2.26.2934_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/karing/releases/download/v1.2.26.2934/karing_1.2.26.2934_linux_amd64.deb",
+        "android": "https://github.com/KaringX/karing/releases/download/v1.2.26.2934/karing_1.2.26.2934_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/karing",
         "ios": "https://apps.apple.com/us/app/karing/id6472431552",
         "iosPrice": "Free"
