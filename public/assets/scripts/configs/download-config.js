@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 11/21/2026, 9:27:32 AM
+// 最后更新时间: 11/22/2026, 9:24:51 AM
 
 const downloadLinks = {
     "v2box": {
@@ -63,8 +63,8 @@ const downloadLinks = {
         "github": "https://github.com/MetaCubeX/ClashMetaForAndroid"
     },
     "surfboard": {
-        "version": "v2.35.2",
-        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.35.2/mobile-universal-release.apk",
+        "version": "v2.36.0",
+        "android": "https://github.com/getsurfboard/surfboard/releases/download/mobile-2.36.0/mobile-universal-release.apk",
         "github": "https://github.com/getsurfboard/surfboard"
     },
     "v2rayng": {
@@ -112,11 +112,11 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "clashmi": {
-        "version": "v1.0.32",
-        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.32.1803/clashmi_1.0.32.1803_windows_x64.exe",
-        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.32.1803/clashmi_1.0.32.1803_macos_universal.dmg",
-        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.32.1803/clashmi_1.0.32.1803_linux_amd64.deb",
-        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.32.1803/clashmi_1.0.32.1803_android_arm64-v8a.apk",
+        "version": "v1.0.33",
+        "windows": "https://github.com/KaringX/clashmi/releases/download/v1.0.33.1905/clashmi_1.0.33.1905_windows_x64.exe",
+        "mac": "https://github.com/KaringX/clashmi/releases/download/v1.0.33.1905/clashmi_1.0.33.1905_macos_universal.dmg",
+        "linux": "https://github.com/KaringX/clashmi/releases/download/v1.0.33.1905/clashmi_1.0.33.1905_linux_amd64.deb",
+        "android": "https://github.com/KaringX/clashmi/releases/download/v1.0.33.1905/clashmi_1.0.33.1905_android_arm64-v8a.apk",
         "github": "https://github.com/KaringX/clashmi",
         "ios": "https://apps.apple.com/us/app/clash-mi/id6744321968",
         "iosPrice": "Free"
