@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 11/22/2026, 9:32:50 AM
+// 最后更新时间: 11/23/2026, 10:21:06 AM
 
 const downloadLinks = {
     "v2box": {
@@ -9,11 +9,11 @@ const downloadLinks = {
         "iosPrice": "Free"
     },
     "hiddify": {
-        "version": "v5.5.5",
-        "windows": "https://github.com/hiddify/hiddify-app/releases/download/v5.5.5/Hiddify-Windows-Setup-x64.exe",
-        "mac": "https://github.com/hiddify/hiddify-app/releases/download/v5.5.5/Hiddify-MacOS-Installer.pkg",
-        "linux": "https://github.com/hiddify/hiddify-app/releases/download/v5.5.5/Hiddify-Debian-x64.deb",
-        "android": "https://github.com/hiddify/hiddify-app/releases/download/v5.5.5/Hiddify-Android-universal.apk",
+        "version": "v5.9.15",
+        "windows": "https://github.com/hiddify/hiddify-app/releases/download/v5.9.15/Hiddify-Windows-Setup-x64.exe",
+        "mac": "https://github.com/hiddify/hiddify-app/releases/download/v5.9.15/Hiddify-MacOS-Installer.pkg",
+        "linux": "https://github.com/hiddify/hiddify-app/releases/download/v5.9.15/Hiddify-Debian-x64.deb",
+        "android": "https://github.com/hiddify/hiddify-app/releases/download/v5.9.15/Hiddify-Android-universal.apk",
         "ios": "https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532",
         "github": "https://github.com/hiddify/hiddify-app",
         "iosPrice": "Free"
