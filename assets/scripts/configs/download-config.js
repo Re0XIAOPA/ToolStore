@@ -1,5 +1,5 @@
 // 下载链接配置  全是小写
-// 最后更新时间: 11/26/2026, 10:39:19 AM
+// 最后更新时间: 11/27/2026, 10:41:16 AM
 
 const downloadLinks = {
     "v2box": {
@@ -73,11 +73,11 @@ const downloadLinks = {
         "github": "https://github.com/2dust/v2rayNG"
     },
     "singbox": {
-        "version": "v1.14.4",
-        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.14.4/sing-box-1.14.4-windows-amd64-legacy-windows-7.zip",
-        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.14.4/SFM-1.14.4-Universal.pkg",
-        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.14.4/sing-box_1.14.4_linux_amd64.deb",
-        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.14.4/SFA-1.14.4-legacy-android-5-universal.apk",
+        "version": "v1.14.5",
+        "windows": "https://github.com/SagerNet/sing-box/releases/download/v1.14.5/sing-box-1.14.5-windows-amd64-legacy-windows-7.zip",
+        "mac": "https://github.com/SagerNet/sing-box/releases/download/v1.14.5/SFM-1.14.5-Universal.pkg",
+        "linux": "https://github.com/SagerNet/sing-box/releases/download/v1.14.5/sing-box_1.14.5_linux_amd64.deb",
+        "android": "https://github.com/SagerNet/sing-box/releases/download/v1.14.5/SFA-1.14.5-legacy-android-5-universal.apk",
         "github": "https://github.com/SagerNet/sing-box",
         "ios": "https://apps.apple.com/us/app/sing-box-vt/id6673731168"
     },
@@ -89,10 +89,10 @@ const downloadLinks = {
     },
     "flclash": {
         "version": "v0.9.5",
-        "windows": "https://github.com/chen08209/FlClash/releases/download/v0.9.5/FlClash-0.9.5-windows-amd64-setup.exe",
-        "mac": "https://github.com/chen08209/FlClash/releases/download/v0.9.5/FlClash-0.9.5-macos-arm64.dmg",
-        "linux": "https://github.com/chen08209/FlClash/releases/download/v0.9.5/FlClash-0.9.5-linux-amd64.deb",
-        "android": "https://github.com/chen08209/FlClash/releases/download/v0.9.5/FlClash-0.9.5-android-arm64.apk",
+        "windows": "https://github.com/Vialibrex/FlClash/releases/download/v0.9.5/FlClash-0.9.5-windows-amd64-setup.exe",
+        "mac": "https://github.com/Vialibrex/FlClash/releases/download/v0.9.5/FlClash-0.9.5-macos-arm64.dmg",
+        "linux": "https://github.com/Vialibrex/FlClash/releases/download/v0.9.5/FlClash-0.9.5-linux-amd64.deb",
+        "android": "https://github.com/Vialibrex/FlClash/releases/download/v0.9.5/FlClash-0.9.5-android-arm64.apk",
         "github": "https://github.com/chen08209/FlClash"
     },
     "v2rayu": {
